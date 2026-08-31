@@ -106,6 +106,9 @@
         collaborate with Claude to get there faster — which is the entire
         premise of every lesson after this one.
       </div>
+
+      <h3 data-i18n="body.h3video">Watch it explained</h3>
+      <div id="lesson-video" data-reveal></div>
     </div>
   </section>
 
@@ -183,11 +186,31 @@
 <script src="../../js/i18n.js"></script>
 <script src="../../js/main.js"></script>
 <script src="../../js/guide.js"></script>
+<script src="../../js/video.js"></script>
 <script>
   (function () {
     "use strict";
 
     var LESSON_ID = "beginner-1";
+
+    /* Fill in urls.en/pt/es with the real player-embed URL once the video
+       for this lesson is produced and hosted (see
+       video/beginner-lesson-1-script.md). Empty = "coming soon" placeholder,
+       so this page never breaks waiting on video production. */
+    var LESSON_VIDEO = {
+      urls: { en: "", pt: "", es: "" },
+      title: {
+        en: "What is Claude AI and why it matters",
+        pt: "O que é o Claude AI e por que ele importa",
+        es: "Qué es Claude AI y por qué importa"
+      },
+      duration: "~4 min",
+      placeholderText: {
+        en: "The video for this lesson is in production — check back soon.",
+        pt: "O vídeo desta aula está em produção — volte em breve.",
+        es: "El video de esta lección está en producción — vuelve pronto."
+      }
+    };
 
     var PAGE_I18N = {
       en: {
@@ -210,6 +233,7 @@
         "body.not2": "It can make mistakes — confidently stating something incorrect, sometimes called a \"hallucination\"",
         "body.not3": "It has no personal opinions or consciousness — it predicts a helpful response based on patterns learned from text",
         "body.callout": "<strong>Why it matters:</strong> this changes how work gets done. Instead of doing every step by hand, you describe the outcome you want and collaborate with Claude to get there faster — which is the entire premise of every lesson after this one.",
+        "body.h3video": "Watch it explained",
         "exercise.intro": "For each task below, decide: is this a <strong>good fit for Claude on its own</strong>, or does it <strong>need a tool or a human</strong>? Click your answer to see if you're right.",
         "badge.eyebrow": "Lesson complete",
         "badge.title": "Claude Fundamentals",
@@ -253,6 +277,7 @@
         "body.not2": "Ele pode cometer erros — afirmar algo incorreto com confiança, o que às vezes é chamado de \"alucinação\"",
         "body.not3": "Ele não tem opiniões pessoais nem consciência — ele prevê uma resposta útil com base em padrões aprendidos de textos",
         "body.callout": "<strong>Por que isso importa:</strong> isso muda a forma como o trabalho é feito. Em vez de fazer cada etapa manualmente, você descreve o resultado que quer e colabora com o Claude para chegar lá mais rápido — essa é a premissa de todas as próximas aulas.",
+        "body.h3video": "Assista à explicação",
         "exercise.intro": "Para cada tarefa abaixo, decida: isso é <strong>algo que o Claude resolve sozinho</strong>, ou <strong>precisa de uma ferramenta ou de uma pessoa</strong>? Clique na sua resposta para ver se acertou.",
         "badge.eyebrow": "Aula concluída",
         "badge.title": "Fundamentos do Claude",
@@ -296,6 +321,7 @@
         "body.not2": "Puede cometer errores — afirmar algo incorrecto con confianza, a veces llamado \"alucinación\"",
         "body.not3": "No tiene opiniones personales ni conciencia — predice una respuesta útil basada en patrones aprendidos de textos",
         "body.callout": "<strong>Por qué importa:</strong> esto cambia la forma en que se hace el trabajo. En lugar de hacer cada paso a mano, describes el resultado que quieres y colaboras con Claude para llegar más rápido — esa es la premisa de todas las lecciones siguientes.",
+        "body.h3video": "Míralo explicado",
         "exercise.intro": "Para cada tarea de abajo, decide: ¿esto es algo que <strong>Claude resuelve por sí solo</strong>, o <strong>necesita una herramienta o una persona</strong>? Haz clic en tu respuesta para ver si acertaste.",
         "badge.eyebrow": "Lección completa",
         "badge.title": "Fundamentos de Claude",
@@ -324,6 +350,10 @@
     function renderDynamic(lang) {
       var data = PAGE_I18N[lang] || PAGE_I18N.en;
       var ui = window.ATS.getUILabels(lang);
+
+      if (window.ATS.video) {
+        window.ATS.video.create("#lesson-video", LESSON_VIDEO, lang);
+      }
 
       var exerciseEl = document.getElementById("exercise");
       exerciseEl.innerHTML = "";
