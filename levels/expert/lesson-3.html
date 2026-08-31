@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lesson 3: Deploying an Automated AI Business — Expert Path — AI Tech School</title>
+<meta name="description" content="Assembling a Trigger, Agent, Output pipeline, and the deployment checklist before it goes live." />
+<link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body style="--card-color: var(--path-expert);">
+
+<a class="visually-hidden" href="#main-content">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../../index.html">
+      <span class="brand-mark" aria-hidden="true">
+        <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M8 4 3 12l5 8M16 4l5 8-5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span>AI Tech School</span>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="../../index.html#why" data-i18n="nav.why">Why ATS</a>
+      <a href="../../index.html#paths" aria-current="page" data-i18n="nav.paths">Skill Paths</a>
+      <a href="../../how-claude-code-works.html" data-i18n="nav.howItWorks">How It Works</a>
+      <a href="../../ai-news.html" data-i18n="nav.news">AI News</a>
+      <a href="../../index.html#founder" data-i18n="nav.founder">Founder</a>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-switcher" role="group" aria-label="Language">
+        <button type="button" class="lang-btn" data-lang-btn="en">EN</button>
+        <button type="button" class="lang-btn" data-lang-btn="pt">PT</button>
+        <button type="button" class="lang-btn" data-lang-btn="es">ES</button>
+      </div>
+      <a class="btn btn-ghost btn-sm header-cta" href="index.html" data-i18n="page.pathName">Expert Path</a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="mobile-nav" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav id="mobile-nav" class="mobile-nav" data-mobile-nav aria-label="Mobile">
+  <a href="../../index.html#why" data-i18n="nav.why">Why ATS</a>
+  <a href="../../index.html#paths" data-i18n="nav.paths">Skill Paths</a>
+      <a href="../../how-claude-code-works.html" data-i18n="nav.howItWorks">How It Works</a>
+      <a href="../../ai-news.html" data-i18n="nav.news">AI News</a>
+  <a href="../../index.html#founder" data-i18n="nav.founder">Founder</a>
+</nav>
+
+<main id="main-content">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html" data-i18n="breadcrumb.home">Home</a>
+      <span class="sep">/</span>
+      <a href="index.html" data-i18n="page.pathName">Expert Path</a>
+      <span class="sep">/</span>
+      <span class="current"><span data-i18n="breadcrumb.lessonWord">Lesson</span> 3</span>
+    </nav>
+  </div>
+
+  <header class="container lesson-header">
+    <div class="lesson-header-top">
+      <span class="path-tag" data-i18n="page.tagLine">Expert &middot; Lesson 3 of 3</span>
+      <span class="lesson-duration">
+        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <span data-i18n="page.duration">~20 minutes</span>
+      </span>
+    </div>
+    <h1 data-i18n="page.title">Deploying a fully automated AI-powered business</h1>
+    <p class="lede" data-i18n="page.lede">Everything in ATS leads here: a pipeline that runs without you operating each step by hand.</p>
+  </header>
+
+  <section class="lesson-section container">
+    <div class="lesson-section-label">
+      <span class="step-num">1</span>
+      <h2 data-i18n="section.explanation">Explanation</h2>
+    </div>
+    <div class="lesson-body">
+      <p data-i18n-html="body.p1">
+        A real automated "business" pipeline is just three parts: a
+        <strong>Trigger</strong>, an <strong>Agent</strong> (with tools via
+        MCP or Composio), and an <strong>Output</strong> — running without
+        you manually operating each step.
+      </p>
+
+      <h3 data-i18n="body.h3example">End-to-end example</h3>
+      <p data-i18n-html="body.example">
+        A new lead fills out a form (<strong>Trigger</strong>). An agent
+        reads the lead, researches the company, and drafts a personalized
+        outreach email (<strong>Agent</strong>, using Claude plus a web
+        tool). The email sends, the lead is logged in a CRM, and the team
+        gets notified (<strong>Output</strong>, via Gmail, Notion, and Slack).
+      </p>
+
+      <h3 data-i18n="body.h3check">Deployment reality check</h3>
+      <ul>
+        <li data-i18n="body.chk1">Start with a human-reviewed version before going fully autonomous</li>
+        <li data-i18n="body.chk2">Monitor the first runs closely</li>
+        <li data-i18n="body.chk3">Keep an off-switch</li>
+      </ul>
+
+      <div class="callout" data-i18n="body.callout">
+        This is the endpoint of the whole curriculum: Beginner gave you the
+        mental model of Claude. Intermediate gave you Claude Code and a real
+        connector. Expert combines them into a multi-tool, guardrailed,
+        autonomous pipeline — exactly like this one.
+      </div>
+    </div>
+  </section>
+
+  <section class="lesson-section container">
+    <div class="lesson-section-label">
+      <span class="step-num">2</span>
+      <h2 data-i18n="section.practice">Try it yourself</h2>
+    </div>
+    <div class="exercise-box">
+      <p class="exercise-intro" data-i18n="exercise.intro">Assemble your own pipeline, then confirm the deployment reality check.</p>
+
+      <div class="select-row">
+        <label for="p-trigger" data-i18n="exercise.triggerLabel">Trigger</label>
+        <select id="p-trigger"></select>
+      </div>
+      <div class="select-row">
+        <label for="p-action" data-i18n="exercise.actionLabel">Agent action</label>
+        <select id="p-action"></select>
+      </div>
+      <div class="select-row">
+        <label for="p-output" data-i18n="exercise.outputLabel">Output</label>
+        <select id="p-output"></select>
+      </div>
+
+      <div class="assembled-output" id="p-output-box"></div>
+
+      <p class="path-block-label" style="margin-top: 24px;" data-i18n="exercise.checklistLabel">Before this goes live, would you:</p>
+      <div class="checklist">
+        <label><input type="checkbox" id="c-review" /> <span data-i18n="exercise.check1">Keep human review at first</span></label>
+        <label><input type="checkbox" id="c-monitor" /> <span data-i18n="exercise.check2">Monitor the first runs closely</span></label>
+        <label><input type="checkbox" id="c-offswitch" /> <span data-i18n="exercise.check3">Keep an off-switch available</span></label>
+      </div>
+    </div>
+  </section>
+
+  <section class="lesson-section container">
+    <div class="lesson-section-label">
+      <span class="step-num">3</span>
+      <h2 data-i18n="section.quiz">Check your understanding</h2>
+    </div>
+    <div id="quiz" class="quiz"></div>
+  </section>
+
+  <section class="lesson-section container">
+    <div class="lesson-section-label">
+      <span class="step-num">4</span>
+      <h2 data-i18n="section.complete">Lesson complete</h2>
+    </div>
+    <div class="badge-card" id="badge" hidden>
+      <div class="badge-icon" aria-hidden="true">
+        <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <p class="badge-eyebrow" data-i18n="badge.eyebrow">Lesson complete</p>
+        <p class="badge-title" data-i18n="badge.title">AI Business Deployment</p>
+        <p class="badge-desc" data-i18n="badge.desc">You've assembled a Trigger, Agent, Output pipeline — and completed the entire ATS curriculum.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="container lesson-nav">
+    <a class="btn btn-ghost" href="lesson-2.html" data-i18n="nav.back">Back: Connecting 10+ tools</a>
+    <a class="btn btn-primary" href="../../index.html" data-i18n="nav.next">Back to Home</a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <a class="brand" href="../../index.html">
+        <span class="brand-mark" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M8 4 3 12l5 8M16 4l5 8-5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span>AI Tech School</span>
+      </a>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="../../index.html#why" data-i18n="nav.why">Why ATS</a>
+      <a href="../../index.html#paths" data-i18n="nav.paths">Skill Paths</a>
+      <a href="../../how-claude-code-works.html" data-i18n="nav.howItWorks">How It Works</a>
+      <a href="../../ai-news.html" data-i18n="nav.news">AI News</a>
+      <a href="../../index.html#founder" data-i18n="nav.founder">Founder</a>
+      <a href="https://instagram.com/ai.tech.school" target="_blank" rel="noopener noreferrer">Instagram — @ai.tech.school</a>
+    </nav>
+  </div>
+  <div class="container footer-bottom">
+    <span>&copy; <span data-year>2026</span> <span data-i18n="footer.tagline1">AI Tech School. Founded by Alex Monteiro.</span></span>
+    <span data-i18n="footer.tagline2">Pure HTML, CSS &amp; JS. No frameworks. No tracking.</span>
+  </div>
+</footer>
+
+<script src="../../js/lesson.js"></script>
+<script src="../../js/i18n.js"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/guide.js"></script>
+<script>
+  (function () {
+    "use strict";
+
+    var LESSON_ID = "expert-3";
+
+    var PAGE_I18N = {
+      en: {
+        "nav.why": "Why ATS", "nav.paths": "Skill Paths", "nav.howItWorks": "How It Works", "nav.news": "AI News", "nav.founder": "Founder",
+        "breadcrumb.home": "Home", "breadcrumb.lessonWord": "Lesson",
+        "page.pathName": "Expert Path",
+        "page.tagLine": "Expert · Lesson 3 of 3",
+        "page.duration": "~20 minutes",
+        "page.title": "Deploying a fully automated AI-powered business",
+        "page.lede": "Everything in ATS leads here: a pipeline that runs without you operating each step by hand.",
+        "section.explanation": "Explanation", "section.practice": "Try it yourself", "section.quiz": "Check your understanding", "section.complete": "Lesson complete",
+        "body.p1": "A real automated \"business\" pipeline is just three parts: a <strong>Trigger</strong>, an <strong>Agent</strong> (with tools via MCP or Composio), and an <strong>Output</strong> — running without you manually operating each step.",
+        "body.h3example": "End-to-end example",
+        "body.example": "A new lead fills out a form (<strong>Trigger</strong>). An agent reads the lead, researches the company, and drafts a personalized outreach email (<strong>Agent</strong>, using Claude plus a web tool). The email sends, the lead is logged in a CRM, and the team gets notified (<strong>Output</strong>, via Gmail, Notion, and Slack).",
+        "body.h3check": "Deployment reality check",
+        "body.chk1": "Start with a human-reviewed version before going fully autonomous",
+        "body.chk2": "Monitor the first runs closely",
+        "body.chk3": "Keep an off-switch",
+        "body.callout": "This is the endpoint of the whole curriculum: Beginner gave you the mental model of Claude. Intermediate gave you Claude Code and a real connector. Expert combines them into a multi-tool, guardrailed, autonomous pipeline — exactly like this one.",
+        "exercise.intro": "Assemble your own pipeline, then confirm the deployment reality check.",
+        "exercise.triggerLabel": "Trigger", "exercise.actionLabel": "Agent action", "exercise.outputLabel": "Output",
+        "exercise.checklistLabel": "Before this goes live, would you:",
+        "exercise.check1": "Keep human review at first",
+        "exercise.check2": "Monitor the first runs closely",
+        "exercise.check3": "Keep an off-switch available",
+        "badge.eyebrow": "Lesson complete",
+        "badge.title": "AI Business Deployment",
+        "badge.desc": "You've assembled a Trigger, Agent, Output pipeline — and completed the entire ATS curriculum.",
+        "nav.back": "Back: Connecting 10+ tools",
+        "nav.next": "Back to Home",
+        "footer.tagline1": "AI Tech School. Founded by Alex Monteiro.",
+        "footer.tagline2": "Pure HTML, CSS & JS. No frameworks. No tracking.",
+        triggers: [
+          { value: "form", label: "A new form submission comes in", phrase: "a new form submission comes in" },
+          { value: "issue", label: "A new GitHub issue is opened", phrase: "a new GitHub issue is opened" },
+          { value: "scheduled", label: "A scheduled time each day", phrase: "a scheduled time each day" }
+        ],
+        actions: [
+          { value: "outreach", label: "Research the lead and draft a personalized outreach email", phrase: "research the lead and draft a personalized outreach email" },
+          { value: "triage", label: "Triage and label the issue", phrase: "triage and label the issue" },
+          { value: "report", label: "Compile a short daily report", phrase: "compile a short daily report" }
+        ],
+        outputs: [
+          { value: "gmail_notion", label: "Send it via Gmail and log the lead in Notion", phrase: "send it via Gmail and log the lead in Notion" },
+          { value: "github_slack", label: "Comment on the GitHub issue and notify Slack", phrase: "comment on the GitHub issue and notify Slack" },
+          { value: "slack", label: "Post the summary to Slack", phrase: "post the summary to Slack" }
+        ],
+        summaryTemplate: function (trigger, action, output) { return "Trigger: " + trigger + ". Agent: " + action + ". Output: " + output + "."; },
+        quiz: [
+          { text: "What are the three parts of a basic automated business pipeline?", options: ["Trigger, Agent, Output", "Login, Password, Dashboard", "Frontend, Backend, Database", "Idea, Funding, Launch"], correctIndex: 0, explain: "Every pipeline in this lesson boils down to what starts it, what the agent does, and what comes out the other end." },
+          { text: "What's the recommended way to deploy a new automation?", options: ["Fully autonomous from day one, no review", "Start human-reviewed, then expand autonomy as trust builds", "Skip monitoring to save time", "Never automate anything that touches a real workflow"], correctIndex: 1, explain: "Starting with review and monitoring, then loosening it as the automation proves itself, is the safer path to full autonomy." },
+          { text: "Which ATS levels combine to make this final lesson possible?", options: ["Only Expert content", "Beginner's Claude fundamentals, Intermediate's Claude Code and connectors, and Expert's multi-tool agents", "None, this is unrelated to the rest of the curriculum", "Only the quiz questions"], correctIndex: 1, explain: "This lesson is the combination of everything: understanding Claude, building with Claude Code and MCP, then designing autonomous multi-tool agents." }
+        ]
+      },
+      pt: {
+        "nav.why": "Por que a ATS", "nav.paths": "Trilhas de Habilidade", "nav.howItWorks": "Como Funciona", "nav.news": "Notícias de IA", "nav.founder": "Fundador",
+        "breadcrumb.home": "Início", "breadcrumb.lessonWord": "Aula",
+        "page.pathName": "Trilha Avançada",
+        "page.tagLine": "Avançado · Aula 3 de 3",
+        "page.duration": "~20 minutos",
+        "page.title": "Implantando um negócio totalmente automatizado com IA",
+        "page.lede": "Tudo na ATS leva até aqui: um pipeline que roda sem você operar cada etapa manualmente.",
+        "section.explanation": "Explicação", "section.practice": "Mão na massa", "section.quiz": "Verifique seu entendimento", "section.complete": "Aula concluída",
+        "body.p1": "Um pipeline de \"negócio\" automatizado de verdade tem só três partes: um <strong>Gatilho</strong>, um <strong>Agente</strong> (com ferramentas via MCP ou Composio), e um <strong>Resultado</strong> — rodando sem você operar cada etapa manualmente.",
+        "body.h3example": "Exemplo de ponta a ponta",
+        "body.example": "Um novo lead preenche um formulário (<strong>Gatilho</strong>). Um agente lê o lead, pesquisa a empresa e redige um e-mail de contato personalizado (<strong>Agente</strong>, usando o Claude mais uma ferramenta de busca na web). O e-mail é enviado, o lead é registrado em um CRM, e a equipe é avisada (<strong>Resultado</strong>, via Gmail, Notion e Slack).",
+        "body.h3check": "Checklist de realidade antes de implantar",
+        "body.chk1": "Comece com uma versão revisada por humanos antes de ir para totalmente autônomo",
+        "body.chk2": "Monitore de perto as primeiras execuções",
+        "body.chk3": "Mantenha um interruptor de desligamento",
+        "body.callout": "Este é o ponto final de todo o currículo: o Iniciante deu a você o modelo mental do Claude. O Intermediário deu a você o Claude Code e um conector de verdade. O Avançado junta tudo isso em um pipeline autônomo, com múltiplas ferramentas e salvaguardas — exatamente como este.",
+        "exercise.intro": "Monte seu próprio pipeline e depois confirme o checklist de realidade antes de implantar.",
+        "exercise.triggerLabel": "Gatilho", "exercise.actionLabel": "Ação do agente", "exercise.outputLabel": "Resultado",
+        "exercise.checklistLabel": "Antes de colocar no ar, você faria isto:",
+        "exercise.check1": "Manter revisão humana no início",
+        "exercise.check2": "Monitorar de perto as primeiras execuções",
+        "exercise.check3": "Manter um interruptor de desligamento disponível",
+        "badge.eyebrow": "Aula concluída",
+        "badge.title": "Implantação de Negócio com IA",
+        "badge.desc": "Você montou um pipeline de Gatilho, Agente e Resultado — e concluiu todo o currículo da ATS.",
+        "nav.back": "Voltar: Conectando mais de 10 ferramentas",
+        "nav.next": "Voltar para o Início",
+        "footer.tagline1": "AI Tech School. Fundada por Alex Monteiro.",
+        "footer.tagline2": "HTML, CSS e JS puros. Sem frameworks. Sem rastreamento.",
+        triggers: [
+          { value: "form", label: "Chega uma nova submissão de formulário", phrase: "chegar uma nova submissão de formulário" },
+          { value: "issue", label: "Uma nova issue é aberta no GitHub", phrase: "uma nova issue for aberta no GitHub" },
+          { value: "scheduled", label: "Um horário programado todos os dias", phrase: "chegar um horário programado todos os dias" }
+        ],
+        actions: [
+          { value: "outreach", label: "Pesquisar o lead e redigir um e-mail de contato personalizado", phrase: "pesquisar o lead e redigir um e-mail de contato personalizado" },
+          { value: "triage", label: "Triar e etiquetar a issue", phrase: "triar e etiquetar a issue" },
+          { value: "report", label: "Montar um relatório diário curto", phrase: "montar um relatório diário curto" }
+        ],
+        outputs: [
+          { value: "gmail_notion", label: "Enviar pelo Gmail e registrar o lead no Notion", phrase: "enviar pelo Gmail e registrar o lead no Notion" },
+          { value: "github_slack", label: "Comentar na issue do GitHub e avisar no Slack", phrase: "comentar na issue do GitHub e avisar no Slack" },
+          { value: "slack", label: "Postar o resumo no Slack", phrase: "postar o resumo no Slack" }
+        ],
+        summaryTemplate: function (trigger, action, output) { return "Gatilho: quando " + trigger + ". Agente: vai " + action + ". Resultado: " + output + "."; },
+        quiz: [
+          { text: "Quais são as três partes de um pipeline básico de negócio automatizado?", options: ["Gatilho, Agente, Resultado", "Login, Senha, Painel", "Frontend, Backend, Banco de dados", "Ideia, Financiamento, Lançamento"], correctIndex: 0, explain: "Todo pipeline desta aula se resume ao que o inicia, o que o agente faz, e o que sai no final." },
+          { text: "Qual é a forma recomendada de implantar uma nova automação?", options: ["Totalmente autônoma desde o primeiro dia, sem revisão", "Começar com revisão humana e ampliar a autonomia conforme a confiança cresce", "Pular o monitoramento para economizar tempo", "Nunca automatizar nada que toque um fluxo de trabalho real"], correctIndex: 1, explain: "Começar com revisão e monitoramento, e afrouxar depois conforme a automação se prova confiável, é o caminho mais seguro para a autonomia total." },
+          { text: "Quais níveis da ATS se combinam para tornar esta aula final possível?", options: ["Só o conteúdo do Avançado", "Os fundamentos do Claude do Iniciante, o Claude Code e os conectores do Intermediário, e os agentes multi-ferramenta do Avançado", "Nenhum, isso não tem relação com o resto do currículo", "Só as perguntas do quiz"], correctIndex: 1, explain: "Esta aula é a combinação de tudo: entender o Claude, construir com o Claude Code e o MCP, e depois projetar agentes autônomos com múltiplas ferramentas." }
+        ]
+      },
+      es: {
+        "nav.why": "Por qué ATS", "nav.paths": "Rutas de Habilidad", "nav.howItWorks": "Cómo Funciona", "nav.news": "Noticias de IA", "nav.founder": "Fundador",
+        "breadcrumb.home": "Inicio", "breadcrumb.lessonWord": "Lección",
+        "page.pathName": "Ruta Experto",
+        "page.tagLine": "Experto · Lección 3 de 3",
+        "page.duration": "~20 minutos",
+        "page.title": "Desplegando un negocio totalmente automatizado con IA",
+        "page.lede": "Todo en ATS lleva hasta aquí: un pipeline que funciona sin que operes cada paso a mano.",
+        "section.explanation": "Explicación", "section.practice": "Manos a la obra", "section.quiz": "Verifica tu comprensión", "section.complete": "Lección completa",
+        "body.p1": "Un pipeline de \"negocio\" automatizado real tiene solo tres partes: un <strong>Disparador</strong>, un <strong>Agente</strong> (con herramientas vía MCP o Composio), y un <strong>Resultado</strong> — funcionando sin que operes cada paso manualmente.",
+        "body.h3example": "Ejemplo de principio a fin",
+        "body.example": "Un nuevo prospecto llena un formulario (<strong>Disparador</strong>). Un agente lee el prospecto, investiga la empresa y redacta un correo de contacto personalizado (<strong>Agente</strong>, usando Claude más una herramienta web). El correo se envía, el prospecto se registra en un CRM, y se avisa al equipo (<strong>Resultado</strong>, vía Gmail, Notion y Slack).",
+        "body.h3check": "Verificación de realidad antes de desplegar",
+        "body.chk1": "Empieza con una versión revisada por humanos antes de ir totalmente autónomo",
+        "body.chk2": "Monitorea de cerca las primeras ejecuciones",
+        "body.chk3": "Mantén un interruptor de apagado",
+        "body.callout": "Este es el punto final de todo el plan de estudios: Principiante te dio el modelo mental de Claude. Intermedio te dio Claude Code y un conector real. Experto lo combina todo en un pipeline autónomo, multi-herramienta y con salvaguardas — exactamente como este.",
+        "exercise.intro": "Arma tu propio pipeline y luego confirma la verificación de realidad antes de desplegar.",
+        "exercise.triggerLabel": "Disparador", "exercise.actionLabel": "Acción del agente", "exercise.outputLabel": "Resultado",
+        "exercise.checklistLabel": "Antes de ponerlo en marcha, ¿harías esto?:",
+        "exercise.check1": "Mantener revisión humana al principio",
+        "exercise.check2": "Monitorear de cerca las primeras ejecuciones",
+        "exercise.check3": "Mantener un interruptor de apagado disponible",
+        "badge.eyebrow": "Lección completa",
+        "badge.title": "Despliegue de Negocio con IA",
+        "badge.desc": "Armaste un pipeline de Disparador, Agente y Resultado — y completaste todo el plan de estudios de ATS.",
+        "nav.back": "Volver: Conectando más de 10 herramientas",
+        "nav.next": "Volver al Inicio",
+        "footer.tagline1": "AI Tech School. Fundada por Alex Monteiro.",
+        "footer.tagline2": "HTML, CSS y JS puros. Sin frameworks. Sin rastreo.",
+        triggers: [
+          { value: "form", label: "Llega una nueva respuesta de formulario", phrase: "llegue una nueva respuesta de formulario" },
+          { value: "issue", label: "Se abre una nueva issue en GitHub", phrase: "se abra una nueva issue en GitHub" },
+          { value: "scheduled", label: "Un horario programado cada día", phrase: "llegue un horario programado cada día" }
+        ],
+        actions: [
+          { value: "outreach", label: "Investigar al prospecto y redactar un correo de contacto personalizado", phrase: "investigue al prospecto y redacte un correo de contacto personalizado" },
+          { value: "triage", label: "Clasificar y etiquetar la issue", phrase: "clasifique y etiquete la issue" },
+          { value: "report", label: "Elaborar un breve informe diario", phrase: "elabore un breve informe diario" }
+        ],
+        outputs: [
+          { value: "gmail_notion", label: "Enviarlo por Gmail y registrar al prospecto en Notion", phrase: "se envíe por Gmail y se registre al prospecto en Notion" },
+          { value: "github_slack", label: "Comentar en la issue de GitHub y avisar en Slack", phrase: "se comente en la issue de GitHub y se avise en Slack" },
+          { value: "slack", label: "Publicar el resumen en Slack", phrase: "se publique el resumen en Slack" }
+        ],
+        summaryTemplate: function (trigger, action, output) { return "Disparador: cuando " + trigger + ". Agente: va a " + action + ". Resultado: " + output + "."; },
+        quiz: [
+          { text: "¿Cuáles son las tres partes de un pipeline básico de negocio automatizado?", options: ["Disparador, Agente, Resultado", "Inicio de sesión, Contraseña, Panel", "Frontend, Backend, Base de datos", "Idea, Financiamiento, Lanzamiento"], correctIndex: 0, explain: "Todo pipeline de esta lección se reduce a qué lo inicia, qué hace el agente, y qué sale al final." },
+          { text: "¿Cuál es la forma recomendada de desplegar una nueva automatización?", options: ["Totalmente autónoma desde el primer día, sin revisión", "Empezar con revisión humana y ampliar la autonomía a medida que se genera confianza", "Saltarte el monitoreo para ahorrar tiempo", "Nunca automatizar nada que toque un flujo de trabajo real"], correctIndex: 1, explain: "Empezar con revisión y monitoreo, y relajarlo después conforme la automatización demuestra ser confiable, es el camino más seguro hacia la autonomía total." },
+          { text: "¿Qué niveles de ATS se combinan para hacer posible esta lección final?", options: ["Solo el contenido de Experto", "Los fundamentos de Claude de Principiante, Claude Code y los conectores de Intermedio, y los agentes multi-herramienta de Experto", "Ninguno, esto no tiene relación con el resto del plan de estudios", "Solo las preguntas del quiz"], correctIndex: 1, explain: "Esta lección es la combinación de todo: entender Claude, construir con Claude Code y MCP, y luego diseñar agentes autónomos multi-herramienta." }
+        ]
+      }
+    };
+
+    function populateSelect(selectEl, options) {
+      selectEl.innerHTML = "";
+      options.forEach(function (opt) {
+        var el = document.createElement("option");
+        el.value = opt.value;
+        el.textContent = opt.label;
+        selectEl.appendChild(el);
+      });
+    }
+
+    function renderDynamic(lang) {
+      var data = PAGE_I18N[lang] || PAGE_I18N.en;
+      var ui = window.ATS.getUILabels(lang);
+
+      var triggerEl = document.getElementById("p-trigger");
+      var actionEl = document.getElementById("p-action");
+      var outputEl = document.getElementById("p-output");
+      var outBox = document.getElementById("p-output-box");
+
+      populateSelect(triggerEl, data.triggers);
+      populateSelect(actionEl, data.actions);
+      populateSelect(outputEl, data.outputs);
+
+      function renderPipeline() {
+        var trigger = data.triggers.find(function (o) { return o.value === triggerEl.value; }) || data.triggers[0];
+        var action = data.actions.find(function (o) { return o.value === actionEl.value; }) || data.actions[0];
+        var output = data.outputs.find(function (o) { return o.value === outputEl.value; }) || data.outputs[0];
+        outBox.textContent = data.summaryTemplate(trigger.phrase, action.phrase, output.phrase);
+      }
+      triggerEl.onchange = renderPipeline;
+      actionEl.onchange = renderPipeline;
+      outputEl.onchange = renderPipeline;
+      renderPipeline();
+
+      document.getElementById("quiz").innerHTML = "";
+      window.ATS.initQuiz("#quiz", data.quiz, ui.quiz, function () {
+        window.ATS.completeLesson(LESSON_ID, "badge");
+      });
+    }
+
+    window.ATS.i18n.init(PAGE_I18N, renderDynamic);
+  })();
+</script>
+</body>
+</html>

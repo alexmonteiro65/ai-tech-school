@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lesson 3: Your First Automated Task — Intermediate Path — AI Tech School</title>
+<meta name="description" content="What makes a task a good automation candidate, and the Trigger, Action, Check model." />
+<link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body style="--card-color: var(--path-intermediate);">
+
+<a class="visually-hidden" href="#main-content">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../../index.html">
+      <span class="brand-mark" aria-hidden="true">
+        <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M8 4 3 12l5 8M16 4l5 8-5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span>AI Tech School</span>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="../../index.html#why" data-i18n="nav.why">Why ATS</a>
+      <a href="../../index.html#paths" aria-current="page" data-i18n="nav.paths">Skill Paths</a>
+      <a href="../../how-claude-code-works.html" data-i18n="nav.howItWorks">How It Works</a>
+      <a href="../../ai-news.html" data-i18n="nav.news">AI News</a>
+      <a href="../../index.html#founder" data-i18n="nav.founder">Founder</a>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-switcher" role="group" aria-label="Language">
+        <button type="button" class="lang-btn" data-lang-btn="en">EN</button>
+        <button type="button" class="lang-btn" data-lang-btn="pt">PT</button>
+        <button type="button" class="lang-btn" data-lang-btn="es">ES</button>
+      </div>
+      <a class="btn btn-ghost btn-sm header-cta" href="index.html" data-i18n="page.pathName">Intermediate Path</a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="mobile-nav" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav id="mobile-nav" class="mobile-nav" data-mobile-nav aria-label="Mobile">
+  <a href="../../index.html#why" data-i18n="nav.why">Why ATS</a>
+  <a href="../../index.html#paths" data-i18n="nav.paths">Skill Paths</a>
+      <a href="../../how-claude-code-works.html" data-i18n="nav.howItWorks">How It Works</a>
+      <a href="../../ai-news.html" data-i18n="nav.news">AI News</a>
+  <a href="../../index.html#founder" data-i18n="nav.founder">Founder</a>
+</nav>
+
+<main id="main-content">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html" data-i18n="breadcrumb.home">Home</a>
+      <span class="sep">/</span>
+      <a href="index.html" data-i18n="page.pathName">Intermediate Path</a>
+      <span class="sep">/</span>
+      <span class="current"><span data-i18n="breadcrumb.lessonWord">Lesson</span> 3</span>
+    </nav>
+  </div>
+
+  <header class="container lesson-header">
+    <div class="lesson-header-top">
+      <span class="path-tag" data-i18n="page.tagLine">Intermediate &middot; Lesson 3 of 3</span>
+      <span class="lesson-duration">
+        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <span data-i18n="page.duration">~16 minutes</span>
+      </span>
+    </div>
+    <h1 data-i18n="page.title">Building your first automated task with Claude Code</h1>
+    <p class="lede" data-i18n="page.lede">Describe a repeatable task once, and let Claude carry it out — instead of doing it by hand every time.</p>
+  </header>
+
+  <section class="lesson-section container">
+    <div class="lesson-section-label">
+      <span class="step-num">1</span>
+      <h2 data-i18n="section.explanation">Explanation</h2>
+    </div>
+    <div class="lesson-body">
+      <p data-i18n="body.p1">
+        Automation with Claude Code means describing a task once, then
+        letting Claude carry out the steps — with your review — instead of
+        you doing them by hand every single time.
+      </p>
+      <p data-i18n="body.p2">
+        Real example: "Every time I add a new blog post file, generate an
+        SEO-friendly meta description and add it to the top of the file."
+        Claude Code can read the new file, draft the description, and edit
+        the file — all inside your project.
+      </p>
+
+      <h3 data-i18n="body.h3good">Good candidates for automation</h3>
+      <ul>
+        <li data-i18n="body.good1">Repetitive — you'd otherwise do this the same way, often</li>
+        <li data-i18n="body.good2">Well-defined — there's a clear right shape for the result</li>
+        <li data-i18n="body.good3">Verifiable — you can check quickly whether it worked</li>
+      </ul>
+
+      <h3 data-i18n="body.h3model">The Trigger &rarr; Action &rarr; Check model</h3>
+      <p data-i18n="body.modelLede">Every automation has the same three parts:</p>
+      <ul>
+        <li data-i18n-html="body.trigger"><strong>Trigger</strong> — what starts the task</li>
+        <li data-i18n-html="body.action"><strong>Action</strong> — what Claude actually does</li>
+        <li data-i18n-html="body.check"><strong>Check</strong> — how you verify it worked</li>
+      </ul>
+
+      <div class="callout" data-i18n-html="body.callout">
+        <strong>Keep a review step early on.</strong> High-stakes, irreversible
+        actions with no check are bad automation candidates — start with
+        something you can verify quickly.
+      </div>
+    </div>
+  </section>
+
+  <section class="lesson-section container">
+    <div class="lesson-section-label">
+      <span class="step-num">2</span>
+      <h2 data-i18n="section.practice">Try it yourself</h2>
+    </div>
+    <div class="exercise-box">
+      <p class="exercise-intro" data-i18n="exercise.intro">Design a real automation by picking one option from each category below.</p>
+
+      <div class="select-row">
+        <label for="wf-trigger" data-i18n="exercise.triggerLabel">Trigger</label>
+        <select id="wf-trigger"></select>
+      </div>
+      <div class="select-row">
+        <label for="wf-action" data-i18n="exercise.actionLabel">Action</label>
+        <select id="wf-action"></select>
+      </div>
+      <div class="select-row">
+        <label for="wf-check" data-i18n="exercise.checkLabel">Check</label>
+        <select id="wf-check"></select>
+      </div>
+
+      <div class="assembled-output" id="wf-output"></div>
+    </div>
+  </section>
+
+  <section class="lesson-section container">
+    <div class="lesson-section-label">
+      <span class="step-num">3</span>
+      <h2 data-i18n="section.quiz">Check your understanding</h2>
+    </div>
+    <div id="quiz" class="quiz"></div>
+  </section>
+
+  <section class="lesson-section container">
+    <div class="lesson-section-label">
+      <span class="step-num">4</span>
+      <h2 data-i18n="section.complete">Lesson complete</h2>
+    </div>
+    <div class="badge-card" id="badge" hidden>
+      <div class="badge-icon" aria-hidden="true">
+        <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <p class="badge-eyebrow" data-i18n="badge.eyebrow">Lesson complete</p>
+        <p class="badge-title" data-i18n="badge.title">Automation Basics</p>
+        <p class="badge-desc" data-i18n="badge.desc">You can design a Trigger, Action, Check automation — and you've finished the Intermediate path.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="container lesson-nav">
+    <a class="btn btn-ghost" href="lesson-2.html" data-i18n="nav.back">Back: Your first MCP connector</a>
+    <a class="btn btn-primary" href="../expert/index.html" data-i18n="nav.next">Next: Expert Path</a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <a class="brand" href="../../index.html">
+        <span class="brand-mark" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M8 4 3 12l5 8M16 4l5 8-5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span>AI Tech School</span>
+      </a>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="../../index.html#why" data-i18n="nav.why">Why ATS</a>
+      <a href="../../index.html#paths" data-i18n="nav.paths">Skill Paths</a>
+      <a href="../../how-claude-code-works.html" data-i18n="nav.howItWorks">How It Works</a>
+      <a href="../../ai-news.html" data-i18n="nav.news">AI News</a>
+      <a href="../../index.html#founder" data-i18n="nav.founder">Founder</a>
+      <a href="https://instagram.com/ai.tech.school" target="_blank" rel="noopener noreferrer">Instagram — @ai.tech.school</a>
+    </nav>
+  </div>
+  <div class="container footer-bottom">
+    <span>&copy; <span data-year>2026</span> <span data-i18n="footer.tagline1">AI Tech School. Founded by Alex Monteiro.</span></span>
+    <span data-i18n="footer.tagline2">Pure HTML, CSS &amp; JS. No frameworks. No tracking.</span>
+  </div>
+</footer>
+
+<script src="../../js/lesson.js"></script>
+<script src="../../js/i18n.js"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/guide.js"></script>
+<script>
+  (function () {
+    "use strict";
+
+    var LESSON_ID = "intermediate-3";
+
+    var PAGE_I18N = {
+      en: {
+        "nav.why": "Why ATS", "nav.paths": "Skill Paths", "nav.howItWorks": "How It Works", "nav.news": "AI News", "nav.founder": "Founder",
+        "breadcrumb.home": "Home", "breadcrumb.lessonWord": "Lesson",
+        "page.pathName": "Intermediate Path",
+        "page.tagLine": "Intermediate · Lesson 3 of 3",
+        "page.duration": "~16 minutes",
+        "page.title": "Building your first automated task with Claude Code",
+        "page.lede": "Describe a repeatable task once, and let Claude carry it out — instead of doing it by hand every time.",
+        "section.explanation": "Explanation", "section.practice": "Try it yourself", "section.quiz": "Check your understanding", "section.complete": "Lesson complete",
+        "body.p1": "Automation with Claude Code means describing a task once, then letting Claude carry out the steps — with your review — instead of you doing them by hand every single time.",
+        "body.p2": "Real example: \"Every time I add a new blog post file, generate an SEO-friendly meta description and add it to the top of the file.\" Claude Code can read the new file, draft the description, and edit the file — all inside your project.",
+        "body.h3good": "Good candidates for automation",
+        "body.good1": "Repetitive — you'd otherwise do this the same way, often",
+        "body.good2": "Well-defined — there's a clear right shape for the result",
+        "body.good3": "Verifiable — you can check quickly whether it worked",
+        "body.h3model": "The Trigger → Action → Check model",
+        "body.modelLede": "Every automation has the same three parts:",
+        "body.trigger": "<strong>Trigger</strong> — what starts the task",
+        "body.action": "<strong>Action</strong> — what Claude actually does",
+        "body.check": "<strong>Check</strong> — how you verify it worked",
+        "body.callout": "<strong>Keep a review step early on.</strong> High-stakes, irreversible actions with no check are bad automation candidates — start with something you can verify quickly.",
+        "exercise.intro": "Design a real automation by picking one option from each category below.",
+        "exercise.triggerLabel": "Trigger", "exercise.actionLabel": "Action", "exercise.checkLabel": "Check",
+        "badge.eyebrow": "Lesson complete",
+        "badge.title": "Automation Basics",
+        "badge.desc": "You can design a Trigger, Action, Check automation — and you've finished the Intermediate path.",
+        "nav.back": "Back: Your first MCP connector",
+        "nav.next": "Next: Expert Path",
+        "footer.tagline1": "AI Tech School. Founded by Alex Monteiro.",
+        "footer.tagline2": "Pure HTML, CSS & JS. No frameworks. No tracking.",
+        triggers: [
+          { value: "new_file", label: "A new file is added to the project", phrase: "a new file is added to the project" },
+          { value: "pr_opened", label: "A pull request is opened", phrase: "a pull request is opened" },
+          { value: "scheduled", label: "A scheduled time each day", phrase: "a scheduled time each day" }
+        ],
+        actions: [
+          { value: "meta_desc", label: "Draft a meta description and add it to the file", phrase: "draft a meta description and add it to the file" },
+          { value: "summarize", label: "Review the changes and summarize them", phrase: "review the changes and summarize them" },
+          { value: "report", label: "Compile a short status report", phrase: "compile a short status report" }
+        ],
+        checks: [
+          { value: "read_before", label: "You read the file before it's published", phrase: "you read the file before it's published" },
+          { value: "approve", label: "You approve the summary before merging", phrase: "you approve the summary before merging" },
+          { value: "skim", label: "You skim the report each morning", phrase: "you skim the report each morning" }
+        ],
+        summaryTemplate: function (trigger, action, check) { return "When " + trigger + ", Claude will " + action + ". Before it's final, " + check + "."; },
+        quiz: [
+          { text: "What makes a task a good candidate for automation?", options: ["It's high-stakes and irreversible", "It's repetitive, well-defined, and easy to verify", "It only happens once", "It requires no review, ever"], correctIndex: 1, explain: "Repetitive, well-defined, and verifiable tasks are the safest and most valuable to automate first." },
+          { text: "In the Trigger, Action, Check model, what is the Check step for?", options: ["Starting the automation", "Verifying the result actually worked", "Deleting the task", "Billing"], correctIndex: 1, explain: "Check is how you confirm the automation actually did what you expected before you trust it fully." },
+          { text: "Why keep a review step in early automations?", options: ["It's required by law", "It catches mistakes before they become real problems", "It makes Claude respond slower for no reason", "It has no real benefit"], correctIndex: 1, explain: "A review step catches mistakes while the stakes are still low — you can loosen it later once you trust the automation." }
+        ]
+      },
+      pt: {
+        "nav.why": "Por que a ATS", "nav.paths": "Trilhas de Habilidade", "nav.howItWorks": "Como Funciona", "nav.news": "Notícias de IA", "nav.founder": "Fundador",
+        "breadcrumb.home": "Início", "breadcrumb.lessonWord": "Aula",
+        "page.pathName": "Trilha Intermediária",
+        "page.tagLine": "Intermediário · Aula 3 de 3",
+        "page.duration": "~16 minutos",
+        "page.title": "Construindo sua primeira tarefa automatizada com o Claude Code",
+        "page.lede": "Descreva uma tarefa repetitiva uma única vez, e deixe o Claude executá-la — em vez de fazer isso manualmente todas as vezes.",
+        "section.explanation": "Explicação", "section.practice": "Mão na massa", "section.quiz": "Verifique seu entendimento", "section.complete": "Aula concluída",
+        "body.p1": "Automação com o Claude Code significa descrever uma tarefa uma vez, e depois deixar o Claude executar as etapas — com sua revisão — em vez de você fazer isso manualmente todas as vezes.",
+        "body.p2": "Exemplo real: \"Toda vez que eu adicionar um novo arquivo de post no blog, gere uma meta descrição amigável para SEO e adicione no topo do arquivo.\" O Claude Code consegue ler o novo arquivo, redigir a descrição e editar o arquivo — tudo dentro do seu projeto.",
+        "body.h3good": "Boas candidatas à automação",
+        "body.good1": "Repetitiva — você faria isso da mesma forma, com frequência",
+        "body.good2": "Bem definida — existe um formato claro e correto para o resultado",
+        "body.good3": "Verificável — você consegue checar rapidamente se funcionou",
+        "body.h3model": "O modelo Gatilho → Ação → Verificação",
+        "body.modelLede": "Toda automação tem as mesmas três partes:",
+        "body.trigger": "<strong>Gatilho</strong> — o que inicia a tarefa",
+        "body.action": "<strong>Ação</strong> — o que o Claude realmente faz",
+        "body.check": "<strong>Verificação</strong> — como você confirma que funcionou",
+        "body.callout": "<strong>Mantenha uma etapa de revisão no início.</strong> Ações de alto risco e irreversíveis sem verificação são más candidatas à automação — comece com algo que você consiga verificar rapidamente.",
+        "exercise.intro": "Projete uma automação de verdade escolhendo uma opção de cada categoria abaixo.",
+        "exercise.triggerLabel": "Gatilho", "exercise.actionLabel": "Ação", "exercise.checkLabel": "Verificação",
+        "badge.eyebrow": "Aula concluída",
+        "badge.title": "Fundamentos de Automação",
+        "badge.desc": "Você consegue projetar uma automação de Gatilho, Ação e Verificação — e concluiu a trilha Intermediária.",
+        "nav.back": "Voltar: Seu primeiro conector MCP",
+        "nav.next": "Próxima: Trilha Avançada",
+        "footer.tagline1": "AI Tech School. Fundada por Alex Monteiro.",
+        "footer.tagline2": "HTML, CSS e JS puros. Sem frameworks. Sem rastreamento.",
+        triggers: [
+          { value: "new_file", label: "Um novo arquivo é adicionado ao projeto", phrase: "um novo arquivo for adicionado ao projeto" },
+          { value: "pr_opened", label: "Um pull request é aberto", phrase: "um pull request for aberto" },
+          { value: "scheduled", label: "Um horário programado todos os dias", phrase: "chegar um horário programado todos os dias" }
+        ],
+        actions: [
+          { value: "meta_desc", label: "Redigir uma meta descrição e adicioná-la ao arquivo", phrase: "redigir uma meta descrição e adicioná-la ao arquivo" },
+          { value: "summarize", label: "Revisar as mudanças e resumi-las", phrase: "revisar as mudanças e resumi-las" },
+          { value: "report", label: "Montar um relatório curto de status", phrase: "montar um relatório curto de status" }
+        ],
+        checks: [
+          { value: "read_before", label: "Você lê o arquivo antes de ele ser publicado", phrase: "você lê o arquivo antes de ele ser publicado" },
+          { value: "approve", label: "Você aprova o resumo antes de fazer o merge", phrase: "você aprova o resumo antes de fazer o merge" },
+          { value: "skim", label: "Você dá uma olhada no relatório toda manhã", phrase: "você dá uma olhada no relatório toda manhã" }
+        ],
+        summaryTemplate: function (trigger, action, check) { return "Quando " + trigger + ", o Claude vai " + action + ". Antes de finalizar, " + check + "."; },
+        quiz: [
+          { text: "O que torna uma tarefa uma boa candidata à automação?", options: ["Ser de alto risco e irreversível", "Ser repetitiva, bem definida e fácil de verificar", "Acontecer só uma vez", "Não precisar de revisão nunca"], correctIndex: 1, explain: "Tarefas repetitivas, bem definidas e verificáveis são as mais seguras e valiosas para automatizar primeiro." },
+          { text: "No modelo Gatilho, Ação, Verificação, para que serve a etapa de Verificação?", options: ["Para iniciar a automação", "Para confirmar que o resultado realmente funcionou", "Para excluir a tarefa", "Para cobrança"], correctIndex: 1, explain: "A Verificação é como você confirma que a automação fez o que era esperado antes de confiar totalmente nela." },
+          { text: "Por que manter uma etapa de revisão nas primeiras automações?", options: ["É exigido por lei", "Ela pega erros antes que virem problemas de verdade", "Faz o Claude responder mais devagar sem motivo", "Não traz benefício real"], correctIndex: 1, explain: "Uma etapa de revisão pega erros enquanto o risco ainda é baixo — você pode afrouxá-la depois, quando já confiar na automação." }
+        ]
+      },
+      es: {
+        "nav.why": "Por qué ATS", "nav.paths": "Rutas de Habilidad", "nav.howItWorks": "Cómo Funciona", "nav.news": "Noticias de IA", "nav.founder": "Fundador",
+        "breadcrumb.home": "Inicio", "breadcrumb.lessonWord": "Lección",
+        "page.pathName": "Ruta Intermedia",
+        "page.tagLine": "Intermedio · Lección 3 de 3",
+        "page.duration": "~16 minutos",
+        "page.title": "Construyendo tu primera tarea automatizada con Claude Code",
+        "page.lede": "Describe una tarea repetible una sola vez, y deja que Claude la lleve a cabo — en lugar de hacerla a mano cada vez.",
+        "section.explanation": "Explicación", "section.practice": "Manos a la obra", "section.quiz": "Verifica tu comprensión", "section.complete": "Lección completa",
+        "body.p1": "Automatizar con Claude Code significa describir una tarea una vez, y luego dejar que Claude ejecute los pasos — con tu revisión — en lugar de que tú los hagas a mano cada vez.",
+        "body.p2": "Ejemplo real: \"Cada vez que agregue un nuevo archivo de entrada de blog, genera una meta descripción amigable para SEO y agrégala al principio del archivo.\" Claude Code puede leer el nuevo archivo, redactar la descripción y editar el archivo — todo dentro de tu proyecto.",
+        "body.h3good": "Buenas candidatas para automatizar",
+        "body.good1": "Repetitiva — de otro modo la harías igual, seguido",
+        "body.good2": "Bien definida — hay una forma clara y correcta del resultado",
+        "body.good3": "Verificable — puedes comprobar rápido si funcionó",
+        "body.h3model": "El modelo Disparador → Acción → Verificación",
+        "body.modelLede": "Toda automatización tiene las mismas tres partes:",
+        "body.trigger": "<strong>Disparador</strong> — qué inicia la tarea",
+        "body.action": "<strong>Acción</strong> — qué hace realmente Claude",
+        "body.check": "<strong>Verificación</strong> — cómo confirmas que funcionó",
+        "body.callout": "<strong>Mantén un paso de revisión al principio.</strong> Las acciones de alto riesgo e irreversibles sin verificación son malas candidatas para automatizar — empieza con algo que puedas verificar rápido.",
+        "exercise.intro": "Diseña una automatización real eligiendo una opción de cada categoría de abajo.",
+        "exercise.triggerLabel": "Disparador", "exercise.actionLabel": "Acción", "exercise.checkLabel": "Verificación",
+        "badge.eyebrow": "Lección completa",
+        "badge.title": "Fundamentos de Automatización",
+        "badge.desc": "Puedes diseñar una automatización de Disparador, Acción y Verificación — y terminaste la ruta Intermedia.",
+        "nav.back": "Volver: Tu primer conector MCP",
+        "nav.next": "Siguiente: Ruta Experto",
+        "footer.tagline1": "AI Tech School. Fundada por Alex Monteiro.",
+        "footer.tagline2": "HTML, CSS y JS puros. Sin frameworks. Sin rastreo.",
+        triggers: [
+          { value: "new_file", label: "Se agrega un nuevo archivo al proyecto", phrase: "se agregue un nuevo archivo al proyecto" },
+          { value: "pr_opened", label: "Se abre un pull request", phrase: "se abra un pull request" },
+          { value: "scheduled", label: "Un horario programado cada día", phrase: "llegue un horario programado cada día" }
+        ],
+        actions: [
+          { value: "meta_desc", label: "Redactar una meta descripción y agregarla al archivo", phrase: "redacte una meta descripción y la agregue al archivo" },
+          { value: "summarize", label: "Revisar los cambios y resumirlos", phrase: "revise los cambios y los resuma" },
+          { value: "report", label: "Elaborar un breve informe de estado", phrase: "elabore un breve informe de estado" }
+        ],
+        checks: [
+          { value: "read_before", label: "Lees el archivo antes de que se publique", phrase: "leas el archivo antes de que se publique" },
+          { value: "approve", label: "Apruebas el resumen antes de fusionar", phrase: "apruebes el resumen antes de fusionar" },
+          { value: "skim", label: "Revisas el informe cada mañana", phrase: "revises el informe cada mañana" }
+        ],
+        summaryTemplate: function (trigger, action, check) { return "Cuando " + trigger + ", Claude va a " + action + ". Antes de darlo por final, " + check + "."; },
+        quiz: [
+          { text: "¿Qué hace que una tarea sea buena candidata para automatizar?", options: ["Es de alto riesgo e irreversible", "Es repetitiva, está bien definida y es fácil de verificar", "Solo pasa una vez", "Nunca requiere revisión"], correctIndex: 1, explain: "Las tareas repetitivas, bien definidas y verificables son las más seguras y valiosas para automatizar primero." },
+          { text: "En el modelo Disparador, Acción, Verificación, ¿para qué sirve el paso de Verificación?", options: ["Para iniciar la automatización", "Para confirmar que el resultado realmente funcionó", "Para eliminar la tarea", "Para facturación"], correctIndex: 1, explain: "La Verificación es cómo confirmas que la automatización hizo lo que esperabas antes de confiar en ella por completo." },
+          { text: "¿Por qué mantener un paso de revisión en las primeras automatizaciones?", options: ["Lo exige la ley", "Detecta errores antes de que se conviertan en problemas reales", "Hace que Claude responda más lento sin motivo", "No aporta ningún beneficio real"], correctIndex: 1, explain: "Un paso de revisión detecta errores mientras el riesgo aún es bajo — puedes relajarlo después, cuando ya confíes en la automatización." }
+        ]
+      }
+    };
+
+    function populateSelect(selectEl, options) {
+      selectEl.innerHTML = "";
+      options.forEach(function (opt) {
+        var el = document.createElement("option");
+        el.value = opt.value;
+        el.textContent = opt.label;
+        selectEl.appendChild(el);
+      });
+    }
+
+    function renderDynamic(lang) {
+      var data = PAGE_I18N[lang] || PAGE_I18N.en;
+      var ui = window.ATS.getUILabels(lang);
+
+      var triggerEl = document.getElementById("wf-trigger");
+      var actionEl = document.getElementById("wf-action");
+      var checkEl = document.getElementById("wf-check");
+      var output = document.getElementById("wf-output");
+
+      populateSelect(triggerEl, data.triggers);
+      populateSelect(actionEl, data.actions);
+      populateSelect(checkEl, data.checks);
+
+      function renderSummary() {
+        var trigger = data.triggers.find(function (o) { return o.value === triggerEl.value; }) || data.triggers[0];
+        var action = data.actions.find(function (o) { return o.value === actionEl.value; }) || data.actions[0];
+        var check = data.checks.find(function (o) { return o.value === checkEl.value; }) || data.checks[0];
+        output.textContent = data.summaryTemplate(trigger.phrase, action.phrase, check.phrase);
+      }
+
+      triggerEl.onchange = renderSummary;
+      actionEl.onchange = renderSummary;
+      checkEl.onchange = renderSummary;
+      renderSummary();
+
+      document.getElementById("quiz").innerHTML = "";
+      window.ATS.initQuiz("#quiz", data.quiz, ui.quiz, function () {
+        window.ATS.completeLesson(LESSON_ID, "badge");
+      });
+    }
+
+    window.ATS.i18n.init(PAGE_I18N, renderDynamic);
+  })();
+</script>
+</body>
+</html>

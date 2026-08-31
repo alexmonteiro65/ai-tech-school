@@ -1,0 +1,32 @@
+<svg viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" role="img" aria-labelledby="title desc">
+  <title id="title">AI Tech School logo</title>
+  <desc id="desc">Square profile picture: a lightning bolt mark above the letters ATS, on a dark high-tech background, for the @ai.tech.school Instagram account.</desc>
+
+  <defs>
+    <linearGradient id="boltGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <radialGradient id="bgGlowLogo" cx="50%" cy="42%" r="65%">
+      <stop offset="0%" stop-color="#1c1533"/>
+      <stop offset="100%" stop-color="#08090d"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1080" height="1080" fill="url(#bgGlowLogo)"/>
+
+  <!-- subtle circuit lines for a high-tech feel -->
+  <g stroke="#262c3d" stroke-width="2" fill="none" opacity="0.6">
+    <path d="M0 860 H300 V760 H520"/>
+    <path d="M1080 220 H780 V320 H560"/>
+    <circle cx="520" cy="760" r="6" fill="#262c3d" stroke="none"/>
+    <circle cx="560" cy="320" r="6" fill="#262c3d" stroke="none"/>
+  </g>
+
+  <!-- Lightning bolt -->
+  <path d="M 588 210 L 430 590 L 525 590 L 480 870 L 690 480 L 585 480 Z"
+        fill="url(#boltGradient)" stroke="#0a0c12" stroke-width="6" stroke-linejoin="round"/>
+
+  <!-- ATS wordmark -->
+  <text x="540" y="960" text-anchor="middle" fill="#f4f6fb" font-size="150" font-weight="800" letter-spacing="10">ATS</text>
+</svg>

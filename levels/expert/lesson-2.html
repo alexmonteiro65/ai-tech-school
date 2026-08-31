@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lesson 2: Connecting 10+ Tools via Composio MCP — Expert Path — AI Tech School</title>
+<meta name="description" content="How Composio provides ready-made MCP connectors, and how one agent uses many tools in one workflow." />
+<link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body style="--card-color: var(--path-expert);">
+
+<a class="visually-hidden" href="#main-content">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../../index.html">
+      <span class="brand-mark" aria-hidden="true">
+        <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M8 4 3 12l5 8M16 4l5 8-5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span>AI Tech School</span>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="../../index.html#why" data-i18n="nav.why">Why ATS</a>
+      <a href="../../index.html#paths" aria-current="page" data-i18n="nav.paths">Skill Paths</a>
+      <a href="../../how-claude-code-works.html" data-i18n="nav.howItWorks">How It Works</a>
+      <a href="../../ai-news.html" data-i18n="nav.news">AI News</a>
+      <a href="../../index.html#founder" data-i18n="nav.founder">Founder</a>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-switcher" role="group" aria-label="Language">
+        <button type="button" class="lang-btn" data-lang-btn="en">EN</button>
+        <button type="button" class="lang-btn" data-lang-btn="pt">PT</button>
+        <button type="button" class="lang-btn" data-lang-btn="es">ES</button>
+      </div>
+      <a class="btn btn-ghost btn-sm header-cta" href="index.html" data-i18n="page.pathName">Expert Path</a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="mobile-nav" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav id="mobile-nav" class="mobile-nav" data-mobile-nav aria-label="Mobile">
+  <a href="../../index.html#why" data-i18n="nav.why">Why ATS</a>
+  <a href="../../index.html#paths" data-i18n="nav.paths">Skill Paths</a>
+      <a href="../../how-claude-code-works.html" data-i18n="nav.howItWorks">How It Works</a>
+      <a href="../../ai-news.html" data-i18n="nav.news">AI News</a>
+  <a href="../../index.html#founder" data-i18n="nav.founder">Founder</a>
+</nav>
+
+<main id="main-content">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html" data-i18n="breadcrumb.home">Home</a>
+      <span class="sep">/</span>
+      <a href="index.html" data-i18n="page.pathName">Expert Path</a>
+      <span class="sep">/</span>
+      <span class="current"><span data-i18n="breadcrumb.lessonWord">Lesson</span> 2</span>
+    </nav>
+  </div>
+
+  <header class="container lesson-header">
+    <div class="lesson-header-top">
+      <span class="path-tag" data-i18n="page.tagLine">Expert &middot; Lesson 2 of 3</span>
+      <span class="lesson-duration">
+        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <span data-i18n="page.duration">~18 minutes</span>
+      </span>
+    </div>
+    <h1 data-i18n="page.title">Connecting 10+ tools via Composio MCP</h1>
+    <p class="lede" data-i18n="page.lede">One agent, many tools — Composio is how you stop building a custom connector for every service.</p>
+  </header>
+
+  <section class="lesson-section container">
+    <div class="lesson-section-label">
+      <span class="step-num">1</span>
+      <h2 data-i18n="section.explanation">Explanation</h2>
+    </div>
+    <div class="lesson-body">
+      <p data-i18n-html="body.p1">
+        <strong>Composio</strong> is a platform that provides ready-made MCP
+        connectors for dozens of popular tools — Slack, Gmail, Notion, Google
+        Calendar, GitHub, Linear, and more — so you don't build a custom
+        connector for every service you want an agent to use.
+      </p>
+      <p data-i18n="body.p2">
+        Instead of one agent hard-wired to one tool, Composio lets a single
+        agent reach many tools through the same MCP interface. The agent
+        picks the right tool for each part of a task.
+      </p>
+
+      <h3 data-i18n="body.h3example">Example: new customer onboarding</h3>
+      <p data-i18n="body.exampleLede">A single workflow, four tools:</p>
+      <ul>
+        <li data-i18n-html="body.ex1"><strong>Gmail</strong> — send the welcome email</li>
+        <li data-i18n-html="body.ex2"><strong>Notion</strong> — create the onboarding document</li>
+        <li data-i18n-html="body.ex3"><strong>Slack</strong> — notify the team</li>
+        <li data-i18n-html="body.ex4"><strong>Google Calendar</strong> — schedule the kickoff call</li>
+      </ul>
+
+      <div class="callout" data-i18n-html="body.callout">
+        <strong>Design principle:</strong> more connected tools means more
+        capability, but also more surface area for mistakes. Only connect
+        what the workflow actually needs.
+      </div>
+    </div>
+  </section>
+
+  <section class="lesson-section container">
+    <div class="lesson-section-label">
+      <span class="step-num">2</span>
+      <h2 data-i18n="section.practice">Try it yourself</h2>
+    </div>
+    <div class="exercise-box">
+      <p class="exercise-intro" data-i18n="exercise.intro">Match each task to the tool best suited to handle it.</p>
+      <div id="exercise"></div>
+    </div>
+  </section>
+
+  <section class="lesson-section container">
+    <div class="lesson-section-label">
+      <span class="step-num">3</span>
+      <h2 data-i18n="section.quiz">Check your understanding</h2>
+    </div>
+    <div id="quiz" class="quiz"></div>
+  </section>
+
+  <section class="lesson-section container">
+    <div class="lesson-section-label">
+      <span class="step-num">4</span>
+      <h2 data-i18n="section.complete">Lesson complete</h2>
+    </div>
+    <div class="badge-card" id="badge" hidden>
+      <div class="badge-icon" aria-hidden="true">
+        <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <p class="badge-eyebrow" data-i18n="badge.eyebrow">Lesson complete</p>
+        <p class="badge-title" data-i18n="badge.title">Multi-Tool Integration</p>
+        <p class="badge-desc" data-i18n="badge.desc">You understand how Composio lets one agent reach many tools, and the tradeoff of connecting more of them.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="container lesson-nav">
+    <a class="btn btn-ghost" href="lesson-1.html" data-i18n="nav.back">Back: Autonomous agents</a>
+    <a class="btn btn-primary" href="lesson-3.html" data-i18n="nav.next">Next: Deploying an automated business</a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <a class="brand" href="../../index.html">
+        <span class="brand-mark" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M8 4 3 12l5 8M16 4l5 8-5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span>AI Tech School</span>
+      </a>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="../../index.html#why" data-i18n="nav.why">Why ATS</a>
+      <a href="../../index.html#paths" data-i18n="nav.paths">Skill Paths</a>
+      <a href="../../how-claude-code-works.html" data-i18n="nav.howItWorks">How It Works</a>
+      <a href="../../ai-news.html" data-i18n="nav.news">AI News</a>
+      <a href="../../index.html#founder" data-i18n="nav.founder">Founder</a>
+      <a href="https://instagram.com/ai.tech.school" target="_blank" rel="noopener noreferrer">Instagram — @ai.tech.school</a>
+    </nav>
+  </div>
+  <div class="container footer-bottom">
+    <span>&copy; <span data-year>2026</span> <span data-i18n="footer.tagline1">AI Tech School. Founded by Alex Monteiro.</span></span>
+    <span data-i18n="footer.tagline2">Pure HTML, CSS &amp; JS. No frameworks. No tracking.</span>
+  </div>
+</footer>
+
+<script src="../../js/lesson.js"></script>
+<script src="../../js/i18n.js"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/guide.js"></script>
+<script>
+  (function () {
+    "use strict";
+
+    var LESSON_ID = "expert-2";
+
+    var PAGE_I18N = {
+      en: {
+        "nav.why": "Why ATS", "nav.paths": "Skill Paths", "nav.howItWorks": "How It Works", "nav.news": "AI News", "nav.founder": "Founder",
+        "breadcrumb.home": "Home", "breadcrumb.lessonWord": "Lesson",
+        "page.pathName": "Expert Path",
+        "page.tagLine": "Expert · Lesson 2 of 3",
+        "page.duration": "~18 minutes",
+        "page.title": "Connecting 10+ tools via Composio MCP",
+        "page.lede": "One agent, many tools — Composio is how you stop building a custom connector for every service.",
+        "section.explanation": "Explanation", "section.practice": "Try it yourself", "section.quiz": "Check your understanding", "section.complete": "Lesson complete",
+        "body.p1": "<strong>Composio</strong> is a platform that provides ready-made MCP connectors for dozens of popular tools — Slack, Gmail, Notion, Google Calendar, GitHub, Linear, and more — so you don't build a custom connector for every service you want an agent to use.",
+        "body.p2": "Instead of one agent hard-wired to one tool, Composio lets a single agent reach many tools through the same MCP interface. The agent picks the right tool for each part of a task.",
+        "body.h3example": "Example: new customer onboarding",
+        "body.exampleLede": "A single workflow, four tools:",
+        "body.ex1": "<strong>Gmail</strong> — send the welcome email",
+        "body.ex2": "<strong>Notion</strong> — create the onboarding document",
+        "body.ex3": "<strong>Slack</strong> — notify the team",
+        "body.ex4": "<strong>Google Calendar</strong> — schedule the kickoff call",
+        "body.callout": "<strong>Design principle:</strong> more connected tools means more capability, but also more surface area for mistakes. Only connect what the workflow actually needs.",
+        "exercise.intro": "Match each task to the tool best suited to handle it.",
+        "badge.eyebrow": "Lesson complete",
+        "badge.title": "Multi-Tool Integration",
+        "badge.desc": "You understand how Composio lets one agent reach many tools, and the tradeoff of connecting more of them.",
+        "nav.back": "Back: Autonomous agents",
+        "nav.next": "Next: Deploying an automated business",
+        "footer.tagline1": "AI Tech School. Founded by Alex Monteiro.",
+        "footer.tagline2": "Pure HTML, CSS & JS. No frameworks. No tracking.",
+        items: [
+          { text: "Notify the team a deploy just finished", correct: "Slack" },
+          { text: "Send a welcome email to a new customer", correct: "Gmail" },
+          { text: "Create a new onboarding document", correct: "Notion" },
+          { text: "Open a pull request with a bug fix", correct: "GitHub" },
+          { text: "Schedule a kickoff call for next week", correct: "Google Calendar" },
+          { text: "Create a tracked engineering ticket", correct: "Linear" }
+        ],
+        pool: ["Slack", "Gmail", "Notion", "GitHub", "Google Calendar", "Linear"],
+        quiz: [
+          { text: "What problem does Composio solve?", options: ["It replaces Claude entirely", "It provides ready-made MCP connectors so you don't build one per tool", "It's a code editor", "It only works with one tool"], correctIndex: 1, explain: "Composio's value is a library of existing connectors, so you're not building a custom integration for every service." },
+          { text: "In a multi-tool workflow, how does the agent decide which tool to use?", options: ["It always uses every tool at once", "It picks the right tool for each part of the task", "Tools are chosen at random", "A human manually switches tools each time"], correctIndex: 1, explain: "Each part of a workflow maps to whichever connected tool actually handles that kind of action." },
+          { text: "What's the tradeoff of connecting more tools to an agent?", options: ["There is no tradeoff", "More capability, but more surface area for mistakes", "It disables MCP", "It makes the agent unable to think"], correctIndex: 1, explain: "Every additional tool is another way the agent could take an unintended action — connect only what the workflow needs." }
+        ]
+      },
+      pt: {
+        "nav.why": "Por que a ATS", "nav.paths": "Trilhas de Habilidade", "nav.howItWorks": "Como Funciona", "nav.news": "Notícias de IA", "nav.founder": "Fundador",
+        "breadcrumb.home": "Início", "breadcrumb.lessonWord": "Aula",
+        "page.pathName": "Trilha Avançada",
+        "page.tagLine": "Avançado · Aula 2 de 3",
+        "page.duration": "~18 minutos",
+        "page.title": "Conectando mais de 10 ferramentas via Composio MCP",
+        "page.lede": "Um agente, várias ferramentas — o Composio é como você para de construir um conector personalizado para cada serviço.",
+        "section.explanation": "Explicação", "section.practice": "Mão na massa", "section.quiz": "Verifique seu entendimento", "section.complete": "Aula concluída",
+        "body.p1": "<strong>O Composio</strong> é uma plataforma que oferece conectores MCP prontos para dezenas de ferramentas populares — Slack, Gmail, Notion, Google Calendar, GitHub, Linear e outras — para que você não precise construir um conector personalizado para cada serviço que quiser que um agente use.",
+        "body.p2": "Em vez de um agente amarrado a uma única ferramenta, o Composio permite que um único agente alcance várias ferramentas pela mesma interface MCP. O agente escolhe a ferramenta certa para cada parte de uma tarefa.",
+        "body.h3example": "Exemplo: integração de um novo cliente",
+        "body.exampleLede": "Um único fluxo de trabalho, quatro ferramentas:",
+        "body.ex1": "<strong>Gmail</strong> — enviar o e-mail de boas-vindas",
+        "body.ex2": "<strong>Notion</strong> — criar o documento de integração",
+        "body.ex3": "<strong>Slack</strong> — avisar a equipe",
+        "body.ex4": "<strong>Google Calendar</strong> — agendar a call inicial",
+        "body.callout": "<strong>Princípio de design:</strong> mais ferramentas conectadas significa mais capacidade, mas também mais superfície para erros. Conecte só o que o fluxo de trabalho realmente precisa.",
+        "exercise.intro": "Combine cada tarefa com a ferramenta mais indicada para realizá-la.",
+        "badge.eyebrow": "Aula concluída",
+        "badge.title": "Integração de Múltiplas Ferramentas",
+        "badge.desc": "Você entende como o Composio permite que um agente alcance várias ferramentas, e o trade-off de conectar mais delas.",
+        "nav.back": "Voltar: Agentes autônomos",
+        "nav.next": "Próxima: Implantando um negócio automatizado",
+        "footer.tagline1": "AI Tech School. Fundada por Alex Monteiro.",
+        "footer.tagline2": "HTML, CSS e JS puros. Sem frameworks. Sem rastreamento.",
+        items: [
+          { text: "Avisar a equipe que um deploy acabou de terminar", correct: "Slack" },
+          { text: "Enviar um e-mail de boas-vindas a um novo cliente", correct: "Gmail" },
+          { text: "Criar um novo documento de integração", correct: "Notion" },
+          { text: "Abrir um pull request com uma correção de bug", correct: "GitHub" },
+          { text: "Agendar uma call inicial para a próxima semana", correct: "Google Calendar" },
+          { text: "Criar um ticket de engenharia rastreável", correct: "Linear" }
+        ],
+        pool: ["Slack", "Gmail", "Notion", "GitHub", "Google Calendar", "Linear"],
+        quiz: [
+          { text: "Qual problema o Composio resolve?", options: ["Ele substitui o Claude por completo", "Ele oferece conectores MCP prontos para você não construir um por ferramenta", "É um editor de código", "Só funciona com uma ferramenta"], correctIndex: 1, explain: "O valor do Composio é uma biblioteca de conectores já existentes, para você não construir uma integração personalizada para cada serviço." },
+          { text: "Em um fluxo de trabalho com várias ferramentas, como o agente decide qual ferramenta usar?", options: ["Ele sempre usa todas as ferramentas ao mesmo tempo", "Ele escolhe a ferramenta certa para cada parte da tarefa", "As ferramentas são escolhidas ao acaso", "Um humano troca de ferramenta manualmente toda vez"], correctIndex: 1, explain: "Cada parte de um fluxo de trabalho corresponde à ferramenta conectada que de fato trata aquele tipo de ação." },
+          { text: "Qual é o trade-off de conectar mais ferramentas a um agente?", options: ["Não há trade-off", "Mais capacidade, mas mais superfície para erros", "Isso desativa o MCP", "Isso impede o agente de pensar"], correctIndex: 1, explain: "Cada ferramenta adicional é mais uma forma de o agente realizar uma ação não pretendida — conecte só o que o fluxo de trabalho precisa." }
+        ]
+      },
+      es: {
+        "nav.why": "Por qué ATS", "nav.paths": "Rutas de Habilidad", "nav.howItWorks": "Cómo Funciona", "nav.news": "Noticias de IA", "nav.founder": "Fundador",
+        "breadcrumb.home": "Inicio", "breadcrumb.lessonWord": "Lección",
+        "page.pathName": "Ruta Experto",
+        "page.tagLine": "Experto · Lección 2 de 3",
+        "page.duration": "~18 minutos",
+        "page.title": "Conectando más de 10 herramientas vía Composio MCP",
+        "page.lede": "Un agente, muchas herramientas — Composio es cómo dejas de construir un conector personalizado para cada servicio.",
+        "section.explanation": "Explicación", "section.practice": "Manos a la obra", "section.quiz": "Verifica tu comprensión", "section.complete": "Lección completa",
+        "body.p1": "<strong>Composio</strong> es una plataforma que ofrece conectores MCP ya listos para docenas de herramientas populares — Slack, Gmail, Notion, Google Calendar, GitHub, Linear y más — para que no tengas que construir un conector personalizado por cada servicio que quieras que use un agente.",
+        "body.p2": "En lugar de un agente atado a una sola herramienta, Composio permite que un solo agente llegue a muchas herramientas a través de la misma interfaz MCP. El agente elige la herramienta correcta para cada parte de una tarea.",
+        "body.h3example": "Ejemplo: incorporación de un nuevo cliente",
+        "body.exampleLede": "Un solo flujo de trabajo, cuatro herramientas:",
+        "body.ex1": "<strong>Gmail</strong> — enviar el correo de bienvenida",
+        "body.ex2": "<strong>Notion</strong> — crear el documento de incorporación",
+        "body.ex3": "<strong>Slack</strong> — avisar al equipo",
+        "body.ex4": "<strong>Google Calendar</strong> — agendar la llamada de arranque",
+        "body.callout": "<strong>Principio de diseño:</strong> más herramientas conectadas significa más capacidad, pero también más superficie para errores. Conecta solo lo que el flujo de trabajo realmente necesita.",
+        "exercise.intro": "Relaciona cada tarea con la herramienta más indicada para manejarla.",
+        "badge.eyebrow": "Lección completa",
+        "badge.title": "Integración Multi-Herramienta",
+        "badge.desc": "Entiendes cómo Composio permite que un agente llegue a muchas herramientas, y el costo de conectar más de ellas.",
+        "nav.back": "Volver: Agentes autónomos",
+        "nav.next": "Siguiente: Desplegando un negocio automatizado",
+        "footer.tagline1": "AI Tech School. Fundada por Alex Monteiro.",
+        "footer.tagline2": "HTML, CSS y JS puros. Sin frameworks. Sin rastreo.",
+        items: [
+          { text: "Avisar al equipo que un despliegue acaba de terminar", correct: "Slack" },
+          { text: "Enviar un correo de bienvenida a un nuevo cliente", correct: "Gmail" },
+          { text: "Crear un nuevo documento de incorporación", correct: "Notion" },
+          { text: "Abrir un pull request con una corrección de error", correct: "GitHub" },
+          { text: "Agendar una llamada de arranque para la próxima semana", correct: "Google Calendar" },
+          { text: "Crear un ticket de ingeniería rastreable", correct: "Linear" }
+        ],
+        pool: ["Slack", "Gmail", "Notion", "GitHub", "Google Calendar", "Linear"],
+        quiz: [
+          { text: "¿Qué problema resuelve Composio?", options: ["Reemplaza a Claude por completo", "Ofrece conectores MCP ya listos para que no construyas uno por herramienta", "Es un editor de código", "Solo funciona con una herramienta"], correctIndex: 1, explain: "El valor de Composio es una biblioteca de conectores ya existentes, para que no construyas una integración personalizada por cada servicio." },
+          { text: "En un flujo de trabajo con varias herramientas, ¿cómo decide el agente qué herramienta usar?", options: ["Siempre usa todas las herramientas a la vez", "Elige la herramienta correcta para cada parte de la tarea", "Las herramientas se eligen al azar", "Un humano cambia de herramienta manualmente cada vez"], correctIndex: 1, explain: "Cada parte de un flujo de trabajo corresponde a la herramienta conectada que realmente maneja ese tipo de acción." },
+          { text: "¿Cuál es el costo de conectar más herramientas a un agente?", options: ["No hay ningún costo", "Más capacidad, pero más superficie para errores", "Desactiva MCP", "Hace que el agente no pueda pensar"], correctIndex: 1, explain: "Cada herramienta adicional es una forma más de que el agente realice una acción no deseada — conecta solo lo que el flujo de trabajo necesita." }
+        ]
+      }
+    };
+
+    function renderDynamic(lang) {
+      var data = PAGE_I18N[lang] || PAGE_I18N.en;
+      var ui = window.ATS.getUILabels(lang);
+
+      document.getElementById("exercise").innerHTML = "";
+      window.ATS.initMatchExercise("#exercise", data.items, data.pool, ui.match);
+
+      document.getElementById("quiz").innerHTML = "";
+      window.ATS.initQuiz("#quiz", data.quiz, ui.quiz, function () {
+        window.ATS.completeLesson(LESSON_ID, "badge");
+      });
+    }
+
+    window.ATS.i18n.init(PAGE_I18N, renderDynamic);
+  })();
+</script>
+</body>
+</html>

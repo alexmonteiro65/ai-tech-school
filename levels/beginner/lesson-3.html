@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lesson 3: What is an API — Beginner Path — AI Tech School</title>
+<meta name="description" content="The restaurant-menu way to think about APIs, and why Claude.ai alone isn't enough to build a product." />
+<link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body style="--card-color: var(--path-beginner);">
+
+<a class="visually-hidden" href="#main-content">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../../index.html">
+      <span class="brand-mark" aria-hidden="true">
+        <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M8 4 3 12l5 8M16 4l5 8-5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span>AI Tech School</span>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="../../index.html#why" data-i18n="nav.why">Why ATS</a>
+      <a href="../../index.html#paths" aria-current="page" data-i18n="nav.paths">Skill Paths</a>
+      <a href="../../how-claude-code-works.html" data-i18n="nav.howItWorks">How It Works</a>
+      <a href="../../ai-news.html" data-i18n="nav.news">AI News</a>
+      <a href="../../index.html#founder" data-i18n="nav.founder">Founder</a>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-switcher" role="group" aria-label="Language">
+        <button type="button" class="lang-btn" data-lang-btn="en">EN</button>
+        <button type="button" class="lang-btn" data-lang-btn="pt">PT</button>
+        <button type="button" class="lang-btn" data-lang-btn="es">ES</button>
+      </div>
+      <a class="btn btn-ghost btn-sm header-cta" href="index.html" data-i18n="page.pathName">Beginner Path</a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="mobile-nav" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav id="mobile-nav" class="mobile-nav" data-mobile-nav aria-label="Mobile">
+  <a href="../../index.html#why" data-i18n="nav.why">Why ATS</a>
+  <a href="../../index.html#paths" data-i18n="nav.paths">Skill Paths</a>
+      <a href="../../how-claude-code-works.html" data-i18n="nav.howItWorks">How It Works</a>
+      <a href="../../ai-news.html" data-i18n="nav.news">AI News</a>
+  <a href="../../index.html#founder" data-i18n="nav.founder">Founder</a>
+</nav>
+
+<main id="main-content">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html" data-i18n="breadcrumb.home">Home</a>
+      <span class="sep">/</span>
+      <a href="index.html" data-i18n="page.pathName">Beginner Path</a>
+      <span class="sep">/</span>
+      <span class="current"><span data-i18n="breadcrumb.lessonWord">Lesson</span> 3</span>
+    </nav>
+  </div>
+
+  <header class="container lesson-header">
+    <div class="lesson-header-top">
+      <span class="path-tag" data-i18n="page.tagLine">Beginner &middot; Lesson 3 of 3</span>
+      <span class="lesson-duration">
+        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <span data-i18n="page.duration">~13 minutes</span>
+      </span>
+    </div>
+    <h1 data-i18n="page.title">What is an API and why you need one</h1>
+    <p class="lede" data-i18n="page.lede">Claude.ai is one way to use Claude. The API is how Claude gets built into everything else.</p>
+  </header>
+
+  <section class="lesson-section container">
+    <div class="lesson-section-label">
+      <span class="step-num">1</span>
+      <h2 data-i18n="section.explanation">Explanation</h2>
+    </div>
+    <div class="lesson-body">
+      <p data-i18n-html="body.p1">
+        <strong>API</strong> stands for Application Programming Interface — a
+        defined way for one piece of software to ask another for something,
+        and get a response back.
+      </p>
+
+      <h3 data-i18n="body.h3menu">The restaurant analogy</h3>
+      <p data-i18n-html="body.menu">
+        Think of a restaurant. You don't walk into the kitchen and cook your
+        own meal — you order from a menu, and a waiter carries your order to
+        the kitchen and brings the result back. The <strong>menu and waiter
+        are the API</strong>: a fixed, reliable way to ask for something
+        without needing to know how the kitchen works inside.
+      </p>
+
+      <h3 data-i18n="body.h3two">Two ways to use Claude</h3>
+      <ul>
+        <li data-i18n-html="body.way1"><strong>Claude.ai</strong> — the chat website. Great for talking to Claude directly, one conversation at a time.</li>
+        <li data-i18n-html="body.way2"><strong>The Claude API</strong> — lets your own software send requests to Claude directly, so Claude can be built into an app, a website, or an automation — not just a chat window.</li>
+      </ul>
+
+      <div class="callout" data-i18n-html="body.callout">
+        <strong>Why you need one:</strong> without an API, Claude only lives
+        inside a chat window. With an API, your own product can ask Claude
+        questions and use the answers automatically — which is exactly what
+        Claude Code and MCP, coming up in the Intermediate path, are built on.
+      </div>
+    </div>
+  </section>
+
+  <section class="lesson-section container">
+    <div class="lesson-section-label">
+      <span class="step-num">2</span>
+      <h2 data-i18n="section.practice">Try it yourself</h2>
+    </div>
+    <div class="exercise-box">
+      <p class="exercise-intro" data-i18n="exercise.intro">Click each step below, in order, to trace what actually happens when an app talks to Claude through the API.</p>
+      <div class="order-list" id="trace-steps"></div>
+      <div class="assembled-output" id="trace-detail">
+        <span class="placeholder" data-i18n="exercise.placeholder">Click a step above to see what happens at that stage.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="lesson-section container">
+    <div class="lesson-section-label">
+      <span class="step-num">3</span>
+      <h2 data-i18n="section.quiz">Check your understanding</h2>
+    </div>
+    <div id="quiz" class="quiz"></div>
+  </section>
+
+  <section class="lesson-section container">
+    <div class="lesson-section-label">
+      <span class="step-num">4</span>
+      <h2 data-i18n="section.complete">Lesson complete</h2>
+    </div>
+    <div class="badge-card" id="badge" hidden>
+      <div class="badge-icon" aria-hidden="true">
+        <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <p class="badge-eyebrow" data-i18n="badge.eyebrow">Lesson complete</p>
+        <p class="badge-title" data-i18n="badge.title">API Fundamentals</p>
+        <p class="badge-desc" data-i18n="badge.desc">You understand how an app actually talks to Claude — and you've finished the Beginner path.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="container lesson-nav">
+    <a class="btn btn-ghost" href="lesson-2.html" data-i18n="nav.back">Back: Your first prompt</a>
+    <a class="btn btn-primary" href="../intermediate/index.html" data-i18n="nav.next">Next: Intermediate Path</a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <a class="brand" href="../../index.html">
+        <span class="brand-mark" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M8 4 3 12l5 8M16 4l5 8-5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span>AI Tech School</span>
+      </a>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="../../index.html#why" data-i18n="nav.why">Why ATS</a>
+      <a href="../../index.html#paths" data-i18n="nav.paths">Skill Paths</a>
+      <a href="../../how-claude-code-works.html" data-i18n="nav.howItWorks">How It Works</a>
+      <a href="../../ai-news.html" data-i18n="nav.news">AI News</a>
+      <a href="../../index.html#founder" data-i18n="nav.founder">Founder</a>
+      <a href="https://instagram.com/ai.tech.school" target="_blank" rel="noopener noreferrer">Instagram — @ai.tech.school</a>
+    </nav>
+  </div>
+  <div class="container footer-bottom">
+    <span>&copy; <span data-year>2026</span> <span data-i18n="footer.tagline1">AI Tech School. Founded by Alex Monteiro.</span></span>
+    <span data-i18n="footer.tagline2">Pure HTML, CSS &amp; JS. No frameworks. No tracking.</span>
+  </div>
+</footer>
+
+<script src="../../js/lesson.js"></script>
+<script src="../../js/i18n.js"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/guide.js"></script>
+<script>
+  (function () {
+    "use strict";
+
+    var LESSON_ID = "beginner-3";
+
+    var PAGE_I18N = {
+      en: {
+        "nav.why": "Why ATS", "nav.paths": "Skill Paths", "nav.howItWorks": "How It Works", "nav.news": "AI News", "nav.founder": "Founder",
+        "breadcrumb.home": "Home", "breadcrumb.lessonWord": "Lesson",
+        "page.pathName": "Beginner Path",
+        "page.tagLine": "Beginner · Lesson 3 of 3",
+        "page.duration": "~13 minutes",
+        "page.title": "What is an API and why you need one",
+        "page.lede": "Claude.ai is one way to use Claude. The API is how Claude gets built into everything else.",
+        "section.explanation": "Explanation", "section.practice": "Try it yourself", "section.quiz": "Check your understanding", "section.complete": "Lesson complete",
+        "body.p1": "<strong>API</strong> stands for Application Programming Interface — a defined way for one piece of software to ask another for something, and get a response back.",
+        "body.h3menu": "The restaurant analogy",
+        "body.menu": "Think of a restaurant. You don't walk into the kitchen and cook your own meal — you order from a menu, and a waiter carries your order to the kitchen and brings the result back. The <strong>menu and waiter are the API</strong>: a fixed, reliable way to ask for something without needing to know how the kitchen works inside.",
+        "body.h3two": "Two ways to use Claude",
+        "body.way1": "<strong>Claude.ai</strong> — the chat website. Great for talking to Claude directly, one conversation at a time.",
+        "body.way2": "<strong>The Claude API</strong> — lets your own software send requests to Claude directly, so Claude can be built into an app, a website, or an automation — not just a chat window.",
+        "body.callout": "<strong>Why you need one:</strong> without an API, Claude only lives inside a chat window. With an API, your own product can ask Claude questions and use the answers automatically — which is exactly what Claude Code and MCP, coming up in the Intermediate path, are built on.",
+        "exercise.intro": "Click each step below, in order, to trace what actually happens when an app talks to Claude through the API.",
+        "exercise.placeholder": "Click a step above to see what happens at that stage.",
+        "exercise.stepPrefix": "Step",
+        "badge.eyebrow": "Lesson complete",
+        "badge.title": "API Fundamentals",
+        "badge.desc": "You understand how an app actually talks to Claude — and you've finished the Beginner path.",
+        "nav.back": "Back: Your first prompt",
+        "nav.next": "Next: Intermediate Path",
+        "footer.tagline1": "AI Tech School. Founded by Alex Monteiro.",
+        "footer.tagline2": "Pure HTML, CSS & JS. No frameworks. No tracking.",
+        steps: [
+          { label: "Your app sends a request", detail: "Your app packages up what you're asking for — the prompt, plus any instructions — into a request." },
+          { label: "The API receives and validates it", detail: "The API checks the request is valid (right format, valid credentials) before passing it along." },
+          { label: "Claude generates a response", detail: "Claude reads the request and generates a response — the actual thinking and writing happens here." },
+          { label: "The API returns the response to your app", detail: "The API hands that response back to your app, which can then show it, store it, or act on it." }
+        ],
+        quiz: [
+          { text: "In the restaurant analogy, what does the API represent?", options: ["The food", "The menu and waiter connecting you to the kitchen", "The customer", "The building"], correctIndex: 1, explain: "The API is the fixed, reliable way to ask for something without needing to know how the kitchen (Claude's model) works inside." },
+          { text: "What's the main limitation of only using Claude.ai, the chat website?", options: ["It costs more", "Claude can't live inside your own app or automation", "It's slower", "It doesn't support English"], correctIndex: 1, explain: "Claude.ai is one conversation at a time in a browser — the API is what lets Claude be built into other software." },
+          { text: "What happens right after your app sends a request to the API?", options: ["Nothing, requests are one-way", "The API processes it and sends back a response", "You have to restart the app", "Claude calls you"], correctIndex: 1, explain: "It's a request-response cycle: your app asks, the API (and Claude) answers, and your app receives that answer." }
+        ]
+      },
+      pt: {
+        "nav.why": "Por que a ATS", "nav.paths": "Trilhas de Habilidade", "nav.howItWorks": "Como Funciona", "nav.news": "Notícias de IA", "nav.founder": "Fundador",
+        "breadcrumb.home": "Início", "breadcrumb.lessonWord": "Aula",
+        "page.pathName": "Trilha Iniciante",
+        "page.tagLine": "Iniciante · Aula 3 de 3",
+        "page.duration": "~13 minutos",
+        "page.title": "O que é uma API e por que você precisa de uma",
+        "page.lede": "O Claude.ai é uma forma de usar o Claude. A API é como o Claude é incorporado a tudo o mais.",
+        "section.explanation": "Explicação", "section.practice": "Mão na massa", "section.quiz": "Verifique seu entendimento", "section.complete": "Aula concluída",
+        "body.p1": "<strong>API</strong> significa Application Programming Interface (Interface de Programação de Aplicações) — uma forma definida de um programa pedir algo a outro e receber uma resposta de volta.",
+        "body.h3menu": "A analogia do restaurante",
+        "body.menu": "Pense em um restaurante. Você não entra na cozinha e cozinha sua própria refeição — você pede pelo cardápio, e um garçom leva seu pedido até a cozinha e traz o resultado de volta. O <strong>cardápio e o garçom são a API</strong>: uma forma fixa e confiável de pedir algo sem precisar saber como a cozinha funciona por dentro.",
+        "body.h3two": "Duas formas de usar o Claude",
+        "body.way1": "<strong>Claude.ai</strong> — o site de chat. Ótimo para conversar diretamente com o Claude, uma conversa de cada vez.",
+        "body.way2": "<strong>A API do Claude</strong> — permite que o seu próprio software envie pedidos diretamente ao Claude, para que ele possa ser incorporado a um aplicativo, um site ou uma automação — não só a uma janela de chat.",
+        "body.callout": "<strong>Por que você precisa de uma:</strong> sem uma API, o Claude só existe dentro de uma janela de chat. Com uma API, o seu próprio produto pode fazer perguntas ao Claude e usar as respostas automaticamente — exatamente o que o Claude Code e o MCP, que vêm na trilha Intermediária, usam como base.",
+        "exercise.intro": "Clique em cada etapa abaixo, em ordem, para acompanhar o que realmente acontece quando um aplicativo fala com o Claude pela API.",
+        "exercise.placeholder": "Clique em uma etapa acima para ver o que acontece nela.",
+        "exercise.stepPrefix": "Etapa",
+        "badge.eyebrow": "Aula concluída",
+        "badge.title": "Fundamentos de API",
+        "badge.desc": "Você entende como um aplicativo realmente conversa com o Claude — e concluiu a trilha Iniciante.",
+        "nav.back": "Voltar: Seu primeiro prompt",
+        "nav.next": "Próxima: Trilha Intermediária",
+        "footer.tagline1": "AI Tech School. Fundada por Alex Monteiro.",
+        "footer.tagline2": "HTML, CSS e JS puros. Sem frameworks. Sem rastreamento.",
+        steps: [
+          { label: "Seu aplicativo envia um pedido", detail: "Seu aplicativo empacota o que você está pedindo — o prompt, mais quaisquer instruções — em um pedido (request)." },
+          { label: "A API recebe e valida o pedido", detail: "A API verifica se o pedido é válido (formato correto, credenciais válidas) antes de encaminhá-lo." },
+          { label: "O Claude gera uma resposta", detail: "O Claude lê o pedido e gera uma resposta — é aqui que o raciocínio e a escrita realmente acontecem." },
+          { label: "A API devolve a resposta para o seu aplicativo", detail: "A API entrega essa resposta de volta para o seu aplicativo, que pode então mostrá-la, guardá-la ou agir com base nela." }
+        ],
+        quiz: [
+          { text: "Na analogia do restaurante, o que a API representa?", options: ["A comida", "O cardápio e o garçom que conectam você à cozinha", "O cliente", "O prédio"], correctIndex: 1, explain: "A API é a forma fixa e confiável de pedir algo sem precisar saber como a cozinha (o modelo do Claude) funciona por dentro." },
+          { text: "Qual é a principal limitação de usar só o Claude.ai, o site de chat?", options: ["Custa mais caro", "O Claude não pode viver dentro do seu próprio aplicativo ou automação", "É mais lento", "Não funciona em português"], correctIndex: 1, explain: "O Claude.ai é uma conversa de cada vez em um navegador — a API é o que permite que o Claude seja incorporado a outros softwares." },
+          { text: "O que acontece logo depois que seu aplicativo envia um pedido para a API?", options: ["Nada, os pedidos são de mão única", "A API processa o pedido e devolve uma resposta", "Você precisa reiniciar o aplicativo", "O Claude liga para você"], correctIndex: 1, explain: "É um ciclo de pedido e resposta: seu aplicativo pergunta, a API (e o Claude) respondem, e seu aplicativo recebe essa resposta." }
+        ]
+      },
+      es: {
+        "nav.why": "Por qué ATS", "nav.paths": "Rutas de Habilidad", "nav.howItWorks": "Cómo Funciona", "nav.news": "Noticias de IA", "nav.founder": "Fundador",
+        "breadcrumb.home": "Inicio", "breadcrumb.lessonWord": "Lección",
+        "page.pathName": "Ruta Principiante",
+        "page.tagLine": "Principiante · Lección 3 de 3",
+        "page.duration": "~13 minutos",
+        "page.title": "Qué es una API y por qué la necesitas",
+        "page.lede": "Claude.ai es una forma de usar Claude. La API es cómo Claude se integra en todo lo demás.",
+        "section.explanation": "Explicación", "section.practice": "Manos a la obra", "section.quiz": "Verifica tu comprensión", "section.complete": "Lección completa",
+        "body.p1": "<strong>API</strong> significa Application Programming Interface (Interfaz de Programación de Aplicaciones) — una forma definida de que un programa le pida algo a otro y reciba una respuesta.",
+        "body.h3menu": "La analogía del restaurante",
+        "body.menu": "Piensa en un restaurante. No entras a la cocina a preparar tu propia comida — pides del menú, y un mesero lleva tu pedido a la cocina y trae el resultado de vuelta. El <strong>menú y el mesero son la API</strong>: una forma fija y confiable de pedir algo sin necesitar saber cómo funciona la cocina por dentro.",
+        "body.h3two": "Dos formas de usar Claude",
+        "body.way1": "<strong>Claude.ai</strong> — el sitio de chat. Ideal para hablar directamente con Claude, una conversación a la vez.",
+        "body.way2": "<strong>La API de Claude</strong> — permite que tu propio software envíe solicitudes directamente a Claude, para que pueda integrarse en una app, un sitio web o una automatización — no solo en una ventana de chat.",
+        "body.callout": "<strong>Por qué la necesitas:</strong> sin una API, Claude solo existe dentro de una ventana de chat. Con una API, tu propio producto puede hacerle preguntas a Claude y usar las respuestas automáticamente — exactamente lo que usan como base Claude Code y MCP, que vienen en la ruta Intermedia.",
+        "exercise.intro": "Haz clic en cada paso de abajo, en orden, para seguir lo que realmente pasa cuando una app le habla a Claude a través de la API.",
+        "exercise.placeholder": "Haz clic en un paso de arriba para ver qué pasa en esa etapa.",
+        "exercise.stepPrefix": "Paso",
+        "badge.eyebrow": "Lección completa",
+        "badge.title": "Fundamentos de API",
+        "badge.desc": "Entiendes cómo una app realmente le habla a Claude — y terminaste la ruta Principiante.",
+        "nav.back": "Volver: Tu primer prompt",
+        "nav.next": "Siguiente: Ruta Intermedia",
+        "footer.tagline1": "AI Tech School. Fundada por Alex Monteiro.",
+        "footer.tagline2": "HTML, CSS y JS puros. Sin frameworks. Sin rastreo.",
+        steps: [
+          { label: "Tu app envía una solicitud", detail: "Tu app empaqueta lo que estás pidiendo — el prompt, más cualquier instrucción — en una solicitud." },
+          { label: "La API la recibe y la valida", detail: "La API verifica que la solicitud sea válida (formato correcto, credenciales válidas) antes de pasarla." },
+          { label: "Claude genera una respuesta", detail: "Claude lee la solicitud y genera una respuesta — aquí es donde ocurre el razonamiento y la escritura." },
+          { label: "La API devuelve la respuesta a tu app", detail: "La API entrega esa respuesta de vuelta a tu app, que luego puede mostrarla, guardarla o actuar sobre ella." }
+        ],
+        quiz: [
+          { text: "En la analogía del restaurante, ¿qué representa la API?", options: ["La comida", "El menú y el mesero que te conectan con la cocina", "El cliente", "El edificio"], correctIndex: 1, explain: "La API es la forma fija y confiable de pedir algo sin necesitar saber cómo funciona la cocina (el modelo de Claude) por dentro." },
+          { text: "¿Cuál es la principal limitación de usar solo Claude.ai, el sitio de chat?", options: ["Cuesta más", "Claude no puede vivir dentro de tu propia app o automatización", "Es más lento", "No admite español"], correctIndex: 1, explain: "Claude.ai es una conversación a la vez en un navegador — la API es lo que permite integrar a Claude en otro software." },
+          { text: "¿Qué pasa justo después de que tu app envía una solicitud a la API?", options: ["Nada, las solicitudes son de una sola vía", "La API la procesa y devuelve una respuesta", "Tienes que reiniciar la app", "Claude te llama"], correctIndex: 1, explain: "Es un ciclo de solicitud y respuesta: tu app pregunta, la API (y Claude) responden, y tu app recibe esa respuesta." }
+        ]
+      }
+    };
+
+    function renderDynamic(lang) {
+      var data = PAGE_I18N[lang] || PAGE_I18N.en;
+      var ui = window.ATS.getUILabels(lang);
+
+      var container = document.getElementById("trace-steps");
+      container.innerHTML = "";
+      var detail = document.getElementById("trace-detail");
+      detail.innerHTML = '<span class="placeholder">' + data["exercise.placeholder"] + "</span>";
+
+      var buttons = [];
+      data.steps.forEach(function (step, index) {
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "order-btn";
+        var slot = document.createElement("span");
+        slot.className = "order-slot";
+        slot.textContent = String(index + 1);
+        var label = document.createElement("span");
+        label.textContent = step.label;
+        btn.appendChild(slot);
+        btn.appendChild(label);
+        btn.addEventListener("click", function () {
+          buttons.forEach(function (b) { b.classList.remove("is-active"); });
+          btn.classList.add("is-active");
+          btn.classList.add("is-viewed");
+          detail.textContent = data["exercise.stepPrefix"] + " " + (index + 1) + ": " + step.detail;
+        });
+        buttons.push(btn);
+        container.appendChild(btn);
+      });
+
+      var quizEl = document.getElementById("quiz");
+      quizEl.innerHTML = "";
+      window.ATS.initQuiz("#quiz", data.quiz, ui.quiz, function () {
+        window.ATS.completeLesson(LESSON_ID, "badge");
+      });
+    }
+
+    window.ATS.i18n.init(PAGE_I18N, renderDynamic);
+  })();
+</script>
+</body>
+</html>

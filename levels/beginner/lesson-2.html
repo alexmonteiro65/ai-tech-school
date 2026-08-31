@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lesson 2: Your First Prompt — Beginner Path — AI Tech School</title>
+<meta name="description" content="The four-part prompt formula, and why a specific request beats a vague one every time." />
+<link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body style="--card-color: var(--path-beginner);">
+
+<a class="visually-hidden" href="#main-content">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../../index.html">
+      <span class="brand-mark" aria-hidden="true">
+        <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M8 4 3 12l5 8M16 4l5 8-5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span>AI Tech School</span>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="../../index.html#why" data-i18n="nav.why">Why ATS</a>
+      <a href="../../index.html#paths" aria-current="page" data-i18n="nav.paths">Skill Paths</a>
+      <a href="../../how-claude-code-works.html" data-i18n="nav.howItWorks">How It Works</a>
+      <a href="../../ai-news.html" data-i18n="nav.news">AI News</a>
+      <a href="../../index.html#founder" data-i18n="nav.founder">Founder</a>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-switcher" role="group" aria-label="Language">
+        <button type="button" class="lang-btn" data-lang-btn="en">EN</button>
+        <button type="button" class="lang-btn" data-lang-btn="pt">PT</button>
+        <button type="button" class="lang-btn" data-lang-btn="es">ES</button>
+      </div>
+      <a class="btn btn-ghost btn-sm header-cta" href="index.html" data-i18n="page.pathName">Beginner Path</a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="mobile-nav" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav id="mobile-nav" class="mobile-nav" data-mobile-nav aria-label="Mobile">
+  <a href="../../index.html#why" data-i18n="nav.why">Why ATS</a>
+  <a href="../../index.html#paths" data-i18n="nav.paths">Skill Paths</a>
+      <a href="../../how-claude-code-works.html" data-i18n="nav.howItWorks">How It Works</a>
+      <a href="../../ai-news.html" data-i18n="nav.news">AI News</a>
+  <a href="../../index.html#founder" data-i18n="nav.founder">Founder</a>
+</nav>
+
+<main id="main-content">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html" data-i18n="breadcrumb.home">Home</a>
+      <span class="sep">/</span>
+      <a href="index.html" data-i18n="page.pathName">Beginner Path</a>
+      <span class="sep">/</span>
+      <span class="current"><span data-i18n="breadcrumb.lessonWord">Lesson</span> 2</span>
+    </nav>
+  </div>
+
+  <header class="container lesson-header">
+    <div class="lesson-header-top">
+      <span class="path-tag" data-i18n="page.tagLine">Beginner &middot; Lesson 2 of 3</span>
+      <span class="lesson-duration">
+        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <span data-i18n="page.duration">~12 minutes</span>
+      </span>
+    </div>
+    <h1 data-i18n="page.title">Your first prompt — how to talk to AI correctly</h1>
+    <p class="lede" data-i18n="page.lede">A prompt is just an instruction. Good instructions get good results — this lesson shows you how to write one.</p>
+  </header>
+
+  <section class="lesson-section container">
+    <div class="lesson-section-label">
+      <span class="step-num">1</span>
+      <h2 data-i18n="section.explanation">Explanation</h2>
+    </div>
+    <div class="lesson-body">
+      <p data-i18n="body.p1">
+        A <strong>prompt</strong> is the instruction you give Claude. Vague
+        prompts get vague results. Specific prompts get results you can
+        actually use.
+      </p>
+
+      <h3 data-i18n="body.h3formula">The four-part formula</h3>
+      <ul>
+        <li data-i18n-html="body.f1"><strong>Task</strong> — what you actually want done</li>
+        <li data-i18n-html="body.f2"><strong>Context</strong> — the details Claude needs to do it well</li>
+        <li data-i18n-html="body.f3"><strong>Format</strong> — how you want the answer shaped (length, structure)</li>
+        <li data-i18n-html="body.f4"><strong>Tone</strong> (optional) — the voice you want it written in</li>
+      </ul>
+
+      <p data-i18n="body.compare">Compare these two prompts:</p>
+      <div class="code-block" data-i18n="body.codeBlock">Vague:   "Write about dogs"
+
+Specific: "Write a 100-word paragraph for a children's book
+           about why dogs make loyal pets, in a warm, simple tone."</div>
+
+      <div class="callout" data-i18n-html="body.callout">
+        <strong>Tip:</strong> treat the first response as a draft, not a final
+        answer. If it's not quite right, refine your prompt with more detail
+        rather than starting over completely.
+      </div>
+    </div>
+  </section>
+
+  <section class="lesson-section container">
+    <div class="lesson-section-label">
+      <span class="step-num">2</span>
+      <h2 data-i18n="section.practice">Try it yourself</h2>
+    </div>
+    <div class="exercise-box">
+      <p class="exercise-intro" data-i18n="exercise.intro">Build a real prompt using the four-part formula. Fill in each field, then assemble it.</p>
+
+      <div class="select-row">
+        <label for="pb-task" data-i18n="exercise.taskLabel">Task</label>
+        <input type="text" id="pb-task" data-i18n-placeholder="exercise.taskPlaceholder" placeholder="e.g. Write a paragraph about why dogs make loyal pets" />
+      </div>
+      <div class="select-row">
+        <label for="pb-context" data-i18n="exercise.contextLabel">Context</label>
+        <input type="text" id="pb-context" data-i18n-placeholder="exercise.contextPlaceholder" placeholder="e.g. It's for a children's book" />
+      </div>
+      <div class="select-row">
+        <label for="pb-format" data-i18n="exercise.formatLabel">Format</label>
+        <select id="pb-format"></select>
+      </div>
+      <div class="select-row">
+        <label for="pb-tone" data-i18n="exercise.toneLabel">Tone</label>
+        <select id="pb-tone"></select>
+      </div>
+
+      <button class="btn btn-primary btn-sm" type="button" id="pb-assemble" data-i18n="exercise.assembleButton">Assemble prompt</button>
+
+      <div class="assembled-output" id="pb-output">
+        <span class="placeholder" data-i18n="exercise.outputPlaceholder">Your assembled prompt will appear here.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="lesson-section container">
+    <div class="lesson-section-label">
+      <span class="step-num">3</span>
+      <h2 data-i18n="section.quiz">Check your understanding</h2>
+    </div>
+    <div id="quiz" class="quiz"></div>
+  </section>
+
+  <section class="lesson-section container">
+    <div class="lesson-section-label">
+      <span class="step-num">4</span>
+      <h2 data-i18n="section.complete">Lesson complete</h2>
+    </div>
+    <div class="badge-card" id="badge" hidden>
+      <div class="badge-icon" aria-hidden="true">
+        <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <p class="badge-eyebrow" data-i18n="badge.eyebrow">Lesson complete</p>
+        <p class="badge-title" data-i18n="badge.title">Prompting Basics</p>
+        <p class="badge-desc" data-i18n="badge.desc">You can now build a specific, well-structured prompt instead of a vague one.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="container lesson-nav">
+    <a class="btn btn-ghost" href="lesson-1.html" data-i18n="nav.back">Back: What is Claude AI</a>
+    <a class="btn btn-primary" href="lesson-3.html" data-i18n="nav.next">Next: What is an API</a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <a class="brand" href="../../index.html">
+        <span class="brand-mark" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M8 4 3 12l5 8M16 4l5 8-5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span>AI Tech School</span>
+      </a>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="../../index.html#why" data-i18n="nav.why">Why ATS</a>
+      <a href="../../index.html#paths" data-i18n="nav.paths">Skill Paths</a>
+      <a href="../../how-claude-code-works.html" data-i18n="nav.howItWorks">How It Works</a>
+      <a href="../../ai-news.html" data-i18n="nav.news">AI News</a>
+      <a href="../../index.html#founder" data-i18n="nav.founder">Founder</a>
+      <a href="https://instagram.com/ai.tech.school" target="_blank" rel="noopener noreferrer">Instagram — @ai.tech.school</a>
+    </nav>
+  </div>
+  <div class="container footer-bottom">
+    <span>&copy; <span data-year>2026</span> <span data-i18n="footer.tagline1">AI Tech School. Founded by Alex Monteiro.</span></span>
+    <span data-i18n="footer.tagline2">Pure HTML, CSS &amp; JS. No frameworks. No tracking.</span>
+  </div>
+</footer>
+
+<script src="../../js/lesson.js"></script>
+<script src="../../js/i18n.js"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/guide.js"></script>
+<script>
+  (function () {
+    "use strict";
+
+    var LESSON_ID = "beginner-2";
+
+    var PAGE_I18N = {
+      en: {
+        "nav.why": "Why ATS", "nav.paths": "Skill Paths", "nav.howItWorks": "How It Works", "nav.news": "AI News", "nav.founder": "Founder",
+        "breadcrumb.home": "Home", "breadcrumb.lessonWord": "Lesson",
+        "page.pathName": "Beginner Path",
+        "page.tagLine": "Beginner · Lesson 2 of 3",
+        "page.duration": "~12 minutes",
+        "page.title": "Your first prompt — how to talk to AI correctly",
+        "page.lede": "A prompt is just an instruction. Good instructions get good results — this lesson shows you how to write one.",
+        "section.explanation": "Explanation", "section.practice": "Try it yourself", "section.quiz": "Check your understanding", "section.complete": "Lesson complete",
+        "body.p1": "A <strong>prompt</strong> is the instruction you give Claude. Vague prompts get vague results. Specific prompts get results you can actually use.",
+        "body.h3formula": "The four-part formula",
+        "body.f1": "<strong>Task</strong> — what you actually want done",
+        "body.f2": "<strong>Context</strong> — the details Claude needs to do it well",
+        "body.f3": "<strong>Format</strong> — how you want the answer shaped (length, structure)",
+        "body.f4": "<strong>Tone</strong> (optional) — the voice you want it written in",
+        "body.compare": "Compare these two prompts:",
+        "body.codeBlock": "Vague:   \"Write about dogs\"\n\nSpecific: \"Write a 100-word paragraph for a children's book\n           about why dogs make loyal pets, in a warm, simple tone.\"",
+        "body.callout": "<strong>Tip:</strong> treat the first response as a draft, not a final answer. If it's not quite right, refine your prompt with more detail rather than starting over completely.",
+        "exercise.intro": "Build a real prompt using the four-part formula. Fill in each field, then assemble it.",
+        "exercise.taskLabel": "Task", "exercise.taskPlaceholder": "e.g. Write a paragraph about why dogs make loyal pets",
+        "exercise.contextLabel": "Context", "exercise.contextPlaceholder": "e.g. It's for a children's book",
+        "exercise.formatLabel": "Format", "exercise.toneLabel": "Tone",
+        "exercise.assembleButton": "Assemble prompt",
+        "exercise.outputPlaceholder": "Your assembled prompt will appear here.",
+        "exercise.emptyMsg": "Add at least a task before assembling.",
+        "exercise.contextPrefix": "Context",
+        "badge.eyebrow": "Lesson complete",
+        "badge.title": "Prompting Basics",
+        "badge.desc": "You can now build a specific, well-structured prompt instead of a vague one.",
+        "nav.back": "Back: What is Claude AI",
+        "nav.next": "Next: What is an API",
+        "footer.tagline1": "AI Tech School. Founded by Alex Monteiro.",
+        "footer.tagline2": "Pure HTML, CSS & JS. No frameworks. No tracking.",
+        formatOptions: [
+          { value: "one_paragraph", label: "One short paragraph", phrase: "one short paragraph" },
+          { value: "bullets", label: "A bullet list of 3 points", phrase: "a bullet list of 3 points" },
+          { value: "email", label: "A formal email", phrase: "a formal email" },
+          { value: "story", label: "A 4-line short story", phrase: "a 4-line short story" }
+        ],
+        toneOptions: [
+          { value: "warm", label: "Warm and simple", phrase: "warm and simple" },
+          { value: "professional", label: "Professional", phrase: "professional" },
+          { value: "playful", label: "Playful", phrase: "playful" }
+        ],
+        quiz: [
+          { text: "What usually causes a disappointing AI response?", options: ["The AI is broken", "A vague or underspecified prompt", "Using too many words", "Asking more than one question"], correctIndex: 1, explain: "Vague instructions leave Claude guessing at what you actually want — specificity is what improves results." },
+          { text: "Which prompt is more likely to get a useful result?", options: ["\"Write about dogs\"", "\"Write a 100-word, warm-toned paragraph for a children's book about why dogs make loyal pets\"", "\"Dogs\"", "\"Tell me stuff\""], correctIndex: 1, explain: "It specifies the task, format, length, audience, and tone — all four parts of the formula." },
+          { text: "What should you do if the first response isn't quite right?", options: ["Give up", "Treat it as a draft and refine your prompt", "Assume Claude can't help with this", "Start over in a different tool"], correctIndex: 1, explain: "Iterating on your prompt with more detail is normal and usually gets you where you want faster than starting over." }
+        ]
+      },
+      pt: {
+        "nav.why": "Por que a ATS", "nav.paths": "Trilhas de Habilidade", "nav.howItWorks": "Como Funciona", "nav.news": "Notícias de IA", "nav.founder": "Fundador",
+        "breadcrumb.home": "Início", "breadcrumb.lessonWord": "Aula",
+        "page.pathName": "Trilha Iniciante",
+        "page.tagLine": "Iniciante · Aula 2 de 3",
+        "page.duration": "~12 minutos",
+        "page.title": "Seu primeiro prompt — como falar com a IA corretamente",
+        "page.lede": "Um prompt é só uma instrução. Boas instruções geram bons resultados — esta aula mostra como escrever uma.",
+        "section.explanation": "Explicação", "section.practice": "Mão na massa", "section.quiz": "Verifique seu entendimento", "section.complete": "Aula concluída",
+        "body.p1": "Um <strong>prompt</strong> é a instrução que você dá ao Claude. Prompts vagos geram resultados vagos. Prompts específicos geram resultados que você realmente consegue usar.",
+        "body.h3formula": "A fórmula de quatro partes",
+        "body.f1": "<strong>Tarefa</strong> — o que você realmente quer que seja feito",
+        "body.f2": "<strong>Contexto</strong> — os detalhes que o Claude precisa para fazer bem",
+        "body.f3": "<strong>Formato</strong> — como você quer que a resposta seja moldada (tamanho, estrutura)",
+        "body.f4": "<strong>Tom</strong> (opcional) — o estilo em que você quer que seja escrito",
+        "body.compare": "Compare estes dois prompts:",
+        "body.codeBlock": "Vago:      \"Escreva sobre cachorros\"\n\nEspecífico: \"Escreva um parágrafo de 100 palavras para um livro\n            infantil sobre por que cachorros são animais leais,\n            em um tom caloroso e simples.\"",
+        "body.callout": "<strong>Dica:</strong> trate a primeira resposta como um rascunho, não como a resposta final. Se não estiver bem, refine seu prompt com mais detalhes em vez de começar do zero.",
+        "exercise.intro": "Monte um prompt de verdade usando a fórmula de quatro partes. Preencha cada campo e depois monte.",
+        "exercise.taskLabel": "Tarefa", "exercise.taskPlaceholder": "ex.: Escreva um parágrafo sobre por que cachorros são leais",
+        "exercise.contextLabel": "Contexto", "exercise.contextPlaceholder": "ex.: É para um livro infantil",
+        "exercise.formatLabel": "Formato", "exercise.toneLabel": "Tom",
+        "exercise.assembleButton": "Montar prompt",
+        "exercise.outputPlaceholder": "Seu prompt montado vai aparecer aqui.",
+        "exercise.emptyMsg": "Adicione pelo menos uma tarefa antes de montar.",
+        "exercise.contextPrefix": "Contexto",
+        "badge.eyebrow": "Aula concluída",
+        "badge.title": "Fundamentos de Prompting",
+        "badge.desc": "Agora você consegue montar um prompt específico e bem estruturado em vez de um prompt vago.",
+        "nav.back": "Voltar: O que é o Claude AI",
+        "nav.next": "Próxima: O que é uma API",
+        "footer.tagline1": "AI Tech School. Fundada por Alex Monteiro.",
+        "footer.tagline2": "HTML, CSS e JS puros. Sem frameworks. Sem rastreamento.",
+        formatOptions: [
+          { value: "one_paragraph", label: "Um parágrafo curto", phrase: "um parágrafo curto" },
+          { value: "bullets", label: "Uma lista de 3 pontos", phrase: "uma lista de 3 pontos" },
+          { value: "email", label: "Um e-mail formal", phrase: "um e-mail formal" },
+          { value: "story", label: "Uma historinha de 4 linhas", phrase: "uma historinha de 4 linhas" }
+        ],
+        toneOptions: [
+          { value: "warm", label: "Caloroso e simples", phrase: "caloroso e simples" },
+          { value: "professional", label: "Profissional", phrase: "profissional" },
+          { value: "playful", label: "Divertido", phrase: "divertido" }
+        ],
+        quiz: [
+          { text: "O que geralmente causa uma resposta decepcionante da IA?", options: ["A IA está com defeito", "Um prompt vago ou pouco específico", "Usar palavras demais", "Fazer mais de uma pergunta"], correctIndex: 1, explain: "Instruções vagas deixam o Claude tendo que adivinhar o que você quer — especificidade é o que melhora os resultados." },
+          { text: "Qual prompt tem mais chance de gerar um resultado útil?", options: ["\"Escreva sobre cachorros\"", "\"Escreva um parágrafo de 100 palavras, em tom caloroso, para um livro infantil sobre por que cachorros são leais\"", "\"Cachorros\"", "\"Me conte umas coisas\""], correctIndex: 1, explain: "Ele especifica a tarefa, o formato, o tamanho, o público e o tom — as quatro partes da fórmula." },
+          { text: "O que você deve fazer se a primeira resposta não ficar boa?", options: ["Desistir", "Tratar como um rascunho e refinar seu prompt", "Achar que o Claude não pode ajudar com isso", "Recomeçar em outra ferramenta"], correctIndex: 1, explain: "Iterar no seu prompt com mais detalhes é normal e geralmente chega no resultado mais rápido do que recomeçar." }
+        ]
+      },
+      es: {
+        "nav.why": "Por qué ATS", "nav.paths": "Rutas de Habilidad", "nav.howItWorks": "Cómo Funciona", "nav.news": "Noticias de IA", "nav.founder": "Fundador",
+        "breadcrumb.home": "Inicio", "breadcrumb.lessonWord": "Lección",
+        "page.pathName": "Ruta Principiante",
+        "page.tagLine": "Principiante · Lección 2 de 3",
+        "page.duration": "~12 minutos",
+        "page.title": "Tu primer prompt — cómo hablarle a la IA correctamente",
+        "page.lede": "Un prompt es solo una instrucción. Buenas instrucciones producen buenos resultados — esta lección te muestra cómo escribir una.",
+        "section.explanation": "Explicación", "section.practice": "Manos a la obra", "section.quiz": "Verifica tu comprensión", "section.complete": "Lección completa",
+        "body.p1": "Un <strong>prompt</strong> es la instrucción que le das a Claude. Prompts vagos producen resultados vagos. Prompts específicos producen resultados que realmente puedes usar.",
+        "body.h3formula": "La fórmula de cuatro partes",
+        "body.f1": "<strong>Tarea</strong> — lo que realmente quieres que se haga",
+        "body.f2": "<strong>Contexto</strong> — los detalles que Claude necesita para hacerlo bien",
+        "body.f3": "<strong>Formato</strong> — cómo quieres que se estructure la respuesta (extensión, estructura)",
+        "body.f4": "<strong>Tono</strong> (opcional) — el estilo en el que quieres que esté escrito",
+        "body.compare": "Compara estos dos prompts:",
+        "body.codeBlock": "Vago:       \"Escribe sobre perros\"\n\nEspecífico: \"Escribe un párrafo de 100 palabras para un libro\n            infantil sobre por qué los perros son mascotas leales,\n            en un tono cálido y simple.\"",
+        "body.callout": "<strong>Consejo:</strong> trata la primera respuesta como un borrador, no como la respuesta final. Si no queda del todo bien, refina tu prompt con más detalle en lugar de empezar de cero.",
+        "exercise.intro": "Arma un prompt real usando la fórmula de cuatro partes. Completa cada campo y luego ármalo.",
+        "exercise.taskLabel": "Tarea", "exercise.taskPlaceholder": "ej.: Escribe un párrafo sobre por qué los perros son leales",
+        "exercise.contextLabel": "Contexto", "exercise.contextPlaceholder": "ej.: Es para un libro infantil",
+        "exercise.formatLabel": "Formato", "exercise.toneLabel": "Tono",
+        "exercise.assembleButton": "Armar prompt",
+        "exercise.outputPlaceholder": "Tu prompt armado aparecerá aquí.",
+        "exercise.emptyMsg": "Agrega al menos una tarea antes de armarlo.",
+        "exercise.contextPrefix": "Contexto",
+        "badge.eyebrow": "Lección completa",
+        "badge.title": "Fundamentos de Prompting",
+        "badge.desc": "Ahora puedes armar un prompt específico y bien estructurado en lugar de uno vago.",
+        "nav.back": "Volver: Qué es Claude AI",
+        "nav.next": "Siguiente: Qué es una API",
+        "footer.tagline1": "AI Tech School. Fundada por Alex Monteiro.",
+        "footer.tagline2": "HTML, CSS y JS puros. Sin frameworks. Sin rastreo.",
+        formatOptions: [
+          { value: "one_paragraph", label: "Un párrafo corto", phrase: "un párrafo corto" },
+          { value: "bullets", label: "Una lista de 3 puntos", phrase: "una lista de 3 puntos" },
+          { value: "email", label: "Un correo formal", phrase: "un correo formal" },
+          { value: "story", label: "Un cuento corto de 4 líneas", phrase: "un cuento corto de 4 líneas" }
+        ],
+        toneOptions: [
+          { value: "warm", label: "Cálido y simple", phrase: "cálido y simple" },
+          { value: "professional", label: "Profesional", phrase: "profesional" },
+          { value: "playful", label: "Divertido", phrase: "divertido" }
+        ],
+        quiz: [
+          { text: "¿Qué suele causar una respuesta decepcionante de la IA?", options: ["La IA está fallando", "Un prompt vago o poco específico", "Usar demasiadas palabras", "Hacer más de una pregunta"], correctIndex: 1, explain: "Las instrucciones vagas dejan a Claude adivinando qué quieres — la especificidad es lo que mejora los resultados." },
+          { text: "¿Qué prompt tiene más probabilidades de dar un resultado útil?", options: ["\"Escribe sobre perros\"", "\"Escribe un párrafo de 100 palabras, en tono cálido, para un libro infantil sobre por qué los perros son leales\"", "\"Perros\"", "\"Cuéntame cosas\""], correctIndex: 1, explain: "Especifica la tarea, el formato, la extensión, la audiencia y el tono — las cuatro partes de la fórmula." },
+          { text: "¿Qué deberías hacer si la primera respuesta no queda del todo bien?", options: ["Rendirte", "Tratarla como un borrador y refinar tu prompt", "Asumir que Claude no puede ayudarte con esto", "Empezar de nuevo en otra herramienta"], correctIndex: 1, explain: "Iterar tu prompt con más detalle es normal y suele llevarte al resultado más rápido que empezar de cero." }
+        ]
+      }
+    };
+
+    function populateSelect(selectEl, options) {
+      selectEl.innerHTML = "";
+      options.forEach(function (opt) {
+        var el = document.createElement("option");
+        el.value = opt.value;
+        el.textContent = opt.label;
+        selectEl.appendChild(el);
+      });
+    }
+
+    function renderDynamic(lang) {
+      var data = PAGE_I18N[lang] || PAGE_I18N.en;
+      var ui = window.ATS.getUILabels(lang);
+
+      var formatSelect = document.getElementById("pb-format");
+      var toneSelect = document.getElementById("pb-tone");
+      populateSelect(formatSelect, data.formatOptions);
+      populateSelect(toneSelect, data.toneOptions);
+
+      var output = document.getElementById("pb-output");
+      output.innerHTML = '<span class="placeholder">' + data["exercise.outputPlaceholder"] + "</span>";
+
+      document.getElementById("pb-assemble").onclick = function () {
+        var task = document.getElementById("pb-task").value.trim();
+        var context = document.getElementById("pb-context").value.trim();
+        var format = data.formatOptions.find(function (o) { return o.value === formatSelect.value; }) || data.formatOptions[0];
+        var tone = data.toneOptions.find(function (o) { return o.value === toneSelect.value; }) || data.toneOptions[0];
+
+        if (!task) {
+          output.innerHTML = '<span class="placeholder">' + data["exercise.emptyMsg"] + "</span>";
+          return;
+        }
+
+        var prompt = task.replace(/\.$/, "") + ", " + format.phrase + ", " + tone.phrase + ".";
+        if (context) {
+          prompt += " " + data["exercise.contextPrefix"] + ": " + context.replace(/\.$/, "") + ".";
+        }
+        output.textContent = prompt;
+      };
+
+      var quizEl = document.getElementById("quiz");
+      quizEl.innerHTML = "";
+      window.ATS.initQuiz("#quiz", data.quiz, ui.quiz, function () {
+        window.ATS.completeLesson(LESSON_ID, "badge");
+      });
+    }
+
+    window.ATS.i18n.init(PAGE_I18N, renderDynamic);
+  })();
+</script>
+</body>
+</html>

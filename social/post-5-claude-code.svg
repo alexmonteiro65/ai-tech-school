@@ -1,0 +1,47 @@
+<svg viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" role="img" aria-labelledby="title desc">
+  <title id="title">What is Claude Code?</title>
+  <desc id="desc">Instagram post explaining Claude Code in three steps: you ask in plain English, Claude reads and edits your real files, and you approve before anything runs.</desc>
+
+  <defs>
+    <radialGradient id="glowCC" cx="50%" cy="12%" r="70%">
+      <stop offset="0%" stop-color="#182238"/>
+      <stop offset="100%" stop-color="#0a0c12"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1080" height="1080" fill="url(#glowCC)"/>
+
+  <text x="540" y="130" text-anchor="middle" fill="#3b82f6" font-size="26" font-weight="700" letter-spacing="3">VISUAL EXPLAINER</text>
+  <text x="540" y="195" text-anchor="middle" fill="#f4f6fb" font-size="54" font-weight="800">What is Claude Code?</text>
+  <text x="540" y="240" text-anchor="middle" fill="#9aa3b8" font-size="27">Claude, inside your terminal — not just a chat window.</text>
+
+  <!-- Step 1 -->
+  <g>
+    <rect x="90" y="300" width="900" height="200" rx="24" fill="#161a26" stroke="#262c3d" stroke-width="2"/>
+    <circle cx="180" cy="400" r="42" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="2"/>
+    <text x="180" y="415" text-anchor="middle" fill="#3b82f6" font-size="34" font-weight="800">1</text>
+    <text x="250" y="385" fill="#f4f6fb" font-size="34" font-weight="800">You ask in plain English</text>
+    <text x="250" y="425" fill="#9aa3b8" font-size="25">"Fix the failing test in checkout.js"</text>
+  </g>
+
+  <!-- Step 2 -->
+  <g>
+    <rect x="90" y="520" width="900" height="200" rx="24" fill="#161a26" stroke="#262c3d" stroke-width="2"/>
+    <circle cx="180" cy="620" r="42" fill="#8b5cf6" fill-opacity="0.15" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="180" y="635" text-anchor="middle" fill="#8b5cf6" font-size="34" font-weight="800">2</text>
+    <text x="250" y="605" fill="#f4f6fb" font-size="34" font-weight="800">Claude reads your real files</text>
+    <text x="250" y="645" fill="#9aa3b8" font-size="25">Not a description of your project — the project itself.</text>
+  </g>
+
+  <!-- Step 3 -->
+  <g>
+    <rect x="90" y="740" width="900" height="200" rx="24" fill="#161a26" stroke="#34d399" stroke-opacity="0.6" stroke-width="2"/>
+    <rect x="90" y="740" width="900" height="200" rx="24" fill="#34d399" fill-opacity="0.06"/>
+    <circle cx="180" cy="840" r="42" fill="#34d399" fill-opacity="0.15" stroke="#34d399" stroke-width="2"/>
+    <text x="180" y="855" text-anchor="middle" fill="#34d399" font-size="34" font-weight="800">3</text>
+    <text x="250" y="825" fill="#f4f6fb" font-size="34" font-weight="800">You approve before it runs</text>
+    <text x="250" y="865" fill="#9aa3b8" font-size="25">Nothing changes in your project without your say-so.</text>
+  </g>
+
+  <text x="540" y="1010" text-anchor="middle" fill="#656d82" font-size="26" font-weight="700" letter-spacing="1">AI TECH SCHOOL</text>
+</svg>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lesson 1: What is Claude Code — Intermediate Path — AI Tech School</title>
+<meta name="description" content="How Claude Code differs from chatting in a browser, and the steps to get it running in your terminal." />
+<link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body style="--card-color: var(--path-intermediate);">
+
+<a class="visually-hidden" href="#main-content">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../../index.html">
+      <span class="brand-mark" aria-hidden="true">
+        <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M8 4 3 12l5 8M16 4l5 8-5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span>AI Tech School</span>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="../../index.html#why" data-i18n="nav.why">Why ATS</a>
+      <a href="../../index.html#paths" aria-current="page" data-i18n="nav.paths">Skill Paths</a>
+      <a href="../../how-claude-code-works.html" data-i18n="nav.howItWorks">How It Works</a>
+      <a href="../../ai-news.html" data-i18n="nav.news">AI News</a>
+      <a href="../../index.html#founder" data-i18n="nav.founder">Founder</a>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-switcher" role="group" aria-label="Language">
+        <button type="button" class="lang-btn" data-lang-btn="en">EN</button>
+        <button type="button" class="lang-btn" data-lang-btn="pt">PT</button>
+        <button type="button" class="lang-btn" data-lang-btn="es">ES</button>
+      </div>
+      <a class="btn btn-ghost btn-sm header-cta" href="index.html" data-i18n="page.pathName">Intermediate Path</a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="mobile-nav" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav id="mobile-nav" class="mobile-nav" data-mobile-nav aria-label="Mobile">
+  <a href="../../index.html#why" data-i18n="nav.why">Why ATS</a>
+  <a href="../../index.html#paths" data-i18n="nav.paths">Skill Paths</a>
+      <a href="../../how-claude-code-works.html" data-i18n="nav.howItWorks">How It Works</a>
+      <a href="../../ai-news.html" data-i18n="nav.news">AI News</a>
+  <a href="../../index.html#founder" data-i18n="nav.founder">Founder</a>
+</nav>
+
+<main id="main-content">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html" data-i18n="breadcrumb.home">Home</a>
+      <span class="sep">/</span>
+      <a href="index.html" data-i18n="page.pathName">Intermediate Path</a>
+      <span class="sep">/</span>
+      <span class="current"><span data-i18n="breadcrumb.lessonWord">Lesson</span> 1</span>
+    </nav>
+  </div>
+
+  <header class="container lesson-header">
+    <div class="lesson-header-top">
+      <span class="path-tag" data-i18n="page.tagLine">Intermediate &middot; Lesson 1 of 3</span>
+      <span class="lesson-duration">
+        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <span data-i18n="page.duration">~14 minutes</span>
+      </span>
+    </div>
+    <h1 data-i18n="page.title">What is Claude Code and how to install it</h1>
+    <p class="lede" data-i18n="page.lede">This is where Claude stops being something you chat with, and becomes something that works inside your actual project.</p>
+  </header>
+
+  <section class="lesson-section container">
+    <div class="lesson-section-label">
+      <span class="step-num">1</span>
+      <h2 data-i18n="section.explanation">Explanation</h2>
+    </div>
+    <div class="lesson-body">
+      <p data-i18n-html="body.p1">
+        <strong>Claude Code</strong> is Anthropic's official command-line
+        tool that lets Claude read, write, and run code directly inside your
+        own project, in your own terminal.
+      </p>
+
+      <h3 data-i18n="body.h3diff">How it's different from chatting in a browser</h3>
+      <p data-i18n="body.diff">
+        When you chat with Claude on a website, you copy code out, paste it
+        into your project, and copy errors back in by hand. Claude Code skips
+        all of that: it can see your actual files, propose edits, run tests
+        or commands, and use tools — with your approval at each step you
+        choose to review.
+      </p>
+
+      <h3 data-i18n="body.h3install">Installing it, conceptually</h3>
+      <p data-i18n="body.installLede">The exact command can vary by operating system, but the shape of the setup is always the same:</p>
+      <div class="code-block" data-i18n="body.codeBlock">1. Install Node.js
+2. Open your terminal
+3. Install Claude Code (a single install command)
+4. Navigate to your project folder
+5. Run: claude</div>
+
+      <div class="callout" data-i18n-html="body.callout">
+        <strong>What changes once it's installed:</strong> you now have an AI
+        collaborator that operates inside your real codebase, instead of a
+        disconnected chat window you copy-paste between.
+      </div>
+    </div>
+  </section>
+
+  <section class="lesson-section container">
+    <div class="lesson-section-label">
+      <span class="step-num">2</span>
+      <h2 data-i18n="section.practice">Try it yourself</h2>
+    </div>
+    <div class="exercise-box">
+      <p class="exercise-intro" data-i18n="exercise.intro">Click the steps below in the order you'd actually perform them to get Claude Code running.</p>
+      <div id="exercise"></div>
+    </div>
+  </section>
+
+  <section class="lesson-section container">
+    <div class="lesson-section-label">
+      <span class="step-num">3</span>
+      <h2 data-i18n="section.quiz">Check your understanding</h2>
+    </div>
+    <div id="quiz" class="quiz"></div>
+  </section>
+
+  <section class="lesson-section container">
+    <div class="lesson-section-label">
+      <span class="step-num">4</span>
+      <h2 data-i18n="section.complete">Lesson complete</h2>
+    </div>
+    <div class="badge-card" id="badge" hidden>
+      <div class="badge-icon" aria-hidden="true">
+        <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <p class="badge-eyebrow" data-i18n="badge.eyebrow">Lesson complete</p>
+        <p class="badge-title" data-i18n="badge.title">Claude Code Setup</p>
+        <p class="badge-desc" data-i18n="badge.desc">You understand what Claude Code is and the sequence to get it running in a real project.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="container lesson-nav">
+    <a class="btn btn-ghost" href="index.html" data-i18n="nav.backToPath">Back to Intermediate Path</a>
+    <a class="btn btn-primary" href="lesson-2.html" data-i18n="nav.next">Next: Your first MCP connector</a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <a class="brand" href="../../index.html">
+        <span class="brand-mark" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M8 4 3 12l5 8M16 4l5 8-5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span>AI Tech School</span>
+      </a>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="../../index.html#why" data-i18n="nav.why">Why ATS</a>
+      <a href="../../index.html#paths" data-i18n="nav.paths">Skill Paths</a>
+      <a href="../../how-claude-code-works.html" data-i18n="nav.howItWorks">How It Works</a>
+      <a href="../../ai-news.html" data-i18n="nav.news">AI News</a>
+      <a href="../../index.html#founder" data-i18n="nav.founder">Founder</a>
+      <a href="https://instagram.com/ai.tech.school" target="_blank" rel="noopener noreferrer">Instagram — @ai.tech.school</a>
+    </nav>
+  </div>
+  <div class="container footer-bottom">
+    <span>&copy; <span data-year>2026</span> <span data-i18n="footer.tagline1">AI Tech School. Founded by Alex Monteiro.</span></span>
+    <span data-i18n="footer.tagline2">Pure HTML, CSS &amp; JS. No frameworks. No tracking.</span>
+  </div>
+</footer>
+
+<script src="../../js/lesson.js"></script>
+<script src="../../js/i18n.js"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/guide.js"></script>
+<script>
+  (function () {
+    "use strict";
+
+    var LESSON_ID = "intermediate-1";
+
+    var PAGE_I18N = {
+      en: {
+        "nav.why": "Why ATS", "nav.paths": "Skill Paths", "nav.howItWorks": "How It Works", "nav.news": "AI News", "nav.founder": "Founder",
+        "breadcrumb.home": "Home", "breadcrumb.lessonWord": "Lesson",
+        "page.pathName": "Intermediate Path",
+        "page.tagLine": "Intermediate · Lesson 1 of 3",
+        "page.duration": "~14 minutes",
+        "page.title": "What is Claude Code and how to install it",
+        "page.lede": "This is where Claude stops being something you chat with, and becomes something that works inside your actual project.",
+        "section.explanation": "Explanation", "section.practice": "Try it yourself", "section.quiz": "Check your understanding", "section.complete": "Lesson complete",
+        "body.p1": "<strong>Claude Code</strong> is Anthropic's official command-line tool that lets Claude read, write, and run code directly inside your own project, in your own terminal.",
+        "body.h3diff": "How it's different from chatting in a browser",
+        "body.diff": "When you chat with Claude on a website, you copy code out, paste it into your project, and copy errors back in by hand. Claude Code skips all of that: it can see your actual files, propose edits, run tests or commands, and use tools — with your approval at each step you choose to review.",
+        "body.h3install": "Installing it, conceptually",
+        "body.installLede": "The exact command can vary by operating system, but the shape of the setup is always the same:",
+        "body.codeBlock": "1. Install Node.js\n2. Open your terminal\n3. Install Claude Code (a single install command)\n4. Navigate to your project folder\n5. Run: claude",
+        "body.callout": "<strong>What changes once it's installed:</strong> you now have an AI collaborator that operates inside your real codebase, instead of a disconnected chat window you copy-paste between.",
+        "exercise.intro": "Click the steps below in the order you'd actually perform them to get Claude Code running.",
+        "badge.eyebrow": "Lesson complete",
+        "badge.title": "Claude Code Setup",
+        "badge.desc": "You understand what Claude Code is and the sequence to get it running in a real project.",
+        "nav.backToPath": "Back to Intermediate Path",
+        "nav.next": "Next: Your first MCP connector",
+        "footer.tagline1": "AI Tech School. Founded by Alex Monteiro.",
+        "footer.tagline2": "Pure HTML, CSS & JS. No frameworks. No tracking.",
+        steps: ["Install Node.js on your computer", "Open your terminal", "Run the install command for Claude Code", "Navigate to your project folder", "Type claude to start a session"],
+        quiz: [
+          { text: "What makes Claude Code different from chatting with Claude in a browser?", options: ["It's a different AI model entirely", "It can directly read, edit, and run code in your real project", "It only works on Windows", "It doesn't need any setup"], correctIndex: 1, explain: "Claude Code operates on your actual files and can run commands, instead of you copy-pasting between a chat window and your project." },
+          { text: "What do you need installed before Claude Code?", options: ["A specific code editor", "Node.js", "A GitHub account", "Nothing at all"], correctIndex: 1, explain: "Node.js is the runtime Claude Code's install relies on — a GitHub account becomes useful later, but isn't required to install it." },
+          { text: "How do you start a Claude Code session in a project?", options: ["Open a chat website", "Run claude from your terminal inside the project folder", "Email Anthropic", "Restart your computer"], correctIndex: 1, explain: "Once installed, running the claude command from inside your project folder starts a session there." }
+        ]
+      },
+      pt: {
+        "nav.why": "Por que a ATS", "nav.paths": "Trilhas de Habilidade", "nav.howItWorks": "Como Funciona", "nav.news": "Notícias de IA", "nav.founder": "Fundador",
+        "breadcrumb.home": "Início", "breadcrumb.lessonWord": "Aula",
+        "page.pathName": "Trilha Intermediária",
+        "page.tagLine": "Intermediário · Aula 1 de 3",
+        "page.duration": "~14 minutos",
+        "page.title": "O que é o Claude Code e como instalá-lo",
+        "page.lede": "É aqui que o Claude deixa de ser algo com que você conversa e passa a ser algo que trabalha dentro do seu projeto de verdade.",
+        "section.explanation": "Explicação", "section.practice": "Mão na massa", "section.quiz": "Verifique seu entendimento", "section.complete": "Aula concluída",
+        "body.p1": "<strong>O Claude Code</strong> é a ferramenta oficial de linha de comando da Anthropic que permite ao Claude ler, escrever e executar código diretamente dentro do seu próprio projeto, no seu próprio terminal.",
+        "body.h3diff": "Como ele é diferente de conversar em um navegador",
+        "body.diff": "Quando você conversa com o Claude em um site, você copia o código, cola no seu projeto e copia os erros de volta manualmente. O Claude Code elimina tudo isso: ele consegue ver seus arquivos de verdade, propor edições, rodar testes ou comandos, e usar ferramentas — com sua aprovação em cada etapa que você escolher revisar.",
+        "body.h3install": "Instalando, de forma conceitual",
+        "body.installLede": "O comando exato pode variar de acordo com o sistema operacional, mas a estrutura da configuração é sempre a mesma:",
+        "body.codeBlock": "1. Instale o Node.js\n2. Abra seu terminal\n3. Instale o Claude Code (um único comando de instalação)\n4. Navegue até a pasta do seu projeto\n5. Execute: claude",
+        "body.callout": "<strong>O que muda depois de instalado:</strong> agora você tem um colaborador de IA que trabalha dentro do seu código real, em vez de uma janela de chat desconectada entre a qual você fica copiando e colando.",
+        "exercise.intro": "Clique nas etapas abaixo na ordem em que você realmente as executaria para colocar o Claude Code para rodar.",
+        "badge.eyebrow": "Aula concluída",
+        "badge.title": "Configuração do Claude Code",
+        "badge.desc": "Você entende o que é o Claude Code e a sequência para colocá-lo para rodar em um projeto de verdade.",
+        "nav.backToPath": "Voltar para a Trilha Intermediária",
+        "nav.next": "Próxima: Seu primeiro conector MCP",
+        "footer.tagline1": "AI Tech School. Fundada por Alex Monteiro.",
+        "footer.tagline2": "HTML, CSS e JS puros. Sem frameworks. Sem rastreamento.",
+        steps: ["Instalar o Node.js no seu computador", "Abrir o terminal", "Executar o comando de instalação do Claude Code", "Navegar até a pasta do seu projeto", "Digitar claude para iniciar uma sessão"],
+        quiz: [
+          { text: "O que torna o Claude Code diferente de conversar com o Claude em um navegador?", options: ["É um modelo de IA totalmente diferente", "Ele consegue ler, editar e executar código diretamente no seu projeto real", "Só funciona no Windows", "Não precisa de nenhuma configuração"], correctIndex: 1, explain: "O Claude Code opera nos seus arquivos reais e consegue executar comandos, em vez de você ficar copiando e colando entre uma janela de chat e o seu projeto." },
+          { text: "O que você precisa ter instalado antes do Claude Code?", options: ["Um editor de código específico", "Node.js", "Uma conta no GitHub", "Nada"], correctIndex: 1, explain: "O Node.js é o ambiente de execução do qual a instalação do Claude Code depende — uma conta no GitHub se torna útil depois, mas não é obrigatória para instalar." },
+          { text: "Como você inicia uma sessão do Claude Code em um projeto?", options: ["Abrindo um site de chat", "Executando claude no terminal, dentro da pasta do projeto", "Enviando um e-mail para a Anthropic", "Reiniciando o computador"], correctIndex: 1, explain: "Depois de instalado, executar o comando claude dentro da pasta do projeto inicia uma sessão ali." }
+        ]
+      },
+      es: {
+        "nav.why": "Por qué ATS", "nav.paths": "Rutas de Habilidad", "nav.howItWorks": "Cómo Funciona", "nav.news": "Noticias de IA", "nav.founder": "Fundador",
+        "breadcrumb.home": "Inicio", "breadcrumb.lessonWord": "Lección",
+        "page.pathName": "Ruta Intermedia",
+        "page.tagLine": "Intermedio · Lección 1 de 3",
+        "page.duration": "~14 minutos",
+        "page.title": "Qué es Claude Code y cómo instalarlo",
+        "page.lede": "Aquí es donde Claude deja de ser algo con lo que chateas y pasa a ser algo que trabaja dentro de tu proyecto real.",
+        "section.explanation": "Explicación", "section.practice": "Manos a la obra", "section.quiz": "Verifica tu comprensión", "section.complete": "Lección completa",
+        "body.p1": "<strong>Claude Code</strong> es la herramienta oficial de línea de comandos de Anthropic que permite a Claude leer, escribir y ejecutar código directamente dentro de tu propio proyecto, en tu propia terminal.",
+        "body.h3diff": "En qué se diferencia de chatear en un navegador",
+        "body.diff": "Cuando chateas con Claude en un sitio web, copias el código, lo pegas en tu proyecto, y copias los errores de vuelta a mano. Claude Code se salta todo eso: puede ver tus archivos reales, proponer cambios, ejecutar pruebas o comandos, y usar herramientas — con tu aprobación en cada paso que decidas revisar.",
+        "body.h3install": "Instalándolo, de forma conceptual",
+        "body.installLede": "El comando exacto puede variar según el sistema operativo, pero la forma de la configuración es siempre la misma:",
+        "body.codeBlock": "1. Instala Node.js\n2. Abre tu terminal\n3. Instala Claude Code (un solo comando de instalación)\n4. Navega hasta la carpeta de tu proyecto\n5. Ejecuta: claude",
+        "body.callout": "<strong>Qué cambia una vez instalado:</strong> ahora tienes un colaborador de IA que opera dentro de tu código real, en lugar de una ventana de chat desconectada entre la que copias y pegas.",
+        "exercise.intro": "Haz clic en los pasos de abajo en el orden en que realmente los harías para poner Claude Code a funcionar.",
+        "badge.eyebrow": "Lección completa",
+        "badge.title": "Configuración de Claude Code",
+        "badge.desc": "Entiendes qué es Claude Code y la secuencia para ponerlo a funcionar en un proyecto real.",
+        "nav.backToPath": "Volver a la Ruta Intermedia",
+        "nav.next": "Siguiente: Tu primer conector MCP",
+        "footer.tagline1": "AI Tech School. Fundada por Alex Monteiro.",
+        "footer.tagline2": "HTML, CSS y JS puros. Sin frameworks. Sin rastreo.",
+        steps: ["Instalar Node.js en tu computadora", "Abrir tu terminal", "Ejecutar el comando de instalación de Claude Code", "Navegar hasta la carpeta de tu proyecto", "Escribir claude para iniciar una sesión"],
+        quiz: [
+          { text: "¿Qué hace que Claude Code sea diferente de chatear con Claude en un navegador?", options: ["Es un modelo de IA completamente distinto", "Puede leer, editar y ejecutar código directamente en tu proyecto real", "Solo funciona en Windows", "No necesita ninguna configuración"], correctIndex: 1, explain: "Claude Code opera sobre tus archivos reales y puede ejecutar comandos, en lugar de que tú copies y pegues entre una ventana de chat y tu proyecto." },
+          { text: "¿Qué necesitas tener instalado antes de Claude Code?", options: ["Un editor de código específico", "Node.js", "Una cuenta de GitHub", "Nada en absoluto"], correctIndex: 1, explain: "Node.js es el entorno de ejecución del que depende la instalación de Claude Code — una cuenta de GitHub resulta útil después, pero no es obligatoria para instalarlo." },
+          { text: "¿Cómo inicias una sesión de Claude Code en un proyecto?", options: ["Abriendo un sitio de chat", "Ejecutando claude desde tu terminal dentro de la carpeta del proyecto", "Enviando un correo a Anthropic", "Reiniciando tu computadora"], correctIndex: 1, explain: "Una vez instalado, ejecutar el comando claude dentro de la carpeta del proyecto inicia una sesión ahí." }
+        ]
+      }
+    };
+
+    function renderDynamic(lang) {
+      var data = PAGE_I18N[lang] || PAGE_I18N.en;
+      var ui = window.ATS.getUILabels(lang);
+
+      document.getElementById("exercise").innerHTML = "";
+      window.ATS.initOrderExercise("#exercise", data.steps, ui.order);
+
+      document.getElementById("quiz").innerHTML = "";
+      window.ATS.initQuiz("#quiz", data.quiz, ui.quiz, function () {
+        window.ATS.completeLesson(LESSON_ID, "badge");
+      });
+    }
+
+    window.ATS.i18n.init(PAGE_I18N, renderDynamic);
+  })();
+</script>
+</body>
+</html>

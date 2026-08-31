@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI Tech School — Learn to Build with AI, Not Just Use It</title>
+<meta name="description" content="AI Tech School teaches Claude, Claude Code, MCP, and agents through three structured skill paths — Beginner, Intermediate, Expert. Founded by Alex Monteiro." />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<a class="visually-hidden" href="#main-content">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">
+        <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M8 4 3 12l5 8M16 4l5 8-5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span>AI Tech School</span>
+    </a>
+
+    <nav class="main-nav" aria-label="Primary">
+      <a href="#why" data-i18n="nav.why">Why ATS</a>
+      <a href="#paths" data-i18n="nav.paths">Skill Paths</a>
+      <a href="how-claude-code-works.html" data-i18n="nav.howItWorks">How It Works</a>
+      <a href="ai-news.html" data-i18n="nav.news">AI News</a>
+      <a href="#founder" data-i18n="nav.founder">Founder</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="lang-switcher" role="group" aria-label="Language">
+        <button type="button" class="lang-btn" data-lang-btn="en">EN</button>
+        <button type="button" class="lang-btn" data-lang-btn="pt">PT</button>
+        <button type="button" class="lang-btn" data-lang-btn="es">ES</button>
+      </div>
+      <a class="btn btn-primary btn-sm header-cta" href="#paths" data-i18n="nav.cta">Start Learning</a>
+      <button
+        class="nav-toggle"
+        type="button"
+        data-nav-toggle
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        aria-label="Toggle menu"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav id="mobile-nav" class="mobile-nav" data-mobile-nav aria-label="Mobile">
+  <a href="#why" data-i18n="nav.why">Why ATS</a>
+  <a href="#paths" data-i18n="nav.paths">Skill Paths</a>
+  <a href="how-claude-code-works.html" data-i18n="nav.howItWorks">How It Works</a>
+  <a href="ai-news.html" data-i18n="nav.news">AI News</a>
+  <a href="#founder" data-i18n="nav.founder">Founder</a>
+</nav>
+
+<main id="main-content">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container hero-inner">
+
+      <div class="hero-copy" data-reveal>
+        <p class="eyebrow" data-i18n="hero.eyebrow">&mdash; Structured AI education</p>
+        <h1 data-i18n-html="hero.h1">Learn to build with <span class="accent-text">AI</span>, not just use it.</h1>
+        <p class="lede" data-i18n="hero.lede">
+          AI Tech School teaches Claude, Claude Code, MCP, agents, and connectors
+          through three structured skill paths — Beginner, Intermediate, and
+          Expert. Every lesson ends with something you actually built.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#paths" data-i18n="hero.cta1">View skill paths</a>
+          <a class="btn btn-ghost" href="#founder" data-i18n="hero.cta2">About the founder</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <strong>3</strong>
+            <span data-i18n="hero.stat1">Skill paths</span>
+          </div>
+          <div class="hero-stat">
+            <strong>9</strong>
+            <span data-i18n="hero.stat2">Complete lessons</span>
+          </div>
+          <div class="hero-stat">
+            <strong>0</strong>
+            <span data-i18n="hero.stat3">Frameworks required</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="founder-card" data-reveal>
+        <div class="founder-avatar" aria-hidden="true">AM</div>
+        <div>
+          <p class="founder-name">Alex Monteiro</p>
+          <p class="founder-title" data-i18n="founderCard.title">Founder, AI Tech School</p>
+          <p class="founder-quote" data-i18n="founderCard.quote">
+            "I built ATS to teach the AI ecosystem the way I wish someone had
+            taught it to me — in order, hands-on, and without the hype."
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROGRESS BANNER (shown only for returning learners) -->
+  <div class="container">
+    <div class="progress-banner" data-progress-banner>
+      <p><span data-i18n="progress.prefix">Welcome back — you've completed</span> <strong data-progress-count>0</strong> <span data-i18n="progress.suffix">lesson(s) so far.</span></p>
+      <a class="btn btn-ghost btn-sm" href="#paths" data-i18n="progress.cta">Continue learning</a>
+    </div>
+  </div>
+
+  <!-- WHY ATS -->
+  <section id="why">
+    <div class="container">
+      <div class="section-heading" data-reveal>
+        <p class="eyebrow" data-i18n="why.eyebrow">&mdash; Why ATS</p>
+        <h2 data-i18n="why.h2">Built to actually teach, not just impress.</h2>
+        <p data-i18n="why.lede">Three principles run through every lesson on this site.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card" data-reveal>
+          <div class="feature-icon" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M9 3v4M6 5h6M13 13l7 3-3.5 1.5L15 21l-2-8Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 data-i18n="why.f1Title">Hands-on, always</h3>
+          <p data-i18n="why.f1Desc">Every lesson has an exercise you complete yourself, not a video you just watch.</p>
+        </div>
+        <div class="feature-card" data-reveal>
+          <div class="feature-icon" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <h3 data-i18n="why.f2Title">Clear skill paths</h3>
+          <p data-i18n="why.f2Desc">Three ordered paths with fixed milestones — you always know exactly where you are and what's next.</p>
+        </div>
+        <div class="feature-card" data-reveal>
+          <div class="feature-icon" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/></svg>
+          </div>
+          <h3 data-i18n="why.f3Title">No black boxes</h3>
+          <p data-i18n="why.f3Desc">We show how the tools actually work underneath — prompts, protocols, and all — so it sticks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILL PATHS -->
+  <section id="paths">
+    <div class="container">
+      <div class="section-heading" data-reveal>
+        <p class="eyebrow" data-i18n="paths.eyebrow">&mdash; Choose your path</p>
+        <h2 data-i18n="paths.h2">Three skill paths. Pick where you actually are.</h2>
+        <p data-i18n="paths.lede">No gatekeeping — start wherever fits, and move up when you're ready.</p>
+      </div>
+
+      <div class="paths-grid">
+
+        <article class="path-card path-card--beginner" data-reveal>
+          <div class="path-card-top">
+            <span class="path-index">01</span>
+            <span class="path-tag" data-i18n="beginner.tag">Beginner</span>
+          </div>
+          <h3 data-i18n="beginner.title">Never touched Claude before</h3>
+          <p data-i18n="beginner.desc">Understand what Claude actually is, how to prompt it well, and what an API is — the foundation everything else builds on.</p>
+
+          <div class="path-meta-row">
+            <span data-i18n="beginner.lessonsCount">3 lessons</span>
+            <span data-i18n="beginner.duration">~35 min total</span>
+          </div>
+
+          <div>
+            <p class="path-block-label" data-i18n="paths.outcomeLabel">What you can build after</p>
+            <p style="color:var(--text-muted);font-size:0.9rem;" data-i18n="beginner.outcome">A well-structured prompt for any task, and a clear mental model of how apps actually talk to Claude.</p>
+          </div>
+
+          <div>
+            <p class="path-block-label" data-i18n="paths.lessonsLabel">Lessons</p>
+            <ol class="lesson-preview-list">
+              <li><span class="lesson-num">01</span><span data-i18n="beginner.lesson1">What is Claude AI and why it matters</span></li>
+              <li><span class="lesson-num">02</span><span data-i18n="beginner.lesson2">Your first prompt — how to talk to AI correctly</span></li>
+              <li><span class="lesson-num">03</span><span data-i18n="beginner.lesson3">What is an API and why you need one</span></li>
+            </ol>
+          </div>
+
+          <div class="path-card-footer">
+            <a class="path-cta" href="levels/beginner/index.html">
+              <span data-i18n="beginner.cta">Start here</span>
+              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="path-card path-card--intermediate" data-reveal>
+          <div class="path-card-top">
+            <span class="path-index">02</span>
+            <span class="path-tag" data-i18n="intermediate.tag">Intermediate</span>
+          </div>
+          <h3 data-i18n="intermediate.title">Ready to start building</h3>
+          <p data-i18n="intermediate.desc">Install Claude Code, connect your first MCP server, and automate a real task inside your own project.</p>
+
+          <div class="path-meta-row">
+            <span data-i18n="intermediate.lessonsCount">3 lessons</span>
+            <span data-i18n="intermediate.duration">~45 min total</span>
+          </div>
+
+          <div>
+            <p class="path-block-label" data-i18n="paths.outcomeLabel">What you can build after</p>
+            <p style="color:var(--text-muted);font-size:0.9rem;" data-i18n="intermediate.outcome">A working Claude Code setup connected to GitHub via MCP, running one automated task you designed.</p>
+          </div>
+
+          <div>
+            <p class="path-block-label" data-i18n="paths.lessonsLabel">Lessons</p>
+            <ol class="lesson-preview-list">
+              <li><span class="lesson-num">01</span><span data-i18n="intermediate.lesson1">What is Claude Code and how to install it</span></li>
+              <li><span class="lesson-num">02</span><span data-i18n="intermediate.lesson2">Your first MCP connector — connecting GitHub</span></li>
+              <li><span class="lesson-num">03</span><span data-i18n="intermediate.lesson3">Building your first automated task with Claude Code</span></li>
+            </ol>
+          </div>
+
+          <div class="path-card-footer">
+            <a class="path-cta" href="levels/intermediate/index.html">
+              <span data-i18n="intermediate.cta">Level up</span>
+              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="path-card path-card--expert" data-reveal>
+          <div class="path-card-top">
+            <span class="path-index">03</span>
+            <span class="path-tag" data-i18n="expert.tag">Expert</span>
+          </div>
+          <h3 data-i18n="expert.title">Building AI professionally</h3>
+          <p data-i18n="expert.desc">Design autonomous agents, connect 10+ tools through Composio MCP, and deploy a fully automated AI-powered workflow.</p>
+
+          <div class="path-meta-row">
+            <span data-i18n="expert.lessonsCount">3 lessons</span>
+            <span data-i18n="expert.duration">~55 min total</span>
+          </div>
+
+          <div>
+            <p class="path-block-label" data-i18n="paths.outcomeLabel">What you can build after</p>
+            <p style="color:var(--text-muted);font-size:0.9rem;" data-i18n="expert.outcome">A designed, guardrailed autonomous agent pipeline spanning multiple real tools, ready to deploy.</p>
+          </div>
+
+          <div>
+            <p class="path-block-label" data-i18n="paths.lessonsLabel">Lessons</p>
+            <ol class="lesson-preview-list">
+              <li><span class="lesson-num">01</span><span data-i18n="expert.lesson1">Building AI agents that work autonomously</span></li>
+              <li><span class="lesson-num">02</span><span data-i18n="expert.lesson2">Connecting 10+ tools via Composio MCP</span></li>
+              <li><span class="lesson-num">03</span><span data-i18n="expert.lesson3">Deploying a fully automated AI-powered business</span></li>
+            </ol>
+          </div>
+
+          <div class="path-card-footer">
+            <a class="path-cta" href="levels/expert/index.html">
+              <span data-i18n="expert.cta">Go deep</span>
+              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDER -->
+  <section class="founder-section" id="founder">
+    <div class="container founder-inner">
+      <div class="founder-avatar-lg" data-reveal aria-hidden="true">AM</div>
+      <div class="founder-copy" data-reveal>
+        <h2>Alex Monteiro</h2>
+        <p class="founder-role" data-i18n="founderSection.role">Founder, AI Tech School</p>
+        <p data-i18n="founderSection.bio1">
+          AI Tech School exists because most AI content is either too shallow
+          to be useful or too dense to get through. Alex built ATS to close
+          that gap — a curriculum modeled directly on how Anthropic teaches
+          Claude itself, organized the way Codecademy organizes skill paths:
+          in order, with clear milestones, and nothing you can't actually do.
+        </p>
+        <p data-i18n="founderSection.bio2">
+          Every lesson exists because it unblocks the next one. Beginner
+          builds the mental model. Intermediate gets your hands on real
+          tools. Expert puts it all together into something you could
+          actually run.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PREVIEW -->
+  <section id="social">
+    <div class="container">
+      <div class="section-heading" data-reveal>
+        <p class="eyebrow" data-i18n="social.eyebrow">&mdash; Coming soon on Instagram</p>
+        <h2 data-i18n="social.h2">A first look at what we're posting</h2>
+        <p data-i18n="social.lede">The account isn't live yet — here's a preview of the first three posts, at @ai.tech.school once it launches.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card" data-reveal>
+          <img src="social/post-1-launch.png" alt="AI Tech School launch announcement graphic" style="width:100%; border-radius: var(--radius-md); border: 1px solid var(--border); margin-bottom: var(--space-4);" />
+          <p data-i18n="social.caption1">AI Tech School is here — three skill paths, nine hands-on lessons, zero fluff.</p>
+        </div>
+        <div class="feature-card" data-reveal>
+          <img src="social/post-4-levels.png" alt="Graphic explaining the three AI Tech School skill levels" style="width:100%; border-radius: var(--radius-md); border: 1px solid var(--border); margin-bottom: var(--space-4);" />
+          <p data-i18n="social.caption2">Beginner, Intermediate, Expert — pick where you actually are.</p>
+        </div>
+        <div class="feature-card" data-reveal>
+          <img src="social/post-8-quote.png" alt="Graphic introducing Alex Monteiro, founder of AI Tech School" style="width:100%; border-radius: var(--radius-md); border: 1px solid var(--border); margin-bottom: var(--space-4);" />
+          <p data-i18n="social.caption3">Meet Alex Monteiro — why this school teaches the way it does.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M8 4 3 12l5 8M16 4l5 8-5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span>AI Tech School</span>
+      </a>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="#why" data-i18n="nav.why">Why ATS</a>
+      <a href="#paths" data-i18n="nav.paths">Skill Paths</a>
+      <a href="how-claude-code-works.html" data-i18n="nav.howItWorks">How It Works</a>
+      <a href="ai-news.html" data-i18n="nav.news">AI News</a>
+      <a href="#founder" data-i18n="nav.founder">Founder</a>
+      <a href="https://instagram.com/ai.tech.school" target="_blank" rel="noopener noreferrer">Instagram — @ai.tech.school</a>
+    </nav>
+  </div>
+  <div class="container footer-bottom">
+    <span>&copy; <span data-year>2026</span> <span data-i18n="footer.tagline1">AI Tech School. Founded by Alex Monteiro.</span></span>
+    <span data-i18n="footer.tagline2">Pure HTML, CSS &amp; JS. No frameworks. No tracking.</span>
+  </div>
+</footer>
+
+<script src="js/lesson.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+<script src="js/guide.js"></script>
+<script>
+  var INDEX_I18N = {
+    en: {
+      "nav.why": "Why ATS", "nav.paths": "Skill Paths", "nav.howItWorks": "How It Works", "nav.news": "AI News", "nav.founder": "Founder", "nav.cta": "Start Learning",
+      "hero.eyebrow": "— Structured AI education",
+      "hero.h1": 'Learn to build with <span class="accent-text">AI</span>, not just use it.',
+      "hero.lede": "AI Tech School teaches Claude, Claude Code, MCP, agents, and connectors through three structured skill paths — Beginner, Intermediate, and Expert. Every lesson ends with something you actually built.",
+      "hero.cta1": "View skill paths", "hero.cta2": "About the founder",
+      "hero.stat1": "Skill paths", "hero.stat2": "Complete lessons", "hero.stat3": "Frameworks required",
+      "founderCard.title": "Founder, AI Tech School",
+      "founderCard.quote": "“I built ATS to teach the AI ecosystem the way I wish someone had taught it to me — in order, hands-on, and without the hype.”",
+      "progress.prefix": "Welcome back — you've completed", "progress.suffix": "lesson(s) so far.", "progress.cta": "Continue learning",
+      "why.eyebrow": "— Why ATS", "why.h2": "Built to actually teach, not just impress.", "why.lede": "Three principles run through every lesson on this site.",
+      "why.f1Title": "Hands-on, always", "why.f1Desc": "Every lesson has an exercise you complete yourself, not a video you just watch.",
+      "why.f2Title": "Clear skill paths", "why.f2Desc": "Three ordered paths with fixed milestones — you always know exactly where you are and what's next.",
+      "why.f3Title": "No black boxes", "why.f3Desc": "We show how the tools actually work underneath — prompts, protocols, and all — so it sticks.",
+      "paths.eyebrow": "— Choose your path", "paths.h2": "Three skill paths. Pick where you actually are.", "paths.lede": "No gatekeeping — start wherever fits, and move up when you're ready.",
+      "paths.lessonsLabel": "Lessons", "paths.outcomeLabel": "What you can build after",
+      "beginner.tag": "Beginner", "beginner.title": "Never touched Claude before",
+      "beginner.desc": "Understand what Claude actually is, how to prompt it well, and what an API is — the foundation everything else builds on.",
+      "beginner.lessonsCount": "3 lessons", "beginner.duration": "~35 min total",
+      "beginner.outcome": "A well-structured prompt for any task, and a clear mental model of how apps actually talk to Claude.",
+      "beginner.lesson1": "What is Claude AI and why it matters",
+      "beginner.lesson2": "Your first prompt — how to talk to AI correctly",
+      "beginner.lesson3": "What is an API and why you need one",
+      "beginner.cta": "Start here",
+      "intermediate.tag": "Intermediate", "intermediate.title": "Ready to start building",
+      "intermediate.desc": "Install Claude Code, connect your first MCP server, and automate a real task inside your own project.",
+      "intermediate.lessonsCount": "3 lessons", "intermediate.duration": "~45 min total",
+      "intermediate.outcome": "A working Claude Code setup connected to GitHub via MCP, running one automated task you designed.",
+      "intermediate.lesson1": "What is Claude Code and how to install it",
+      "intermediate.lesson2": "Your first MCP connector — connecting GitHub",
+      "intermediate.lesson3": "Building your first automated task with Claude Code",
+      "intermediate.cta": "Level up",
+      "expert.tag": "Expert", "expert.title": "Building AI professionally",
+      "expert.desc": "Design autonomous agents, connect 10+ tools through Composio MCP, and deploy a fully automated AI-powered workflow.",
+      "expert.lessonsCount": "3 lessons", "expert.duration": "~55 min total",
+      "expert.outcome": "A designed, guardrailed autonomous agent pipeline spanning multiple real tools, ready to deploy.",
+      "expert.lesson1": "Building AI agents that work autonomously",
+      "expert.lesson2": "Connecting 10+ tools via Composio MCP",
+      "expert.lesson3": "Deploying a fully automated AI-powered business",
+      "expert.cta": "Go deep",
+      "founderSection.role": "Founder, AI Tech School",
+      "founderSection.bio1": "AI Tech School exists because most AI content is either too shallow to be useful or too dense to get through. Alex built ATS to close that gap — a curriculum modeled directly on how Anthropic teaches Claude itself, organized the way Codecademy organizes skill paths: in order, with clear milestones, and nothing you can't actually do.",
+      "founderSection.bio2": "Every lesson exists because it unblocks the next one. Beginner builds the mental model. Intermediate gets your hands on real tools. Expert puts it all together into something you could actually run.",
+      "footer.tagline1": "AI Tech School. Founded by Alex Monteiro.",
+      "footer.tagline2": "Pure HTML, CSS & JS. No frameworks. No tracking.",
+      "social.eyebrow": "— Coming soon on Instagram",
+      "social.h2": "A first look at what we're posting",
+      "social.lede": "The account isn't live yet — here's a preview of the first three posts, at @ai.tech.school once it launches.",
+      "social.caption1": "AI Tech School is here — three skill paths, nine hands-on lessons, zero fluff.",
+      "social.caption2": "Beginner, Intermediate, Expert — pick where you actually are.",
+      "social.caption3": "Meet Alex Monteiro — why this school teaches the way it does."
+    },
+    pt: {
+      "nav.why": "Por que a ATS", "nav.paths": "Trilhas de Habilidade", "nav.howItWorks": "Como Funciona", "nav.news": "Notícias de IA", "nav.founder": "Fundador", "nav.cta": "Começar a Aprender",
+      "hero.eyebrow": "— Educação estruturada em IA",
+      "hero.h1": 'Aprenda a construir com <span class="accent-text">IA</span>, não só a usá-la.',
+      "hero.lede": "A AI Tech School ensina Claude, Claude Code, MCP, agentes e conectores por meio de três trilhas de habilidade estruturadas — Iniciante, Intermediário e Avançado. Cada aula termina com algo que você realmente construiu.",
+      "hero.cta1": "Ver trilhas de habilidade", "hero.cta2": "Sobre o fundador",
+      "hero.stat1": "Trilhas de habilidade", "hero.stat2": "Aulas completas", "hero.stat3": "Frameworks necessários",
+      "founderCard.title": "Fundador, AI Tech School",
+      "founderCard.quote": "“Criei a ATS para ensinar o ecossistema de IA do jeito que eu gostaria que tivessem me ensinado — em ordem, na prática, e sem exagero.”",
+      "progress.prefix": "Bem-vindo de volta — você já completou", "progress.suffix": "aula(s) até agora.", "progress.cta": "Continuar aprendendo",
+      "why.eyebrow": "— Por que a ATS", "why.h2": "Feita para realmente ensinar, não só impressionar.", "why.lede": "Três princípios guiam cada aula deste site.",
+      "why.f1Title": "Sempre na prática", "why.f1Desc": "Cada aula tem um exercício que você mesmo completa, não um vídeo que você apenas assiste.",
+      "why.f2Title": "Trilhas de habilidade claras", "why.f2Desc": "Três trilhas ordenadas com marcos fixos — você sempre sabe exatamente onde está e o que vem a seguir.",
+      "why.f3Title": "Sem caixas-pretas", "why.f3Desc": "Mostramos como as ferramentas realmente funcionam por baixo dos panos — prompts, protocolos e tudo mais — para o aprendizado ficar de verdade.",
+      "paths.eyebrow": "— Escolha sua trilha", "paths.h2": "Três trilhas de habilidade. Escolha onde você está agora.", "paths.lede": "Sem barreiras — comece onde fizer sentido e avance quando estiver pronto.",
+      "paths.lessonsLabel": "Aulas", "paths.outcomeLabel": "O que você pode construir depois",
+      "beginner.tag": "Iniciante", "beginner.title": "Nunca usou o Claude antes",
+      "beginner.desc": "Entenda o que o Claude realmente é, como fazer bons prompts e o que é uma API — a base sobre a qual tudo o mais é construído.",
+      "beginner.lessonsCount": "3 aulas", "beginner.duration": "~35 min no total",
+      "beginner.outcome": "Um prompt bem estruturado para qualquer tarefa, e um modelo mental claro de como os aplicativos realmente conversam com o Claude.",
+      "beginner.lesson1": "O que é o Claude AI e por que ele importa",
+      "beginner.lesson2": "Seu primeiro prompt — como falar com a IA corretamente",
+      "beginner.lesson3": "O que é uma API e por que você precisa de uma",
+      "beginner.cta": "Comece aqui",
+      "intermediate.tag": "Intermediário", "intermediate.title": "Pronto para começar a construir",
+      "intermediate.desc": "Instale o Claude Code, conecte seu primeiro servidor MCP e automatize uma tarefa real dentro do seu próprio projeto.",
+      "intermediate.lessonsCount": "3 aulas", "intermediate.duration": "~45 min no total",
+      "intermediate.outcome": "Uma configuração funcional do Claude Code conectada ao GitHub via MCP, executando uma tarefa automatizada que você mesmo projetou.",
+      "intermediate.lesson1": "O que é o Claude Code e como instalá-lo",
+      "intermediate.lesson2": "Seu primeiro conector MCP — conectando o GitHub",
+      "intermediate.lesson3": "Construindo sua primeira tarefa automatizada com o Claude Code",
+      "intermediate.cta": "Avance de nível",
+      "expert.tag": "Avançado", "expert.title": "Construindo IA profissionalmente",
+      "expert.desc": "Projete agentes autônomos, conecte mais de 10 ferramentas pelo Composio MCP e implante um fluxo de trabalho totalmente automatizado com IA.",
+      "expert.lessonsCount": "3 aulas", "expert.duration": "~55 min no total",
+      "expert.outcome": "Um pipeline de agente autônomo projetado, com salvaguardas, abrangendo várias ferramentas reais, pronto para implantar.",
+      "expert.lesson1": "Construindo agentes de IA que funcionam de forma autônoma",
+      "expert.lesson2": "Conectando mais de 10 ferramentas via Composio MCP",
+      "expert.lesson3": "Implantando um negócio totalmente automatizado com IA",
+      "expert.cta": "Aprofunde-se",
+      "founderSection.role": "Fundador, AI Tech School",
+      "founderSection.bio1": "A AI Tech School existe porque a maior parte do conteúdo sobre IA é superficial demais para ser útil, ou densa demais para se conseguir terminar. Alex criou a ATS para preencher essa lacuna — um currículo modelado diretamente na forma como a Anthropic ensina o próprio Claude, organizado da mesma maneira que a Codecademy organiza suas trilhas de habilidade: em ordem, com marcos claros, e nada que você não consiga realmente fazer.",
+      "founderSection.bio2": "Cada aula existe porque ela destrava a próxima. O Iniciante constrói o modelo mental. O Intermediário coloca a mão na massa com ferramentas reais. O Avançado junta tudo em algo que você poderia realmente colocar para rodar.",
+      "footer.tagline1": "AI Tech School. Fundada por Alex Monteiro.",
+      "footer.tagline2": "HTML, CSS e JS puros. Sem frameworks. Sem rastreamento.",
+      "social.eyebrow": "— Em breve no Instagram",
+      "social.h2": "Um primeiro olhar sobre o que vamos publicar",
+      "social.lede": "A conta ainda não está no ar — aqui está uma prévia das três primeiras publicações, em @ai.tech.school assim que for lançada.",
+      "social.caption1": "A AI Tech School chegou — três trilhas de habilidade, nove aulas na prática, zero enrolação.",
+      "social.caption2": "Iniciante, Intermediário, Avançado — comece de onde você realmente está.",
+      "social.caption3": "Conheça Alex Monteiro — por que esta escola ensina do jeito que ensina."
+    },
+    es: {
+      "nav.why": "Por qué ATS", "nav.paths": "Rutas de Habilidad", "nav.howItWorks": "Cómo Funciona", "nav.news": "Noticias de IA", "nav.founder": "Fundador", "nav.cta": "Empezar a Aprender",
+      "hero.eyebrow": "— Educación estructurada en IA",
+      "hero.h1": 'Aprende a construir con <span class="accent-text">IA</span>, no solo a usarla.',
+      "hero.lede": "AI Tech School enseña Claude, Claude Code, MCP, agentes y conectores a través de tres rutas de habilidad estructuradas — Principiante, Intermedio y Experto. Cada lección termina con algo que realmente construiste.",
+      "hero.cta1": "Ver rutas de habilidad", "hero.cta2": "Sobre el fundador",
+      "hero.stat1": "Rutas de habilidad", "hero.stat2": "Lecciones completas", "hero.stat3": "Frameworks necesarios",
+      "founderCard.title": "Fundador, AI Tech School",
+      "founderCard.quote": "“Creé ATS para enseñar el ecosistema de IA como me hubiera gustado que me lo enseñaran a mí — en orden, con práctica real, y sin exageraciones.”",
+      "progress.prefix": "Bienvenido de nuevo — ya completaste", "progress.suffix": "lección(es) hasta ahora.", "progress.cta": "Seguir aprendiendo",
+      "why.eyebrow": "— Por qué ATS", "why.h2": "Hecha para enseñar de verdad, no solo para impresionar.", "why.lede": "Tres principios guían cada lección de este sitio.",
+      "why.f1Title": "Siempre práctico", "why.f1Desc": "Cada lección tiene un ejercicio que tú mismo completas, no un video que solo miras.",
+      "why.f2Title": "Rutas de habilidad claras", "why.f2Desc": "Tres rutas ordenadas con hitos fijos — siempre sabes exactamente dónde estás y qué sigue.",
+      "why.f3Title": "Sin cajas negras", "why.f3Desc": "Mostramos cómo funcionan realmente las herramientas por dentro — prompts, protocolos y todo lo demás — para que se quede grabado.",
+      "paths.eyebrow": "— Elige tu ruta", "paths.h2": "Tres rutas de habilidad. Elige dónde estás realmente.", "paths.lede": "Sin barreras de entrada — empieza donde encajes y avanza cuando estés listo.",
+      "paths.lessonsLabel": "Lecciones", "paths.outcomeLabel": "Qué puedes construir después",
+      "beginner.tag": "Principiante", "beginner.title": "Nunca usaste Claude antes",
+      "beginner.desc": "Entiende qué es realmente Claude, cómo escribirle buenos prompts y qué es una API — la base sobre la que se construye todo lo demás.",
+      "beginner.lessonsCount": "3 lecciones", "beginner.duration": "~35 min en total",
+      "beginner.outcome": "Un prompt bien estructurado para cualquier tarea, y un modelo mental claro de cómo las aplicaciones realmente se comunican con Claude.",
+      "beginner.lesson1": "Qué es Claude AI y por qué importa",
+      "beginner.lesson2": "Tu primer prompt — cómo hablarle a la IA correctamente",
+      "beginner.lesson3": "Qué es una API y por qué la necesitas",
+      "beginner.cta": "Empieza aquí",
+      "intermediate.tag": "Intermedio", "intermediate.title": "Listo para empezar a construir",
+      "intermediate.desc": "Instala Claude Code, conecta tu primer servidor MCP y automatiza una tarea real dentro de tu propio proyecto.",
+      "intermediate.lessonsCount": "3 lecciones", "intermediate.duration": "~45 min en total",
+      "intermediate.outcome": "Una configuración funcional de Claude Code conectada a GitHub vía MCP, ejecutando una tarea automatizada que tú diseñaste.",
+      "intermediate.lesson1": "Qué es Claude Code y cómo instalarlo",
+      "intermediate.lesson2": "Tu primer conector MCP — conectando GitHub",
+      "intermediate.lesson3": "Construyendo tu primera tarea automatizada con Claude Code",
+      "intermediate.cta": "Sube de nivel",
+      "expert.tag": "Experto", "expert.title": "Construyendo IA de forma profesional",
+      "expert.desc": "Diseña agentes autónomos, conecta más de 10 herramientas mediante Composio MCP, y despliega un flujo de trabajo totalmente automatizado con IA.",
+      "expert.lessonsCount": "3 lecciones", "expert.duration": "~55 min en total",
+      "expert.outcome": "Un pipeline de agente autónomo diseñado, con salvaguardas, que abarca varias herramientas reales, listo para desplegar.",
+      "expert.lesson1": "Construyendo agentes de IA que funcionan de forma autónoma",
+      "expert.lesson2": "Conectando más de 10 herramientas vía Composio MCP",
+      "expert.lesson3": "Desplegando un negocio totalmente automatizado con IA",
+      "expert.cta": "Profundiza",
+      "founderSection.role": "Fundador, AI Tech School",
+      "founderSection.bio1": "AI Tech School existe porque la mayoría del contenido sobre IA es demasiado superficial para ser útil, o demasiado denso para terminarlo. Alex creó ATS para cerrar esa brecha — un plan de estudios modelado directamente en cómo Anthropic le enseña a Claude, organizado de la misma forma en que Codecademy organiza sus rutas de habilidad: en orden, con hitos claros, y nada que no puedas realmente hacer.",
+      "founderSection.bio2": "Cada lección existe porque desbloquea la siguiente. Principiante construye el modelo mental. Intermedio te pone a trabajar con herramientas reales. Experto lo junta todo en algo que realmente podrías poner a funcionar.",
+      "footer.tagline1": "AI Tech School. Fundada por Alex Monteiro.",
+      "footer.tagline2": "HTML, CSS y JS puros. Sin frameworks. Sin rastreo.",
+      "social.eyebrow": "— Próximamente en Instagram",
+      "social.h2": "Un primer vistazo a lo que vamos a publicar",
+      "social.lede": "La cuenta todavía no está activa — aquí tienes una vista previa de las primeras tres publicaciones, en @ai.tech.school en cuanto se lance.",
+      "social.caption1": "Llegó AI Tech School — tres rutas de habilidad, nueve lecciones prácticas, cero relleno.",
+      "social.caption2": "Principiante, Intermedio, Experto — empieza donde realmente estás.",
+      "social.caption3": "Conoce a Alex Monteiro — por qué esta escuela enseña como enseña."
+    }
+  };
+
+  window.ATS.i18n.init(INDEX_I18N);
+</script>
+</body>
+</html>

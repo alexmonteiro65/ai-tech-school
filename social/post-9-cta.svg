@@ -1,0 +1,33 @@
+<svg viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" role="img" aria-labelledby="title desc">
+  <title id="title">Call to action — start learning today</title>
+  <desc id="desc">Instagram post prompting the viewer to start the free Beginner lesson today, with a link-in-bio call to action.</desc>
+
+  <defs>
+    <linearGradient id="ctaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <radialGradient id="glowCTA" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#22163f"/>
+      <stop offset="100%" stop-color="#0a0c12"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1080" height="1080" fill="url(#glowCTA)"/>
+
+  <text x="540" y="260" text-anchor="middle" fill="#3b82f6" font-size="26" font-weight="700" letter-spacing="3">TODAY IS A GOOD DAY TO START</text>
+
+  <text x="540" y="380" text-anchor="middle" fill="#f4f6fb" font-size="70" font-weight="800">Stop scrolling.</text>
+  <text x="540" y="460" text-anchor="middle" fill="#f4f6fb" font-size="70" font-weight="800">Start building.</text>
+
+  <text x="540" y="540" text-anchor="middle" fill="#9aa3b8" font-size="30">Lesson 1 of the Beginner path is free</text>
+  <text x="540" y="580" text-anchor="middle" fill="#9aa3b8" font-size="30">and takes about 10 minutes.</text>
+
+  <!-- CTA button -->
+  <rect x="340" y="660" width="400" height="90" rx="45" fill="url(#ctaGradient)"/>
+  <text x="540" y="716" text-anchor="middle" fill="#ffffff" font-size="32" font-weight="800">START LESSON 1</text>
+
+  <text x="540" y="820" text-anchor="middle" fill="#656d82" font-size="26" font-weight="700" letter-spacing="1">LINK IN BIO</text>
+
+  <text x="540" y="1010" text-anchor="middle" fill="#656d82" font-size="26" font-weight="700" letter-spacing="1">AI TECH SCHOOL</text>
+</svg>

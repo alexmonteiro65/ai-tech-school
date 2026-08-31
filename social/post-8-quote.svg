@@ -1,0 +1,38 @@
+<svg viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" role="img" aria-labelledby="title desc">
+  <title id="title">AI Tech School — Founder Story</title>
+  <desc id="desc">Instagram post introducing Alex Monteiro, founder of AI Tech School, with a quote about why the school was built.</desc>
+
+  <defs>
+    <linearGradient id="avatarGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <radialGradient id="glow3" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#241a3d"/>
+      <stop offset="100%" stop-color="#0a0c12"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1080" height="1080" fill="url(#glow3)"/>
+
+  <text x="540" y="150" text-anchor="middle" fill="#3b82f6" font-size="26" font-weight="700" letter-spacing="3">MEET THE FOUNDER</text>
+
+  <!-- Avatar -->
+  <circle cx="540" cy="330" r="120" fill="url(#avatarGradient)"/>
+  <text x="540" y="358" text-anchor="middle" fill="#ffffff" font-size="72" font-weight="800">AM</text>
+
+  <!-- Name / role -->
+  <text x="540" y="520" text-anchor="middle" fill="#f4f6fb" font-size="56" font-weight="800">Alex Monteiro</text>
+  <text x="540" y="565" text-anchor="middle" fill="#3b82f6" font-size="28" font-weight="700" letter-spacing="1">FOUNDER, AI TECH SCHOOL</text>
+
+  <!-- Quote -->
+  <g fill="#9aa3b8" font-size="32" text-anchor="middle">
+    <text x="540" y="670">"I built ATS to teach the AI ecosystem</text>
+    <text x="540" y="715">the way I wish someone had taught it to me —</text>
+    <text x="540" y="760">in order, hands-on, and without the hype."</text>
+  </g>
+
+  <rect x="440" y="830" width="200" height="4" rx="2" fill="#262c3d"/>
+
+  <text x="540" y="960" text-anchor="middle" fill="#656d82" font-size="26" font-weight="700" letter-spacing="1">AI TECH SCHOOL</text>
+</svg>

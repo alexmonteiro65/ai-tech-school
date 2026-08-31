@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Latest AI News — AI Tech School</title>
+<meta name="description" content="A curated, dated snapshot of recent Claude and AI ecosystem news, with links to original sources — from AI Tech School." />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<a class="visually-hidden" href="#main-content">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">
+        <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M8 4 3 12l5 8M16 4l5 8-5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span>AI Tech School</span>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="index.html#paths" data-i18n="nav.paths">Skill Paths</a>
+      <a href="how-claude-code-works.html" data-i18n="nav.howItWorks">How It Works</a>
+      <a href="ai-news.html" aria-current="page" data-i18n="nav.news">AI News</a>
+      <a href="index.html#founder" data-i18n="nav.founder">Founder</a>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-switcher" role="group" aria-label="Language">
+        <button type="button" class="lang-btn" data-lang-btn="en">EN</button>
+        <button type="button" class="lang-btn" data-lang-btn="pt">PT</button>
+        <button type="button" class="lang-btn" data-lang-btn="es">ES</button>
+      </div>
+      <a class="btn btn-primary btn-sm header-cta" href="index.html#paths" data-i18n="nav.cta">Start Learning</a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="mobile-nav" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav id="mobile-nav" class="mobile-nav" data-mobile-nav aria-label="Mobile">
+  <a href="index.html#paths" data-i18n="nav.paths">Skill Paths</a>
+  <a href="how-claude-code-works.html" data-i18n="nav.howItWorks">How It Works</a>
+  <a href="ai-news.html" data-i18n="nav.news">AI News</a>
+  <a href="index.html#founder" data-i18n="nav.founder">Founder</a>
+</nav>
+
+<main id="main-content">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html" data-i18n="breadcrumb.home">Home</a>
+      <span class="sep">/</span>
+      <span class="current" data-i18n="page.breadcrumbCurrent">AI News</span>
+    </nav>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="section-heading" data-reveal>
+        <p class="eyebrow" data-i18n="page.eyebrow">&mdash; Curated snapshot</p>
+        <h2 data-i18n="page.h1">Recent Claude &amp; AI ecosystem news</h2>
+        <p data-i18n="page.lede">This is a hand-picked, dated snapshot — not a live feed. ATS has no backend and makes no external calls on your behalf, so this list is updated by hand and won't auto-refresh. Click through to the original source for the full story.</p>
+        <p class="path-meta-row" style="margin-top: var(--space-4);"><span data-i18n="page.snapshotLabel">Snapshot taken</span>: <strong data-i18n="page.snapshotDate">August 31, 2026</strong></p>
+      </div>
+
+      <div id="news-list" class="features-grid" style="grid-template-columns: 1fr;"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M8 4 3 12l5 8M16 4l5 8-5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span>AI Tech School</span>
+      </a>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="index.html#paths" data-i18n="nav.paths">Skill Paths</a>
+      <a href="how-claude-code-works.html" data-i18n="nav.howItWorks">How It Works</a>
+      <a href="ai-news.html" data-i18n="nav.news">AI News</a>
+      <a href="index.html#founder" data-i18n="nav.founder">Founder</a>
+      <a href="https://instagram.com/ai.tech.school" target="_blank" rel="noopener noreferrer">Instagram — @ai.tech.school</a>
+    </nav>
+  </div>
+  <div class="container footer-bottom">
+    <span>&copy; <span data-year>2026</span> <span data-i18n="footer.tagline1">AI Tech School. Founded by Alex Monteiro.</span></span>
+    <span data-i18n="footer.tagline2">Pure HTML, CSS &amp; JS. No frameworks. No tracking.</span>
+  </div>
+</footer>
+
+<script src="js/lesson.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+<script src="js/guide.js"></script>
+<script>
+  (function () {
+    "use strict";
+
+    var PAGE_I18N = {
+      en: {
+        "nav.paths": "Skill Paths", "nav.howItWorks": "How It Works", "nav.news": "AI News", "nav.founder": "Founder", "nav.cta": "Start Learning",
+        "breadcrumb.home": "Home",
+        "page.breadcrumbCurrent": "AI News",
+        "page.eyebrow": "— Curated snapshot",
+        "page.h1": "Recent Claude & AI ecosystem news",
+        "page.lede": "This is a hand-picked, dated snapshot — not a live feed. ATS has no backend and makes no external calls on your behalf, so this list is updated by hand and won't auto-refresh. Click through to the original source for the full story.",
+        "page.snapshotLabel": "Snapshot taken",
+        "page.snapshotDate": "August 31, 2026",
+        "news.sourceLabel": "Source",
+        "news.readMore": "Read the source",
+        "footer.tagline1": "AI Tech School. Founded by Alex Monteiro.",
+        "footer.tagline2": "Pure HTML, CSS & JS. No frameworks. No tracking.",
+        items: [
+          { date: "Aug 28, 2026", title: "Claude Code adds model-switch hooks, live Remote Control streaming, and a spend limit bar", summary: "Version 2.1.251 introduced PreModelSwitch/PostModelSwitch hook events, live streaming of subagent tool calls to Remote Control clients, and a spend limit bar in /usage.", source: "Releasebot — Claude Code changelog", url: "https://releasebot.io/updates/anthropic/claude-code" },
+          { date: "Aug 26, 2026", title: "Salesforce and Anthropic announce \"Claudeforce\"", summary: "An expanded strategic partnership bringing Claude's intelligence directly into Salesforce's CRM products.", source: "Salesforce Newsroom", url: "https://www.salesforce.com/news/press-releases/2026/08/26/salesforce-and-anthropic-announce-claudeforce/" },
+          { date: "Aug 16, 2026", title: "Major outage affected Claude.ai, Claude Code, and Claude Cowork", summary: "Anthropic confirmed an incident causing sign-in problems, failed loads, and incomplete requests across multiple Claude products.", source: "BleepingComputer", url: "https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-confirms-claude-is-down-in-major-outage-affecting-multiple-services/" },
+          { date: "Aug 14, 2026", title: "Claude Code's auto mode turned on by default", summary: "Pro, Max, and Team accounts now default to auto mode, letting Claude Code carry out more of a task before asking for a check-in.", source: "TechCrunch", url: "https://techcrunch.com/2026/08/09/anthropic-is-turning-claude-codes-auto-mode-on-by-default/" },
+          { date: "Aug 11, 2026", title: "Anthropic to watermark all Claude outputs worldwide", summary: "Machine-readable watermarking, added to meet EU AI Act transparency rules, now applies globally to Claude's generated text and files.", source: "Euronews", url: "https://www.euronews.com/next/2026/08/11/eu-compliance-delivered-globally-anthropic-to-watermark-claudes-output-worldwide" },
+          { date: "Aug 2026", title: "Claude Sonnet 5 introduced as the new default model", summary: "Ships with a native 1M-token context window, alongside continued performance and startup-time improvements across Claude Code.", source: "Releasebot — Claude changelog", url: "https://releasebot.io/updates/anthropic/claude" },
+          { date: "Aug 2026", title: "Claude for K-12 Academy expanded with free AI-fluency content", summary: "New courses, guides, and classroom workflows aimed at teachers, coaches, and district teams adopting AI in schools.", source: "Anthropic Newsroom", url: "https://www.anthropic.com/news" }
+        ]
+      },
+      pt: {
+        "nav.paths": "Trilhas de Habilidade", "nav.howItWorks": "Como Funciona", "nav.news": "Notícias de IA", "nav.founder": "Fundador", "nav.cta": "Começar a Aprender",
+        "breadcrumb.home": "Início",
+        "page.breadcrumbCurrent": "Notícias de IA",
+        "page.eyebrow": "— Instantâneo selecionado",
+        "page.h1": "Notícias recentes do Claude e do ecossistema de IA",
+        "page.lede": "Isto é um instantâneo selecionado à mão e datado — não é um feed ao vivo. A ATS não tem backend e não faz chamadas externas em seu nome, então esta lista é atualizada manualmente e não se atualiza sozinha. Clique para ir à fonte original e ler a matéria completa.",
+        "page.snapshotLabel": "Instantâneo feito em",
+        "page.snapshotDate": "31 de agosto de 2026",
+        "news.sourceLabel": "Fonte",
+        "news.readMore": "Ler na fonte",
+        "footer.tagline1": "AI Tech School. Fundada por Alex Monteiro.",
+        "footer.tagline2": "HTML, CSS e JS puros. Sem frameworks. Sem rastreamento.",
+        items: [
+          { date: "28 de ago. de 2026", title: "Claude Code adiciona hooks de troca de modelo, streaming ao vivo no Remote Control e uma barra de limite de gastos", summary: "A versão 2.1.251 trouxe os eventos de hook PreModelSwitch/PostModelSwitch, streaming ao vivo das chamadas de ferramentas de subagentes para clientes do Remote Control, e uma barra de limite de gastos no /usage.", source: "Releasebot — changelog do Claude Code", url: "https://releasebot.io/updates/anthropic/claude-code" },
+          { date: "26 de ago. de 2026", title: "Salesforce e Anthropic anunciam a \"Claudeforce\"", summary: "Uma parceria estratégica ampliada que leva a inteligência do Claude diretamente para os produtos de CRM da Salesforce.", source: "Sala de imprensa da Salesforce", url: "https://www.salesforce.com/news/press-releases/2026/08/26/salesforce-and-anthropic-announce-claudeforce/" },
+          { date: "16 de ago. de 2026", title: "Grande instabilidade afetou o Claude.ai, o Claude Code e o Claude Cowork", summary: "A Anthropic confirmou um incidente que causou problemas de login, falhas de carregamento e pedidos incompletos em vários produtos do Claude.", source: "BleepingComputer", url: "https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-confirms-claude-is-down-in-major-outage-affecting-multiple-services/" },
+          { date: "14 de ago. de 2026", title: "O modo automático do Claude Code passou a vir ativado por padrão", summary: "Contas Pro, Max e Team agora usam o modo automático por padrão, permitindo que o Claude Code realize mais partes de uma tarefa antes de pedir uma checagem.", source: "TechCrunch", url: "https://techcrunch.com/2026/08/09/anthropic-is-turning-claude-codes-auto-mode-on-by-default/" },
+          { date: "11 de ago. de 2026", title: "Anthropic vai marcar com marca d'água todas as saídas do Claude no mundo todo", summary: "Marcação legível por máquina, adicionada para cumprir as regras de transparência do AI Act da UE, agora se aplica globalmente aos textos e arquivos gerados pelo Claude.", source: "Euronews", url: "https://www.euronews.com/next/2026/08/11/eu-compliance-delivered-globally-anthropic-to-watermark-claudes-output-worldwide" },
+          { date: "ago. de 2026", title: "Claude Sonnet 5 é apresentado como o novo modelo padrão", summary: "Vem com uma janela de contexto nativa de 1 milhão de tokens, além de melhorias contínuas de desempenho e tempo de inicialização no Claude Code.", source: "Releasebot — changelog do Claude", url: "https://releasebot.io/updates/anthropic/claude" },
+          { date: "ago. de 2026", title: "Claude for K-12 Academy é ampliada com conteúdo gratuito de fluência em IA", summary: "Novos cursos, guias e fluxos de trabalho para sala de aula voltados a professores, coordenadores e equipes de redes escolares que estão adotando IA.", source: "Sala de imprensa da Anthropic", url: "https://www.anthropic.com/news" }
+        ]
+      },
+      es: {
+        "nav.paths": "Rutas de Habilidad", "nav.howItWorks": "Cómo Funciona", "nav.news": "Noticias de IA", "nav.founder": "Fundador", "nav.cta": "Empezar a Aprender",
+        "breadcrumb.home": "Inicio",
+        "page.breadcrumbCurrent": "Noticias de IA",
+        "page.eyebrow": "— Resumen curado",
+        "page.h1": "Noticias recientes de Claude y del ecosistema de IA",
+        "page.lede": "Esto es un resumen curado a mano y con fecha — no es un feed en vivo. ATS no tiene backend y no hace llamadas externas en tu nombre, así que esta lista se actualiza manualmente y no se refresca sola. Haz clic para ir a la fuente original y leer la nota completa.",
+        "page.snapshotLabel": "Resumen tomado el",
+        "page.snapshotDate": "31 de agosto de 2026",
+        "news.sourceLabel": "Fuente",
+        "news.readMore": "Leer en la fuente",
+        "footer.tagline1": "AI Tech School. Fundada por Alex Monteiro.",
+        "footer.tagline2": "HTML, CSS y JS puros. Sin frameworks. Sin rastreo.",
+        items: [
+          { date: "28 ago. 2026", title: "Claude Code agrega hooks de cambio de modelo, streaming en vivo en Remote Control y una barra de límite de gasto", summary: "La versión 2.1.251 introdujo los eventos de hook PreModelSwitch/PostModelSwitch, streaming en vivo de las llamadas a herramientas de subagentes hacia clientes de Remote Control, y una barra de límite de gasto en /usage.", source: "Releasebot — changelog de Claude Code", url: "https://releasebot.io/updates/anthropic/claude-code" },
+          { date: "26 ago. 2026", title: "Salesforce y Anthropic anuncian \"Claudeforce\"", summary: "Una alianza estratégica ampliada que lleva la inteligencia de Claude directamente a los productos de CRM de Salesforce.", source: "Sala de prensa de Salesforce", url: "https://www.salesforce.com/news/press-releases/2026/08/26/salesforce-and-anthropic-announce-claudeforce/" },
+          { date: "16 ago. 2026", title: "Una gran interrupción afectó a Claude.ai, Claude Code y Claude Cowork", summary: "Anthropic confirmó un incidente que causó problemas para iniciar sesión, fallas de carga y solicitudes incompletas en varios productos de Claude.", source: "BleepingComputer", url: "https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-confirms-claude-is-down-in-major-outage-affecting-multiple-services/" },
+          { date: "14 ago. 2026", title: "El modo automático de Claude Code ahora viene activado por defecto", summary: "Las cuentas Pro, Max y Team ahora usan el modo automático por defecto, permitiendo que Claude Code realice más partes de una tarea antes de pedir una revisión.", source: "TechCrunch", url: "https://techcrunch.com/2026/08/09/anthropic-is-turning-claude-codes-auto-mode-on-by-default/" },
+          { date: "11 ago. 2026", title: "Anthropic marcará con marca de agua todas las salidas de Claude en todo el mundo", summary: "El marcado legible por máquina, agregado para cumplir las reglas de transparencia de la Ley de IA de la UE, ahora se aplica globalmente a los textos y archivos generados por Claude.", source: "Euronews", url: "https://www.euronews.com/next/2026/08/11/eu-compliance-delivered-globally-anthropic-to-watermark-claudes-output-worldwide" },
+          { date: "ago. 2026", title: "Claude Sonnet 5 se presenta como el nuevo modelo predeterminado", summary: "Viene con una ventana de contexto nativa de 1 millón de tokens, junto con mejoras continuas de rendimiento y tiempo de inicio en Claude Code.", source: "Releasebot — changelog de Claude", url: "https://releasebot.io/updates/anthropic/claude" },
+          { date: "ago. 2026", title: "Claude for K-12 Academy se amplía con contenido gratuito de alfabetización en IA", summary: "Nuevos cursos, guías y flujos de trabajo de aula dirigidos a docentes, coordinadores y equipos de distritos escolares que están adoptando IA.", source: "Sala de prensa de Anthropic", url: "https://www.anthropic.com/news" }
+        ]
+      }
+    };
+
+    function renderNews(lang) {
+      var data = PAGE_I18N[lang] || PAGE_I18N.en;
+      var list = document.getElementById("news-list");
+      list.innerHTML = "";
+
+      data.items.forEach(function (item) {
+        var card = document.createElement("article");
+        card.className = "feature-card";
+
+        var dateEl = document.createElement("p");
+        dateEl.className = "path-block-label";
+        dateEl.textContent = item.date;
+
+        var titleEl = document.createElement("h3");
+        titleEl.style.marginTop = "4px";
+        titleEl.textContent = item.title;
+
+        var summaryEl = document.createElement("p");
+        summaryEl.textContent = item.summary;
+        summaryEl.style.marginBottom = "12px";
+
+        var linkEl = document.createElement("a");
+        linkEl.href = item.url;
+        linkEl.target = "_blank";
+        linkEl.rel = "noopener noreferrer";
+        linkEl.className = "path-cta";
+        linkEl.innerHTML =
+          "<span>" + (data["news.readMore"]) + " — " + item.source + "</span>" +
+          '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+        card.appendChild(dateEl);
+        card.appendChild(titleEl);
+        card.appendChild(summaryEl);
+        card.appendChild(linkEl);
+        list.appendChild(card);
+      });
+    }
+
+    window.ATS.i18n.init(PAGE_I18N, renderNews);
+  })();
+</script>
+</body>
+</html>

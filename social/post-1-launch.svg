@@ -1,0 +1,47 @@
+<svg viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" role="img" aria-labelledby="title desc">
+  <title id="title">AI Tech School — Launch Announcement</title>
+  <desc id="desc">Instagram launch post: AI Tech School logo and tagline, learn to build with AI, three skill paths, nine lessons, in English, Portuguese and Spanish.</desc>
+
+  <defs>
+    <linearGradient id="brandGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="38%" r="55%">
+      <stop offset="0%" stop-color="#26193f"/>
+      <stop offset="100%" stop-color="#0a0c12"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1080" height="1080" fill="url(#glow)"/>
+
+  <!-- Eyebrow -->
+  <text x="540" y="270" text-anchor="middle" fill="#3b82f6" font-size="26" font-weight="700" letter-spacing="3">NEW PLATFORM</text>
+
+  <!-- Logo mark -->
+  <rect x="470" y="330" width="140" height="140" rx="32" fill="url(#brandGradient)"/>
+  <g transform="translate(486,346) scale(4.5)">
+    <path d="M8 4 3 12l5 8M16 4l5 8-5 8" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="540" y="560" text-anchor="middle" fill="#f4f6fb" font-size="76" font-weight="800" letter-spacing="1">AI TECH SCHOOL</text>
+
+  <!-- Tagline -->
+  <text x="540" y="630" text-anchor="middle" fill="#9aa3b8" font-size="32" font-weight="500">Learn to build with AI, not just use it.</text>
+
+  <!-- Stat pills -->
+  <g font-size="24" font-weight="700" fill="#f4f6fb">
+    <rect x="150" y="720" width="230" height="66" rx="33" fill="#161a26" stroke="#262c3d" stroke-width="2"/>
+    <text x="265" y="762" text-anchor="middle">3 skill paths</text>
+
+    <rect x="415" y="720" width="250" height="66" rx="33" fill="#161a26" stroke="#262c3d" stroke-width="2"/>
+    <text x="540" y="762" text-anchor="middle">9 lessons</text>
+
+    <rect x="700" y="720" width="230" height="66" rx="33" fill="#161a26" stroke="#262c3d" stroke-width="2"/>
+    <text x="815" y="762" text-anchor="middle">EN · PT · ES</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="540" y="960" text-anchor="middle" fill="#656d82" font-size="26" font-weight="600" letter-spacing="1">LINK IN BIO</text>
+</svg>

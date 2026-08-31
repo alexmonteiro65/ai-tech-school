@@ -1,0 +1,51 @@
+<svg viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" role="img" aria-labelledby="title desc">
+  <title id="title">What is Claude AI — simple explanation</title>
+  <desc id="desc">Instagram post explaining Claude in plain language: an AI model that reads and writes, reasons step by step, and does not know live data unless connected to a tool.</desc>
+
+  <defs>
+    <radialGradient id="glowWC" cx="50%" cy="10%" r="70%">
+      <stop offset="0%" stop-color="#1c1533"/>
+      <stop offset="100%" stop-color="#0a0c12"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1080" height="1080" fill="url(#glowWC)"/>
+
+  <text x="540" y="120" text-anchor="middle" fill="#3b82f6" font-size="26" font-weight="700" letter-spacing="3">VISUAL EXPLAINER</text>
+  <text x="540" y="185" text-anchor="middle" fill="#f4f6fb" font-size="52" font-weight="800">What is Claude, really?</text>
+
+  <g fill="#9aa3b8" font-size="27" text-anchor="middle">
+    <text x="540" y="235">An AI model that reads what you give it and writes</text>
+    <text x="540" y="270">an original, reasoned response — not a search engine.</text>
+  </g>
+
+  <!-- Fact 1 -->
+  <g>
+    <rect x="90" y="330" width="900" height="180" rx="24" fill="#161a26" stroke="#262c3d" stroke-width="2"/>
+    <circle cx="180" cy="420" r="42" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="2"/>
+    <path d="M 165 420 h 30 M 165 408 h 30 M 165 432 h 20" stroke="#3b82f6" stroke-width="3" stroke-linecap="round" transform="translate(0,-12)"/>
+    <text x="250" y="410" fill="#f4f6fb" font-size="30" font-weight="800">Reads &amp; writes in plain language</text>
+    <text x="250" y="448" fill="#9aa3b8" font-size="23">Emails, code, plans, explanations — whatever you need written.</text>
+  </g>
+
+  <!-- Fact 2 -->
+  <g>
+    <rect x="90" y="530" width="900" height="180" rx="24" fill="#161a26" stroke="#262c3d" stroke-width="2"/>
+    <circle cx="180" cy="620" r="42" fill="#8b5cf6" fill-opacity="0.15" stroke="#8b5cf6" stroke-width="2"/>
+    <path d="M 165 608 l 15 12 l -15 12 M 195 632 h -12" stroke="#8b5cf6" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="250" y="610" fill="#f4f6fb" font-size="30" font-weight="800">Reasons step by step</text>
+    <text x="250" y="648" fill="#9aa3b8" font-size="23">Works through a problem with you, not just a one-shot answer.</text>
+  </g>
+
+  <!-- Fact 3 -->
+  <g>
+    <rect x="90" y="730" width="900" height="180" rx="24" fill="#161a26" stroke="#f87171" stroke-opacity="0.5" stroke-width="2"/>
+    <rect x="90" y="730" width="900" height="180" rx="24" fill="#f87171" fill-opacity="0.05"/>
+    <circle cx="180" cy="820" r="42" fill="#f87171" fill-opacity="0.15" stroke="#f87171" stroke-width="2"/>
+    <text x="180" y="833" text-anchor="middle" fill="#f87171" font-size="34" font-weight="800">!</text>
+    <text x="250" y="810" fill="#f4f6fb" font-size="30" font-weight="800">Doesn't know live data on its own</text>
+    <text x="250" y="848" fill="#9aa3b8" font-size="23">Needs a connected tool to check today's news, prices, or events.</text>
+  </g>
+
+  <text x="540" y="1010" text-anchor="middle" fill="#656d82" font-size="26" font-weight="700" letter-spacing="1">AI TECH SCHOOL</text>
+</svg>

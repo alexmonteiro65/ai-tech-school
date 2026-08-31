@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lesson 2: Your First MCP Connector — Intermediate Path — AI Tech School</title>
+<meta name="description" content="What MCP servers, tools, and clients actually are, and what changes once GitHub is connected." />
+<link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body style="--card-color: var(--path-intermediate);">
+
+<a class="visually-hidden" href="#main-content">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../../index.html">
+      <span class="brand-mark" aria-hidden="true">
+        <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M8 4 3 12l5 8M16 4l5 8-5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span>AI Tech School</span>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="../../index.html#why" data-i18n="nav.why">Why ATS</a>
+      <a href="../../index.html#paths" aria-current="page" data-i18n="nav.paths">Skill Paths</a>
+      <a href="../../how-claude-code-works.html" data-i18n="nav.howItWorks">How It Works</a>
+      <a href="../../ai-news.html" data-i18n="nav.news">AI News</a>
+      <a href="../../index.html#founder" data-i18n="nav.founder">Founder</a>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-switcher" role="group" aria-label="Language">
+        <button type="button" class="lang-btn" data-lang-btn="en">EN</button>
+        <button type="button" class="lang-btn" data-lang-btn="pt">PT</button>
+        <button type="button" class="lang-btn" data-lang-btn="es">ES</button>
+      </div>
+      <a class="btn btn-ghost btn-sm header-cta" href="index.html" data-i18n="page.pathName">Intermediate Path</a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="mobile-nav" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav id="mobile-nav" class="mobile-nav" data-mobile-nav aria-label="Mobile">
+  <a href="../../index.html#why" data-i18n="nav.why">Why ATS</a>
+  <a href="../../index.html#paths" data-i18n="nav.paths">Skill Paths</a>
+      <a href="../../how-claude-code-works.html" data-i18n="nav.howItWorks">How It Works</a>
+      <a href="../../ai-news.html" data-i18n="nav.news">AI News</a>
+  <a href="../../index.html#founder" data-i18n="nav.founder">Founder</a>
+</nav>
+
+<main id="main-content">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html" data-i18n="breadcrumb.home">Home</a>
+      <span class="sep">/</span>
+      <a href="index.html" data-i18n="page.pathName">Intermediate Path</a>
+      <span class="sep">/</span>
+      <span class="current"><span data-i18n="breadcrumb.lessonWord">Lesson</span> 2</span>
+    </nav>
+  </div>
+
+  <header class="container lesson-header">
+    <div class="lesson-header-top">
+      <span class="path-tag" data-i18n="page.tagLine">Intermediate &middot; Lesson 2 of 3</span>
+      <span class="lesson-duration">
+        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <span data-i18n="page.duration">~15 minutes</span>
+      </span>
+    </div>
+    <h1 data-i18n="page.title">Your first MCP connector — connecting GitHub</h1>
+    <p class="lede" data-i18n="page.lede">MCP is what turns Claude from "an assistant who talks about your work" into "an assistant who can act on it."</p>
+  </header>
+
+  <section class="lesson-section container">
+    <div class="lesson-section-label">
+      <span class="step-num">1</span>
+      <h2 data-i18n="section.explanation">Explanation</h2>
+    </div>
+    <div class="lesson-body">
+      <p data-i18n-html="body.p1">
+        <strong>MCP (Model Context Protocol)</strong> is an open standard that
+        lets Claude connect to external tools and data sources — like
+        GitHub, Google Drive, or a database — in a consistent way.
+      </p>
+      <p data-i18n-html="body.p2">
+        Without MCP, Claude only knows what's in the conversation. With MCP,
+        Claude can look things up and take real actions through
+        <strong>MCP servers</strong>.
+      </p>
+
+      <h3 data-i18n="body.h3vocab">Key vocabulary</h3>
+      <ul>
+        <li data-i18n-html="body.v1"><strong>MCP Server</strong> — the connector itself, e.g. a "GitHub MCP server"</li>
+        <li data-i18n-html="body.v2"><strong>Tool</strong> — a specific action a server exposes, e.g. "create a pull request"</li>
+        <li data-i18n-html="body.v3"><strong>Client</strong> — the app using the server, e.g. Claude Code</li>
+      </ul>
+
+      <div class="callout" data-i18n-html="body.callout">
+        <strong>What connecting GitHub actually changes:</strong> Claude goes
+        from an assistant who talks about your repository to one that can
+        read issues, search code, and open pull requests — always with your
+        visibility into what it's doing.
+      </div>
+    </div>
+  </section>
+
+  <section class="lesson-section container">
+    <div class="lesson-section-label">
+      <span class="step-num">2</span>
+      <h2 data-i18n="section.practice">Try it yourself</h2>
+    </div>
+    <div class="exercise-box">
+      <p class="exercise-intro" data-i18n="exercise.intro">Match each MCP term to its correct definition.</p>
+      <div id="exercise"></div>
+    </div>
+  </section>
+
+  <section class="lesson-section container">
+    <div class="lesson-section-label">
+      <span class="step-num">3</span>
+      <h2 data-i18n="section.quiz">Check your understanding</h2>
+    </div>
+    <div id="quiz" class="quiz"></div>
+  </section>
+
+  <section class="lesson-section container">
+    <div class="lesson-section-label">
+      <span class="step-num">4</span>
+      <h2 data-i18n="section.complete">Lesson complete</h2>
+    </div>
+    <div class="badge-card" id="badge" hidden>
+      <div class="badge-icon" aria-hidden="true">
+        <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <p class="badge-eyebrow" data-i18n="badge.eyebrow">Lesson complete</p>
+        <p class="badge-title" data-i18n="badge.title">MCP Basics</p>
+        <p class="badge-desc" data-i18n="badge.desc">You understand what MCP servers, tools, and clients are, and what a real connector unlocks.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="container lesson-nav">
+    <a class="btn btn-ghost" href="lesson-1.html" data-i18n="nav.back">Back: What is Claude Code</a>
+    <a class="btn btn-primary" href="lesson-3.html" data-i18n="nav.next">Next: Your first automated task</a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <a class="brand" href="../../index.html">
+        <span class="brand-mark" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M8 4 3 12l5 8M16 4l5 8-5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span>AI Tech School</span>
+      </a>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="../../index.html#why" data-i18n="nav.why">Why ATS</a>
+      <a href="../../index.html#paths" data-i18n="nav.paths">Skill Paths</a>
+      <a href="../../how-claude-code-works.html" data-i18n="nav.howItWorks">How It Works</a>
+      <a href="../../ai-news.html" data-i18n="nav.news">AI News</a>
+      <a href="../../index.html#founder" data-i18n="nav.founder">Founder</a>
+      <a href="https://instagram.com/ai.tech.school" target="_blank" rel="noopener noreferrer">Instagram — @ai.tech.school</a>
+    </nav>
+  </div>
+  <div class="container footer-bottom">
+    <span>&copy; <span data-year>2026</span> <span data-i18n="footer.tagline1">AI Tech School. Founded by Alex Monteiro.</span></span>
+    <span data-i18n="footer.tagline2">Pure HTML, CSS &amp; JS. No frameworks. No tracking.</span>
+  </div>
+</footer>
+
+<script src="../../js/lesson.js"></script>
+<script src="../../js/i18n.js"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/guide.js"></script>
+<script>
+  (function () {
+    "use strict";
+
+    var LESSON_ID = "intermediate-2";
+
+    var PAGE_I18N = {
+      en: {
+        "nav.why": "Why ATS", "nav.paths": "Skill Paths", "nav.howItWorks": "How It Works", "nav.news": "AI News", "nav.founder": "Founder",
+        "breadcrumb.home": "Home", "breadcrumb.lessonWord": "Lesson",
+        "page.pathName": "Intermediate Path",
+        "page.tagLine": "Intermediate · Lesson 2 of 3",
+        "page.duration": "~15 minutes",
+        "page.title": "Your first MCP connector — connecting GitHub",
+        "page.lede": "MCP is what turns Claude from “an assistant who talks about your work” into “an assistant who can act on it.”",
+        "section.explanation": "Explanation", "section.practice": "Try it yourself", "section.quiz": "Check your understanding", "section.complete": "Lesson complete",
+        "body.p1": "<strong>MCP (Model Context Protocol)</strong> is an open standard that lets Claude connect to external tools and data sources — like GitHub, Google Drive, or a database — in a consistent way.",
+        "body.p2": "Without MCP, Claude only knows what's in the conversation. With MCP, Claude can look things up and take real actions through <strong>MCP servers</strong>.",
+        "body.h3vocab": "Key vocabulary",
+        "body.v1": "<strong>MCP Server</strong> — the connector itself, e.g. a \"GitHub MCP server\"",
+        "body.v2": "<strong>Tool</strong> — a specific action a server exposes, e.g. \"create a pull request\"",
+        "body.v3": "<strong>Client</strong> — the app using the server, e.g. Claude Code",
+        "body.callout": "<strong>What connecting GitHub actually changes:</strong> Claude goes from an assistant who talks about your repository to one that can read issues, search code, and open pull requests — always with your visibility into what it's doing.",
+        "exercise.intro": "Match each MCP term to its correct definition.",
+        "badge.eyebrow": "Lesson complete",
+        "badge.title": "MCP Basics",
+        "badge.desc": "You understand what MCP servers, tools, and clients are, and what a real connector unlocks.",
+        "nav.back": "Back: What is Claude Code",
+        "nav.next": "Next: Your first automated task",
+        "footer.tagline1": "AI Tech School. Founded by Alex Monteiro.",
+        "footer.tagline2": "Pure HTML, CSS & JS. No frameworks. No tracking.",
+        items: [
+          { text: "MCP Server", correct: "The connector itself, e.g. a GitHub connector" },
+          { text: "Tool", correct: "A specific action a server exposes, like creating a pull request" },
+          { text: "Client", correct: "The app using the server, like Claude Code" },
+          { text: "Resource", correct: "Data a server exposes for Claude to read, like a file or issue" }
+        ],
+        pool: ["The connector itself, e.g. a GitHub connector", "A specific action a server exposes, like creating a pull request", "The app using the server, like Claude Code", "Data a server exposes for Claude to read, like a file or issue"],
+        quiz: [
+          { text: "What problem does MCP solve?", options: ["It makes Claude faster", "It gives Claude a standard way to connect to real tools and data", "It replaces the need for prompts", "It's a new programming language"], correctIndex: 1, explain: "MCP is a protocol — a consistent way for Claude to reach external tools and data instead of a one-off integration per tool." },
+          { text: "In MCP, what is a Tool?", options: ["The app using Claude", "A specific action a server exposes, like \"create a pull request\"", "The AI model itself", "A type of prompt"], correctIndex: 1, explain: "A Tool is one concrete action the MCP server makes available — the Client is the app, the Server is the connector." },
+          { text: "After connecting the GitHub MCP server, what changes?", options: ["Nothing, it's cosmetic", "Claude can take real actions on your repo, like opening pull requests", "GitHub is deleted", "You lose access to your code"], correctIndex: 1, explain: "Claude moves from discussing your repo to acting on it — reading issues, searching code, opening pull requests." }
+        ]
+      },
+      pt: {
+        "nav.why": "Por que a ATS", "nav.paths": "Trilhas de Habilidade", "nav.howItWorks": "Como Funciona", "nav.news": "Notícias de IA", "nav.founder": "Fundador",
+        "breadcrumb.home": "Início", "breadcrumb.lessonWord": "Aula",
+        "page.pathName": "Trilha Intermediária",
+        "page.tagLine": "Intermediário · Aula 2 de 3",
+        "page.duration": "~15 minutos",
+        "page.title": "Seu primeiro conector MCP — conectando o GitHub",
+        "page.lede": "O MCP é o que transforma o Claude de “um assistente que fala sobre o seu trabalho” em “um assistente que pode agir sobre ele”.",
+        "section.explanation": "Explicação", "section.practice": "Mão na massa", "section.quiz": "Verifique seu entendimento", "section.complete": "Aula concluída",
+        "body.p1": "<strong>MCP (Model Context Protocol)</strong> é um padrão aberto que permite ao Claude se conectar a ferramentas e fontes de dados externas — como GitHub, Google Drive ou um banco de dados — de forma consistente.",
+        "body.p2": "Sem o MCP, o Claude só sabe o que está na conversa. Com o MCP, o Claude consegue consultar informações e realizar ações reais por meio de <strong>servidores MCP</strong>.",
+        "body.h3vocab": "Vocabulário essencial",
+        "body.v1": "<strong>Servidor MCP</strong> — o conector em si, por exemplo um \"servidor MCP do GitHub\"",
+        "body.v2": "<strong>Ferramenta (Tool)</strong> — uma ação específica que um servidor disponibiliza, por exemplo \"criar um pull request\"",
+        "body.v3": "<strong>Cliente</strong> — o aplicativo que usa o servidor, por exemplo o Claude Code",
+        "body.callout": "<strong>O que realmente muda ao conectar o GitHub:</strong> o Claude passa de um assistente que fala sobre o seu repositório para um que consegue ler issues, buscar código e abrir pull requests — sempre com total visibilidade do que ele está fazendo.",
+        "exercise.intro": "Combine cada termo do MCP com sua definição correta.",
+        "badge.eyebrow": "Aula concluída",
+        "badge.title": "Fundamentos de MCP",
+        "badge.desc": "Você entende o que são servidores, ferramentas e clientes MCP, e o que um conector de verdade desbloqueia.",
+        "nav.back": "Voltar: O que é o Claude Code",
+        "nav.next": "Próxima: Sua primeira tarefa automatizada",
+        "footer.tagline1": "AI Tech School. Fundada por Alex Monteiro.",
+        "footer.tagline2": "HTML, CSS e JS puros. Sem frameworks. Sem rastreamento.",
+        items: [
+          { text: "Servidor MCP", correct: "O conector em si, por exemplo um conector do GitHub" },
+          { text: "Ferramenta (Tool)", correct: "Uma ação específica que um servidor disponibiliza, como criar um pull request" },
+          { text: "Cliente", correct: "O aplicativo que usa o servidor, como o Claude Code" },
+          { text: "Recurso (Resource)", correct: "Dados que um servidor disponibiliza para o Claude ler, como um arquivo ou uma issue" }
+        ],
+        pool: ["O conector em si, por exemplo um conector do GitHub", "Uma ação específica que um servidor disponibiliza, como criar um pull request", "O aplicativo que usa o servidor, como o Claude Code", "Dados que um servidor disponibiliza para o Claude ler, como um arquivo ou uma issue"],
+        quiz: [
+          { text: "Qual problema o MCP resolve?", options: ["Deixa o Claude mais rápido", "Dá ao Claude uma forma padronizada de se conectar a ferramentas e dados reais", "Elimina a necessidade de prompts", "É uma nova linguagem de programação"], correctIndex: 1, explain: "O MCP é um protocolo — uma forma consistente de o Claude acessar ferramentas e dados externos, em vez de uma integração personalizada para cada ferramenta." },
+          { text: "No MCP, o que é uma Ferramenta (Tool)?", options: ["O aplicativo que usa o Claude", "Uma ação específica que um servidor disponibiliza, como \"criar um pull request\"", "O próprio modelo de IA", "Um tipo de prompt"], correctIndex: 1, explain: "Uma Ferramenta é uma ação concreta que o servidor MCP disponibiliza — o Cliente é o aplicativo, o Servidor é o conector." },
+          { text: "Depois de conectar o servidor MCP do GitHub, o que muda?", options: ["Nada, é só estético", "O Claude consegue realizar ações reais no seu repositório, como abrir pull requests", "O GitHub é apagado", "Você perde o acesso ao seu código"], correctIndex: 1, explain: "O Claude passa de discutir sobre o seu repositório para agir sobre ele — lendo issues, buscando código, abrindo pull requests." }
+        ]
+      },
+      es: {
+        "nav.why": "Por qué ATS", "nav.paths": "Rutas de Habilidad", "nav.howItWorks": "Cómo Funciona", "nav.news": "Noticias de IA", "nav.founder": "Fundador",
+        "breadcrumb.home": "Inicio", "breadcrumb.lessonWord": "Lección",
+        "page.pathName": "Ruta Intermedia",
+        "page.tagLine": "Intermedio · Lección 2 de 3",
+        "page.duration": "~15 minutos",
+        "page.title": "Tu primer conector MCP — conectando GitHub",
+        "page.lede": "MCP es lo que convierte a Claude de “un asistente que habla sobre tu trabajo” en “un asistente que puede actuar sobre él”.",
+        "section.explanation": "Explicación", "section.practice": "Manos a la obra", "section.quiz": "Verifica tu comprensión", "section.complete": "Lección completa",
+        "body.p1": "<strong>MCP (Model Context Protocol)</strong> es un estándar abierto que permite a Claude conectarse a herramientas y fuentes de datos externas — como GitHub, Google Drive o una base de datos — de forma consistente.",
+        "body.p2": "Sin MCP, Claude solo sabe lo que hay en la conversación. Con MCP, Claude puede consultar información y realizar acciones reales a través de <strong>servidores MCP</strong>.",
+        "body.h3vocab": "Vocabulario clave",
+        "body.v1": "<strong>Servidor MCP</strong> — el conector en sí, por ejemplo un \"servidor MCP de GitHub\"",
+        "body.v2": "<strong>Herramienta (Tool)</strong> — una acción específica que un servidor expone, por ejemplo \"crear un pull request\"",
+        "body.v3": "<strong>Cliente</strong> — la app que usa el servidor, por ejemplo Claude Code",
+        "body.callout": "<strong>Qué cambia realmente al conectar GitHub:</strong> Claude pasa de ser un asistente que habla sobre tu repositorio a uno que puede leer issues, buscar código y abrir pull requests — siempre con total visibilidad de lo que está haciendo.",
+        "exercise.intro": "Relaciona cada término de MCP con su definición correcta.",
+        "badge.eyebrow": "Lección completa",
+        "badge.title": "Fundamentos de MCP",
+        "badge.desc": "Entiendes qué son los servidores, herramientas y clientes de MCP, y qué desbloquea un conector real.",
+        "nav.back": "Volver: Qué es Claude Code",
+        "nav.next": "Siguiente: Tu primera tarea automatizada",
+        "footer.tagline1": "AI Tech School. Fundada por Alex Monteiro.",
+        "footer.tagline2": "HTML, CSS y JS puros. Sin frameworks. Sin rastreo.",
+        items: [
+          { text: "Servidor MCP", correct: "El conector en sí, por ejemplo un conector de GitHub" },
+          { text: "Herramienta (Tool)", correct: "Una acción específica que un servidor expone, como crear un pull request" },
+          { text: "Cliente", correct: "La app que usa el servidor, como Claude Code" },
+          { text: "Recurso (Resource)", correct: "Datos que un servidor expone para que Claude los lea, como un archivo o una issue" }
+        ],
+        pool: ["El conector en sí, por ejemplo un conector de GitHub", "Una acción específica que un servidor expone, como crear un pull request", "La app que usa el servidor, como Claude Code", "Datos que un servidor expone para que Claude los lea, como un archivo o una issue"],
+        quiz: [
+          { text: "¿Qué problema resuelve MCP?", options: ["Hace que Claude sea más rápido", "Le da a Claude una forma estándar de conectarse a herramientas y datos reales", "Elimina la necesidad de prompts", "Es un nuevo lenguaje de programación"], correctIndex: 1, explain: "MCP es un protocolo — una forma consistente de que Claude acceda a herramientas y datos externos, en lugar de una integración distinta por cada herramienta." },
+          { text: "En MCP, ¿qué es una Herramienta (Tool)?", options: ["La app que usa Claude", "Una acción específica que un servidor expone, como \"crear un pull request\"", "El propio modelo de IA", "Un tipo de prompt"], correctIndex: 1, explain: "Una Herramienta es una acción concreta que el servidor MCP pone a disposición — el Cliente es la app, el Servidor es el conector." },
+          { text: "Después de conectar el servidor MCP de GitHub, ¿qué cambia?", options: ["Nada, es solo estético", "Claude puede realizar acciones reales en tu repositorio, como abrir pull requests", "Se elimina GitHub", "Pierdes el acceso a tu código"], correctIndex: 1, explain: "Claude pasa de hablar sobre tu repositorio a actuar sobre él — leyendo issues, buscando código, abriendo pull requests." }
+        ]
+      }
+    };
+
+    function renderDynamic(lang) {
+      var data = PAGE_I18N[lang] || PAGE_I18N.en;
+      var ui = window.ATS.getUILabels(lang);
+
+      document.getElementById("exercise").innerHTML = "";
+      window.ATS.initMatchExercise("#exercise", data.items, data.pool, ui.match);
+
+      document.getElementById("quiz").innerHTML = "";
+      window.ATS.initQuiz("#quiz", data.quiz, ui.quiz, function () {
+        window.ATS.completeLesson(LESSON_ID, "badge");
+      });
+    }
+
+    window.ATS.i18n.init(PAGE_I18N, renderDynamic);
+  })();
+</script>
+</body>
+</html>

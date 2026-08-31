@@ -1,0 +1,117 @@
+<svg viewBox="0 0 1000 1250" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" role="img" aria-labelledby="title desc">
+  <title id="title">The AI Universe</title>
+  <desc id="desc">A layered diagram showing Claude at the center, surrounded by how you reach it (prompts and chat), how software reaches it (the API), how it reaches tools (MCP), the connectors that plug into MCP (GitHub, Slack, Gmail, Notion, Calendar, Composio), and an outer orbit of autonomous agents that use all of the above.</desc>
+
+  <defs>
+    <linearGradient id="claudeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <radialGradient id="bgGlow" cx="50%" cy="46%" r="60%">
+      <stop offset="0%" stop-color="#241a3d"/>
+      <stop offset="100%" stop-color="#0a0c12"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="1000" height="1250" fill="url(#bgGlow)"/>
+
+  <!-- Title -->
+  <text x="500" y="55" text-anchor="middle" fill="#f4f6fb" font-size="34" font-weight="800" letter-spacing="1">THE AI UNIVERSE</text>
+  <text x="500" y="85" text-anchor="middle" fill="#9aa3b8" font-size="17">From talking to Claude, to autonomous agents acting on your behalf</text>
+
+  <!-- ===================== RINGS ===================== -->
+  <g stroke-width="2">
+    <!-- Connectors ring (outermost filled ring) -->
+    <circle cx="500" cy="580" r="340" fill="#38bdf8" fill-opacity="0.07" stroke="#38bdf8" stroke-opacity="0.55"/>
+    <!-- MCP ring -->
+    <circle cx="500" cy="580" r="270" fill="#8b5cf6" fill-opacity="0.10" stroke="#8b5cf6" stroke-opacity="0.6"/>
+    <!-- API ring -->
+    <circle cx="500" cy="580" r="200" fill="#3b82f6" fill-opacity="0.12" stroke="#3b82f6" stroke-opacity="0.65"/>
+    <!-- Prompts & Chat ring -->
+    <circle cx="500" cy="580" r="130" fill="#262c3d" fill-opacity="0.9" stroke="#9aa3b8" stroke-opacity="0.5"/>
+  </g>
+
+  <!-- Agent orbit (dashed, outside all rings) -->
+  <circle cx="500" cy="580" r="390" fill="none" stroke="#c084fc" stroke-width="2.5" stroke-dasharray="3 10" stroke-linecap="round"/>
+
+  <!-- Orbiting agent satellites -->
+  <g>
+    <circle cx="500" cy="190" r="9" fill="#c084fc"/>
+    <circle cx="856" cy="775" r="7" fill="#c084fc" fill-opacity="0.7"/>
+    <circle cx="144" cy="775" r="7" fill="#c084fc" fill-opacity="0.7"/>
+    <!-- loop motion arrow near the top satellite -->
+    <path d="M 458 165 A 44 44 0 0 1 542 165" fill="none" stroke="#c084fc" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arrowHead)"/>
+  </g>
+
+  <defs>
+    <marker id="arrowHead" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#c084fc"/>
+    </marker>
+  </defs>
+
+  <!-- ===================== CLAUDE CORE ===================== -->
+  <circle cx="500" cy="580" r="62" fill="url(#claudeGradient)"/>
+  <text x="500" y="573" text-anchor="middle" fill="#ffffff" font-size="22" font-weight="800">CLAUDE</text>
+  <text x="500" y="595" text-anchor="middle" fill="#ffffff" font-size="12" fill-opacity="0.85">the model</text>
+
+  <!-- ===================== CONNECTOR CHIPS ===================== -->
+  <g font-size="19" font-weight="700" fill="#f4f6fb">
+    <!-- GitHub: top -->
+    <rect x="430" y="220" width="140" height="40" rx="20" fill="#10131c" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="500" y="246" text-anchor="middle">GitHub</text>
+
+    <!-- Slack: upper right -->
+    <rect x="734.4" y="390" width="140" height="40" rx="20" fill="#10131c" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="804.4" y="416" text-anchor="middle">Slack</text>
+
+    <!-- Gmail: lower right -->
+    <rect x="734.4" y="730" width="140" height="40" rx="20" fill="#10131c" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="804.4" y="756" text-anchor="middle">Gmail</text>
+
+    <!-- Notion: bottom -->
+    <rect x="430" y="900" width="140" height="40" rx="20" fill="#10131c" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="500" y="926" text-anchor="middle">Notion</text>
+
+    <!-- Calendar: lower left -->
+    <rect x="125.6" y="730" width="160" height="40" rx="20" fill="#10131c" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="205.6" y="756" text-anchor="middle">Calendar</text>
+
+    <!-- Composio: upper left -->
+    <rect x="125.6" y="390" width="160" height="40" rx="20" fill="#10131c" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="205.6" y="416" text-anchor="middle">Composio</text>
+  </g>
+
+  <!-- ===================== LEGEND ===================== -->
+  <g font-size="16">
+    <!-- column x positions -->
+    <!-- row 1 -->
+    <circle cx="60" cy="1020" r="9" fill="url(#claudeGradient)"/>
+    <text x="80" y="1015" fill="#f4f6fb" font-weight="800" font-size="17">Claude</text>
+    <text x="80" y="1038" fill="#9aa3b8" font-size="14">The model that reasons, writes, and talks with you.</text>
+
+    <circle cx="400" cy="1020" r="9" fill="#9aa3b8"/>
+    <text x="420" y="1015" fill="#f4f6fb" font-weight="800" font-size="17">Prompts &amp; Chat</text>
+    <text x="420" y="1038" fill="#9aa3b8" font-size="14">Talking to Claude directly, one message at a time.</text>
+
+    <circle cx="740" cy="1020" r="9" fill="#3b82f6"/>
+    <text x="760" y="1015" fill="#f4f6fb" font-weight="800" font-size="17">API</text>
+    <text x="760" y="1038" fill="#9aa3b8" font-size="14">How your own software sends requests to Claude.</text>
+
+    <!-- row 2 -->
+    <circle cx="60" cy="1100" r="9" fill="#8b5cf6"/>
+    <text x="80" y="1095" fill="#f4f6fb" font-weight="800" font-size="17">MCP</text>
+    <text x="80" y="1118" fill="#9aa3b8" font-size="14">The standard that lets Claude reach real tools and data.</text>
+
+    <circle cx="400" cy="1100" r="9" fill="#38bdf8"/>
+    <text x="420" y="1095" fill="#f4f6fb" font-weight="800" font-size="17">Connectors</text>
+    <text x="420" y="1118" fill="#9aa3b8" font-size="14">MCP servers for real services, plus</text>
+    <text x="420" y="1136" fill="#9aa3b8" font-size="14">aggregators like Composio or Zapier.</text>
+
+    <circle cx="740" cy="1100" r="9" fill="#c084fc"/>
+    <text x="760" y="1095" fill="#f4f6fb" font-weight="800" font-size="17">Agents</text>
+    <text x="760" y="1118" fill="#9aa3b8" font-size="14">Loops that observe, think, and act on their own.</text>
+  </g>
+
+  <text x="500" y="1200" text-anchor="middle" fill="#656d82" font-size="13">AI Tech School — how the pieces of the AI ecosystem fit together</text>
+</svg>
