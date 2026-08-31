@@ -1,0 +1,58 @@
+name: Instagram auto-post
+
+# Posts the next due item from social/schedule.json to @ai.tech.school
+# using Meta's official Instagram Graph API (see scripts/post_to_instagram.py
+# and social/instagram-api-setup.md). No third-party scheduler involved.
+#
+# Runs twice a day to cover the two posting slots in the content calendar
+# (morning ~9:00 AM ET, evening ~7:00 PM ET). Times below are in UTC and
+# assume US Eastern Daylight Time (UTC-4), which is correct for the whole
+# Sep 1 - Sep 20, 2026 posting window. If the account's actual timezone is
+# different, adjust the two cron lines below.
+on:
+  schedule:
+    - cron: "0 13 * * *"  # ~9:00 AM ET -> "morning" slot
+    - cron: "0 23 * * *"  # ~7:00 PM ET -> "evening" slot
+  workflow_dispatch: {}    # lets Alex trigger a run manually from the Actions tab to test
+
+permissions:
+  contents: write
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Determine slot for this run
+        id: slot
+        run: |
+          hour_utc=$(date -u +%H)
+          if [ "$hour_utc" -lt 18 ]; then
+            echo "slot=morning" >> "$GITHUB_OUTPUT"
+          else
+            echo "slot=evening" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Post to Instagram if something is due
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          RUN_SLOT: ${{ steps.slot.outputs.slot }}
+        run: python scripts/post_to_instagram.py
+
+      - name: Commit updated schedule.json if it changed
+        run: |
+          if ! git diff --quiet -- social/schedule.json; then
+            git config user.name "ats-autopost-bot"
+            git config user.email "actions@users.noreply.github.com"
+            git add social/schedule.json
+            git commit -m "Mark scheduled post as published [skip ci]"
+            git push
+          else
+            echo "No schedule changes to commit."
+          fi
