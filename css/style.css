@@ -1001,6 +1001,107 @@ section { padding-block: var(--space-8); }
 .video-placeholder .icon { width: 32px; height: 32px; }
 .video-placeholder p { font-size: 0.92rem; max-width: 32ch; }
 
+/* Poster card that launches the in-page overlay player */
+.ats-video-poster {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--surface) linear-gradient(135deg, rgba(139, 92, 246, 0.22), rgba(59, 130, 246, 0.22));
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  font: inherit;
+  color: var(--text);
+  padding: 0;
+}
+.ats-video-poster:hover .ats-video-poster-play,
+.ats-video-poster:focus-visible .ats-video-poster-play { transform: scale(1.08); }
+.ats-video-poster-play {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-full);
+  background: var(--gradient-primary);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.15s ease;
+}
+.ats-video-poster-play .icon { width: 26px; height: 26px; margin-left: 3px; }
+.ats-video-poster-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+.ats-video-poster-duration {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  background: rgba(10, 12, 18, 0.7);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  padding: 2px 10px;
+}
+
+/* Full in-page overlay player — the site's own "watch here" screen */
+.ats-video-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ats-video-overlay[hidden] { display: none; }
+.ats-video-overlay-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 7, 12, 0.92);
+}
+.ats-video-overlay-panel {
+  position: relative;
+  width: min(92vw, 1100px);
+}
+.ats-video-overlay-close {
+  position: absolute;
+  top: -44px;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  cursor: pointer;
+}
+.ats-video-overlay-close .icon { width: 18px; height: 18px; }
+.ats-video-overlay-close:hover { background: var(--surface-hover); }
+.ats-video-overlay-frame-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+  background: #000;
+}
+.ats-video-overlay-iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+body.ats-video-open { overflow: hidden; }
+
 /* ==========================================================================
    Guide widget (persistent tips bubble, every page)
    ========================================================================== */
