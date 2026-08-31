@@ -1,0 +1,77 @@
+{
+  "_comment": "Machine-readable version of content-calendar.md, feed posts only (the 3 Reels in week 4 need an actual recorded video file, so they stay manual — see content-calendar.md). Consumed by scripts/post_to_instagram.py via the instagram-autopost GitHub Actions workflow. Do not hand-edit 'posted' — the workflow updates it after a successful publish. Dates are calendar dates in the account's assumed local timezone (see social/instagram-api-setup.md for the timezone note).",
+  "posts": [
+    {
+      "id": "post-1-launch",
+      "date": "2026-09-01",
+      "slot": "morning",
+      "image": "social/post-1-launch.png",
+      "caption": "AI Tech School is here. Learn Claude, Claude Code, MCP, and agents — the way we wish someone had taught us. Three skill paths, nine hands-on lessons, zero fluff. Link in bio.\n#AITechSchool #ClaudeAI #LearnAI #ClaudeCode #MCP #AIagents",
+      "posted": false
+    },
+    {
+      "id": "post-2-what-is-claude",
+      "date": "2026-09-03",
+      "slot": "evening",
+      "image": "social/post-2-what-is-claude.png",
+      "caption": "Claude isn't a search engine and it isn't magic. It reads what you give it and writes an original, reasoned response. It reasons step by step. And it doesn't know today's news unless it's connected to a tool that does.\n#ClaudeAI #AITechSchool #LearnAI #WhatIsAI",
+      "posted": false
+    },
+    {
+      "id": "post-3-api-vs-mcp",
+      "date": "2026-09-06",
+      "slot": "evening",
+      "image": "social/post-3-api-vs-mcp.png",
+      "caption": "API vs MCP: an API is endpoints you call by hand, no memory, custom code per tool. MCP is a standard Claude can discover on its own, that keeps context across steps. Same goal, very different shape.\n#MCP #API #AITechSchool #ClaudeAI #AIagents",
+      "posted": false
+    },
+    {
+      "id": "post-4-levels",
+      "date": "2026-09-08",
+      "slot": "morning",
+      "image": "social/post-4-levels.png",
+      "caption": "Never touched Claude? Ready to build? Already shipping AI agents? There's a path for each. Beginner → Intermediate → Expert — pick where you actually are, no gatekeeping.\n#AITechSchool #Beginner #ClaudeCode #AIagents #LearnToCode",
+      "posted": false
+    },
+    {
+      "id": "post-5-claude-code",
+      "date": "2026-09-10",
+      "slot": "evening",
+      "image": "social/post-5-claude-code.png",
+      "caption": "Claude Code in 3 steps: you ask in plain English → Claude reads your real files → you approve before anything runs. It's Claude, inside your terminal — not just a chat window.\n#ClaudeCode #AITechSchool #ClaudeAI #DevTools #LearnToCode",
+      "posted": false
+    },
+    {
+      "id": "post-6-ai-agent",
+      "date": "2026-09-13",
+      "slot": "evening",
+      "image": "social/post-6-ai-agent.png",
+      "caption": "An agent isn't just a chatbot — it's a loop. Observe, think, act, repeat, until the goal is done, largely without a human approving every step. That's the whole model.\n#AIagents #AITechSchool #ClaudeAI #MCP #Automation",
+      "posted": false
+    },
+    {
+      "id": "post-7-free-tools",
+      "date": "2026-09-15",
+      "slot": "morning",
+      "image": "social/post-7-free-tools.png",
+      "caption": "4 free AI tools worth knowing: Gemini Notebook (source-grounded research), Google AI Studio (free Gemini playground), Hugging Face Spaces (free model hosting), and GitHub Copilot's free tier. No credit card needed for any of them.\n#FreeAITools #AITechSchool #ClaudeAI #AIforBeginners",
+      "posted": false
+    },
+    {
+      "id": "post-8-quote",
+      "date": "2026-09-17",
+      "slot": "evening",
+      "image": "social/post-8-quote.png",
+      "caption": "\"I built ATS to teach the AI ecosystem the way I wish someone had taught it to me — in order, hands-on, and without the hype.\" — Alex Monteiro, founder.\n#AITechSchool #FounderStory #ClaudeAI #BuildInPublic",
+      "posted": false
+    },
+    {
+      "id": "post-9-cta",
+      "date": "2026-09-20",
+      "slot": "evening",
+      "image": "social/post-9-cta.png",
+      "caption": "Stop scrolling. Start building. Lesson 1 of the Beginner path is free and takes about 10 minutes. Link in bio.\n#AITechSchool #StartToday #ClaudeAI #LearnAI",
+      "posted": false
+    }
+  ]
+}
