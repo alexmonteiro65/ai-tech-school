@@ -1,0 +1,64 @@
+# Beginner · Lesson 1 — "What is Claude AI and why it matters"
+## Video script (~4 minutes)
+
+Source lesson: [`levels/beginner/lesson-1.html`](../levels/beginner/lesson-1.html)
+Presenter voice: Alex Monteiro (first person, matches the site's founder voice
+and `video/ai-universe-script.md`)
+Target runtime: ~4:00 at a measured, unhurried presenter pace (~130 wpm)
+Companion diagram/visuals: none required — this lesson is presenter + on-screen
+text callouts, not a system diagram like "The AI Universe."
+
+**Note on timing across languages:** Portuguese and Spanish typically run
+10-15% longer aloud than English for the same meaning. Re-time PT/ES against
+the actual voice track once recorded, rather than assuming identical
+timestamps to the English column.
+
+**Production note:** whichever avatar/voice tool renders this (HeyGen,
+Synthesia, your own recorded voice, etc.), the on-screen text column is what
+that tool's caption/lower-third layer should show — keep it short enough to
+read in the time given.
+
+---
+
+## English
+
+| Time | On-screen | Narration |
+|---|---|---|
+| 0:00–0:15 | Title card: "What is Claude AI?" · Beginner · Lesson 1 | Hi, I'm Alex, founder of AI Tech School. Before you write a single prompt, it helps to know exactly what you're talking to. So let's spend the next few minutes on one question: what is Claude, actually? |
+| 0:15–0:45 | Text: "Reads. Writes. Reasons." | Claude is an AI model made by Anthropic. It reads, writes, reasons through problems, and holds a conversation in plain language. And here's the one thing people get wrong most often: Claude is not a search engine. It doesn't go fetch a page that already exists somewhere. It reads what you give it, and generates an original, reasoned response based on that. |
+| 0:45–1:00 | Text: "What Claude is good at" | So what's it actually good at? Four things, in particular. |
+| 1:00–1:45 | Four beats, one at a time: "Drafting & editing" / "Explaining concepts" / "Summarizing" / "Reasoning step by step" | Drafting and editing writing — emails, reports, code, plans. Explaining a concept in plain language, at whatever depth you need. Summarizing long documents down to the parts that matter. And reasoning through a problem step by step, together with you. If your task looks like one of those four, Claude is a strong fit on its own. |
+| 1:45–2:00 | Text: "What Claude is not" | Now, just as important — what Claude is not. |
+| 2:00–2:50 | Three beats: "No live data" / "Can make mistakes" / "No opinions, no consciousness" | It doesn't know real-time events unless it's told, or given a tool that can look them up — so don't ask it for today's stock price and expect a live number. It can make mistakes: confidently stating something incorrect, which people call a "hallucination." And it has no personal opinions and no consciousness — it's predicting a helpful response based on patterns learned from text, not thinking the way you do. |
+| 2:50–3:35 | Split screen: "Old way: do every step by hand" → "New way: describe the outcome" | Here's why all of this matters. Instead of doing every step of a task by hand, you describe the outcome you want, and you collaborate with Claude to get there faster. Say you need to decide whether a task is a good fit for Claude alone, or whether it needs a tool or a person — drafting that email? Claude, on its own. Booking a real flight for tomorrow morning? That needs a connected tool, not Claude alone. That distinction — what Claude can do by itself versus what needs help — is the premise of every lesson after this one. |
+| 3:35–4:00 | ATS logo, lesson badge preview: "Claude Fundamentals" | On the page, you'll practice that exact distinction yourself — six real examples, sorted into "good fit for Claude" or "needs a tool or a human" — then a three-question check before you earn the Claude Fundamentals badge. Finish it, and I'll see you in Lesson 2: your first prompt. |
+
+---
+
+## Português (Brasil)
+
+| Tempo | Na tela | Narração |
+|---|---|---|
+| 0:00–0:15 | Card de título: "O que é o Claude AI?" · Iniciante · Aula 1 | Oi, eu sou o Alex, fundador da AI Tech School. Antes de escrever seu primeiro prompt, ajuda saber exatamente com o que você está falando. Então vamos passar os próximos minutos numa pergunta só: afinal, o que é o Claude? |
+| 0:15–0:45 | Texto: "Lê. Escreve. Raciocina." | O Claude é um modelo de IA criado pela Anthropic. Ele lê, escreve, raciocina sobre problemas e mantém uma conversa em linguagem natural. E aqui está o erro mais comum: o Claude não é um mecanismo de busca. Ele não vai buscar uma página que já existe em algum lugar. Ele lê o que você fornece, e gera uma resposta original e raciocinada com base nisso. |
+| 0:45–1:00 | Texto: "No que o Claude é bom" | Então, no que ele é realmente bom? Quatro coisas, principalmente. |
+| 1:00–1:45 | Quatro pontos, um de cada vez: "Redigir e editar" / "Explicar conceitos" / "Resumir" / "Raciocinar passo a passo" | Redigir e editar textos — e-mails, relatórios, código, planos. Explicar um conceito em linguagem simples, na profundidade que você precisar. Resumir documentos longos nas partes que realmente importam. E raciocinar sobre um problema, passo a passo, junto com você. Se a sua tarefa parece com uma dessas quatro, o Claude resolve sozinho, tranquilamente. |
+| 1:45–2:00 | Texto: "No que o Claude não é bom" | Agora, tão importante quanto — no que o Claude não é bom. |
+| 2:00–2:50 | Três pontos: "Sem dados em tempo real" / "Pode errar" / "Sem opinião, sem consciência" | Ele não conhece eventos em tempo real, a menos que seja informado, ou receba uma ferramenta para consultá-los — então não peça o preço da ação hoje esperando um número ao vivo. Ele pode cometer erros: afirmar algo incorreto com confiança total, o que chamamos de "alucinação". E ele não tem opiniões pessoais nem consciência — ele está prevendo uma resposta útil com base em padrões aprendidos de textos, não pensando do jeito que você pensa. |
+| 2:50–3:35 | Tela dividida: "Jeito antigo: fazer cada etapa na mão" → "Jeito novo: descrever o resultado" | E é por isso que tudo isso importa. Em vez de fazer cada etapa de uma tarefa manualmente, você descreve o resultado que quer, e colabora com o Claude para chegar lá mais rápido. Pense assim: decidir se uma tarefa serve para o Claude sozinho, ou se precisa de uma ferramenta ou pessoa — redigir aquele e-mail? Claude resolve sozinho. Reservar um voo de verdade para amanhã de manhã? Isso precisa de uma ferramenta conectada, não só do Claude. Essa distinção — o que o Claude faz sozinho versus o que precisa de ajuda — é a base de todas as próximas aulas. |
+| 3:35–4:00 | Logo da ATS, prévia do emblema: "Fundamentos do Claude" | Na página, você vai praticar exatamente essa distinção — seis exemplos reais, classificados entre "serve para o Claude" ou "precisa de ferramenta ou pessoa" — depois três perguntas rápidas antes de conquistar o emblema Fundamentos do Claude. Termine, e te vejo na Aula 2: seu primeiro prompt. |
+
+---
+
+## Español (Latinoamérica)
+
+| Tiempo | En pantalla | Narración |
+|---|---|---|
+| 0:00–0:15 | Tarjeta de título: "¿Qué es Claude AI?" · Principiante · Lección 1 | Hola, soy Alex, fundador de AI Tech School. Antes de escribir tu primer prompt, ayuda saber exactamente con qué estás hablando. Así que vamos a dedicar los próximos minutos a una sola pregunta: ¿qué es Claude, en realidad? |
+| 0:15–0:45 | Texto: "Lee. Escribe. Razona." | Claude es un modelo de IA creado por Anthropic. Lee, escribe, razona sobre problemas y mantiene una conversación en lenguaje natural. Y aquí está el error más común: Claude no es un buscador. No va a recuperar una página que ya existe en algún lugar. Lee lo que le das, y genera una respuesta original y razonada a partir de eso. |
+| 0:45–1:00 | Texto: "En qué es bueno Claude" | Entonces, ¿en qué es realmente bueno? En cuatro cosas, sobre todo. |
+| 1:00–1:45 | Cuatro puntos, uno por uno: "Redactar y editar" / "Explicar conceptos" / "Resumir" / "Razonar paso a paso" | Redactar y editar textos — correos, informes, código, planes. Explicar un concepto en lenguaje simple, con la profundidad que necesites. Resumir documentos largos en las partes que realmente importan. Y razonar sobre un problema, paso a paso, contigo. Si tu tarea se parece a una de esas cuatro, Claude la resuelve bien por sí solo. |
+| 1:45–2:00 | Texto: "En qué no es bueno Claude" | Ahora, igual de importante — en qué Claude no es bueno. |
+| 2:00–2:50 | Tres puntos: "Sin datos en tiempo real" / "Puede cometer errores" / "Sin opiniones, sin conciencia" | No conoce eventos en tiempo real a menos que se le indique, o se le dé una herramienta para consultarlos — así que no le pidas el precio de una acción hoy esperando un número en vivo. Puede cometer errores: afirmar algo incorrecto con total confianza, lo que se conoce como "alucinación". Y no tiene opiniones personales ni conciencia — está prediciendo una respuesta útil según patrones aprendidos de textos, no pensando como tú piensas. |
+| 2:50–3:35 | Pantalla dividida: "Forma antigua: hacer cada paso a mano" → "Forma nueva: describir el resultado" | Y por eso todo esto importa. En lugar de hacer cada paso de una tarea a mano, describes el resultado que quieres, y colaboras con Claude para llegar más rápido. Piénsalo así: decidir si una tarea es para Claude solo, o si necesita una herramienta o una persona — ¿redactar ese correo? Claude solo. ¿Reservar un vuelo real para mañana por la mañana? Eso necesita una herramienta conectada, no solo a Claude. Esa distinción — lo que Claude hace solo frente a lo que necesita ayuda — es la base de todas las lecciones siguientes. |
+| 3:35–4:00 | Logo de ATS, vista previa de la insignia: "Fundamentos de Claude" | En la página, vas a practicar exactamente esa distinción — seis ejemplos reales, clasificados entre "es tarea para Claude" o "necesita herramienta o persona" — y luego tres preguntas rápidas antes de ganar la insignia Fundamentos de Claude. Termínala, y nos vemos en la Lección 2: tu primer prompt. |
