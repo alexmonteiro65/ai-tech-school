@@ -1,0 +1,44 @@
+name: AI news auto-update
+
+# Regenerates news/news-data.js — the content behind ai-news.html — by
+# scanning free public RSS feeds for AI/Claude news and asking the
+# Anthropic API to write short, original AITS-toned summaries in
+# en/pt/es. See scripts/fetch_and_rewrite_news.py and
+# news/ai-news-setup.md for the full explanation and one-time setup.
+#
+# Runs once a day. Adjust the cron line below to change the cadence —
+# GitHub Actions' free tier easily covers a daily run.
+on:
+  schedule:
+    - cron: "30 12 * * *"  # ~8:30 AM ET
+  workflow_dispatch: {}    # lets Alex trigger a run manually from the Actions tab to test
+
+permissions:
+  contents: write
+
+jobs:
+  update-news:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch and rewrite AI news
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/fetch_and_rewrite_news.py
+
+      - name: Commit updated news-data.js if it changed
+        run: |
+          if ! git diff --quiet -- news/news-data.js; then
+            git config user.name "ats-news-bot"
+            git config user.email "actions@users.noreply.github.com"
+            git add news/news-data.js
+            git commit -m "Refresh AI news snapshot [skip ci]"
+            git push
+          else
+            echo "No news changes to commit."
+          fi
