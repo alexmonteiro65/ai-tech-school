@@ -363,6 +363,15 @@ section { padding-block: var(--space-8); }
   font-size: 1rem;
   letter-spacing: 0.02em;
   color: var(--text);
+  overflow: hidden;
+}
+.founder-avatar img,
+.founder-avatar-lg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-full);
+  display: block;
 }
 
 .founder-name { font-weight: 700; font-size: 0.95rem; margin-bottom: var(--space-1); }
@@ -530,6 +539,7 @@ section { padding-block: var(--space-8); }
   font-weight: 800;
   font-size: 1.6rem;
   flex-shrink: 0;
+  overflow: hidden;
 }
 .founder-copy h2 { font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 800; margin-bottom: var(--space-2); }
 .founder-copy .founder-role { color: var(--accent-blue); font-weight: 600; font-size: 0.92rem; margin-bottom: var(--space-3); }
