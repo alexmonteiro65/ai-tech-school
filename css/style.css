@@ -1172,6 +1172,29 @@ body.ats-video-open { overflow: hidden; }
 .guide-tip { font-size: 0.88rem; color: var(--text-muted); }
 
 /* ==========================================================================
+   Audio narration player (js/audio.js)
+   ========================================================================== */
+.ats-audio-player {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+.ats-audio-player-label {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  font-weight: 600;
+  color: var(--text);
+}
+.ats-audio-duration { font-weight: 400; font-size: 0.85rem; color: var(--text-faint); }
+.ats-audio-player audio { border-radius: var(--radius-md); }
+
+/* ==========================================================================
    Scroll reveal
    ========================================================================== */
 [data-reveal] { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
