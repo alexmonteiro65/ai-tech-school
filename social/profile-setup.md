@@ -5,9 +5,13 @@ see CLAUDE.md for why (same reasoning as the Runway/HeyGen and Composio
 decisions: no credential handling, no live account access).
 
 ## Profile picture
-Upload `profile.png` (1080×1080, rendered from `logo.svg`). Instagram
-crops profile pictures to a circle — the bolt-and-wordmark design is
-centered so nothing important sits in the corners that get cut off.
+Done — Alex uploaded `profile.png` (1080×1080, the graduate-robot mascot
+with the "AITS" chest badge, flattened onto white) directly in the
+Instagram app and it's already live on @ai.tech.school. White won out over
+the near-black alternative once both were visible on the actual profile.
+`aits-mascot.png` is the same art as a transparent PNG (master file, no
+background baked in) for any future use that isn't this specific circular
+crop.
 
 ## Bio
 ```

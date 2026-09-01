@@ -26,7 +26,7 @@ rather than assuming identical timestamps.
 | 0:52–1:08 | Highlight ring: MCP | Here's where it gets really interesting. The Model Context Protocol — MCP — is an open standard that lets Claude reach real tools and real data, not just text you paste into a chat box. |
 | 1:08–1:28 | Highlight ring: Connectors (GitHub, Slack, Gmail, Notion, Calendar, Composio chips) | MCP servers, called connectors, plug Claude into GitHub, Slack, Gmail, Notion, your calendar — and platforms like Composio or Zapier bundle hundreds of these connectors in one place. |
 | 1:28–1:46 | Highlight outer orbit: Agents (satellites + loop arrow) | And in the outer orbit: agents. Systems that loop — observe, think, act, repeat — using Claude, the API, and MCP together, largely without a human approving every step. |
-| 1:46–2:00 | Pull back to full diagram, then cut to ATS logo / three level cards | That's the entire AI universe, in under two minutes. At AI Tech School, you'll build every one of these layers yourself, across three levels — Beginner, Intermediate, and Expert. Let's get started. |
+| 1:46–2:00 | Pull back to full diagram, then cut to AITS logo / three level cards | That's the entire AI universe, in under two minutes. At AI Tech School, you'll build every one of these layers yourself, across three levels — Beginner, Intermediate, and Expert. Let's get started. |
 
 ---
 
@@ -41,7 +41,7 @@ rather than assuming identical timestamps.
 | 0:52–1:08 | Destaque no anel: MCP | E é aqui que fica realmente interessante. O Model Context Protocol — o MCP — é um padrão aberto que permite ao Claude alcançar ferramentas e dados reais, não só textos que você cola em uma caixa de chat. |
 | 1:08–1:28 | Destaque no anel: Conectores (chips GitHub, Slack, Gmail, Notion, Calendário, Composio) | Servidores MCP, chamados de conectores, ligam o Claude ao GitHub, Slack, Gmail, Notion, sua agenda — e plataformas como Composio ou Zapier reúnem centenas desses conectores em um só lugar. |
 | 1:28–1:46 | Destaque na órbita externa: Agentes (satélites + seta de ciclo) | E na órbita externa: os agentes. Sistemas que funcionam em ciclo — observar, pensar, agir, repetir — usando o Claude, a API e o MCP juntos, em grande parte sem um humano aprovando cada etapa. |
-| 1:46–2:00 | Afasta a câmera para o diagrama completo, depois corta para o logo da ATS / os três cartões de nível | Esse é o universo da IA inteiro, em menos de dois minutos. Na AI Tech School, você vai construir cada uma dessas camadas com as próprias mãos, em três níveis — Iniciante, Intermediário e Avançado. Vamos começar. |
+| 1:46–2:00 | Afasta a câmera para o diagrama completo, depois corta para o logo da AITS / os três cartões de nível | Esse é o universo da IA inteiro, em menos de dois minutos. Na AI Tech School, você vai construir cada uma dessas camadas com as próprias mãos, em três níveis — Iniciante, Intermediário e Avançado. Vamos começar. |
 
 ---
 
@@ -56,4 +56,4 @@ rather than assuming identical timestamps.
 | 0:52–1:08 | Resaltar anillo: MCP | Aquí es donde se pone realmente interesante. El Model Context Protocol — MCP — es un estándar abierto que permite a Claude llegar a herramientas y datos reales, no solo texto que pegas en una ventana de chat. |
 | 1:08–1:28 | Resaltar anillo: Conectores (chips GitHub, Slack, Gmail, Notion, Calendario, Composio) | Los servidores MCP, llamados conectores, conectan a Claude con GitHub, Slack, Gmail, Notion, tu calendario — y plataformas como Composio o Zapier agrupan cientos de estos conectores en un solo lugar. |
 | 1:28–1:46 | Resaltar órbita externa: Agentes (satélites + flecha de ciclo) | Y en la órbita exterior: los agentes. Sistemas que funcionan en bucle — observar, pensar, actuar, repetir — usando a Claude, la API y MCP juntos, en gran parte sin que un humano apruebe cada paso. |
-| 1:46–2:00 | Alejar cámara al diagrama completo, luego cortar al logo de ATS / las tres tarjetas de nivel | Ese es todo el universo de la IA, en menos de dos minutos. En AI Tech School, vas a construir cada una de estas capas con tus propias manos, en tres niveles — Principiante, Intermedio y Experto. Empecemos. |
+| 1:46–2:00 | Alejar cámara al diagrama completo, luego cortar al logo de AITS / las tres tarjetas de nivel | Ese es todo el universo de la IA, en menos de dos minutos. En AI Tech School, vas a construir cada una de estas capas con tus propias manos, en tres niveles — Principiante, Intermedio y Experto. Empecemos. |

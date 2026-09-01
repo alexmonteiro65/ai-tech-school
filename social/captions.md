@@ -121,15 +121,15 @@ for the initial follow list, and `reels-scripts.md` for the 3 Reels.
 ## Post 8 — Quote from Alex Monteiro (`post-8-quote.png`)
 
 **English**
-> "I built ATS to teach the AI ecosystem the way I wish someone had taught it to me — in order, hands-on, and without the hype." — Alex Monteiro, founder.
+> "I built AITS to teach the AI ecosystem the way I wish someone had taught it to me — in order, hands-on, and without the hype." — Alex Monteiro, founder.
 > #AITechSchool #FounderStory #ClaudeAI #BuildInPublic
 
 **Português (Brasil)**
-> "Criei a ATS para ensinar o ecossistema de IA do jeito que eu gostaria que tivessem me ensinado — em ordem, na prática, e sem exagero." — Alex Monteiro, fundador.
+> "Criei a AITS para ensinar o ecossistema de IA do jeito que eu gostaria que tivessem me ensinado — em ordem, na prática, e sem exagero." — Alex Monteiro, fundador.
 > #AITechSchool #HistoriaDoFundador #ClaudeAI #ConstruindoEmPublico
 
 **Español (Latinoamérica)**
-> "Creé ATS para enseñar el ecosistema de IA como me hubiera gustado que me lo enseñaran a mí — en orden, con práctica real, y sin exageraciones." — Alex Monteiro, fundador.
+> "Creé AITS para enseñar el ecosistema de IA como me hubiera gustado que me lo enseñaran a mí — en orden, con práctica real, y sin exageraciones." — Alex Monteiro, fundador.
 > #AITechSchool #HistoriaDelFundador #ClaudeAI #ConstruyendoEnPublico
 
 ---

@@ -1,4 +1,4 @@
-# AI Tech School (ATS)
+# AI Tech School (AITS)
 
 ## 1. Vision
 
@@ -11,7 +11,7 @@ it."**
 The site is not a marketing page. It is a learning product. Every screen
 either teaches something or points clearly at what to learn next.
 
-**Content model: Anthropic Academy.** ATS teaches the same subject matter
+**Content model: Anthropic Academy.** AITS teaches the same subject matter
 Anthropic's own Academy teaches (Claude fundamentals → Claude Code → MCP →
 the platform/API), so curriculum accuracy is anchored to the product itself,
 not to third-party interpretations of it.
@@ -21,11 +21,19 @@ Paths** — Beginner / Intermediate / Expert — each a fixed, ordered sequence
 of lessons with clear milestones (what you'll learn, how long it takes, what
 you can build after). No vague "browse and hope" navigation.
 
-**Guide: Alex Monteiro, Founder.** ATS is fronted by its real founder, not a
+**Guide: Alex Monteiro, Founder.** AITS is fronted by its real founder, not a
 mascot. Alex's presence (name, title, a short mission statement) appears on
 the landing page and sets the tone: direct, practical, no hype. There is no
 fictional character, no avatar illustration, no chatbot persona. If Alex's
 bio or photo is added later, keep it factual — no invented credentials.
+
+The one deliberate exception: the browser-tab favicon (`favicon.ico` +
+`assets/favicon-*.png` + `assets/apple-touch-icon.png`, linked from every
+page's `<head>`) uses the graduate-robot mascot built for Instagram
+(`social/aits-mascot.png`). Alex chose to keep the mascot out of the header
+and page content — this is only a tab icon, not a reversal of the
+no-mascot rule above. Don't extend it to the header, hero, or any on-page
+content without that being asked for explicitly.
 
 A small persistent widget (`js/guide.js`) puts Alex's "AM" monogram on
 every page with a handful of rotating static tips. This is still not a
@@ -117,8 +125,9 @@ learner pick up where they left off — never to block access.
 ### Folder structure
 
 ```
-ATS/
+AITS/
   CLAUDE.md
+  favicon.ico                    # browser-tab icon, multi-size (16/32/48), cropped from social/aits-mascot.png
   index.html                     # landing page
   how-claude-code-works.html     # visual diagrams: the Claude Code loop, install, MCP
   ai-news.html                   # curated, dated snapshot of AI ecosystem news
@@ -128,7 +137,9 @@ ATS/
   video/
     ai-universe-script.md        # 2-minute presenter script, EN/PT/ES, scene-by-scene, tied to the diagram
   social/
-    logo.svg, profile.png        # @ai.tech.school profile picture (lightning bolt + "ATS", not the site's bracket mark — deliberate, a profile pic at circular-crop size needs different treatment than the inline site logo)
+    logo.svg                     # inline site logo (bracket mark) — separate from the social mascot below
+    aits-mascot.png              # the graduate-robot mascot, chest badge reading "AITS" — no wordmark, no tagline bars. Transparent PNG, the master art everything else here is cropped from.
+    profile.png                  # @ai.tech.school profile picture — aits-mascot.png, square, flattened onto white (Alex's choice over the near-black alternative once he saw both live on the Instagram profile) so it stays legible once Instagram masks it to a circle
     post-1-launch.* … post-9-cta.*      # 9 ready-to-post graphics (SVG source + rendered PNG), fill a complete 3×3 grid in order
     captions.md                  # EN/PT/ES captions per post
     reels-scripts.md             # 3 Reels scripts (60s each) — scripts only, no video generated
@@ -151,6 +162,8 @@ ATS/
     guide.js                     # persistent "AM" tips widget, every page (see section 1)
     video.js                     # video-embed config + placeholder renderer (see note below)
   assets/                        # icons/images, added as needed (SVG preferred)
+    favicon-16x16.png, favicon-32x32.png, favicon-192x192.png, apple-touch-icon.png
+                                  # sized favicon PNGs, linked from every page's <head> alongside favicon.ico
   levels/
     beginner/
       index.html                 # path overview: what/how long/what you'll build + lesson list
@@ -166,7 +179,7 @@ ATS/
 Adding a lesson means adding one HTML file under the right `levels/<path>/`
 folder and one row in that path's `index.html` lesson list. Don't invent a
 different folder shape per path. A standalone page like
-`how-claude-code-works.html` or `ai-news.html` lives at the ATS root
+`how-claude-code-works.html` or `ai-news.html` lives at the AITS root
 alongside `index.html` — add its link to every page's nav (main-nav,
 mobile-nav, footer) and its `nav.*` key to every page's dictionary, the
 same way `nav.howItWorks` and `nav.news` were added.
@@ -228,10 +241,10 @@ classes from `style.css` rather than inventing new visual patterns.
 
 ## 5. Internationalization (i18n)
 
-ATS supports English, Brazilian Portuguese (`pt`), and Latin American
+AITS supports English, Brazilian Portuguese (`pt`), and Latin American
 Spanish (`es`) — always in that order wherever the switcher appears. The
-engine is `js/i18n.js` (`ATS.i18n.init/setLanguage/getLanguage`); every page
-loads it and calls `ATS.i18n.init(dict, onLanguageChange)`.
+engine is `js/i18n.js` (`AITS.i18n.init/setLanguage/getLanguage`); every page
+loads it and calls `AITS.i18n.init(dict, onLanguageChange)`.
 
 - **Translation dictionaries live inline per page**, the same way quiz and
   exercise data does — a `const PAGE_I18N = { en: {...}, pt: {...}, es:
@@ -244,14 +257,14 @@ loads it and calls `ATS.i18n.init(dict, onLanguageChange)`.
   engine walks these on init and on every language switch.
 - **Dynamically-rendered content** (quiz questions, exercise items, assembled
   prompts/pipelines) cannot be reached by a DOM attribute — the page passes
-  `onLanguageChange` to `ATS.i18n.init(...)`, and that callback clears the
+  `onLanguageChange` to `AITS.i18n.init(...)`, and that callback clears the
   relevant container(s) and re-invokes the shared exercise/quiz builders
   with that language's data. Re-rendering an in-progress exercise or quiz on
   a language switch is expected behavior, not a bug — completion state
   (the badge, `localStorage` progress) is untouched by it.
 - **Generic UI chrome** for the quiz/exercise builders (button text like
   "Check answers", feedback prefixes like "Correct — ") is not lesson
-  content — it's translated once via `ATS.getUILabels(lang)` in
+  content — it's translated once via `AITS.getUILabels(lang)` in
   `js/lesson.js` and passed as the `labels` argument to `initQuiz` /
   `initChoiceExercise` / `initOrderExercise` / `initMatchExercise`. Don't
   copy these strings into a lesson page's own dictionary.
@@ -262,7 +275,7 @@ loads it and calls `ATS.i18n.init(dict, onLanguageChange)`.
 - The switcher itself is three buttons (`data-lang-btn="en|pt|es"`) in the
   header, always visible at every breakpoint — the `.header-cta` button is
   what hides on narrow screens to make room, never the switcher.
-- Adding a fourth language means adding a key to `ATS.i18n.SUPPORTED` in
+- Adding a fourth language means adding a key to `AITS.i18n.SUPPORTED` in
   `js/i18n.js`, a button in every page's switcher markup, and a new
   language block in every page's dictionary — there's no partial-language
   state to design around; a page either has all three (soon four) or the

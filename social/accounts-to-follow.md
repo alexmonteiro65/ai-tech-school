@@ -33,7 +33,7 @@ Buffer/Later in `content-calendar.md`).
 
 | Account | Followers | Why |
 |---|---|---|
-| [@codecademy](https://www.instagram.com/codecademy/) | ~369K | Direct structural inspiration for ATS's skill paths |
+| [@codecademy](https://www.instagram.com/codecademy/) | ~369K | Direct structural inspiration for AITS's skill paths |
 | [@freecodecamp](https://www.instagram.com/freecodecamp/) | ~190K | Free coding education, large engaged community |
 | [@khanacademy](https://www.instagram.com/khanacademy/) | ~315K | Education-first tone worth studying |
 | [@coursera](https://www.instagram.com/coursera/) | ~1.4M | Adjacent audience actively looking for AI courses |
