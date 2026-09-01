@@ -108,6 +108,9 @@
         questions and use the answers automatically — which is exactly what
         Claude Code and MCP, coming up in the Intermediate path, are built on.
       </div>
+
+      <h3 data-i18n="body.h3video">Listen to it explained</h3>
+      <div id="lesson-audio" data-reveal></div>
     </div>
   </section>
 
@@ -185,11 +188,32 @@
 <script src="../../js/i18n.js"></script>
 <script src="../../js/main.js"></script>
 <script src="../../js/guide.js"></script>
+<script src="../../js/audio.js"></script>
 <script>
   (function () {
     "use strict";
 
     var LESSON_ID = "beginner-3";
+
+    /* Fill in urls.en/pt/es with the path to the real MP3 once the
+       narration for this lesson is generated (see
+       video/beginner-lesson-3-script.md and
+       scripts/generate_narration.py). Empty = "coming soon" placeholder,
+       so this page never breaks waiting on the recording. */
+    var LESSON_AUDIO = {
+      urls: { en: "", pt: "", es: "" },
+      label: {
+        en: "What is an API and why you need one",
+        pt: "O que é uma API e por que você precisa de uma",
+        es: "Qué es una API y por qué la necesitas"
+      },
+      duration: "~2 min",
+      placeholderText: {
+        en: "The narrated audio for this lesson is in production — check back soon.",
+        pt: "O áudio narrado desta aula está em produção — volte em breve.",
+        es: "El audio narrado de esta lección está en producción — vuelve pronto."
+      }
+    };
 
     var PAGE_I18N = {
       en: {
@@ -208,6 +232,7 @@
         "body.way1": "<strong>Claude.ai</strong> — the chat website. Great for talking to Claude directly, one conversation at a time.",
         "body.way2": "<strong>The Claude API</strong> — lets your own software send requests to Claude directly, so Claude can be built into an app, a website, or an automation — not just a chat window.",
         "body.callout": "<strong>Why you need one:</strong> without an API, Claude only lives inside a chat window. With an API, your own product can ask Claude questions and use the answers automatically — which is exactly what Claude Code and MCP, coming up in the Intermediate path, are built on.",
+        "body.h3video": "Listen to it explained",
         "exercise.intro": "Click each step below, in order, to trace what actually happens when an app talks to Claude through the API.",
         "exercise.placeholder": "Click a step above to see what happens at that stage.",
         "exercise.stepPrefix": "Step",
@@ -246,6 +271,7 @@
         "body.way1": "<strong>Claude.ai</strong> — o site de chat. Ótimo para conversar diretamente com o Claude, uma conversa de cada vez.",
         "body.way2": "<strong>A API do Claude</strong> — permite que o seu próprio software envie pedidos diretamente ao Claude, para que ele possa ser incorporado a um aplicativo, um site ou uma automação — não só a uma janela de chat.",
         "body.callout": "<strong>Por que você precisa de uma:</strong> sem uma API, o Claude só existe dentro de uma janela de chat. Com uma API, o seu próprio produto pode fazer perguntas ao Claude e usar as respostas automaticamente — exatamente o que o Claude Code e o MCP, que vêm na trilha Intermediária, usam como base.",
+        "body.h3video": "Ouça a explicação",
         "exercise.intro": "Clique em cada etapa abaixo, em ordem, para acompanhar o que realmente acontece quando um aplicativo fala com o Claude pela API.",
         "exercise.placeholder": "Clique em uma etapa acima para ver o que acontece nela.",
         "exercise.stepPrefix": "Etapa",
@@ -284,6 +310,7 @@
         "body.way1": "<strong>Claude.ai</strong> — el sitio de chat. Ideal para hablar directamente con Claude, una conversación a la vez.",
         "body.way2": "<strong>La API de Claude</strong> — permite que tu propio software envíe solicitudes directamente a Claude, para que pueda integrarse en una app, un sitio web o una automatización — no solo en una ventana de chat.",
         "body.callout": "<strong>Por qué la necesitas:</strong> sin una API, Claude solo existe dentro de una ventana de chat. Con una API, tu propio producto puede hacerle preguntas a Claude y usar las respuestas automáticamente — exactamente lo que usan como base Claude Code y MCP, que vienen en la ruta Intermedia.",
+        "body.h3video": "Escúchalo explicado",
         "exercise.intro": "Haz clic en cada paso de abajo, en orden, para seguir lo que realmente pasa cuando una app le habla a Claude a través de la API.",
         "exercise.placeholder": "Haz clic en un paso de arriba para ver qué pasa en esa etapa.",
         "exercise.stepPrefix": "Paso",
@@ -311,6 +338,10 @@
     function renderDynamic(lang) {
       var data = PAGE_I18N[lang] || PAGE_I18N.en;
       var ui = window.ATS.getUILabels(lang);
+
+      if (window.ATS.audio) {
+        window.ATS.audio.create("#lesson-audio", LESSON_AUDIO, lang);
+      }
 
       var container = document.getElementById("trace-steps");
       container.innerHTML = "";

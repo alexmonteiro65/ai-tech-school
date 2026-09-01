@@ -109,6 +109,9 @@
         collaborator that operates inside your real codebase, instead of a
         disconnected chat window you copy-paste between.
       </div>
+
+      <h3 data-i18n="body.h3video">Listen to it explained</h3>
+      <div id="lesson-audio" data-reveal></div>
     </div>
   </section>
 
@@ -183,11 +186,32 @@
 <script src="../../js/i18n.js"></script>
 <script src="../../js/main.js"></script>
 <script src="../../js/guide.js"></script>
+<script src="../../js/audio.js"></script>
 <script>
   (function () {
     "use strict";
 
     var LESSON_ID = "intermediate-1";
+
+    /* Fill in urls.en/pt/es with the path to the real MP3 once the
+       narration for this lesson is generated (see
+       video/intermediate-lesson-1-script.md and
+       scripts/generate_narration.py). Empty = "coming soon" placeholder,
+       so this page never breaks waiting on the recording. */
+    var LESSON_AUDIO = {
+      urls: { en: "", pt: "", es: "" },
+      label: {
+        en: "What is Claude Code and how to install it",
+        pt: "O que é o Claude Code e como instalá-lo",
+        es: "Qué es Claude Code y cómo instalarlo"
+      },
+      duration: "~2 min",
+      placeholderText: {
+        en: "The narrated audio for this lesson is in production — check back soon.",
+        pt: "O áudio narrado desta aula está em produção — volte em breve.",
+        es: "El audio narrado de esta lección está en producción — vuelve pronto."
+      }
+    };
 
     var PAGE_I18N = {
       en: {
@@ -206,6 +230,7 @@
         "body.installLede": "The exact command can vary by operating system, but the shape of the setup is always the same:",
         "body.codeBlock": "1. Install Node.js\n2. Open your terminal\n3. Install Claude Code (a single install command)\n4. Navigate to your project folder\n5. Run: claude",
         "body.callout": "<strong>What changes once it's installed:</strong> you now have an AI collaborator that operates inside your real codebase, instead of a disconnected chat window you copy-paste between.",
+        "body.h3video": "Listen to it explained",
         "exercise.intro": "Click the steps below in the order you'd actually perform them to get Claude Code running.",
         "badge.eyebrow": "Lesson complete",
         "badge.title": "Claude Code Setup",
@@ -237,6 +262,7 @@
         "body.installLede": "O comando exato pode variar de acordo com o sistema operacional, mas a estrutura da configuração é sempre a mesma:",
         "body.codeBlock": "1. Instale o Node.js\n2. Abra seu terminal\n3. Instale o Claude Code (um único comando de instalação)\n4. Navegue até a pasta do seu projeto\n5. Execute: claude",
         "body.callout": "<strong>O que muda depois de instalado:</strong> agora você tem um colaborador de IA que trabalha dentro do seu código real, em vez de uma janela de chat desconectada entre a qual você fica copiando e colando.",
+        "body.h3video": "Ouça a explicação",
         "exercise.intro": "Clique nas etapas abaixo na ordem em que você realmente as executaria para colocar o Claude Code para rodar.",
         "badge.eyebrow": "Aula concluída",
         "badge.title": "Configuração do Claude Code",
@@ -268,6 +294,7 @@
         "body.installLede": "El comando exacto puede variar según el sistema operativo, pero la forma de la configuración es siempre la misma:",
         "body.codeBlock": "1. Instala Node.js\n2. Abre tu terminal\n3. Instala Claude Code (un solo comando de instalación)\n4. Navega hasta la carpeta de tu proyecto\n5. Ejecuta: claude",
         "body.callout": "<strong>Qué cambia una vez instalado:</strong> ahora tienes un colaborador de IA que opera dentro de tu código real, en lugar de una ventana de chat desconectada entre la que copias y pegas.",
+        "body.h3video": "Escúchalo explicado",
         "exercise.intro": "Haz clic en los pasos de abajo en el orden en que realmente los harías para poner Claude Code a funcionar.",
         "badge.eyebrow": "Lección completa",
         "badge.title": "Configuración de Claude Code",
@@ -288,6 +315,10 @@
     function renderDynamic(lang) {
       var data = PAGE_I18N[lang] || PAGE_I18N.en;
       var ui = window.ATS.getUILabels(lang);
+
+      if (window.ATS.audio) {
+        window.ATS.audio.create("#lesson-audio", LESSON_AUDIO, lang);
+      }
 
       document.getElementById("exercise").innerHTML = "";
       window.ATS.initOrderExercise("#exercise", data.steps, ui.order);

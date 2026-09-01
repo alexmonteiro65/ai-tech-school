@@ -113,6 +113,9 @@
         actions with no check are bad automation candidates — start with
         something you can verify quickly.
       </div>
+
+      <h3 data-i18n="body.h3video">Listen to it explained</h3>
+      <div id="lesson-audio" data-reveal></div>
     </div>
   </section>
 
@@ -201,11 +204,32 @@
 <script src="../../js/i18n.js"></script>
 <script src="../../js/main.js"></script>
 <script src="../../js/guide.js"></script>
+<script src="../../js/audio.js"></script>
 <script>
   (function () {
     "use strict";
 
     var LESSON_ID = "intermediate-3";
+
+    /* Fill in urls.en/pt/es with the path to the real MP3 once the
+       narration for this lesson is generated (see
+       video/intermediate-lesson-3-script.md and
+       scripts/generate_narration.py). Empty = "coming soon" placeholder,
+       so this page never breaks waiting on the recording. */
+    var LESSON_AUDIO = {
+      urls: { en: "", pt: "", es: "" },
+      label: {
+        en: "Building your first automated task with Claude Code",
+        pt: "Construindo sua primeira tarefa automatizada com o Claude Code",
+        es: "Construyendo tu primera tarea automatizada con Claude Code"
+      },
+      duration: "~2 min",
+      placeholderText: {
+        en: "The narrated audio for this lesson is in production — check back soon.",
+        pt: "O áudio narrado desta aula está em produção — volte em breve.",
+        es: "El audio narrado de esta lección está en producción — vuelve pronto."
+      }
+    };
 
     var PAGE_I18N = {
       en: {
@@ -229,6 +253,7 @@
         "body.action": "<strong>Action</strong> — what Claude actually does",
         "body.check": "<strong>Check</strong> — how you verify it worked",
         "body.callout": "<strong>Keep a review step early on.</strong> High-stakes, irreversible actions with no check are bad automation candidates — start with something you can verify quickly.",
+        "body.h3video": "Listen to it explained",
         "exercise.intro": "Design a real automation by picking one option from each category below.",
         "exercise.triggerLabel": "Trigger", "exercise.actionLabel": "Action", "exercise.checkLabel": "Check",
         "badge.eyebrow": "Lesson complete",
@@ -281,6 +306,7 @@
         "body.action": "<strong>Ação</strong> — o que o Claude realmente faz",
         "body.check": "<strong>Verificação</strong> — como você confirma que funcionou",
         "body.callout": "<strong>Mantenha uma etapa de revisão no início.</strong> Ações de alto risco e irreversíveis sem verificação são más candidatas à automação — comece com algo que você consiga verificar rapidamente.",
+        "body.h3video": "Ouça a explicação",
         "exercise.intro": "Projete uma automação de verdade escolhendo uma opção de cada categoria abaixo.",
         "exercise.triggerLabel": "Gatilho", "exercise.actionLabel": "Ação", "exercise.checkLabel": "Verificação",
         "badge.eyebrow": "Aula concluída",
@@ -333,6 +359,7 @@
         "body.action": "<strong>Acción</strong> — qué hace realmente Claude",
         "body.check": "<strong>Verificación</strong> — cómo confirmas que funcionó",
         "body.callout": "<strong>Mantén un paso de revisión al principio.</strong> Las acciones de alto riesgo e irreversibles sin verificación son malas candidatas para automatizar — empieza con algo que puedas verificar rápido.",
+        "body.h3video": "Escúchalo explicado",
         "exercise.intro": "Diseña una automatización real eligiendo una opción de cada categoría de abajo.",
         "exercise.triggerLabel": "Disparador", "exercise.actionLabel": "Acción", "exercise.checkLabel": "Verificación",
         "badge.eyebrow": "Lección completa",
@@ -379,6 +406,10 @@
     function renderDynamic(lang) {
       var data = PAGE_I18N[lang] || PAGE_I18N.en;
       var ui = window.ATS.getUILabels(lang);
+
+      if (window.ATS.audio) {
+        window.ATS.audio.create("#lesson-audio", LESSON_AUDIO, lang);
+      }
 
       var triggerEl = document.getElementById("wf-trigger");
       var actionEl = document.getElementById("wf-action");

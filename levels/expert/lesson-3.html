@@ -110,6 +110,9 @@
         connector. Expert combines them into a multi-tool, guardrailed,
         autonomous pipeline — exactly like this one.
       </div>
+
+      <h3 data-i18n="body.h3video">Listen to it explained</h3>
+      <div id="lesson-audio" data-reveal></div>
     </div>
   </section>
 
@@ -205,11 +208,32 @@
 <script src="../../js/i18n.js"></script>
 <script src="../../js/main.js"></script>
 <script src="../../js/guide.js"></script>
+<script src="../../js/audio.js"></script>
 <script>
   (function () {
     "use strict";
 
     var LESSON_ID = "expert-3";
+
+    /* Fill in urls.en/pt/es with the path to the real MP3 once the
+       narration for this lesson is generated (see
+       video/expert-lesson-3-script.md and
+       scripts/generate_narration.py). Empty = "coming soon" placeholder,
+       so this page never breaks waiting on the recording. */
+    var LESSON_AUDIO = {
+      urls: { en: "", pt: "", es: "" },
+      label: {
+        en: "Deploying a fully automated AI-powered business",
+        pt: "Implantando um negócio totalmente automatizado com IA",
+        es: "Desplegando un negocio totalmente automatizado con IA"
+      },
+      duration: "~2:15",
+      placeholderText: {
+        en: "The narrated audio for this lesson is in production — check back soon.",
+        pt: "O áudio narrado desta aula está em produção — volte em breve.",
+        es: "El audio narrado de esta lección está en producción — vuelve pronto."
+      }
+    };
 
     var PAGE_I18N = {
       en: {
@@ -229,6 +253,7 @@
         "body.chk2": "Monitor the first runs closely",
         "body.chk3": "Keep an off-switch",
         "body.callout": "This is the endpoint of the whole curriculum: Beginner gave you the mental model of Claude. Intermediate gave you Claude Code and a real connector. Expert combines them into a multi-tool, guardrailed, autonomous pipeline — exactly like this one.",
+        "body.h3video": "Listen to it explained",
         "exercise.intro": "Assemble your own pipeline, then confirm the deployment reality check.",
         "exercise.triggerLabel": "Trigger", "exercise.actionLabel": "Agent action", "exercise.outputLabel": "Output",
         "exercise.checklistLabel": "Before this goes live, would you:",
@@ -281,6 +306,7 @@
         "body.chk2": "Monitore de perto as primeiras execuções",
         "body.chk3": "Mantenha um interruptor de desligamento",
         "body.callout": "Este é o ponto final de todo o currículo: o Iniciante deu a você o modelo mental do Claude. O Intermediário deu a você o Claude Code e um conector de verdade. O Avançado junta tudo isso em um pipeline autônomo, com múltiplas ferramentas e salvaguardas — exatamente como este.",
+        "body.h3video": "Ouça a explicação",
         "exercise.intro": "Monte seu próprio pipeline e depois confirme o checklist de realidade antes de implantar.",
         "exercise.triggerLabel": "Gatilho", "exercise.actionLabel": "Ação do agente", "exercise.outputLabel": "Resultado",
         "exercise.checklistLabel": "Antes de colocar no ar, você faria isto:",
@@ -333,6 +359,7 @@
         "body.chk2": "Monitorea de cerca las primeras ejecuciones",
         "body.chk3": "Mantén un interruptor de apagado",
         "body.callout": "Este es el punto final de todo el plan de estudios: Principiante te dio el modelo mental de Claude. Intermedio te dio Claude Code y un conector real. Experto lo combina todo en un pipeline autónomo, multi-herramienta y con salvaguardas — exactamente como este.",
+        "body.h3video": "Escúchalo explicado",
         "exercise.intro": "Arma tu propio pipeline y luego confirma la verificación de realidad antes de desplegar.",
         "exercise.triggerLabel": "Disparador", "exercise.actionLabel": "Acción del agente", "exercise.outputLabel": "Resultado",
         "exercise.checklistLabel": "Antes de ponerlo en marcha, ¿harías esto?:",
@@ -383,6 +410,10 @@
     function renderDynamic(lang) {
       var data = PAGE_I18N[lang] || PAGE_I18N.en;
       var ui = window.ATS.getUILabels(lang);
+
+      if (window.ATS.audio) {
+        window.ATS.audio.create("#lesson-audio", LESSON_AUDIO, lang);
+      }
 
       var triggerEl = document.getElementById("p-trigger");
       var actionEl = document.getElementById("p-action");

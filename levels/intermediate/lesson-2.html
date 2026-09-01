@@ -105,6 +105,9 @@
         read issues, search code, and open pull requests — always with your
         visibility into what it's doing.
       </div>
+
+      <h3 data-i18n="body.h3video">Listen to it explained</h3>
+      <div id="lesson-audio" data-reveal></div>
     </div>
   </section>
 
@@ -179,11 +182,32 @@
 <script src="../../js/i18n.js"></script>
 <script src="../../js/main.js"></script>
 <script src="../../js/guide.js"></script>
+<script src="../../js/audio.js"></script>
 <script>
   (function () {
     "use strict";
 
     var LESSON_ID = "intermediate-2";
+
+    /* Fill in urls.en/pt/es with the path to the real MP3 once the
+       narration for this lesson is generated (see
+       video/intermediate-lesson-2-script.md and
+       scripts/generate_narration.py). Empty = "coming soon" placeholder,
+       so this page never breaks waiting on the recording. */
+    var LESSON_AUDIO = {
+      urls: { en: "", pt: "", es: "" },
+      label: {
+        en: "Your first MCP connector — connecting GitHub",
+        pt: "Seu primeiro conector MCP — conectando o GitHub",
+        es: "Tu primer conector MCP — conectando GitHub"
+      },
+      duration: "~2 min",
+      placeholderText: {
+        en: "The narrated audio for this lesson is in production — check back soon.",
+        pt: "O áudio narrado desta aula está em produção — volte em breve.",
+        es: "El audio narrado de esta lección está en producción — vuelve pronto."
+      }
+    };
 
     var PAGE_I18N = {
       en: {
@@ -202,6 +226,7 @@
         "body.v2": "<strong>Tool</strong> — a specific action a server exposes, e.g. \"create a pull request\"",
         "body.v3": "<strong>Client</strong> — the app using the server, e.g. Claude Code",
         "body.callout": "<strong>What connecting GitHub actually changes:</strong> Claude goes from an assistant who talks about your repository to one that can read issues, search code, and open pull requests — always with your visibility into what it's doing.",
+        "body.h3video": "Listen to it explained",
         "exercise.intro": "Match each MCP term to its correct definition.",
         "badge.eyebrow": "Lesson complete",
         "badge.title": "MCP Basics",
@@ -239,6 +264,7 @@
         "body.v2": "<strong>Ferramenta (Tool)</strong> — uma ação específica que um servidor disponibiliza, por exemplo \"criar um pull request\"",
         "body.v3": "<strong>Cliente</strong> — o aplicativo que usa o servidor, por exemplo o Claude Code",
         "body.callout": "<strong>O que realmente muda ao conectar o GitHub:</strong> o Claude passa de um assistente que fala sobre o seu repositório para um que consegue ler issues, buscar código e abrir pull requests — sempre com total visibilidade do que ele está fazendo.",
+        "body.h3video": "Ouça a explicação",
         "exercise.intro": "Combine cada termo do MCP com sua definição correta.",
         "badge.eyebrow": "Aula concluída",
         "badge.title": "Fundamentos de MCP",
@@ -276,6 +302,7 @@
         "body.v2": "<strong>Herramienta (Tool)</strong> — una acción específica que un servidor expone, por ejemplo \"crear un pull request\"",
         "body.v3": "<strong>Cliente</strong> — la app que usa el servidor, por ejemplo Claude Code",
         "body.callout": "<strong>Qué cambia realmente al conectar GitHub:</strong> Claude pasa de ser un asistente que habla sobre tu repositorio a uno que puede leer issues, buscar código y abrir pull requests — siempre con total visibilidad de lo que está haciendo.",
+        "body.h3video": "Escúchalo explicado",
         "exercise.intro": "Relaciona cada término de MCP con su definición correcta.",
         "badge.eyebrow": "Lección completa",
         "badge.title": "Fundamentos de MCP",
@@ -302,6 +329,10 @@
     function renderDynamic(lang) {
       var data = PAGE_I18N[lang] || PAGE_I18N.en;
       var ui = window.ATS.getUILabels(lang);
+
+      if (window.ATS.audio) {
+        window.ATS.audio.create("#lesson-audio", LESSON_AUDIO, lang);
+      }
 
       document.getElementById("exercise").innerHTML = "";
       window.ATS.initMatchExercise("#exercise", data.items, data.pool, ui.match);

@@ -1,15 +1,26 @@
 /* Shared audio-narration engine, used by per-lesson audio sections.
 
-   Pattern: same as js/video.js but simpler — no avatar, just a real human
-   voice narrating the lesson script, hosted right in this repo (a 3-5
+   Pattern: same as js/video.js but simpler — no avatar, just a narrated
+   voice reading the lesson script, hosted right in this repo (a 2-4
    minute MP3 is small enough that there's no reason to reach for
    YouTube/Vimeo the way the video pipeline does). Renders a plain HTML5
    <audio> player. Leave a language's url empty and a "coming soon"
    placeholder renders instead, so the page never breaks waiting on the
-   recording. See CLAUDE.md section 2 for why this project doesn't call a
-   generative voice API directly — the audio is recorded/produced outside
-   this codebase (the founder's own voice, or a free tool the user runs
-   himself) and only the finished, hosted file is referenced here. */
+   recording.
+
+   Where the MP3s come from: Piper, a free, open-source, offline neural
+   TTS engine (MIT-licensed, no account, no API key — this is NOT the
+   "no paid/generative third-party API" case in CLAUDE.md section 2,
+   which is about billed, key-authenticated APIs like Runway/HeyGen).
+   scripts/generate_narration.py reads the scripts in video/*-script.md
+   and synthesizes them with Piper inside
+   .github/workflows/generate-narration.yml — the same GitHub-Actions-as-
+   backend pattern as the AI News and Instagram pipelines, needed only
+   because the Piper voice models themselves are fetched from Hugging
+   Face, which this project's own dev sandbox can't reach but Actions
+   runners can. See claude/change-plan-sept1.md section 4 for the voice
+   choices. Nothing here calls a generative API from the live site or a
+   visitor's browser — only the finished, hosted MP3 is referenced. */
 window.ATS = window.ATS || {};
 
 (function (ATS) {

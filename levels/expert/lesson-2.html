@@ -107,6 +107,9 @@
         capability, but also more surface area for mistakes. Only connect
         what the workflow actually needs.
       </div>
+
+      <h3 data-i18n="body.h3video">Listen to it explained</h3>
+      <div id="lesson-audio" data-reveal></div>
     </div>
   </section>
 
@@ -181,11 +184,32 @@
 <script src="../../js/i18n.js"></script>
 <script src="../../js/main.js"></script>
 <script src="../../js/guide.js"></script>
+<script src="../../js/audio.js"></script>
 <script>
   (function () {
     "use strict";
 
     var LESSON_ID = "expert-2";
+
+    /* Fill in urls.en/pt/es with the path to the real MP3 once the
+       narration for this lesson is generated (see
+       video/expert-lesson-2-script.md and
+       scripts/generate_narration.py). Empty = "coming soon" placeholder,
+       so this page never breaks waiting on the recording. */
+    var LESSON_AUDIO = {
+      urls: { en: "", pt: "", es: "" },
+      label: {
+        en: "Connecting 10+ tools via Composio MCP",
+        pt: "Conectando mais de 10 ferramentas via Composio MCP",
+        es: "Conectando más de 10 herramientas vía Composio MCP"
+      },
+      duration: "~2 min",
+      placeholderText: {
+        en: "The narrated audio for this lesson is in production — check back soon.",
+        pt: "O áudio narrado desta aula está em produção — volte em breve.",
+        es: "El audio narrado de esta lección está en producción — vuelve pronto."
+      }
+    };
 
     var PAGE_I18N = {
       en: {
@@ -206,6 +230,7 @@
         "body.ex3": "<strong>Slack</strong> — notify the team",
         "body.ex4": "<strong>Google Calendar</strong> — schedule the kickoff call",
         "body.callout": "<strong>Design principle:</strong> more connected tools means more capability, but also more surface area for mistakes. Only connect what the workflow actually needs.",
+        "body.h3video": "Listen to it explained",
         "exercise.intro": "Match each task to the tool best suited to handle it.",
         "badge.eyebrow": "Lesson complete",
         "badge.title": "Multi-Tool Integration",
@@ -247,6 +272,7 @@
         "body.ex3": "<strong>Slack</strong> — avisar a equipe",
         "body.ex4": "<strong>Google Calendar</strong> — agendar a call inicial",
         "body.callout": "<strong>Princípio de design:</strong> mais ferramentas conectadas significa mais capacidade, mas também mais superfície para erros. Conecte só o que o fluxo de trabalho realmente precisa.",
+        "body.h3video": "Ouça a explicação",
         "exercise.intro": "Combine cada tarefa com a ferramenta mais indicada para realizá-la.",
         "badge.eyebrow": "Aula concluída",
         "badge.title": "Integração de Múltiplas Ferramentas",
@@ -288,6 +314,7 @@
         "body.ex3": "<strong>Slack</strong> — avisar al equipo",
         "body.ex4": "<strong>Google Calendar</strong> — agendar la llamada de arranque",
         "body.callout": "<strong>Principio de diseño:</strong> más herramientas conectadas significa más capacidad, pero también más superficie para errores. Conecta solo lo que el flujo de trabajo realmente necesita.",
+        "body.h3video": "Escúchalo explicado",
         "exercise.intro": "Relaciona cada tarea con la herramienta más indicada para manejarla.",
         "badge.eyebrow": "Lección completa",
         "badge.title": "Integración Multi-Herramienta",
@@ -316,6 +343,10 @@
     function renderDynamic(lang) {
       var data = PAGE_I18N[lang] || PAGE_I18N.en;
       var ui = window.ATS.getUILabels(lang);
+
+      if (window.ATS.audio) {
+        window.ATS.audio.create("#lesson-audio", LESSON_AUDIO, lang);
+      }
 
       document.getElementById("exercise").innerHTML = "";
       window.ATS.initMatchExercise("#exercise", data.items, data.pool, ui.match);

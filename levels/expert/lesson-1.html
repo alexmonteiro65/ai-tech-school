@@ -107,6 +107,9 @@
         but only sends automatically for the cases it's confident about, and
         escalates everything else to a human.
       </div>
+
+      <h3 data-i18n="body.h3video">Listen to it explained</h3>
+      <div id="lesson-audio" data-reveal></div>
     </div>
   </section>
 
@@ -195,11 +198,32 @@
 <script src="../../js/i18n.js"></script>
 <script src="../../js/main.js"></script>
 <script src="../../js/guide.js"></script>
+<script src="../../js/audio.js"></script>
 <script>
   (function () {
     "use strict";
 
     var LESSON_ID = "expert-1";
+
+    /* Fill in urls.en/pt/es with the path to the real MP3 once the
+       narration for this lesson is generated (see
+       video/expert-lesson-1-script.md and
+       scripts/generate_narration.py). Empty = "coming soon" placeholder,
+       so this page never breaks waiting on the recording. */
+    var LESSON_AUDIO = {
+      urls: { en: "", pt: "", es: "" },
+      label: {
+        en: "Building AI agents that work autonomously",
+        pt: "Construindo agentes de IA que funcionam de forma autônoma",
+        es: "Construyendo agentes de IA que funcionan de forma autónoma"
+      },
+      duration: "~2:15",
+      placeholderText: {
+        en: "The narrated audio for this lesson is in production — check back soon.",
+        pt: "O áudio narrado desta aula está em produção — volte em breve.",
+        es: "El audio narrado de esta lección está en producción — vuelve pronto."
+      }
+    };
 
     var PAGE_I18N = {
       en: {
@@ -219,6 +243,7 @@
         "body.r2": "<strong>Observability</strong> — logs of what it actually did",
         "body.r3": "<strong>A stopping condition</strong> — a limit or a point where it must hand off to a human",
         "body.callout": "Example: an agent that monitors a support inbox and drafts replies — but only sends automatically for the cases it's confident about, and escalates everything else to a human.",
+        "body.h3video": "Listen to it explained",
         "exercise.intro": "Scenario: you're configuring an agent to manage replies to a shared inbox. Choose its permissions, then check your setup.",
         "exercise.cRead": "Can read incoming emails", "exercise.cReadNote": "(required for this agent)",
         "exercise.cDraft": "Can draft replies for your review",
@@ -264,6 +289,7 @@
         "body.r2": "<strong>Observabilidade</strong> — registros do que ele realmente fez",
         "body.r3": "<strong>Uma condição de parada</strong> — um limite ou um ponto em que ele precisa repassar para um humano",
         "body.callout": "Exemplo: um agente que monitora uma caixa de suporte e redige respostas — mas só envia automaticamente nos casos em que tem confiança, e encaminha todo o resto para um humano.",
+        "body.h3video": "Ouça a explicação",
         "exercise.intro": "Cenário: você está configurando um agente para gerenciar respostas de uma caixa de entrada compartilhada. Escolha as permissões dele e depois verifique sua configuração.",
         "exercise.cRead": "Pode ler e-mails recebidos", "exercise.cReadNote": "(obrigatório para este agente)",
         "exercise.cDraft": "Pode redigir respostas para sua revisão",
@@ -309,6 +335,7 @@
         "body.r2": "<strong>Observabilidad</strong> — registros de lo que realmente hizo",
         "body.r3": "<strong>Una condición de parada</strong> — un límite o un punto en el que debe pasarle el control a un humano",
         "body.callout": "Ejemplo: un agente que monitorea una bandeja de soporte y redacta respuestas — pero solo las envía automáticamente en los casos donde tiene confianza, y escala todo lo demás a un humano.",
+        "body.h3video": "Escúchalo explicado",
         "exercise.intro": "Escenario: estás configurando un agente para gestionar respuestas de una bandeja de entrada compartida. Elige sus permisos y luego revisa tu configuración.",
         "exercise.cRead": "Puede leer correos entrantes", "exercise.cReadNote": "(obligatorio para este agente)",
         "exercise.cDraft": "Puede redactar respuestas para tu revisión",
@@ -342,6 +369,10 @@
     function renderDynamic(lang) {
       var data = PAGE_I18N[lang] || PAGE_I18N.en;
       var ui = window.ATS.getUILabels(lang);
+
+      if (window.ATS.audio) {
+        window.ATS.audio.create("#lesson-audio", LESSON_AUDIO, lang);
+      }
 
       document.getElementById("guard-check").onclick = function () {
         var draft = document.getElementById("g-draft").checked;

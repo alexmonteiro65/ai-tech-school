@@ -106,6 +106,9 @@ Specific: "Write a 100-word paragraph for a children's book
         answer. If it's not quite right, refine your prompt with more detail
         rather than starting over completely.
       </div>
+
+      <h3 data-i18n="body.h3video">Listen to it explained</h3>
+      <div id="lesson-audio" data-reveal></div>
     </div>
   </section>
 
@@ -202,11 +205,32 @@ Specific: "Write a 100-word paragraph for a children's book
 <script src="../../js/i18n.js"></script>
 <script src="../../js/main.js"></script>
 <script src="../../js/guide.js"></script>
+<script src="../../js/audio.js"></script>
 <script>
   (function () {
     "use strict";
 
     var LESSON_ID = "beginner-2";
+
+    /* Fill in urls.en/pt/es with the path to the real MP3 once the
+       narration for this lesson is generated (see
+       video/beginner-lesson-2-script.md and
+       scripts/generate_narration.py). Empty = "coming soon" placeholder,
+       so this page never breaks waiting on the recording. */
+    var LESSON_AUDIO = {
+      urls: { en: "", pt: "", es: "" },
+      label: {
+        en: "Your first prompt — how to talk to AI correctly",
+        pt: "Seu primeiro prompt — como falar com a IA corretamente",
+        es: "Tu primer prompt — cómo hablarle a la IA correctamente"
+      },
+      duration: "~2 min",
+      placeholderText: {
+        en: "The narrated audio for this lesson is in production — check back soon.",
+        pt: "O áudio narrado desta aula está em produção — volte em breve.",
+        es: "El audio narrado de esta lección está en producción — vuelve pronto."
+      }
+    };
 
     var PAGE_I18N = {
       en: {
@@ -227,6 +251,7 @@ Specific: "Write a 100-word paragraph for a children's book
         "body.compare": "Compare these two prompts:",
         "body.codeBlock": "Vague:   \"Write about dogs\"\n\nSpecific: \"Write a 100-word paragraph for a children's book\n           about why dogs make loyal pets, in a warm, simple tone.\"",
         "body.callout": "<strong>Tip:</strong> treat the first response as a draft, not a final answer. If it's not quite right, refine your prompt with more detail rather than starting over completely.",
+        "body.h3video": "Listen to it explained",
         "exercise.intro": "Build a real prompt using the four-part formula. Fill in each field, then assemble it.",
         "exercise.taskLabel": "Task", "exercise.taskPlaceholder": "e.g. Write a paragraph about why dogs make loyal pets",
         "exercise.contextLabel": "Context", "exercise.contextPlaceholder": "e.g. It's for a children's book",
@@ -277,6 +302,7 @@ Specific: "Write a 100-word paragraph for a children's book
         "body.compare": "Compare estes dois prompts:",
         "body.codeBlock": "Vago:      \"Escreva sobre cachorros\"\n\nEspecífico: \"Escreva um parágrafo de 100 palavras para um livro\n            infantil sobre por que cachorros são animais leais,\n            em um tom caloroso e simples.\"",
         "body.callout": "<strong>Dica:</strong> trate a primeira resposta como um rascunho, não como a resposta final. Se não estiver bem, refine seu prompt com mais detalhes em vez de começar do zero.",
+        "body.h3video": "Ouça a explicação",
         "exercise.intro": "Monte um prompt de verdade usando a fórmula de quatro partes. Preencha cada campo e depois monte.",
         "exercise.taskLabel": "Tarefa", "exercise.taskPlaceholder": "ex.: Escreva um parágrafo sobre por que cachorros são leais",
         "exercise.contextLabel": "Contexto", "exercise.contextPlaceholder": "ex.: É para um livro infantil",
@@ -327,6 +353,7 @@ Specific: "Write a 100-word paragraph for a children's book
         "body.compare": "Compara estos dos prompts:",
         "body.codeBlock": "Vago:       \"Escribe sobre perros\"\n\nEspecífico: \"Escribe un párrafo de 100 palabras para un libro\n            infantil sobre por qué los perros son mascotas leales,\n            en un tono cálido y simple.\"",
         "body.callout": "<strong>Consejo:</strong> trata la primera respuesta como un borrador, no como la respuesta final. Si no queda del todo bien, refina tu prompt con más detalle en lugar de empezar de cero.",
+        "body.h3video": "Escúchalo explicado",
         "exercise.intro": "Arma un prompt real usando la fórmula de cuatro partes. Completa cada campo y luego ármalo.",
         "exercise.taskLabel": "Tarea", "exercise.taskPlaceholder": "ej.: Escribe un párrafo sobre por qué los perros son leales",
         "exercise.contextLabel": "Contexto", "exercise.contextPlaceholder": "ej.: Es para un libro infantil",
@@ -374,6 +401,10 @@ Specific: "Write a 100-word paragraph for a children's book
     function renderDynamic(lang) {
       var data = PAGE_I18N[lang] || PAGE_I18N.en;
       var ui = window.ATS.getUILabels(lang);
+
+      if (window.ATS.audio) {
+        window.ATS.audio.create("#lesson-audio", LESSON_AUDIO, lang);
+      }
 
       var formatSelect = document.getElementById("pb-format");
       var toneSelect = document.getElementById("pb-tone");

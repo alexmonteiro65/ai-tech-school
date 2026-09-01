@@ -1,0 +1,544 @@
+#!/usr/bin/env python3
+"""
+Assembles "The AI Universe" explainer video (one MP4 per language) from
+material that already exists in this repo — no stock footage, no
+generative video API (see CLAUDE.md section 2 for why that's ruled out).
+
+Inputs:
+  - diagrams/ai-universe.svg          the single source diagram
+  - video/ai-universe-script.md       scene timing + on-screen text + narration
+  - audio/universe/ai-universe-<lang>.mp3   narration, produced by
+                                       scripts/generate_narration.py (run
+                                       that first — this script fails
+                                       loudly if the audio is missing)
+
+What it does:
+  1. Rasterizes the diagram once at high resolution with rsvg-convert, then
+     pads it with matching background color so later crops can extend
+     past the drawn edges.
+  2. Walks the same 8 scenes the script already times out (title card ->
+     Claude core -> Prompts & Chat -> API -> MCP -> Connectors -> Agents
+     orbit -> pull back), each scene a slow pan/zoom ("Ken Burns") between
+     a start and end crop of that one diagram, matching the ring radii
+     actually drawn in the SVG (see SCENES below) — i.e. this isn't a
+     generic zoom-and-pan of a photo, the crop boxes are keyed to the
+     diagram's real geometry.
+  3. Rescales the authored scene durations (which assume ~130 wpm
+     English) to the real length of the generated narration for that
+     language, so PT/ES — which run longer, per the script's own timing
+     note — stay in sync instead of racing ahead of the voice.
+  4. Burns in a short on-screen caption per scene (from the script's own
+     "on-screen" column) and mixes in the narration track.
+  5. Appends a simple end card (AI Tech School + the three skill paths)
+     and writes video/ai-universe-<lang>.mp4.
+
+Runs in GitHub Actions for the same reason scripts/generate_narration.py
+does: it depends on that script's output. Encoding itself (rsvg-convert,
+ffmpeg) needs no network at all once the two apt packages below are
+installed — this could run locally too, if audio/universe/ already has
+the MP3s.
+"""
+import os
+import re
+import subprocess
+
+from PIL import Image, ImageDraw, ImageFont
+
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DIAGRAM_SVG = os.path.join(REPO_ROOT, "diagrams", "ai-universe.svg")
+SCRIPT_MD = os.path.join(REPO_ROOT, "video", "ai-universe-script.md")
+AUDIO_DIR = os.path.join(REPO_ROOT, "audio", "universe")
+OUTPUT_DIR = os.path.join(REPO_ROOT, "video")
+WORK_DIR = os.environ.get("UNIVERSE_VIDEO_WORKDIR", "/tmp/universe-video-build")
+
+LANGS = ("en", "pt", "es")
+LANG_HEADINGS = {
+    "en": "## English",
+    "pt": "## Português (Brasil)",
+    "es": "## Español (Latinoamérica)",
+}
+
+# Diagram geometry (SVG viewBox is 1000x1020, center 500,480 — see
+# diagrams/ai-universe.svg's RINGS comment block). Each scene is a crop
+# box in SVG units: (cx, cy, half_extent). The video pans/zooms from the
+# previous scene's end box to this scene's box over the scene's duration.
+# Scene order matches the script table exactly (both EN/PT/ES use the
+# same 8 rows in the same order), so this list is language-independent.
+BG_COLOR = "#0a0c12"  # diagrams/ai-universe.svg's bgGlow outer stop
+CX, CY = 500, 480
+SCENES = [
+    {"box": (CX, CY, 540)},   # 0: title card, full diagram
+    {"box": (CX, CY, 170)},   # 1: Claude core (r=62 + glow)
+    {"box": (CX, CY, 190)},   # 2: Prompts & Chat ring (r=100)
+    {"box": (CX, CY, 250)},   # 3: API ring (r=165)
+    {"box": (CX, CY, 310)},   # 4: MCP ring (r=230)
+    {"box": (CX, CY, 430)},   # 5: Connectors ring + chips (r=300)
+    {"box": (CX, CY, 460)},   # 6: Agents outer orbit (r=350)
+    {"box": (CX, CY, 540)},   # 7: pull back to full diagram
+]
+
+RASTER_SCALE = 2   # SVG units -> px (2x is already sharp for a 1080 output crop)
+PAD_SVG = 300       # padding added on every side, in SVG units, before cropping
+OUT_SIZE = 1080     # square output canvas, px
+FPS = 15            # a slow Ken Burns pan doesn't need 30fps, and this keeps
+                    # per-language render time reasonable (see write_scene_frames)
+END_CARD_SECONDS = 4.0
+
+END_CARD_TEXT = {
+    "en": ("AI TECH SCHOOL", "Beginner  ·  Intermediate  ·  Expert"),
+    "pt": ("AI TECH SCHOOL", "Iniciante  ·  Intermediário  ·  Avançado"),
+    "es": ("AI TECH SCHOOL", "Principiante  ·  Intermedio  ·  Experto"),
+}
+
+
+def log(msg):
+    print(f"[build_universe_video] {msg}", flush=True)
+
+
+def run(cmd, **kwargs):
+    proc = subprocess.run(cmd, capture_output=True, text=True, **kwargs)
+    if proc.returncode != 0:
+        log(f"COMMAND FAILED: {' '.join(cmd)}")
+        log(proc.stdout)
+        log(proc.stderr)
+        raise RuntimeError(f"command failed: {cmd[0]}")
+    return proc
+
+
+# --------------------------------------------------------------------------
+# Script parsing (time range + on-screen text, per language)
+# --------------------------------------------------------------------------
+
+TABLE_ROW_RE = re.compile(r"^\|(.+)\|\s*$")
+TABLE_SEPARATOR_RE = re.compile(r"^\|?[\s:-]+\|[\s:|-]+$")
+TIME_RANGE_RE = re.compile(r"(\d+):(\d+)\s*[–-]\s*(\d+):(\d+)")
+
+
+def extract_lang_section(markdown_text, lang):
+    heading = LANG_HEADINGS[lang]
+    idx = markdown_text.find(heading)
+    if idx == -1:
+        return None
+    start = idx + len(heading)
+    next_idx = markdown_text.find("\n## ", start)
+    return markdown_text[start : next_idx if next_idx != -1 else len(markdown_text)].strip()
+
+
+def parse_scenes(section_text):
+    """Returns [{"duration": seconds, "on_screen": str}, ...] in row order."""
+    rows = []
+    for raw_line in section_text.splitlines():
+        stripped = raw_line.strip()
+        if TABLE_SEPARATOR_RE.match(stripped):
+            continue
+        m = TABLE_ROW_RE.match(stripped)
+        if not m:
+            continue
+        cells = [c.strip() for c in m.group(1).split("|")]
+        if len(cells) != 3:
+            continue
+        time_cell, on_screen, narration = cells
+        tm = TIME_RANGE_RE.search(time_cell)
+        if not tm:
+            continue  # header row
+        start_s = int(tm.group(1)) * 60 + int(tm.group(2))
+        end_s = int(tm.group(3)) * 60 + int(tm.group(4))
+        rows.append({"duration": max(end_s - start_s, 1), "on_screen": on_screen})
+    return rows
+
+
+def hex_to_rgb(hex_color):
+    hex_color = hex_color.lstrip("#")
+    return tuple(int(hex_color[i : i + 2], 16) for i in (0, 2, 4))
+
+
+# --------------------------------------------------------------------------
+# Diagram rasterization
+# --------------------------------------------------------------------------
+
+def rasterize_diagram():
+    os.makedirs(WORK_DIR, exist_ok=True)
+    raw_png = os.path.join(WORK_DIR, "diagram_raw.png")
+    w = 1000 * RASTER_SCALE
+    h = 1020 * RASTER_SCALE
+    run(["rsvg-convert", "-w", str(w), "-h", str(h), DIAGRAM_SVG, "-o", raw_png])
+
+    raw = Image.open(raw_png).convert("RGB")
+    pad_px = PAD_SVG * RASTER_SCALE
+    padded = Image.new("RGB", (w + 2 * pad_px, h + 2 * pad_px), hex_to_rgb(BG_COLOR))
+    padded.paste(raw, (pad_px, pad_px))
+    padded_path = os.path.join(WORK_DIR, "diagram_padded.png")
+    padded.save(padded_path)
+    log(f"rasterized + padded diagram -> {padded_path} ({padded.size[0]}x{padded.size[1]})")
+    return padded_path
+
+
+def crop_frame(padded_img, cx, cy, half):
+    """Crops a (cx±half, cy±half) SVG-space square out of the padded
+    diagram and resizes it to the output canvas."""
+    pad_px = PAD_SVG * RASTER_SCALE
+    px_cx = (cx + PAD_SVG) * RASTER_SCALE
+    px_cy = (cy + PAD_SVG) * RASTER_SCALE
+    px_half = half * RASTER_SCALE
+    box = (px_cx - px_half, px_cy - px_half, px_cx + px_half, px_cy + px_half)
+    return padded_img.crop(box).resize((OUT_SIZE, OUT_SIZE), Image.Resampling.BILINEAR)
+
+
+# --------------------------------------------------------------------------
+# Frame sequence + encode
+# --------------------------------------------------------------------------
+
+def lerp(a, b, t):
+    return a + (b - a) * t
+
+
+def write_scene_frames(padded_img, prev_box, this_box, duration_s, stdin_pipe):
+    """Streams this scene's frames straight into ffmpeg's stdin as raw
+    RGB24 bytes — no per-frame PNG encode/decode/disk-write, which is by
+    far the slowest part of generating a few thousand frames. Returns the
+    frame count actually written."""
+    n_frames = max(int(round(duration_s * FPS)), 1)
+    for i in range(n_frames):
+        t = i / max(n_frames - 1, 1)
+        # ease-in-out so the pan doesn't feel mechanical
+        eased = t * t * (3 - 2 * t)
+        cx = lerp(prev_box[0], this_box[0], eased)
+        cy = lerp(prev_box[1], this_box[1], eased)
+        half = lerp(prev_box[2], this_box[2], eased)
+        frame = crop_frame(padded_img, cx, cy, half)
+        stdin_pipe.write(frame.tobytes())
+    return n_frames
+
+
+def build_end_card(lang, out_path):
+    img = Image.new("RGB", (OUT_SIZE, OUT_SIZE), hex_to_rgb(BG_COLOR))
+    draw = ImageDraw.Draw(img)
+    title, subtitle = END_CARD_TEXT[lang]
+
+    def load_font(size, bold=True):
+        candidates = [
+            "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf" if bold
+            else "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+        ]
+        for c in candidates:
+            if os.path.exists(c):
+                return ImageFont.truetype(c, size)
+        return ImageFont.load_default()
+
+    title_font = load_font(64, bold=True)
+    subtitle_font = load_font(30, bold=False)
+
+    tw = draw.textlength(title, font=title_font)
+    draw.text(((OUT_SIZE - tw) / 2, OUT_SIZE / 2 - 60), title, font=title_font, fill=(244, 246, 251))
+    sw = draw.textlength(subtitle, font=subtitle_font)
+    draw.text(((OUT_SIZE - sw) / 2, OUT_SIZE / 2 + 30), subtitle, font=subtitle_font, fill=(154, 163, 184))
+
+    img.save(out_path)
+
+
+CAPTION_FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+
+
+def shorten_caption(text):
+    """The script's "on-screen / diagram focus" column is written for a
+    reader following along with the full table, so a few rows carry a
+    parenthetical aside (e.g. "...Connectors (GitHub, Slack, Gmail,
+    Notion, Calendar, Composio chips)") or a second clause after a comma
+    ("Pull back..., then cut to...") that's too long to burn in as one
+    line without overflowing a 1080px-wide frame. The diagram itself
+    already shows the connector names and the narration says the rest,
+    so trimming to the first clause loses nothing on screen."""
+    for sep in (" (", ", then", ", depois", ", luego"):
+        idx = text.find(sep)
+        if idx != -1:
+            text = text[:idx]
+    return text.strip().rstrip(",")
+
+
+def caption_font_size(text):
+    if len(text) > 45:
+        return 26
+    if len(text) > 30:
+        return 30
+    return 34
+
+
+def caption_drawtext_filter(captions):
+    """captions: [(start_s, end_s, text), ...]. Returns an ffmpeg
+    drawtext filter chain burning in each scene's on-screen text near the
+    bottom of the frame, one caption visible at a time."""
+    parts = []
+    for start_s, end_s, raw_text in captions:
+        text = shorten_caption(raw_text)
+        escaped = (
+            text.replace("\\", "\\\\")
+            .replace(":", "\\:")
+            .replace("'", "’")
+            .replace(",", "\\,")
+        )
+        parts.append(
+            "drawtext=fontfile='%s':text='%s':fontcolor=white:fontsize=%d:"
+            "box=1:boxcolor=black@0.45:boxborderw=16:"
+            "x=(w-text_w)/2:y=h-140:enable='between(t,%.2f,%.2f)'"
+            % (CAPTION_FONT, escaped, caption_font_size(text), start_s, end_s)
+        )
+    return ",".join(parts)
+
+
+def ffprobe_duration(path):
+    proc = run(
+        [
+            "ffprobe",
+            "-v",
+            "error",
+            "-show_entries",
+            "format=duration",
+            "-of",
+            "default=noprint_wrappers=1:nokey=1",
+            path,
+        ]
+    )
+    return float(proc.stdout.strip())
+
+
+def build_video_for_lang(lang, padded_img, script_scenes):
+    audio_path = os.path.join(AUDIO_DIR, f"ai-universe-{lang}.mp3")
+    if not os.path.exists(audio_path):
+        log(f"WARNING: {audio_path} not found — run scripts/generate_narration.py first. Skipping {lang}.")
+        return None
+
+    audio_duration = ffprobe_duration(audio_path)
+    narration_budget = max(audio_duration - END_CARD_SECONDS, 5.0)
+    authored_total = sum(s["duration"] for s in script_scenes)
+    scale = narration_budget / authored_total
+
+    os.makedirs(WORK_DIR, exist_ok=True)
+
+    # Work out every scene's real (rescaled) duration and caption window
+    # first, so the ffmpeg process (and its drawtext filter, which needs
+    # the full caption list up front) can be started before any frames
+    # are generated.
+    captions = []
+    elapsed = 0.0
+    scene_durations = []
+    for scene_script in script_scenes:
+        duration = scene_script["duration"] * scale
+        scene_durations.append(duration)
+        captions.append((elapsed, elapsed + duration, scene_script["on_screen"]))
+        elapsed += duration
+
+    # Frames are streamed straight into ffmpeg's stdin as raw RGB24 bytes
+    # instead of written to disk as individual PNGs first — with a few
+    # thousand frames per language, per-frame PNG encode+disk I/O was by
+    # far the slowest part of building this video; piping raw frames
+    # avoids it entirely.
+    diagram_video = os.path.join(WORK_DIR, f"diagram_{lang}.mp4")
+    ffmpeg_cmd = [
+        "ffmpeg",
+        "-y",
+        "-loglevel",
+        "error",
+        "-f",
+        "rawvideo",
+        "-pixel_format",
+        "rgb24",
+        "-video_size",
+        f"{OUT_SIZE}x{OUT_SIZE}",
+        "-framerate",
+        str(FPS),
+        "-i",
+        "-",
+        "-vf",
+        caption_drawtext_filter(captions),
+        "-c:v",
+        "libx264",
+        "-pix_fmt",
+        "yuv420p",
+        diagram_video,
+    ]
+    proc = subprocess.Popen(ffmpeg_cmd, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+    prev_box = SCENES[0]["box"]
+    for scene_def, duration in zip(SCENES, scene_durations):
+        write_scene_frames(padded_img, prev_box, scene_def["box"], duration, proc.stdin)
+        prev_box = scene_def["box"]
+    proc.stdin.close()
+    stderr = proc.stderr.read()
+    returncode = proc.wait()
+    if returncode != 0:
+        log(stderr.decode("utf-8", "replace"))
+        raise RuntimeError(f"ffmpeg (raw frame encode) failed for {lang}")
+
+    end_card_png = os.path.join(WORK_DIR, f"end_card_{lang}.png")
+    build_end_card(lang, end_card_png)
+    end_card_video = os.path.join(WORK_DIR, f"end_card_{lang}.mp4")
+    run(
+        [
+            "ffmpeg",
+            "-y",
+            "-loglevel",
+            "error",
+            "-loop",
+            "1",
+            "-i",
+            end_card_png,
+            "-t",
+            str(END_CARD_SECONDS),
+            "-vf",
+            f"fps={FPS}",
+            "-c:v",
+            "libx264",
+            "-pix_fmt",
+            "yuv420p",
+            end_card_video,
+        ]
+    )
+
+    concat_list = os.path.join(WORK_DIR, f"concat_{lang}.txt")
+    with open(concat_list, "w") as f:
+        f.write(f"file '{diagram_video}'\n")
+        f.write(f"file '{end_card_video}'\n")
+
+    silent_video = os.path.join(WORK_DIR, f"silent_{lang}.mp4")
+    run(
+        [
+            "ffmpeg",
+            "-y",
+            "-loglevel",
+            "error",
+            "-f",
+            "concat",
+            "-safe",
+            "0",
+            "-i",
+            concat_list,
+            "-c",
+            "copy",
+            silent_video,
+        ]
+    )
+
+    out_path = os.path.join(OUTPUT_DIR, f"ai-universe-{lang}.mp4")
+    run(
+        [
+            "ffmpeg",
+            "-y",
+            "-loglevel",
+            "error",
+            "-i",
+            silent_video,
+            "-i",
+            audio_path,
+            "-c:v",
+            "copy",
+            "-c:a",
+            "aac",
+            "-shortest",
+            out_path,
+        ]
+    )
+    log(f"wrote {out_path}")
+    return f"video/ai-universe-{lang}.mp4"
+
+
+def patch_urls_block(file_path, marker_re, generated_paths, label):
+    """Shared HTML-patch helper: finds the first `urls: { en: "...", ... }`
+    object following marker_re and replaces only the languages in
+    generated_paths whose current value is empty — never overwriting a
+    URL a human (or an earlier run) already set. Mirrors
+    scripts/generate_narration.py's patch_lesson_html."""
+    if not os.path.exists(file_path):
+        log(f"WARNING: {file_path} not found, skipping {label} URL patch")
+        return
+
+    with open(file_path, "r", encoding="utf-8") as f:
+        content = f.read()
+    original = content
+
+    marker_match = marker_re.search(content)
+    if not marker_match:
+        log(f"WARNING: {label} marker not found in {file_path}, skipping URL patch")
+        return
+
+    urls_line_re = re.compile(r"urls:\s*\{[^}]*\}")
+    tail = content[marker_match.end() :]
+    urls_match = urls_line_re.search(tail)
+    if not urls_match:
+        log(f"WARNING: no urls: {{...}} block found after {label} marker in {file_path}")
+        return
+
+    line = urls_match.group(0)
+    for lang, rel_path in generated_paths.items():
+        lang_re = re.compile(r"(" + re.escape(lang) + r':\s*")(")')
+        line = lang_re.sub(lambda m, p=rel_path: m.group(1) + p + '"', line)
+
+    abs_start = marker_match.end() + urls_match.start()
+    abs_end = marker_match.end() + urls_match.end()
+    content = content[:abs_start] + line + content[abs_end:]
+
+    if content != original:
+        with open(file_path, "w", encoding="utf-8") as f:
+            f.write(content)
+        log(f"patched {label} urls in {file_path}")
+    else:
+        log(f"{file_path}: {label} urls already set, nothing to patch")
+
+
+def patch_video_pages(generated_paths):
+    """Wires the freshly-built MP4s into the two places that reference
+    them: the dedicated AI Universe video page's own config, and the
+    shared AI_UNIVERSE_CONFIG in js/video.js that each level hub page's
+    course-intro slot reads via ATS.video.renderInto()."""
+    if not generated_paths:
+        return
+
+    patch_urls_block(
+        os.path.join(REPO_ROOT, "ai-universe-video.html"),
+        re.compile(r"var AI_UNIVERSE_VIDEO\s*=\s*\{"),
+        generated_paths,
+        "ai-universe-video.html AI_UNIVERSE_VIDEO",
+    )
+    patch_urls_block(
+        os.path.join(REPO_ROOT, "js", "video.js"),
+        re.compile(r"var AI_UNIVERSE_CONFIG\s*=\s*\{"),
+        generated_paths,
+        "js/video.js AI_UNIVERSE_CONFIG",
+    )
+
+
+def main():
+    if not os.path.exists(CAPTION_FONT):
+        raise RuntimeError(
+            f"{CAPTION_FONT} not found — install the fonts-dejavu-core apt "
+            "package (see .github/workflows/generate-universe-video.yml)"
+        )
+
+    with open(SCRIPT_MD, "r", encoding="utf-8") as f:
+        markdown_text = f.read()
+
+    padded_path = rasterize_diagram()
+    padded_img = Image.open(padded_path)
+
+    generated_paths = {}
+    for lang in LANGS:
+        section = extract_lang_section(markdown_text, lang)
+        if not section:
+            log(f"WARNING: no '{LANG_HEADINGS[lang]}' section in {SCRIPT_MD}")
+            continue
+        scenes = parse_scenes(section)
+        if len(scenes) != len(SCENES):
+            log(
+                f"WARNING: {lang} has {len(scenes)} scenes, expected {len(SCENES)} "
+                "(script table changed shape?) — skipping"
+            )
+            continue
+        rel_path = build_video_for_lang(lang, padded_img, scenes)
+        if rel_path:
+            generated_paths[lang] = rel_path
+
+    patch_video_pages(generated_paths)
+
+    log("done")
+
+
+if __name__ == "__main__":
+    main()

@@ -81,13 +81,17 @@ learner pick up where they left off — never to block access.
   with explicit permission — isn't something this assistant does. The
   video pipeline that *did* ship instead: a hand-built SVG diagram
   (`diagrams/ai-universe.svg`), a script derived from it
-  (`video/ai-universe-script.md`), and a static embed slot
+  (`video/ai-universe-script.md`), a self-hosted `<video>` slot
   (`js/video.js` + `ai-universe-video.html` + a slot on each level's hub
-  page) that shows a "coming soon" placeholder until real embed URLs (from
-  a video the user generates and hosts themselves, e.g. on YouTube/Vimeo)
-  are filled into `VIDEO_EMBED_URLS`. Don't revisit calling a generative
-  video/image/voice API directly from this codebase without a real
-  architecture conversation first.
+  page — plain MP4 files served from this site's own `video/` folder, not
+  a YouTube/Vimeo iframe, so nothing in the player can take a visitor off
+  the page) that shows a "coming soon" placeholder until a url is set,
+  and — added 2026-09-01, see this section's later entry on
+  `scripts/build_universe_video.py` — an automated pipeline that
+  generates and hosts that MP4 itself, keyless, by animating the one
+  diagram already in this repo rather than calling any video-generation
+  API. Don't revisit calling a generative video/image/voice API directly
+  from this codebase without a real architecture conversation first.
 - **Buffer, Later, and other paid social-scheduling APIs are still ruled
   out for the same reason** — a billed API + OAuth credentials this
   assistant won't hold, with no backend of its own to run a schedule on.
@@ -141,6 +145,57 @@ learner pick up where they left off — never to block access.
   understated — small muted text (`.ats-news-source`), not a button or
   icon — per Alex's explicit request to keep visitors from bouncing off
   the site, while still citing sources honestly rather than hiding them.
+- **Lesson and AI Universe narration audio is a third instance of the same
+  GitHub-Actions-as-backend pattern**, built 2026-09-01 per
+  `claude/change-plan-sept1.md` section 4 ("professorial narrator voice
+  for quizzes and lessons"). Unlike the two pipelines above, this one
+  needs no secret at all: it uses Piper, a free, open-source, offline
+  neural TTS engine (MIT-licensed) — genuinely free compute, not a
+  billed/key-authenticated API, so it doesn't run into the rule at the
+  top of this section. The reason it still has to run in Actions rather
+  than anywhere else is narrower: the Piper *voice model* files
+  (`en_US-norman-medium`, `pt_BR-faber-medium`, `es_ES-davefx-medium` —
+  the last one flagged as Spain- rather than Latin-American-accented,
+  the best option Piper currently ships) are fetched once from Hugging
+  Face's public model hub, and only a GitHub Actions runner has a route
+  there. Pipeline: `scripts/generate_narration.py` reads the narration
+  text in `video/*-lesson-*-script.md` (one file per lesson, plus the
+  table-format `video/ai-universe-script.md`), synthesizes each with
+  Piper, encodes to MP3 with ffmpeg, writes the files to
+  `audio/lessons/` and `audio/universe/`, and patches each lesson's
+  `LESSON_AUDIO.urls` (in its own `<script>` block, see section 4 below)
+  from empty to the real path — never overwriting a URL already set.
+  `js/audio.js` renders the `<audio>` player (or a "coming soon"
+  placeholder while a url is still empty) from that config.
+  `.github/workflows/generate-narration.yml` runs it on a manual trigger
+  or whenever a script file changes, and commits the generated audio and
+  patched lesson pages back.
+- **The AI Universe explainer video is a fourth instance of the same
+  pattern**, built 2026-09-01 per `claude/change-plan-sept1.md` section 6
+  ("automated video pipeline + sourcing real footage"). It is
+  deliberately NOT stock footage or a generative-video API call — see
+  the video-generation rule near the top of this section for why that's
+  ruled out — it's an assembled walkthrough of the one diagram this
+  project already has (`diagrams/ai-universe.svg`), which is the
+  approach that section's research actually landed on. Pipeline:
+  `scripts/build_universe_video.py` rasterizes that SVG once at high
+  resolution, then for each of the 8 scenes `video/ai-universe-script.md`
+  already times out, pans/zooms ("Ken Burns") between crop boxes keyed to
+  the diagram's real ring radii (Claude core, Prompts & Chat, API, MCP,
+  Connectors, Agents orbit — see the SCENES constant, not a generic
+  zoom-and-pan), rescaling the authored scene durations to match the
+  *actual* length of that language's narration (PT/ES run longer than
+  EN, so a fixed timeline would drift out of sync), burns in a short
+  on-screen caption per scene, appends a simple end card, and muxes in
+  the narration MP3 from the audio pipeline above — so this depends on
+  that one and re-runs it first to be self-contained. Writes
+  `video/ai-universe-<lang>.mp4` and wires the paths into
+  `ai-universe-video.html` and the shared `AI_UNIVERSE_CONFIG` in
+  `js/video.js` (which every level hub page's course-intro slot reads),
+  the same empty-until-generated, never-overwrite-a-set-url contract as
+  the lesson pages. `.github/workflows/generate-universe-video.yml` runs
+  it on a manual trigger or when the diagram, script, or either script
+  file changes.
 - **Static content, static hosting.** Pages are plain files. Lesson/quiz
   data lives inline in each lesson's own `<script>` block (a small JS
   object passed to the shared quiz engine) — not fetched from a server.
@@ -171,6 +226,15 @@ AITS/
     ai-universe.svg              # source diagram behind the video script (Claude → Prompts/Chat → API → MCP → Connectors → Agents)
   video/
     ai-universe-script.md        # 2-minute presenter script, EN/PT/ES, scene-by-scene, tied to the diagram
+    ai-universe-en.mp4, -pt.mp4, -es.mp4
+                                  # generated by scripts/build_universe_video.py, see CLAUDE.md section 2
+    beginner-lesson-1-script.md   # avatar-video-style script (table format), narration source for lesson audio too
+    beginner-lesson-2-script.md … expert-lesson-3-script.md
+                                  # plain-prose narration script per lesson (EN/PT/ES), read by scripts/generate_narration.py
+  audio/
+    lessons/                     # generated MP3s, one per lesson per language — <level>-<n>-<lang>.mp3
+    universe/                    # generated AI Universe narration MP3s — ai-universe-<lang>.mp3
+                                  # both auto-generated by scripts/generate_narration.py, see CLAUDE.md section 2
   news/
     news-data.js                  # AI News content, en/pt/es — auto-generated (see CLAUDE.md section 2)
     ai-news-setup.md               # one-time setup steps (only Alex can do these — the ANTHROPIC_API_KEY secret)
@@ -192,10 +256,14 @@ AITS/
     post_to_instagram.py          # Instagram Graph API publish script (posts 3-slide EN/PT/ES carousels), run by the workflow below
     fetch_and_rewrite_news.py     # AI News pipeline: fetch RSS -> rewrite via Anthropic API -> news/news-data.js
     build_social_carousels.py     # one-time content tool: generates social/carousels/*.svg (EN/PT/ES per post)
+    generate_narration.py         # narration pipeline: video/*-script.md -> Piper TTS -> audio/, patches LESSON_AUDIO urls
+    build_universe_video.py       # video pipeline: diagram + script + narration -> video/ai-universe-<lang>.mp4, patches video urls
   .github/
     workflows/
       instagram-autopost.yml      # GitHub Actions schedule that runs post_to_instagram.py twice daily
       ai-news-autoupdate.yml      # GitHub Actions schedule that runs fetch_and_rewrite_news.py daily
+      generate-narration.yml      # GitHub Actions job (manual trigger, or on script changes) that runs generate_narration.py
+      generate-universe-video.yml # GitHub Actions job (manual trigger, or on changes) that runs build_universe_video.py
   css/
     style.css                    # global design system + all page styles
   js/
@@ -204,6 +272,7 @@ AITS/
     i18n.js                      # language-switching engine (see section 5)
     guide.js                     # persistent "AM" tips widget, every page (see section 1)
     video.js                     # video-embed config + placeholder renderer (see note below)
+    audio.js                     # lesson-narration player + "coming soon" placeholder, see section 2
   assets/                        # icons/images, added as needed (SVG preferred)
     favicon-16x16.png, favicon-32x32.png, favicon-192x192.png, apple-touch-icon.png
                                   # sized favicon PNGs, linked from every page's <head> alongside favicon.ico
