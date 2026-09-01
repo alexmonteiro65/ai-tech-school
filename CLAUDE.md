@@ -77,13 +77,27 @@ learner pick up where they left off — never to block access.
   are filled into `VIDEO_EMBED_URLS`. Don't revisit calling a generative
   video/image/voice API directly from this codebase without a real
   architecture conversation first.
-- **Same reasoning applies to Buffer, Later, or any social-scheduling
-  API** — requested for @ai.tech.school and declined for identical reasons
-  (billed API + OAuth credentials this assistant won't hold, no backend to
-  run a schedule on). What shipped instead: `social/content-calendar.md`,
-  a real 30-day plan meant to be posted by hand. If real scheduling is ever
-  wanted, that's a backend + credentials decision for a human to make
-  deliberately, not something to wire up incrementally.
+- **Buffer, Later, and other paid social-scheduling APIs are still ruled
+  out for the same reason** — a billed API + OAuth credentials this
+  assistant won't hold, with no backend of its own to run a schedule on.
+  What shipped instead is different from what this section originally
+  said: **automated posting does now exist**, built on Meta's own free
+  Instagram Graph API called directly, with zero third-party scheduler in
+  the loop. `social/schedule.json` is the machine-readable calendar,
+  `scripts/post_to_instagram.py` does the two-step Graph API publish, and
+  `.github/workflows/instagram-autopost.yml` runs it twice daily via
+  GitHub Actions (free tier) and commits `schedule.json` back with the
+  post marked done. The two credentials this needs (`IG_ACCESS_TOKEN`,
+  `IG_USER_ID`) live only as GitHub Actions repository secrets that Alex
+  entered himself — never in this codebase, never handled by Claude. Full
+  one-time setup steps are in `social/instagram-api-setup.md`.
+  `social/content-calendar.md` stays as the human-readable version of the
+  same schedule. The 3 Reels are still posted by hand — no video file
+  exists for them to publish, and this project still doesn't generate
+  video from a script (see the video-generation rule above). If a
+  different platform (Buffer, Later, TikTok, etc.) is wanted later, that's
+  still a deliberate backend + credentials conversation, not an
+  incremental add to this pipeline.
 - **Static content, static hosting.** Pages are plain files. Lesson/quiz
   data lives inline in each lesson's own `<script>` block (a small JS
   object passed to the shared quiz engine) — not fetched from a server.
@@ -120,7 +134,14 @@ ATS/
     reels-scripts.md             # 3 Reels scripts (60s each) — scripts only, no video generated
     profile-setup.md             # bio/link/profile-picture text, ready to paste in manually
     accounts-to-follow.md        # 20 hand-verified real Instagram accounts (wrong-guess handles caught and logged, not just assumed)
-    content-calendar.md          # 30-day manual posting plan — 9 posts weeks 1–3, 3 Reels week 4
+    content-calendar.md          # human-readable version of the 30-day plan — 9 posts weeks 1–3, 3 Reels week 4
+    schedule.json                 # machine-readable version of the same 9 feed posts, consumed by scripts/post_to_instagram.py
+    instagram-api-setup.md        # one-time Graph API setup steps (only Alex can do these — account + credentials)
+  scripts/
+    post_to_instagram.py          # Instagram Graph API publish script, run by the workflow below
+  .github/
+    workflows/
+      instagram-autopost.yml      # GitHub Actions schedule that runs post_to_instagram.py twice daily
   css/
     style.css                    # global design system + all page styles
   js/
