@@ -1,0 +1,61 @@
+name: Generate lesson narration audio
+
+# Synthesizes the "professorial narrator voice" MP3s for every lesson and
+# for the AI Universe explainer, using Piper — a free, open-source,
+# offline text-to-speech engine (no account, no API key). See
+# scripts/generate_narration.py, js/audio.js, and
+# claude/change-plan-sept1.md section 4 for the full explanation.
+#
+# Runs in GitHub Actions (not anywhere else) for one reason: the Piper
+# voice model files (~60-100MB each) are fetched once from Hugging
+# Face's public model hub, and only an Actions runner has a route there.
+# Synthesis itself needs no key or paid service — this is the one
+# GitHub-Actions-as-backend pipeline in this project that needs zero
+# secrets from Alex.
+on:
+  workflow_dispatch: {}   # trigger manually from the Actions tab any time
+  push:
+    branches: [main]
+    paths:
+      - "video/*-script.md"
+      - "scripts/generate_narration.py"
+      - ".github/workflows/generate-narration.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  generate-narration:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Piper (offline TTS) and ffmpeg
+        run: |
+          pip install --upgrade piper-tts
+          which ffmpeg || (sudo apt-get update && sudo apt-get install -y ffmpeg)
+
+      - name: Cache Piper voice models
+        uses: actions/cache@v4
+        with:
+          path: .piper-voices
+          key: piper-voices-en_US-norman-medium-pt_BR-faber-medium-es_ES-davefx-medium
+
+      - name: Generate narration MP3s
+        run: python scripts/generate_narration.py
+
+      - name: Commit generated audio and lesson pages if anything changed
+        run: |
+          git config user.name "ats-narration-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add audio/ levels/
+          if ! git diff --cached --quiet; then
+            git commit -m "Generate lesson narration audio [skip ci]"
+            git push
+          else
+            echo "No narration changes to commit."
+          fi
