@@ -136,7 +136,7 @@ window.ATS = window.ATS || {};
   /* Backward-compatible helper for the existing "AI Universe" video page,
      which calls ATS.video.renderInto("#video-container", lang) directly. */
   var AI_UNIVERSE_CONFIG = {
-    urls: { en: "", pt: "", es: "" },
+    urls: { en: "video/ai-universe-en.mp4", pt: "video/ai-universe-pt.mp4", es: "video/ai-universe-es.mp4" },
     title: { en: "The AI Universe", pt: "O Universo da IA", es: "El Universo de la IA" },
     duration: "~2 min"
   };
