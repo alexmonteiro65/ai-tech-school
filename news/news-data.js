@@ -7,50 +7,50 @@ window.AITS_NEWS = {
     "items": [
       {
         "date": "Aug 29, 2026",
-        "title": "Sony Music, Warner sue Anthropic, alleging a ‘brazen campaign’ of intellectual property theft",
-        "summary": "Sony Music and Warner Bros. filed a lawsuit against Anthropic, claiming the company illegally used their copyrighted music catalogs to train AI models without permission.",
+        "title": "Sony Music, Warner sue Anthropic, alleging a 'brazen campaign' of intellectual property theft",
+        "summary": "Major music labels filed a lawsuit against Anthropic claiming the company illegally used copyrighted music in training its AI models. The suit alleges systematic unauthorized use of protected material.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
         "url": "https://techcrunch.com/2026/08/29/sony-music-warner-sue-anthropic-alleging-a-brazen-campaign-of-intellectual-property-theft/"
       },
       {
         "date": "Aug 28, 2026",
         "title": "An Anthropic researcher just gave us a peek at self-improving AI",
-        "summary": "An Anthropic research team demonstrated that an automated AI system could identify and correct its own misaligned behaviors across multiple benchmarks without hurting its overall performance.",
+        "summary": "Researchers demonstrated a system where automated AI could identify and correct misaligned behaviors across multiple benchmarks while maintaining overall performance. The work shows a pathway toward AI systems that can improve themselves without external oversight.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
         "url": "https://techcrunch.com/2026/08/28/an-anthropic-researcher-just-gave-us-a-peek-at-self-improving-ai/"
       },
       {
         "date": "Aug 28, 2026",
-        "title": "Anthropic gets its first court win over the Pentagon’s supply-chain risk label",
-        "summary": "A federal court ruled that the Trump administration's classification of Anthropic as a supply-chain risk was unlawful, marking a victory in the company's dispute with the Pentagon.",
+        "title": "Anthropic gets its first court win over the Pentagon's supply-chain risk label",
+        "summary": "A federal judge ruled that the Trump administration's designation of Anthropic as a supply-chain risk was improper, giving the company a court victory. Anthropic continues pursuing a second related lawsuit challenging the same label.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
         "url": "https://techcrunch.com/2026/08/28/anthropic-gets-its-first-court-win-over-the-pentagons-supply-chain-risk-label/"
       },
       {
         "date": "Aug 19, 2026",
         "title": "VentureBeat names Rob Strechay as its first Lead Analyst, expanding its enterprise AI research push",
-        "summary": "VentureBeat hired Rob Strechay as its first Lead Analyst to provide technical research for enterprise technology decision-makers evaluating AI infrastructure and deployment strategies.",
+        "summary": "Rob Strechay, a veteran technology analyst with three decades of experience, joined VentureBeat to lead research focused on enterprise AI infrastructure, deployment challenges, and decision-making. His coverage will include cloud infrastructure, data systems, platform engineering, and where AI intersects with security.",
         "source": "AI | VentureBeat",
         "url": "https://venturebeat.com/ai/venturebeat-names-rob-strechay-as-its-first-lead-analyst-expanding-its-enterprise-ai-research-push"
       },
       {
         "date": "Jan 22, 2026",
         "title": "Railway secures $100 million to challenge AWS with AI-native cloud infrastructure",
-        "summary": "Railway, a cloud platform built to match the speed of AI coding tools, raised $100 million in Series B funding after reaching over 10 million monthly deployments by focusing on fast infrastructure and lower costs than traditional cloud providers.",
+        "summary": "Railway, a cloud infrastructure startup with two million developers, raised $100 million in Series B funding to accelerate deployment of applications at speeds needed for AI-generated code. The company operates its own data centers and charges by the second, undercutting traditional cloud providers on both speed and cost.",
         "source": "AI | VentureBeat",
         "url": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud"
       },
       {
         "date": "Jan 19, 2026",
         "title": "Claude Code costs up to $200 a month. Goose does the same thing for free.",
-        "summary": "Goose, a free open-source AI coding agent from Block, offers similar capabilities to Claude Code without subscription fees by running entirely on a user's local computer with offline functionality.",
+        "summary": "Goose, an open-source AI coding agent from Block, provides autonomous coding capabilities comparable to Claude Code but runs locally on user hardware with no subscription fees or usage limits. Developers report frustration with Claude Code's rate-limiting system, while Goose offers privacy and offline functionality at the cost of requiring more powerful local hardware and slightly lower model quality.",
         "source": "AI | VentureBeat",
         "url": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free"
       },
       {
         "date": "Sep 1, 2026",
-        "title": "Apple shares ‘shocking evidence’ against former employee accused of stealing company data for OpenAI",
-        "summary": "Apple presented evidence that a former employee who is accused of stealing confidential data to give to OpenAI destroyed evidence after learning he was under investigation.",
+        "title": "Apple shares 'shocking evidence' against former employee accused of stealing company data for OpenAI",
+        "summary": "Apple presented evidence that a former employee destroyed data and communications after learning he was under investigation for allegedly transferring confidential company information to OpenAI. The case involves allegations of corporate espionage and evidence tampering.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
         "url": "https://techcrunch.com/2026/08/31/apple-shares-shocking-evidence-against-former-employee-accused-of-stealing-company-data-for-openai/"
       }
@@ -61,50 +61,50 @@ window.AITS_NEWS = {
     "items": [
       {
         "date": "29 de ago. de 2026",
-        "title": "Sony Music, Warner sue Anthropic, alleging a ‘brazen campaign’ of intellectual property theft",
-        "summary": "Sony Music e Warner Bros. entraram com uma ação judicial contra a Anthropic, alegando que a empresa usou ilegalmente seus catálogos de música protegidos por direitos autorais para treinar modelos de IA sem permissão.",
+        "title": "Sony Music, Warner processam Anthropic, alegando 'campanha descarada' de roubo de propriedade intelectual",
+        "summary": "Grandes gravadoras musicais entraram com uma ação judicial contra a Anthropic, alegando que a empresa usou ilegalmente músicas protegidas no treinamento de seus modelos de IA. A ação alega uso não autorizado sistemático de material protegido.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
         "url": "https://techcrunch.com/2026/08/29/sony-music-warner-sue-anthropic-alleging-a-brazen-campaign-of-intellectual-property-theft/"
       },
       {
         "date": "28 de ago. de 2026",
-        "title": "An Anthropic researcher just gave us a peek at self-improving AI",
-        "summary": "Um time de pesquisa da Anthropic demonstrou que um sistema de IA automatizado conseguiu identificar e corrigir seus próprios comportamentos desalinhados em vários benchmarks sem prejudicar seu desempenho geral.",
+        "title": "Um pesquisador da Anthropic nos deu uma prévia de IA que se melhora",
+        "summary": "Pesquisadores demonstraram um sistema onde a IA automatizada conseguiu identificar e corrigir comportamentos desalinhados em múltiplos benchmarks mantendo o desempenho geral. O trabalho mostra um caminho para sistemas de IA que podem se melhorar sem supervisão externa.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
         "url": "https://techcrunch.com/2026/08/28/an-anthropic-researcher-just-gave-us-a-peek-at-self-improving-ai/"
       },
       {
         "date": "28 de ago. de 2026",
-        "title": "Anthropic gets its first court win over the Pentagon’s supply-chain risk label",
-        "summary": "Uma corte federal determinou que a classificação da Anthropic como risco da cadeia de suprimentos pela administração Trump era ilegal, marcando uma vitória na disputa da empresa com o Pentágono.",
+        "title": "Anthropic conquista sua primeira vitória judicial contra o rótulo de risco de cadeia de suprimentos do Pentágono",
+        "summary": "Um juiz federal determinou que a designação do governo Trump da Anthropic como risco de cadeia de suprimentos foi inadequada, concedendo uma vitória judicial à empresa. A Anthropic continua buscando uma segunda ação judicial relacionada desafiando o mesmo rótulo.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
         "url": "https://techcrunch.com/2026/08/28/anthropic-gets-its-first-court-win-over-the-pentagons-supply-chain-risk-label/"
       },
       {
         "date": "19 de ago. de 2026",
-        "title": "VentureBeat names Rob Strechay as its first Lead Analyst, expanding its enterprise AI research push",
-        "summary": "VentureBeat contratou Rob Strechay como seu primeiro Lead Analyst para fornecer pesquisa técnica aos tomadores de decisão de tecnologia empresarial que avaliam estratégias de infraestrutura de IA e implantação.",
+        "title": "VentureBeat nomeia Rob Strechay como seu primeiro Analista-Líder, expandindo sua iniciativa de pesquisa em IA corporativa",
+        "summary": "Rob Strechay, um analista de tecnologia veterano com três décadas de experiência, se juntou à VentureBeat para liderar pesquisa focada em infraestrutura de IA corporativa, desafios de implantação e tomada de decisões. Sua cobertura incluirá infraestrutura em nuvem, sistemas de dados, engenharia de plataformas e onde a IA se cruza com segurança.",
         "source": "AI | VentureBeat",
         "url": "https://venturebeat.com/ai/venturebeat-names-rob-strechay-as-its-first-lead-analyst-expanding-its-enterprise-ai-research-push"
       },
       {
         "date": "22 de jan. de 2026",
-        "title": "Railway secures $100 million to challenge AWS with AI-native cloud infrastructure",
-        "summary": "Railway, uma plataforma de cloud construída para acompanhar a velocidade das ferramentas de codificação com IA, arrecadou $100 milhões em financiamento da Série B após atingir mais de 10 milhões de implantações mensais, focando em infraestrutura rápida e custos menores que os provedores de cloud tradicionais.",
+        "title": "Railway consegue $100 milhões para desafiar AWS com infraestrutura em nuvem nativa de IA",
+        "summary": "Railway, uma startup de infraestrutura em nuvem com dois milhões de desenvolvedores, levantou $100 milhões em financiamento da Série B para acelerar a implantação de aplicativos em velocidades necessárias para código gerado por IA. A empresa opera seus próprios data centers e cobra por segundo, undercutting provedores tradicionais em velocidade e custo.",
         "source": "AI | VentureBeat",
         "url": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud"
       },
       {
         "date": "19 de jan. de 2026",
-        "title": "Claude Code costs up to $200 a month. Goose does the same thing for free.",
-        "summary": "Goose, um agente de codificação com IA de código aberto gratuito da Block, oferece recursos similares ao Claude Code sem taxas de assinatura ao funcionar inteiramente no computador local do usuário com funcionalidade offline.",
+        "title": "Claude Code custa até $200 por mês. Goose faz a mesma coisa gratuitamente.",
+        "summary": "Goose, um agente de codificação de IA de código aberto da Block, oferece capacidades de codificação autônoma comparáveis ao Claude Code, mas é executado localmente no hardware do usuário sem taxas de assinatura ou limites de uso. Desenvolvedores relatam frustração com o sistema de limitação de taxa do Claude Code, enquanto Goose oferece privacidade e funcionalidade offline ao custo de exigir hardware local mais poderoso e qualidade de modelo ligeiramente menor.",
         "source": "AI | VentureBeat",
         "url": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free"
       },
       {
         "date": "1 de set. de 2026",
-        "title": "Apple shares ‘shocking evidence’ against former employee accused of stealing company data for OpenAI",
-        "summary": "Apple apresentou evidências de que um ex-funcionário acusado de roubar dados confidenciais para entregar ao OpenAI destruiu evidências após saber que estava sendo investigado.",
+        "title": "Apple compartilha 'evidência chocante' contra ex-funcionário acusado de roubar dados da empresa para OpenAI",
+        "summary": "Apple apresentou evidências de que um ex-funcionário destruiu dados e comunicações após descobrir que estava sob investigação por alegadamente transferir informações confidenciais da empresa para OpenAI. O caso envolve alegações de espionagem corporativa e adulteração de evidências.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
         "url": "https://techcrunch.com/2026/08/31/apple-shares-shocking-evidence-against-former-employee-accused-of-stealing-company-data-for-openai/"
       }
@@ -115,50 +115,50 @@ window.AITS_NEWS = {
     "items": [
       {
         "date": "29 de ago. de 2026",
-        "title": "Sony Music, Warner sue Anthropic, alleging a ‘brazen campaign’ of intellectual property theft",
-        "summary": "Sony Music y Warner Bros. presentaron una demanda contra Anthropic, alegando que la empresa utilizó ilegalmente sus catálogos de música protegidos por derechos de autor para entrenar modelos de IA sin permiso.",
+        "title": "Sony Music, Warner demandan a Anthropic, alegando una 'campaña descarada' de robo de propiedad intelectual",
+        "summary": "Las principales discográficas presentaron una demanda contra Anthropic, acusando a la empresa de usar ilegalmente música protegida en el entrenamiento de sus modelos de IA. La demanda alega el uso no autorizado sistemático de material protegido.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
         "url": "https://techcrunch.com/2026/08/29/sony-music-warner-sue-anthropic-alleging-a-brazen-campaign-of-intellectual-property-theft/"
       },
       {
         "date": "28 de ago. de 2026",
-        "title": "An Anthropic researcher just gave us a peek at self-improving AI",
-        "summary": "Un equipo de investigación de Anthropic demostró que un sistema de IA automatizado podría identificar y corregir sus propios comportamientos desalineados en múltiples puntos de referencia sin dañar su rendimiento general.",
+        "title": "Un investigador de Anthropic nos dio un adelanto de IA que se auto-mejora",
+        "summary": "Los investigadores demostraron un sistema donde la IA automatizada identificó y corrigió comportamientos desalineados en múltiples puntos de referencia mientras mantenía el rendimiento general. El trabajo muestra un camino hacia sistemas de IA que pueden mejorarse a sí mismos sin supervisión externa.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
         "url": "https://techcrunch.com/2026/08/28/an-anthropic-researcher-just-gave-us-a-peek-at-self-improving-ai/"
       },
       {
         "date": "28 de ago. de 2026",
-        "title": "Anthropic gets its first court win over the Pentagon’s supply-chain risk label",
-        "summary": "Un tribunal federal determinó que la clasificación de Anthropic como riesgo de la cadena de suministros por parte de la administración Trump fue ilegal, marcando una victoria en la disputa de la empresa con el Pentágono.",
+        "title": "Anthropic consigue su primera victoria judicial contra la etiqueta de riesgo de cadena de suministro del Pentágono",
+        "summary": "Un juez federal dictaminó que la designación de la administración Trump de Anthropic como riesgo de cadena de suministro fue impropia, otorgando una victoria judicial a la empresa. Anthropic continúa persiguiendo una segunda demanda relacionada que cuestione la misma etiqueta.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
         "url": "https://techcrunch.com/2026/08/28/anthropic-gets-its-first-court-win-over-the-pentagons-supply-chain-risk-label/"
       },
       {
         "date": "19 de ago. de 2026",
-        "title": "VentureBeat names Rob Strechay as its first Lead Analyst, expanding its enterprise AI research push",
-        "summary": "VentureBeat contrató a Rob Strechay como su primer Lead Analyst para proporcionar investigación técnica a los tomadores de decisiones de tecnología empresarial que evalúan estrategias de infraestructura de IA e implementación.",
+        "title": "VentureBeat nombra a Rob Strechay como su primer Analista Líder, expandiendo su iniciativa de investigación en IA empresarial",
+        "summary": "Rob Strechay, un veterano analista de tecnología con tres décadas de experiencia, se unió a VentureBeat para liderar investigación enfocada en infraestructura de IA empresarial, desafíos de implementación y toma de decisiones. Su cobertura incluirá infraestructura en la nube, sistemas de datos, ingeniería de plataformas y donde la IA se cruza con la seguridad.",
         "source": "AI | VentureBeat",
         "url": "https://venturebeat.com/ai/venturebeat-names-rob-strechay-as-its-first-lead-analyst-expanding-its-enterprise-ai-research-push"
       },
       {
         "date": "22 de ene. de 2026",
-        "title": "Railway secures $100 million to challenge AWS with AI-native cloud infrastructure",
-        "summary": "Railway, una plataforma en la nube construida para igualar la velocidad de las herramientas de codificación con IA, recaudó $100 millones en financiamiento de la Serie B después de alcanzar más de 10 millones de implementaciones mensuales, enfocándose en infraestructura rápida y costos más bajos que los proveedores de nube tradicionales.",
+        "title": "Railway asegura $100 millones para desafiar a AWS con infraestructura en nube nativa de IA",
+        "summary": "Railway, una startup de infraestructura en la nube con dos millones de desarrolladores, recaudó $100 millones en financiamiento de la Serie B para acelerar el despliegue de aplicaciones a velocidades necesarias para el código generado por IA. La empresa opera sus propios centros de datos y cobra por segundo, subpreciando a los proveedores de nube tradicionales en velocidad y costo.",
         "source": "AI | VentureBeat",
         "url": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud"
       },
       {
         "date": "19 de ene. de 2026",
-        "title": "Claude Code costs up to $200 a month. Goose does the same thing for free.",
-        "summary": "Goose, un agente de codificación con IA de código abierto gratuito de Block, ofrece capacidades similares a Claude Code sin tarifas de suscripción al ejecutarse completamente en la computadora local del usuario con funcionalidad sin conexión.",
+        "title": "Claude Code cuesta hasta $200 al mes. Goose hace lo mismo gratis.",
+        "summary": "Goose, un agente de codificación de IA de código abierto de Block, proporciona capacidades de codificación autónoma comparables a Claude Code pero se ejecuta localmente en el hardware del usuario sin cuotas de suscripción ni límites de uso. Los desarrolladores reportan frustración con el sistema de limitación de velocidad de Claude Code, mientras que Goose ofrece privacidad y funcionalidad sin conexión al costo de requerir hardware local más poderoso y calidad de modelo ligeramente inferior.",
         "source": "AI | VentureBeat",
         "url": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free"
       },
       {
         "date": "1 de sep. de 2026",
-        "title": "Apple shares ‘shocking evidence’ against former employee accused of stealing company data for OpenAI",
-        "summary": "Apple presentó evidencia de que un ex-empleado acusado de robar datos confidenciales para entregar a OpenAI destruyó evidencia después de enterarse de que estaba siendo investigado.",
+        "title": "Apple comparte 'evidencia impactante' contra ex empleado acusado de robar datos de la empresa para OpenAI",
+        "summary": "Apple presentó evidencia de que un ex empleado destruyó datos y comunicaciones después de enterarse de que estaba siendo investigado por presuntamente transferir información confidencial de la empresa a OpenAI. El caso involucra alegaciones de espionaje corporativo y ocultamiento de pruebas.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
         "url": "https://techcrunch.com/2026/08/31/apple-shares-shocking-evidence-against-former-employee-accused-of-stealing-company-data-for-openai/"
       }
