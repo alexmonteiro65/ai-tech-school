@@ -55,7 +55,22 @@ jobs:
           git add audio/ levels/
           if ! git diff --cached --quiet; then
             git commit -m "Generate lesson narration audio [skip ci]"
-            git push
+            # Can race with generate-universe-video.yml pushing to main at the
+            # same time (both can be triggered by the same push). Rebase onto
+            # whatever landed first and retry rather than failing outright.
+            for attempt in 1 2 3 4 5; do
+              if git push; then
+                echo "Pushed on attempt $attempt."
+                break
+              fi
+              echo "Push rejected (attempt $attempt) — pulling and rebasing, then retrying..."
+              git fetch origin main
+              git rebase origin/main
+              if [ "$attempt" = 5 ]; then
+                echo "Still failing to push after $attempt attempts."
+                exit 1
+              fi
+            done
           else
             echo "No narration changes to commit."
           fi
