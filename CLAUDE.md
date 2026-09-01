@@ -130,8 +130,9 @@ learner pick up where they left off — never to block access.
   `scripts/fetch_and_rewrite_news.py` pulls two free public RSS feeds
   (TechCrunch AI, VentureBeat AI — Anthropic doesn't publish its own feed),
   filters for Claude/Anthropic/AI-ecosystem relevance, asks the Anthropic
-  API for an original 1-2 sentence en/pt/es summary of each item (never a
-  copy of the source text), and writes `news/news-data.js`, which
+  API for a translated headline plus an original 1-2 sentence summary of
+  each item, in en/pt/es (never a copy of the source text), and writes
+  `news/news-data.js`, which
   `ai-news.html` loads directly via `<script src>` (not `fetch()` — that
   would break offline/`file://` viewing, see section 2's "open any page
   directly" rule). `.github/workflows/ai-news-autoupdate.yml` runs it

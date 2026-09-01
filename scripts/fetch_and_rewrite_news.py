@@ -134,15 +134,20 @@ def call_anthropic_rewrite(items, api_key):
     )
 
     prompt = (
-        "You are writing short news blurbs for AI Tech School (AITS), an educational "
+        "You are writing short news cards for AI Tech School (AITS), an educational "
         "site that teaches Claude, Claude Code, MCP, and the AI ecosystem. For each "
-        "numbered item below, write your OWN original 1-2 sentence factual summary of "
-        "what happened — never copy phrases from the source summary. Plain, direct, "
-        "no hype, no marketing adjectives, written the way you'd explain it to someone "
-        "learning the field. Provide the summary in English (en), Brazilian Portuguese "
-        "(pt), and Latin American Spanish (es).\n\n"
-        "Respond with ONLY a JSON array, one object per item, in the same order, "
-        'each shaped exactly like: {"en": "...", "pt": "...", "es": "..."}. '
+        "numbered item below, do two things in each of three languages — English (en), "
+        "Brazilian Portuguese (pt), and Latin American Spanish (es):\n"
+        "1. Translate the headline (TITLE) naturally for that language — keep proper "
+        "nouns/product names (Claude, Anthropic, MCP, company names) as-is, translate "
+        "the rest.\n"
+        "2. Write your OWN original 1-2 sentence factual summary of what happened — "
+        "never copy phrases from the source summary. Plain, direct, no hype, no "
+        "marketing adjectives, written the way you'd explain it to someone learning "
+        "the field.\n\n"
+        "Respond with ONLY a JSON array, one object per item, in the same order, each "
+        'shaped exactly like: {"en": {"title": "...", "summary": "..."}, "pt": '
+        '{"title": "...", "summary": "..."}, "es": {"title": "...", "summary": "..."}}. '
         "No other text before or after the JSON.\n\n"
         f"{numbered}"
     )
@@ -209,10 +214,11 @@ def build_output(items, rewrites):
 
     for item, rewrite in zip(items, rewrites):
         for lang in langs:
+            lang_rewrite = rewrite.get(lang) or rewrite.get("en") or {}
             out[lang]["items"].append({
                 "date": format_date_label(item["pubDate"], lang),
-                "title": item["title"],
-                "summary": rewrite.get(lang, rewrite.get("en", "")),
+                "title": lang_rewrite.get("title", item["title"]),
+                "summary": lang_rewrite.get("summary", ""),
                 "source": item["source"],
                 "url": item["link"],
             })

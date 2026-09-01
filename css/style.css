@@ -129,6 +129,13 @@ section { padding-block: var(--space-8); }
   margin-bottom: var(--space-3);
 }
 
+/* Alex asked for the hero's eyebrow ("Structured AI education") at 2x —
+   scoped to the hero only so every other section's eyebrow stays as-is. */
+.hero .eyebrow {
+  font-size: 26px;
+  margin-bottom: var(--space-4);
+}
+
 .section-heading { max-width: 640px; margin-bottom: var(--space-7); }
 .section-heading h2 {
   font-size: clamp(1.7rem, 4vw, 2.4rem);
@@ -365,12 +372,19 @@ section { padding-block: var(--space-8); }
   color: var(--text);
   overflow: hidden;
 }
-.founder-avatar img,
-.founder-avatar-lg img {
+.founder-avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: var(--radius-full);
+  display: block;
+}
+.founder-avatar-lg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: var(--radius-lg);
   display: block;
 }
 
@@ -528,9 +542,13 @@ section { padding-block: var(--space-8); }
 .founder-section { background: var(--bg-elevated); border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); }
 .founder-inner { display: flex; flex-direction: column; gap: var(--space-6); align-items: flex-start; }
 .founder-avatar-lg {
-  width: 114px;
-  height: 114px;
-  border-radius: var(--radius-full);
+  /* A portrait rectangle, not a circle — a circular crop of a headshot
+     forces choosing between cutting the forehead or the chin (a person's
+     face is taller than it is wide). Alex asked for this shape 2026-09-01
+     after the circular version kept clipping his photo. */
+  width: 140px;
+  height: 188px;
+  border-radius: var(--radius-lg);
   background: var(--surface);
   border: 1px solid var(--border);
   display: flex;
