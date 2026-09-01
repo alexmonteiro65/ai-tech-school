@@ -1,5 +1,5 @@
 name: Generate AI Universe explainer video
-
+ 
 # Assembles video/ai-universe-<lang>.mp4 (EN/PT/ES) from the existing
 # diagram + script — a slow pan/zoom through diagrams/ai-universe.svg,
 # captioned, narrated, and closed with a simple end card. See
@@ -23,38 +23,38 @@ on:
       - "scripts/generate_narration.py"
       - "scripts/build_universe_video.py"
       - ".github/workflows/generate-universe-video.yml"
-
+ 
 permissions:
   contents: write
-
+ 
 jobs:
   generate-universe-video:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
+ 
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-
+ 
       - name: Install Piper (offline TTS), Pillow, ffmpeg, and rsvg-convert
         run: |
           pip install --upgrade piper-tts pillow
           sudo apt-get update
           sudo apt-get install -y ffmpeg librsvg2-bin fonts-dejavu-core
-
+ 
       - name: Cache Piper voice models
         uses: actions/cache@v4
         with:
           path: .piper-voices
           key: piper-voices-en_US-norman-medium-pt_BR-faber-medium-es_ES-davefx-medium
-
+ 
       - name: Generate narration audio (needed by the video mux step)
         run: python scripts/generate_narration.py
-
+ 
       - name: Build the AI Universe video (EN/PT/ES)
         run: python scripts/build_universe_video.py
-
+ 
       - name: Commit generated audio and video if anything changed
         run: |
           git config user.name "ats-narration-bot"
@@ -62,7 +62,23 @@ jobs:
           git add audio/ video/*.mp4 levels/ ai-universe-video.html js/video.js
           if ! git diff --cached --quiet; then
             git commit -m "Generate AI Universe explainer video [skip ci]"
-            git push
+            # This workflow and generate-narration.yml can both be triggered by
+            # the same push and land on main around the same time. If the other
+            # one pushes first, `git push` here is rejected as non-fast-forward.
+            # Rebase onto whatever landed and retry a few times before giving up.
+            for attempt in 1 2 3 4 5; do
+              if git push; then
+                echo "Pushed on attempt $attempt."
+                break
+              fi
+              echo "Push rejected (attempt $attempt) — pulling and rebasing, then retrying..."
+              git fetch origin main
+              git rebase origin/main
+              if [ "$attempt" = 5 ]; then
+                echo "Still failing to push after $attempt attempts."
+                exit 1
+              fi
+            done
           else
             echo "No video changes to commit."
           fi
