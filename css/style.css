@@ -203,7 +203,6 @@ section { padding-block: var(--space-8); }
   width: 32px;
   height: 32px;
   border-radius: var(--radius-sm);
-  background: var(--gradient-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -211,6 +210,7 @@ section { padding-block: var(--space-8); }
   color: #fff;
 }
 .brand-mark .icon { width: 17px; height: 17px; }
+.brand-mark-img { width: 30px; height: 30px; object-fit: contain; display: block; }
 
 .main-nav { display: none; align-items: center; gap: var(--space-6); }
 .main-nav a { font-size: 0.92rem; font-weight: 500; color: var(--text-muted); transition: color 0.15s ease; }
@@ -351,8 +351,8 @@ section { padding-block: var(--space-8); }
 
 .founder-avatar {
   flex-shrink: 0;
-  width: 56px;
-  height: 56px;
+  width: 72px;
+  height: 72px;
   border-radius: var(--radius-full);
   background: var(--bg-elevated);
   border: 1px solid var(--border);
@@ -528,8 +528,8 @@ section { padding-block: var(--space-8); }
 .founder-section { background: var(--bg-elevated); border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); }
 .founder-inner { display: flex; flex-direction: column; gap: var(--space-6); align-items: flex-start; }
 .founder-avatar-lg {
-  width: 88px;
-  height: 88px;
+  width: 114px;
+  height: 114px;
   border-radius: var(--radius-full);
   background: var(--surface);
   border: 1px solid var(--border);
@@ -566,8 +566,11 @@ section { padding-block: var(--space-8); }
   margin-bottom: var(--space-6);
 }
 .progress-banner.is-visible { display: flex; }
-.progress-banner p { font-size: 0.92rem; color: var(--text-muted); }
+.progress-banner p { font-size: 0.92rem; color: var(--text-muted); margin: 0; }
 .progress-banner strong { color: var(--text); }
+.progress-banner-link { text-decoration: none; cursor: pointer; transition: border-color 0.15s ease, background 0.15s ease; }
+.progress-banner-link:hover { border-color: var(--accent-purple); background: var(--bg-elevated); }
+.progress-banner-link p span[data-i18n="progress.cta"] { color: var(--accent-purple); font-weight: 600; }
 
 /* ==========================================================================
    Path hub page (levels/*/index.html)
@@ -1109,8 +1112,68 @@ section { padding-block: var(--space-8); }
   box-shadow: var(--shadow-lg);
   background: #000;
 }
-.ats-video-overlay-iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.ats-video-overlay-video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #000; object-fit: contain; }
 body.ats-video-open { overflow: hidden; }
+
+/* Directly-playable inline player (text-beside-video layouts) — sized like
+   a typical embedded video, no click-to-open overlay needed */
+.ats-video-inline-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  align-items: center;
+}
+@media (min-width: 860px) {
+  .ats-video-inline-section { grid-template-columns: 1fr 1fr; }
+}
+.ats-video-inline {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #000;
+  box-shadow: var(--shadow-md);
+}
+.ats-video-inline video { width: 100%; height: 100%; object-fit: contain; display: block; background: #000; }
+
+/* ==========================================================================
+   AI News source citations (deliberately understated, not button-styled —
+   see news/ai-news-setup.md)
+   ========================================================================== */
+.ats-news-source {
+  display: inline-block;
+  font-size: 0.78rem;
+  color: var(--text-faint);
+  text-decoration: none;
+  border-bottom: 1px dotted transparent;
+}
+.ats-news-source:hover,
+.ats-news-source:focus-visible {
+  color: var(--text-muted);
+  border-bottom-color: var(--text-muted);
+}
+
+/* ==========================================================================
+   AI Universe homepage teaser
+   ========================================================================== */
+.ats-universe-teaser {
+  display: block;
+  max-width: 640px;
+  margin: 0 auto;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.ats-universe-teaser:hover,
+.ats-universe-teaser:focus-visible {
+  transform: translateY(-4px);
+  border-color: var(--accent-purple);
+  box-shadow: var(--shadow-lg);
+}
+.ats-universe-teaser img { display: block; width: 100%; height: auto; }
 
 /* ==========================================================================
    Guide widget (persistent tips bubble, every page)

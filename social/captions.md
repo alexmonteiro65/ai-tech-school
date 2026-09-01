@@ -1,12 +1,27 @@
 # Instagram captions — AI Tech School (@ai.tech.school)
 
-9 posts, pairing with the matching PNG in this folder. Written for manual
-posting — see `content-calendar.md` for dates/times, `accounts-to-follow.md`
-for the initial follow list, and `reels-scripts.md` for the 3 Reels.
+9 posts. Each is now a 3-slide carousel — English slide first, then
+Portuguese, then Spanish (see `carousels/`, built by
+`../scripts/build_social_carousels.py`) — because a single Instagram post
+can't adapt to each viewer's language the way the website can; swiping is
+the Instagram equivalent of the site's language switcher.
+
+Instagram only takes one caption per post, covering every slide. The three
+translations below are combined into that single caption automatically —
+`schedule.json` already has the exact combined text each automated post
+uses (English, then a "Swipe → EN · PT · ES" note, then the 🇧🇷 and 🇪🇸
+versions). The captions below are shown per-language for readability and
+for posting by hand through Meta Business Suite (see
+`meta-business-suite-guide.md`) — when posting manually, combine all three
+into one caption the same way `schedule.json` does, rather than picking
+just one language.
+
+See `content-calendar.md` for dates/times, `accounts-to-follow.md` for the
+initial follow list, and `reels-scripts.md` for the 3 Reels.
 
 ---
 
-## Post 1 — Launch announcement (`post-1-launch.png`)
+## Post 1 — Launch announcement (3-slide carousel: `carousels/post-1-launch-en.png`, `-pt.png`, `-es.png`)
 
 **English**
 > AI Tech School is here. Learn Claude, Claude Code, MCP, and agents — the way we wish someone had taught us. Three skill paths, nine hands-on lessons, zero fluff. Link in bio.
@@ -22,7 +37,7 @@ for the initial follow list, and `reels-scripts.md` for the 3 Reels.
 
 ---
 
-## Post 2 — What is Claude AI (`post-2-what-is-claude.png`)
+## Post 2 — What is Claude AI (3-slide carousel: `carousels/post-2-what-is-claude-en.png`, `-pt.png`, `-es.png`)
 
 **English**
 > Claude isn't a search engine and it isn't magic. It reads what you give it and writes an original, reasoned response. It reasons step by step. And it doesn't know today's news unless it's connected to a tool that does.
@@ -38,7 +53,7 @@ for the initial follow list, and `reels-scripts.md` for the 3 Reels.
 
 ---
 
-## Post 3 — API vs MCP explained (`post-3-api-vs-mcp.png`)
+## Post 3 — API vs MCP explained (3-slide carousel: `carousels/post-3-api-vs-mcp-en.png`, `-pt.png`, `-es.png`)
 
 **English**
 > API vs MCP: an API is endpoints you call by hand, no memory, custom code per tool. MCP is a standard Claude can discover on its own, that keeps context across steps. Same goal, very different shape.
@@ -54,7 +69,7 @@ for the initial follow list, and `reels-scripts.md` for the 3 Reels.
 
 ---
 
-## Post 4 — The 3 learning levels (`post-4-levels.png`)
+## Post 4 — The 3 learning levels (3-slide carousel: `carousels/post-4-levels-en.png`, `-pt.png`, `-es.png`)
 
 **English**
 > Never touched Claude? Ready to build? Already shipping AI agents? There's a path for each. Beginner → Intermediate → Expert — pick where you actually are, no gatekeeping.
@@ -70,7 +85,7 @@ for the initial follow list, and `reels-scripts.md` for the 3 Reels.
 
 ---
 
-## Post 5 — What is Claude Code (`post-5-claude-code.png`)
+## Post 5 — What is Claude Code (3-slide carousel: `carousels/post-5-claude-code-en.png`, `-pt.png`, `-es.png`)
 
 **English**
 > Claude Code in 3 steps: you ask in plain English → Claude reads your real files → you approve before anything runs. It's Claude, inside your terminal — not just a chat window.
@@ -86,7 +101,7 @@ for the initial follow list, and `reels-scripts.md` for the 3 Reels.
 
 ---
 
-## Post 6 — What is an AI Agent (`post-6-ai-agent.png`)
+## Post 6 — What is an AI Agent (3-slide carousel: `carousels/post-6-ai-agent-en.png`, `-pt.png`, `-es.png`)
 
 **English**
 > An agent isn't just a chatbot — it's a loop. Observe, think, act, repeat, until the goal is done, largely without a human approving every step. That's the whole model.
@@ -102,7 +117,7 @@ for the initial follow list, and `reels-scripts.md` for the 3 Reels.
 
 ---
 
-## Post 7 — Free AI tools you don't know about (`post-7-free-tools.png`)
+## Post 7 — Free AI tools you don't know about (3-slide carousel: `carousels/post-7-free-tools-en.png`, `-pt.png`, `-es.png`)
 
 **English**
 > 4 free AI tools worth knowing: Gemini Notebook (source-grounded research), Google AI Studio (free Gemini playground), Hugging Face Spaces (free model hosting), and GitHub Copilot's free tier. No credit card needed for any of them.
@@ -118,7 +133,7 @@ for the initial follow list, and `reels-scripts.md` for the 3 Reels.
 
 ---
 
-## Post 8 — Quote from Alex Monteiro (`post-8-quote.png`)
+## Post 8 — Quote from Alex Monteiro (3-slide carousel: `carousels/post-8-quote-en.png`, `-pt.png`, `-es.png`)
 
 **English**
 > "I built AITS to teach the AI ecosystem the way I wish someone had taught it to me — in order, hands-on, and without the hype." — Alex Monteiro, founder.
@@ -134,7 +149,7 @@ for the initial follow list, and `reels-scripts.md` for the 3 Reels.
 
 ---
 
-## Post 9 — Call to action (`post-9-cta.png`)
+## Post 9 — Call to action (3-slide carousel: `carousels/post-9-cta-en.png`, `-pt.png`, `-es.png`)
 
 **English**
 > Stop scrolling. Start building. Lesson 1 of the Beginner path is free and takes about 10 minutes. Link in bio.

@@ -93,6 +93,16 @@ publish a video the same way as an image, but no video file exists yet for
 those, and this project doesn't generate video from a script. Once you have
 real Reel files, ask and this can be extended to post those too.
 
+## Carousels, not single images
+
+As of 2026-09-01, each of the 9 feed posts publishes as a 3-slide carousel
+— English, then Portuguese, then Spanish (see `schedule.json`'s `images`
+arrays and `carousels/`) — instead of one English-only image, so viewers
+in any of the three languages can swipe to their own. `post_to_instagram.py`
+handles this automatically (it creates one child container per slide, then
+one carousel container, then publishes that); nothing extra to set up for
+this beyond the two secrets above.
+
 ## Token expiry
 
 Your `IG_ACCESS_TOKEN` expires roughly every 60 days. When it does, the

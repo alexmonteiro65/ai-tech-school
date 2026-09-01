@@ -1,0 +1,39 @@
+<svg viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" role="img" aria-labelledby="title desc">
+  <title id="title">API vs MCP, explained simply</title>
+  <desc id="desc">Instagram post comparing traditional APIs and the Model Context Protocol side by side.</desc>
+  <defs>
+    <radialGradient id="glowAM" cx="50%" cy="10%" r="70%">
+      <stop offset="0%" stop-color="#1a1530"/><stop offset="100%" stop-color="#0a0c12"/>
+    </radialGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#glowAM)"/>
+  <text x="540" y="110" text-anchor="middle" fill="#3b82f6" font-size="26" font-weight="700" letter-spacing="3">EXPLICACIÓN VISUAL</text>
+  <text x="540" y="172" text-anchor="middle" fill="#f4f6fb" font-size="50" font-weight="800">API vs. MCP</text>
+  <text x="540" y="212" text-anchor="middle" fill="#9aa3b8" font-size="23">Dos formas distintas de que el software llegue a Claude</text>
+  <g>
+    <rect x="80" y="270" width="440" height="700" rx="24" fill="#161a26" stroke="#3b82f6" stroke-opacity="0.5" stroke-width="2"/>
+    <text x="300" y="335" text-anchor="middle" fill="#3b82f6" font-size="34" font-weight="800" letter-spacing="1">API</text>
+    <text x="300" y="410" text-anchor="middle" fill="#f4f6fb" font-size="23" font-weight="700">Llamas endpoints</text>
+    <text x="300" y="440" text-anchor="middle" fill="#f4f6fb" font-size="23" font-weight="700">específicos</text>
+    <text x="300" y="530" text-anchor="middle" fill="#f4f6fb" font-size="23" font-weight="700">Sin memoria entre</text>
+    <text x="300" y="560" text-anchor="middle" fill="#f4f6fb" font-size="23" font-weight="700">las llamadas</text>
+    <text x="300" y="650" text-anchor="middle" fill="#f4f6fb" font-size="23" font-weight="700">Necesita código propio</text>
+    <text x="300" y="680" text-anchor="middle" fill="#f4f6fb" font-size="23" font-weight="700">por herramienta</text>
+    <text x="300" y="770" text-anchor="middle" fill="#f4f6fb" font-size="23" font-weight="700">De uso general,</text>
+    <text x="300" y="800" text-anchor="middle" fill="#f4f6fb" font-size="23" font-weight="700">no pensado para IA</text>
+  </g>
+  <g>
+    <rect x="560" y="270" width="440" height="700" rx="24" fill="#161a26" stroke="#8b5cf6" stroke-opacity="0.6" stroke-width="2"/>
+    <rect x="560" y="270" width="440" height="700" rx="24" fill="#8b5cf6" fill-opacity="0.06"/>
+    <text x="780" y="335" text-anchor="middle" fill="#8b5cf6" font-size="34" font-weight="800" letter-spacing="1">MCP</text>
+    <text x="780" y="410" text-anchor="middle" fill="#f4f6fb" font-size="23" font-weight="700">Claude descubre las</text>
+    <text x="780" y="440" text-anchor="middle" fill="#f4f6fb" font-size="23" font-weight="700">herramientas solo</text>
+    <text x="780" y="530" text-anchor="middle" fill="#f4f6fb" font-size="23" font-weight="700">Mantiene el contexto</text>
+    <text x="780" y="560" text-anchor="middle" fill="#f4f6fb" font-size="23" font-weight="700">entre los pasos</text>
+    <text x="780" y="650" text-anchor="middle" fill="#f4f6fb" font-size="23" font-weight="700">Un solo estándar,</text>
+    <text x="780" y="680" text-anchor="middle" fill="#f4f6fb" font-size="23" font-weight="700">muchas herramientas</text>
+    <text x="780" y="770" text-anchor="middle" fill="#f4f6fb" font-size="23" font-weight="700">Hecho para cómo la IA</text>
+    <text x="780" y="800" text-anchor="middle" fill="#f4f6fb" font-size="23" font-weight="700">realmente funciona</text>
+  </g>
+  <text x="540" y="1010" text-anchor="middle" fill="#656d82" font-size="26" font-weight="700" letter-spacing="1">AI TECH SCHOOL</text>
+</svg>

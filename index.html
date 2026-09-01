@@ -19,7 +19,7 @@
   <div class="container">
     <a class="brand" href="#top">
       <span class="brand-mark" aria-hidden="true">
-        <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M8 4 3 12l5 8M16 4l5 8-5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <img class="brand-mark-img" src="assets/mascot-mark.png" alt="" />
       </span>
       <span>AI Tech School</span>
     </a>
@@ -29,6 +29,7 @@
       <a href="#paths" data-i18n="nav.paths">Skill Paths</a>
       <a href="how-claude-code-works.html" data-i18n="nav.howItWorks">How It Works</a>
       <a href="ai-news.html" data-i18n="nav.news">AI News</a>
+      <a href="ai-universe-video.html" data-i18n="nav.universe">AI Universe</a>
       <a href="#founder" data-i18n="nav.founder">Founder</a>
     </nav>
 
@@ -58,6 +59,7 @@
   <a href="#paths" data-i18n="nav.paths">Skill Paths</a>
   <a href="how-claude-code-works.html" data-i18n="nav.howItWorks">How It Works</a>
   <a href="ai-news.html" data-i18n="nav.news">AI News</a>
+      <a href="ai-universe-video.html" data-i18n="nav.universe">AI Universe</a>
   <a href="#founder" data-i18n="nav.founder">Founder</a>
 </nav>
 
@@ -97,7 +99,7 @@
       </div>
 
       <div class="founder-card" data-reveal>
-        <div class="founder-avatar"><img src="assets/alex-monteiro.jpg" alt="Alex Monteiro" /></div>
+        <div class="founder-avatar"><img src="assets/apple-touch-icon.png" alt="AI Tech School mascot" /></div>
         <div>
           <p class="founder-name">Alex Monteiro</p>
           <p class="founder-title" data-i18n="founderCard.title">Founder, AI Tech School</p>
@@ -113,10 +115,9 @@
 
   <!-- PROGRESS BANNER (shown only for returning learners) -->
   <div class="container">
-    <div class="progress-banner" data-progress-banner>
-      <p><span data-i18n="progress.prefix">Welcome back — you've completed</span> <strong data-progress-count>0</strong> <span data-i18n="progress.suffix">lesson(s) so far.</span></p>
-      <a class="btn btn-ghost btn-sm" href="#paths" data-i18n="progress.cta">Continue learning</a>
-    </div>
+    <a class="progress-banner progress-banner-link" href="#paths" data-progress-banner>
+      <p><span data-i18n="progress.prefix">Welcome back — you've completed</span> <strong data-progress-count>0</strong> <span data-i18n="progress.suffix">lesson(s) so far.</span> <span data-i18n="progress.cta">Continue learning</span> &rarr;</p>
+    </a>
   </div>
 
   <!-- WHY AITS -->
@@ -285,10 +286,10 @@
           Alex Monteiro is a creative producer and founder of NOMA
           Productions, with a career spanning educational app development,
           screenwriting, music production, and the upcoming Bramericanos
-          podcast. He also serves as Vice President of Communications at
-          Cohen Brown Management Group. Brazilian-born and based in Los
-          Angeles since 1984, he brings the same hands-on, ship-it instinct
-          from his work to teaching AI.
+          podcast. He also formerly served as Vice President of
+          Communications at Cohen Brown Management Group. Brazilian-born
+          and based in Los Angeles since 1984, he brings the same
+          hands-on, ship-it instinct from his work to teaching AI.
         </p>
         <p data-i18n="founderSection.bio1">
           AI Tech School exists because most AI content is either too shallow
@@ -307,6 +308,23 @@
     </div>
   </section>
 
+  <!-- AI UNIVERSE TEASER -->
+  <section id="universe">
+    <div class="container">
+      <div class="section-heading" data-reveal style="margin-left:auto; margin-right:auto; text-align:center;">
+        <p class="eyebrow" data-i18n="universe.eyebrow">&mdash; See the whole picture</p>
+        <h2 data-i18n="universe.h2">The AI Universe, in one map</h2>
+        <p data-i18n="universe.lede">Claude, prompts and chat, the API, MCP, connectors, and agents — how it all fits together, in one image and a 2-minute video.</p>
+      </div>
+      <a class="ats-universe-teaser" href="ai-universe-video.html" data-reveal>
+        <img src="diagrams/ai-universe.svg" alt="The AI Universe: Claude at the center, surrounded by rings for prompts and chat, the API, MCP, connectors, and an outer orbit of agents." />
+      </a>
+      <div style="text-align:center; margin-top: var(--space-6);">
+        <a class="btn btn-primary" href="ai-universe-video.html" data-i18n="universe.cta">Watch the 2-minute explainer</a>
+      </div>
+    </div>
+  </section>
+
   <!-- SOCIAL PREVIEW -->
   <section id="social">
     <div class="container">
@@ -316,17 +334,19 @@
         <p data-i18n="social.lede">The account isn't live yet — here's a preview of the first three posts, at @ai.tech.school once it launches.</p>
       </div>
 
+      <p class="path-meta-row" style="margin-bottom: var(--space-5);" data-i18n="social.langNote">These preview graphics switch with the language buttons above — try EN / PT / ES.</p>
+
       <div class="features-grid">
         <div class="feature-card" data-reveal>
-          <img src="social/post-1-launch.png" alt="AI Tech School launch announcement graphic" style="width:100%; border-radius: var(--radius-md); border: 1px solid var(--border); margin-bottom: var(--space-4);" />
+          <img id="social-preview-1" src="social/carousels/post-1-launch-en.png" alt="AI Tech School launch announcement graphic" style="width:100%; border-radius: var(--radius-md); border: 1px solid var(--border); margin-bottom: var(--space-4);" />
           <p data-i18n="social.caption1">AI Tech School is here — three skill paths, nine hands-on lessons, zero fluff.</p>
         </div>
         <div class="feature-card" data-reveal>
-          <img src="social/post-4-levels.png" alt="Graphic explaining the three AI Tech School skill levels" style="width:100%; border-radius: var(--radius-md); border: 1px solid var(--border); margin-bottom: var(--space-4);" />
+          <img id="social-preview-2" src="social/carousels/post-4-levels-en.png" alt="Graphic explaining the three AI Tech School skill levels" style="width:100%; border-radius: var(--radius-md); border: 1px solid var(--border); margin-bottom: var(--space-4);" />
           <p data-i18n="social.caption2">Beginner, Intermediate, Expert — pick where you actually are.</p>
         </div>
         <div class="feature-card" data-reveal>
-          <img src="social/post-8-quote.png" alt="Graphic introducing Alex Monteiro, founder of AI Tech School" style="width:100%; border-radius: var(--radius-md); border: 1px solid var(--border); margin-bottom: var(--space-4);" />
+          <img id="social-preview-3" src="social/carousels/post-8-quote-en.png" alt="Graphic introducing Alex Monteiro, founder of AI Tech School" style="width:100%; border-radius: var(--radius-md); border: 1px solid var(--border); margin-bottom: var(--space-4);" />
           <p data-i18n="social.caption3">Meet Alex Monteiro — why this school teaches the way it does.</p>
         </div>
       </div>
@@ -340,7 +360,7 @@
     <div>
       <a class="brand" href="#top">
         <span class="brand-mark" aria-hidden="true">
-          <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M8 4 3 12l5 8M16 4l5 8-5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <img class="brand-mark-img" src="assets/mascot-mark.png" alt="" />
         </span>
         <span>AI Tech School</span>
       </a>
@@ -350,6 +370,7 @@
       <a href="#paths" data-i18n="nav.paths">Skill Paths</a>
       <a href="how-claude-code-works.html" data-i18n="nav.howItWorks">How It Works</a>
       <a href="ai-news.html" data-i18n="nav.news">AI News</a>
+      <a href="ai-universe-video.html" data-i18n="nav.universe">AI Universe</a>
       <a href="#founder" data-i18n="nav.founder">Founder</a>
       <a href="https://instagram.com/ai.tech.school" target="_blank" rel="noopener noreferrer">Instagram — @ai.tech.school</a>
     </nav>
@@ -367,7 +388,7 @@
 <script>
   var INDEX_I18N = {
     en: {
-      "nav.why": "Why AITS", "nav.paths": "Skill Paths", "nav.howItWorks": "How It Works", "nav.news": "AI News", "nav.founder": "Founder", "nav.cta": "Start Learning",
+      "nav.why": "Why AITS", "nav.paths": "Skill Paths", "nav.howItWorks": "How It Works", "nav.news": "AI News", "nav.universe": "AI Universe", "nav.founder": "Founder", "nav.cta": "Start Learning",
       "hero.eyebrow": "— Structured AI education",
       "hero.h1": 'Learn to build with <span class="accent-text">AI</span>, not just use it.',
       "hero.lede": "AI Tech School teaches Claude, Claude Code, MCP, agents, and connectors through three structured skill paths — Beginner, Intermediate, and Expert. Every lesson ends with something you actually built.",
@@ -407,20 +428,25 @@
       "expert.lesson3": "Deploying a fully automated AI-powered business",
       "expert.cta": "Go deep",
       "founderSection.role": "Founder, AI Tech School",
-      "founderSection.bio0": "Alex Monteiro is a creative producer and founder of NOMA Productions, with a career spanning educational app development, screenwriting, music production, and the upcoming Bramericanos podcast. He also serves as Vice President of Communications at Cohen Brown Management Group. Brazilian-born and based in Los Angeles since 1984, he brings the same hands-on, ship-it instinct from his work to teaching AI.",
+      "founderSection.bio0": "Alex Monteiro is a creative producer and founder of NOMA Productions, with a career spanning educational app development, screenwriting, music production, and the upcoming Bramericanos podcast. He also formerly served as Vice President of Communications at Cohen Brown Management Group. Brazilian-born and based in Los Angeles since 1984, he brings the same hands-on, ship-it instinct from his work to teaching AI.",
       "founderSection.bio1": "AI Tech School exists because most AI content is either too shallow to be useful or too dense to get through. Alex built AITS to close that gap — a curriculum modeled directly on how Anthropic teaches Claude itself, organized the way Codecademy organizes skill paths: in order, with clear milestones, and nothing you can't actually do.",
       "founderSection.bio2": "Every lesson exists because it unblocks the next one. Beginner builds the mental model. Intermediate gets your hands on real tools. Expert puts it all together into something you could actually run.",
       "footer.tagline1": "AI Tech School. Founded by Alex Monteiro.",
       "footer.tagline2": "Pure HTML, CSS & JS. No frameworks. No tracking.",
+      "universe.eyebrow": "— See the whole picture",
+      "universe.h2": "The AI Universe, in one map",
+      "universe.lede": "Claude, prompts and chat, the API, MCP, connectors, and agents — how it all fits together, in one image and a 2-minute video.",
+      "universe.cta": "Watch the 2-minute explainer",
       "social.eyebrow": "— Coming soon on Instagram",
       "social.h2": "A first look at what we're posting",
       "social.lede": "The account isn't live yet — here's a preview of the first three posts, at @ai.tech.school once it launches.",
       "social.caption1": "AI Tech School is here — three skill paths, nine hands-on lessons, zero fluff.",
       "social.caption2": "Beginner, Intermediate, Expert — pick where you actually are.",
-      "social.caption3": "Meet Alex Monteiro — why this school teaches the way it does."
+      "social.caption3": "Meet Alex Monteiro — why this school teaches the way it does.",
+      "social.langNote": "These preview graphics switch with the language buttons above — try EN / PT / ES."
     },
     pt: {
-      "nav.why": "Por que a AITS", "nav.paths": "Trilhas de Habilidade", "nav.howItWorks": "Como Funciona", "nav.news": "Notícias de IA", "nav.founder": "Fundador", "nav.cta": "Começar a Aprender",
+      "nav.why": "Por que a AITS", "nav.paths": "Trilhas de Habilidade", "nav.howItWorks": "Como Funciona", "nav.news": "Notícias de IA", "nav.universe": "Universo da IA", "nav.founder": "Fundador", "nav.cta": "Começar a Aprender",
       "hero.eyebrow": "— Educação estruturada em IA",
       "hero.h1": 'Aprenda a construir com <span class="accent-text">IA</span>, não só a usá-la.',
       "hero.lede": "A AI Tech School ensina Claude, Claude Code, MCP, agentes e conectores por meio de três trilhas de habilidade estruturadas — Iniciante, Intermediário e Avançado. Cada aula termina com algo que você realmente construiu.",
@@ -460,20 +486,25 @@
       "expert.lesson3": "Implantando um negócio totalmente automatizado com IA",
       "expert.cta": "Aprofunde-se",
       "founderSection.role": "Fundador, AI Tech School",
-      "founderSection.bio0": "Alex Monteiro é produtor criativo e fundador da NOMA Productions, com uma carreira que passa por desenvolvimento de aplicativos educacionais, roteirização, produção musical e o podcast Bramericanos, que está por vir. Ele também é Vice-Presidente de Comunicações na Cohen Brown Management Group. Brasileiro, radicado em Los Angeles desde 1984, ele traz para o ensino de IA o mesmo instinto prático de colocar as coisas no ar que sempre guiou seu trabalho.",
+      "founderSection.bio0": "Alex Monteiro é produtor criativo e fundador da NOMA Productions, com uma carreira que passa por desenvolvimento de aplicativos educacionais, roteirização, produção musical e o podcast Bramericanos, que está por vir. Ele também exerceu o cargo de Vice-Presidente de Comunicações na Cohen Brown Management Group. Brasileiro, radicado em Los Angeles desde 1984, ele traz para o ensino de IA o mesmo instinto prático de colocar as coisas no ar que sempre guiou seu trabalho.",
       "founderSection.bio1": "A AI Tech School existe porque a maior parte do conteúdo sobre IA é superficial demais para ser útil, ou densa demais para se conseguir terminar. Alex criou a AITS para preencher essa lacuna — um currículo modelado diretamente na forma como a Anthropic ensina o próprio Claude, organizado da mesma maneira que a Codecademy organiza suas trilhas de habilidade: em ordem, com marcos claros, e nada que você não consiga realmente fazer.",
       "founderSection.bio2": "Cada aula existe porque ela destrava a próxima. O Iniciante constrói o modelo mental. O Intermediário coloca a mão na massa com ferramentas reais. O Avançado junta tudo em algo que você poderia realmente colocar para rodar.",
       "footer.tagline1": "AI Tech School. Fundada por Alex Monteiro.",
       "footer.tagline2": "HTML, CSS e JS puros. Sem frameworks. Sem rastreamento.",
+      "universe.eyebrow": "— Veja o quadro completo",
+      "universe.h2": "O Universo da IA, em um só mapa",
+      "universe.lede": "Claude, prompts e chat, a API, o MCP, conectores e agentes — como tudo se encaixa, em uma imagem e um vídeo de 2 minutos.",
+      "universe.cta": "Assista ao vídeo de 2 minutos",
       "social.eyebrow": "— Em breve no Instagram",
       "social.h2": "Um primeiro olhar sobre o que vamos publicar",
       "social.lede": "A conta ainda não está no ar — aqui está uma prévia das três primeiras publicações, em @ai.tech.school assim que for lançada.",
       "social.caption1": "A AI Tech School chegou — três trilhas de habilidade, nove aulas na prática, zero enrolação.",
       "social.caption2": "Iniciante, Intermediário, Avançado — comece de onde você realmente está.",
-      "social.caption3": "Conheça Alex Monteiro — por que esta escola ensina do jeito que ensina."
+      "social.caption3": "Conheça Alex Monteiro — por que esta escola ensina do jeito que ensina.",
+      "social.langNote": "Essas imagens de prévia mudam junto com os botões de idioma acima — experimente EN / PT / ES."
     },
     es: {
-      "nav.why": "Por qué AITS", "nav.paths": "Rutas de Habilidad", "nav.howItWorks": "Cómo Funciona", "nav.news": "Noticias de IA", "nav.founder": "Fundador", "nav.cta": "Empezar a Aprender",
+      "nav.why": "Por qué AITS", "nav.paths": "Rutas de Habilidad", "nav.howItWorks": "Cómo Funciona", "nav.news": "Noticias de IA", "nav.universe": "Universo de la IA", "nav.founder": "Fundador", "nav.cta": "Empezar a Aprender",
       "hero.eyebrow": "— Educación estructurada en IA",
       "hero.h1": 'Aprende a construir con <span class="accent-text">IA</span>, no solo a usarla.',
       "hero.lede": "AI Tech School enseña Claude, Claude Code, MCP, agentes y conectores a través de tres rutas de habilidad estructuradas — Principiante, Intermedio y Experto. Cada lección termina con algo que realmente construiste.",
@@ -513,21 +544,42 @@
       "expert.lesson3": "Desplegando un negocio totalmente automatizado con IA",
       "expert.cta": "Profundiza",
       "founderSection.role": "Fundador, AI Tech School",
-      "founderSection.bio0": "Alex Monteiro es productor creativo y fundador de NOMA Productions, con una carrera que abarca el desarrollo de aplicaciones educativas, guionismo, producción musical y el próximo podcast Bramericanos. También es Vicepresidente de Comunicaciones en Cohen Brown Management Group. Brasileño, radicado en Los Ángeles desde 1984, aporta a la enseñanza de IA el mismo instinto práctico de sacar las cosas adelante que siempre ha guiado su trabajo.",
+      "founderSection.bio0": "Alex Monteiro es productor creativo y fundador de NOMA Productions, con una carrera que abarca el desarrollo de aplicaciones educativas, guionismo, producción musical y el próximo podcast Bramericanos. También ejerció el cargo de Vicepresidente de Comunicaciones en Cohen Brown Management Group. Brasileño, radicado en Los Ángeles desde 1984, aporta a la enseñanza de IA el mismo instinto práctico de sacar las cosas adelante que siempre ha guiado su trabajo.",
       "founderSection.bio1": "AI Tech School existe porque la mayoría del contenido sobre IA es demasiado superficial para ser útil, o demasiado denso para terminarlo. Alex creó AITS para cerrar esa brecha — un plan de estudios modelado directamente en cómo Anthropic le enseña a Claude, organizado de la misma forma en que Codecademy organiza sus rutas de habilidad: en orden, con hitos claros, y nada que no puedas realmente hacer.",
       "founderSection.bio2": "Cada lección existe porque desbloquea la siguiente. Principiante construye el modelo mental. Intermedio te pone a trabajar con herramientas reales. Experto lo junta todo en algo que realmente podrías poner a funcionar.",
       "footer.tagline1": "AI Tech School. Fundada por Alex Monteiro.",
       "footer.tagline2": "HTML, CSS y JS puros. Sin frameworks. Sin rastreo.",
+      "universe.eyebrow": "— Mira el panorama completo",
+      "universe.h2": "El Universo de la IA, en un solo mapa",
+      "universe.lede": "Claude, prompts y chat, la API, MCP, conectores y agentes — cómo encaja todo, en una imagen y un video de 2 minutos.",
+      "universe.cta": "Mira el video de 2 minutos",
       "social.eyebrow": "— Próximamente en Instagram",
       "social.h2": "Un primer vistazo a lo que vamos a publicar",
       "social.lede": "La cuenta todavía no está activa — aquí tienes una vista previa de las primeras tres publicaciones, en @ai.tech.school en cuanto se lance.",
       "social.caption1": "Llegó AI Tech School — tres rutas de habilidad, nueve lecciones prácticas, cero relleno.",
       "social.caption2": "Principiante, Intermedio, Experto — empieza donde realmente estás.",
-      "social.caption3": "Conoce a Alex Monteiro — por qué esta escuela enseña como enseña."
+      "social.caption3": "Conoce a Alex Monteiro — por qué esta escuela enseña como enseña.",
+      "social.langNote": "Estas imágenes de vista previa cambian junto con los botones de idioma de arriba — prueba EN / PT / ES."
     }
   };
 
-  window.ATS.i18n.init(INDEX_I18N);
+  // The 3 Instagram preview graphics are pre-rendered per language (see
+  // social/carousels/, produced by scripts/build_social_carousels.py) —
+  // swap the <img src> to match whichever language the visitor has
+  // selected, the same way every other page's text does.
+  var SOCIAL_PREVIEW_IMAGES = {
+    "social-preview-1": "post-1-launch",
+    "social-preview-2": "post-4-levels",
+    "social-preview-3": "post-8-quote"
+  };
+  function updateSocialPreviewImages(lang) {
+    Object.keys(SOCIAL_PREVIEW_IMAGES).forEach(function (id) {
+      var img = document.getElementById(id);
+      if (img) img.src = "social/carousels/" + SOCIAL_PREVIEW_IMAGES[id] + "-" + lang + ".png";
+    });
+  }
+
+  window.ATS.i18n.init(INDEX_I18N, updateSocialPreviewImages);
 </script>
 </body>
 </html>

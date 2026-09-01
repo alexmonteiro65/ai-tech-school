@@ -15,8 +15,14 @@ for how to obtain and add them.
 Runs from .github/workflows/instagram-autopost.yml on a schedule. Reads
 social/schedule.json, finds the first post whose date is today-or-earlier,
 whose slot matches this run, and that hasn't been posted yet; publishes it
-via the two-step Graph API flow (create media container, then publish);
-marks it posted=true and lets the workflow commit that change back.
+as a 3-slide carousel (English, Portuguese, Spanish — see
+social/carousels/, built by scripts/build_social_carousels.py, and
+CLAUDE.md for why each post is 3 slides instead of one: Instagram can't
+show different content per viewer the way the website can, so "swipe for
+your language" is the carousel's job): one child media container per
+image, then one parent container of type CAROUSEL referencing all of
+them, then a single publish call for the parent. Marks the post posted=true
+and lets the workflow commit that change back.
 
 Deliberately conservative: posts at most ONE item per run, and does
 nothing (exit 0, no error) when nothing is due — a missed or delayed run
@@ -72,17 +78,51 @@ def graph_request(path, params, method="POST"):
 
 
 def publish_post(entry, access_token, ig_user_id):
-    image_url = PUBLIC_BASE_URL + entry["image"]
-    log(f"Creating media container for {entry['id']} ({image_url})")
-    container = graph_request(
-        f"{ig_user_id}/media",
-        {
-            "image_url": image_url,
-            "caption": entry["caption"],
-            "access_token": access_token,
-        },
-    )
-    creation_id = container["id"]
+    images = entry.get("images")
+    if not images:
+        # Backward compatible with an older single-image entry, in case one
+        # is ever added by hand without the carousel treatment.
+        images = [entry["image"]]
+
+    if len(images) == 1:
+        # A single-image entry publishes directly, no carousel wrapper needed.
+        image_url = PUBLIC_BASE_URL + images[0]
+        log(f"Creating media container for {entry['id']} ({image_url})")
+        container = graph_request(
+            f"{ig_user_id}/media",
+            {
+                "image_url": image_url,
+                "caption": entry["caption"],
+                "access_token": access_token,
+            },
+        )
+        creation_id = container["id"]
+    else:
+        child_ids = []
+        for image in images:
+            image_url = PUBLIC_BASE_URL + image
+            log(f"Creating carousel-item container for {entry['id']} ({image_url})")
+            child = graph_request(
+                f"{ig_user_id}/media",
+                {
+                    "image_url": image_url,
+                    "is_carousel_item": "true",
+                    "access_token": access_token,
+                },
+            )
+            child_ids.append(child["id"])
+
+        log(f"Creating carousel container for {entry['id']} with {len(child_ids)} slides")
+        parent = graph_request(
+            f"{ig_user_id}/media",
+            {
+                "media_type": "CAROUSEL",
+                "children": ",".join(child_ids),
+                "caption": entry["caption"],
+                "access_token": access_token,
+            },
+        )
+        creation_id = parent["id"]
 
     log(f"Publishing container {creation_id}")
     result = graph_request(

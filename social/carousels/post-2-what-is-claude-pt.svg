@@ -1,0 +1,39 @@
+<svg viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" role="img" aria-labelledby="title desc">
+  <title id="title">What is Claude AI — simple explanation</title>
+  <desc id="desc">Instagram post explaining Claude in plain language.</desc>
+  <defs>
+    <radialGradient id="glowWC" cx="50%" cy="10%" r="70%">
+      <stop offset="0%" stop-color="#1c1533"/><stop offset="100%" stop-color="#0a0c12"/>
+    </radialGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#glowWC)"/>
+  <text x="540" y="120" text-anchor="middle" fill="#3b82f6" font-size="26" font-weight="700" letter-spacing="3">EXPLICAÇÃO VISUAL</text>
+  <text x="540" y="185" text-anchor="middle" fill="#f4f6fb" font-size="48" font-weight="800">O que é o Claude, afinal?</text>
+  <g fill="#9aa3b8" font-size="25" text-anchor="middle">
+    <text x="540" y="235">Um modelo de IA que lê o que você fornece e escreve</text>
+    <text x="540" y="270">uma resposta original e raciocinada — não é um buscador.</text>
+  </g>
+  <g>
+    <rect x="90" y="330" width="900" height="180" rx="24" fill="#161a26" stroke="#262c3d" stroke-width="2"/>
+    <circle cx="180" cy="420" r="42" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="2"/>
+    <path d="M 165 420 h 30 M 165 408 h 30 M 165 432 h 20" stroke="#3b82f6" stroke-width="3" stroke-linecap="round" transform="translate(0,-12)"/>
+    <text x="250" y="410" fill="#f4f6fb" font-size="27" font-weight="800">Lê e escreve em linguagem natural</text>
+    <text x="250" y="448" fill="#9aa3b8" font-size="21">E-mails, código, planos, explicações — o que você precisar escrever.</text>
+  </g>
+  <g>
+    <rect x="90" y="530" width="900" height="180" rx="24" fill="#161a26" stroke="#262c3d" stroke-width="2"/>
+    <circle cx="180" cy="620" r="42" fill="#8b5cf6" fill-opacity="0.15" stroke="#8b5cf6" stroke-width="2"/>
+    <path d="M 165 608 l 15 12 l -15 12 M 195 632 h -12" stroke="#8b5cf6" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="250" y="610" fill="#f4f6fb" font-size="27" font-weight="800">Raciocina passo a passo</text>
+    <text x="250" y="648" fill="#9aa3b8" font-size="21">Trabalha um problema junto com você, não dá só uma resposta pronta.</text>
+  </g>
+  <g>
+    <rect x="90" y="730" width="900" height="180" rx="24" fill="#161a26" stroke="#f87171" stroke-opacity="0.5" stroke-width="2"/>
+    <rect x="90" y="730" width="900" height="180" rx="24" fill="#f87171" fill-opacity="0.05"/>
+    <circle cx="180" cy="820" r="42" fill="#f87171" fill-opacity="0.15" stroke="#f87171" stroke-width="2"/>
+    <text x="180" y="833" text-anchor="middle" fill="#f87171" font-size="34" font-weight="800">!</text>
+    <text x="250" y="810" fill="#f4f6fb" font-size="27" font-weight="800">Não conhece dados em tempo real sozinho</text>
+    <text x="250" y="848" fill="#9aa3b8" font-size="21">Precisa de uma ferramenta conectada para ver notícias, preços ou eventos de hoje.</text>
+  </g>
+  <text x="540" y="1010" text-anchor="middle" fill="#656d82" font-size="26" font-weight="700" letter-spacing="1">AI TECH SCHOOL</text>
+</svg>

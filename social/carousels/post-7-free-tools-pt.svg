@@ -1,0 +1,39 @@
+<svg viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, -apple-system, Helvetica, Arial, sans-serif" role="img" aria-labelledby="title desc">
+  <title id="title">Free AI tools you don't know about</title>
+  <desc id="desc">Instagram post listing four genuinely free AI tools.</desc>
+  <defs>
+    <radialGradient id="glowFT" cx="50%" cy="10%" r="70%">
+      <stop offset="0%" stop-color="#182238"/><stop offset="100%" stop-color="#0a0c12"/>
+    </radialGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#glowFT)"/>
+  <text x="540" y="115" text-anchor="middle" fill="#3b82f6" font-size="24" font-weight="700" letter-spacing="2">GRÁTIS E SUBESTIMADAS</text>
+  <text x="540" y="180" text-anchor="middle" fill="#f4f6fb" font-size="44" font-weight="800">4 ferramentas de IA grátis</text>
+  <text x="540" y="225" text-anchor="middle" fill="#9aa3b8" font-size="25">que você provavelmente ainda não usa</text>
+  <g>
+    <rect x="90" y="280" width="900" height="165" rx="20" fill="#161a26" stroke="#262c3d" stroke-width="2"/>
+    <text x="130" y="335" fill="#3b82f6" font-size="28" font-weight="800">Gemini Notebook</text>
+    <text x="130" y="370" fill="#9aa3b8" font-size="20">Antigo NotebookLM — envie suas fontes e receba respostas baseadas nelas.</text>
+    <text x="130" y="400" fill="#656d82" font-size="17">Grátis: 100 notebooks, 50 fontes cada, 50 perguntas por dia</text>
+  </g>
+  <g>
+    <rect x="90" y="465" width="900" height="165" rx="20" fill="#161a26" stroke="#262c3d" stroke-width="2"/>
+    <text x="130" y="520" fill="#8b5cf6" font-size="28" font-weight="800">Google AI Studio</text>
+    <text x="130" y="555" fill="#9aa3b8" font-size="20">Um playground gratuito para prototipar com modelos Gemini usando prompts simples.</text>
+    <text x="130" y="585" fill="#656d82" font-size="17">Acesso gratuito na maioria das regiões</text>
+  </g>
+  <g>
+    <rect x="90" y="650" width="900" height="165" rx="20" fill="#161a26" stroke="#262c3d" stroke-width="2"/>
+    <text x="130" y="705" fill="#38bdf8" font-size="28" font-weight="800">Hugging Face Spaces</text>
+    <text x="130" y="740" fill="#9aa3b8" font-size="20">Hospedagem grátis para rodar e compartilhar modelos e demos de IA de código aberto.</text>
+    <text x="130" y="770" fill="#656d82" font-size="17">Plano grátis, sem cartão de crédito</text>
+  </g>
+  <g>
+    <rect x="90" y="835" width="900" height="165" rx="20" fill="#161a26" stroke="#34d399" stroke-opacity="0.5" stroke-width="2"/>
+    <rect x="90" y="835" width="900" height="165" rx="20" fill="#34d399" fill-opacity="0.05"/>
+    <text x="130" y="890" fill="#34d399" font-size="28" font-weight="800">GitHub Copilot (plano grátis)</text>
+    <text x="130" y="925" fill="#9aa3b8" font-size="20">Plano grátis disponível para contas individuais e estudantes verificados.</text>
+    <text x="130" y="955" fill="#656d82" font-size="17">Confira a elegibilidade atual em github.com</text>
+  </g>
+  <text x="540" y="1050" text-anchor="middle" fill="#656d82" font-size="24" font-weight="700" letter-spacing="1">AI TECH SCHOOL</text>
+</svg>
