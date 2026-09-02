@@ -3,164 +3,164 @@
    See news/ai-news-setup.md for how the pipeline is configured. */
 window.AITS_NEWS = {
   "en": {
-    "snapshotDate": "September 1, 2026",
+    "snapshotDate": "September 2, 2026",
     "items": [
       {
-        "date": "Aug 29, 2026",
-        "title": "Sony Music, Warner sue Anthropic, alleging a 'brazen campaign' of intellectual property theft",
-        "summary": "Major music labels filed a lawsuit against Anthropic claiming the company illegally used copyrighted music in training its AI models. The suit alleges systematic unauthorized use of protected material.",
+        "date": "Sep 1, 2026",
+        "title": "Anthropic's new Fable release is cheaper, less restrictive",
+        "summary": "Fable 5.1 reduces the cost per token and lowers the rate of false-positive safety blocks that were triggering when the model worked with legitimate code and content. The changes make the model cheaper to use at scale while reducing developer friction.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
-        "url": "https://techcrunch.com/2026/08/29/sony-music-warner-sue-anthropic-alleging-a-brazen-campaign-of-intellectual-property-theft/"
-      },
-      {
-        "date": "Aug 28, 2026",
-        "title": "An Anthropic researcher just gave us a peek at self-improving AI",
-        "summary": "Researchers demonstrated a system where automated AI could identify and correct misaligned behaviors across multiple benchmarks while maintaining overall performance. The work shows a pathway toward AI systems that can improve themselves without external oversight.",
-        "source": "AI News & Artificial Intelligence | TechCrunch",
-        "url": "https://techcrunch.com/2026/08/28/an-anthropic-researcher-just-gave-us-a-peek-at-self-improving-ai/"
-      },
-      {
-        "date": "Aug 28, 2026",
-        "title": "Anthropic gets its first court win over the Pentagon's supply-chain risk label",
-        "summary": "A federal judge ruled that the Trump administration's designation of Anthropic as a supply-chain risk was improper, giving the company a court victory. Anthropic continues pursuing a second related lawsuit challenging the same label.",
-        "source": "AI News & Artificial Intelligence | TechCrunch",
-        "url": "https://techcrunch.com/2026/08/28/anthropic-gets-its-first-court-win-over-the-pentagons-supply-chain-risk-label/"
+        "url": "https://techcrunch.com/2026/09/01/anthropics-new-fable-release-is-cheaper-less-restrictive/"
       },
       {
         "date": "Aug 19, 2026",
         "title": "VentureBeat names Rob Strechay as its first Lead Analyst, expanding its enterprise AI research push",
-        "summary": "Rob Strechay, a veteran technology analyst with three decades of experience, joined VentureBeat to lead research focused on enterprise AI infrastructure, deployment challenges, and decision-making. His coverage will include cloud infrastructure, data systems, platform engineering, and where AI intersects with security.",
+        "summary": "VentureBeat hired Rob Strechay, a former managing director at theCUBE Research with nearly three decades of infrastructure and product experience, as its first Lead Analyst to conduct deeper research into how enterprises deploy AI systems. He will lead a new series of technical interviews and analysis focused on practical challenges in enterprise AI infrastructure, security, and multi-vendor orchestration.",
         "source": "AI | VentureBeat",
         "url": "https://venturebeat.com/ai/venturebeat-names-rob-strechay-as-its-first-lead-analyst-expanding-its-enterprise-ai-research-push"
       },
       {
         "date": "Jan 22, 2026",
         "title": "Railway secures $100 million to challenge AWS with AI-native cloud infrastructure",
-        "summary": "Railway, a cloud infrastructure startup with two million developers, raised $100 million in Series B funding to accelerate deployment of applications at speeds needed for AI-generated code. The company operates its own data centers and charges by the second, undercutting traditional cloud providers on both speed and cost.",
+        "summary": "Railway, a cloud platform with two million developers, raised $100 million in Series B funding led by TQ Ventures to build its own data centers and expand globally. The company positions itself as faster and cheaper than legacy cloud providers by designing infrastructure optimized for AI-assisted development, where deployment times need to match the speed of AI code generation.",
         "source": "AI | VentureBeat",
         "url": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud"
       },
       {
         "date": "Jan 19, 2026",
         "title": "Claude Code costs up to $200 a month. Goose does the same thing for free.",
-        "summary": "Goose, an open-source AI coding agent from Block, provides autonomous coding capabilities comparable to Claude Code but runs locally on user hardware with no subscription fees or usage limits. Developers report frustration with Claude Code's rate-limiting system, while Goose offers privacy and offline functionality at the cost of requiring more powerful local hardware and slightly lower model quality.",
+        "summary": "Goose, an open-source AI coding agent built by Block, can run locally on a developer's machine using open-source models, eliminating subscription costs and rate limits that Claude Code imposes at up to $200 per month. While Claude Code offers superior model quality and larger context windows, Goose appeals to developers who prioritize privacy, offline access, and cost savings over premium AI model capabilities.",
         "source": "AI | VentureBeat",
         "url": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free"
       },
       {
-        "date": "Sep 1, 2026",
-        "title": "Apple shares 'shocking evidence' against former employee accused of stealing company data for OpenAI",
-        "summary": "Apple presented evidence that a former employee destroyed data and communications after learning he was under investigation for allegedly transferring confidential company information to OpenAI. The case involves allegations of corporate espionage and evidence tampering.",
+        "date": "Sep 2, 2026",
+        "title": "OpenAI faces 30 more lawsuits tied to Tumbler Ridge shooting",
+        "summary": "Law firm Edelson PC filed 30 additional lawsuits against OpenAI related to a shooting incident in Tumbler Ridge, adding claims of aiding and abetting alongside previously filed charges. The lawsuits name Chris Lehane, though evidence supporting the connection between OpenAI systems and the incident has not been publicly confirmed.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
-        "url": "https://techcrunch.com/2026/08/31/apple-shares-shocking-evidence-against-former-employee-accused-of-stealing-company-data-for-openai/"
+        "url": "https://techcrunch.com/2026/09/02/openai-faces-30-more-lawsuits-tied-to-tumbler-ridge-shooting/"
+      },
+      {
+        "date": "Sep 1, 2026",
+        "title": "AfterQuery reportedly becomes Y Combinator's fastest-ever unicorn, now valued at $3.2B",
+        "summary": "AI model-training startup AfterQuery reached a $3.2 billion valuation in a funding round just five months after closing its Series A at $300 million in April, making it one of Y Combinator's fastest companies to reach unicorn status. The rapid valuation increase reflects investor demand for companies building infrastructure to train AI models.",
+        "source": "AI News & Artificial Intelligence | TechCrunch",
+        "url": "https://techcrunch.com/2026/09/01/afterquery-reportedly-becomes-y-combinators-fastest-ever-unicorn-now-valued-at-3-2b/"
+      },
+      {
+        "date": "Sep 1, 2026",
+        "title": "OpenAI's Astra model is on the way — and very good at breaking into computer systems",
+        "summary": "OpenAI previewed its upcoming Astra model and disclosed safety measures it is implementing before release, noting that the model demonstrates strong capabilities in identifying and exploiting computer system vulnerabilities. The preview reveals both the model's potential power and OpenAI's deliberate approach to managing security risks associated with its release.",
+        "source": "AI News & Artificial Intelligence | TechCrunch",
+        "url": "https://techcrunch.com/2026/09/01/open-ais-astra-model-is-on-the-way-and-very-good-at-breaking-into-computer-systems/"
       }
     ]
   },
   "pt": {
-    "snapshotDate": "1 de set. de 2026",
+    "snapshotDate": "2 de set. de 2026",
     "items": [
       {
-        "date": "29 de ago. de 2026",
-        "title": "Sony Music, Warner processam Anthropic, alegando 'campanha descarada' de roubo de propriedade intelectual",
-        "summary": "Grandes gravadoras musicais entraram com uma ação judicial contra a Anthropic, alegando que a empresa usou ilegalmente músicas protegidas no treinamento de seus modelos de IA. A ação alega uso não autorizado sistemático de material protegido.",
+        "date": "1 de set. de 2026",
+        "title": "Novo lançamento Fable da Anthropic é mais barato e menos restritivo",
+        "summary": "O Fable 5.1 reduz o custo por token e diminui a taxa de bloqueios de segurança falsos que ocorriam quando o modelo trabalhava com código e conteúdo legítimos. As mudanças tornam o modelo mais barato de usar em grande escala enquanto reduzem o atrito do desenvolvedor.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
-        "url": "https://techcrunch.com/2026/08/29/sony-music-warner-sue-anthropic-alleging-a-brazen-campaign-of-intellectual-property-theft/"
-      },
-      {
-        "date": "28 de ago. de 2026",
-        "title": "Um pesquisador da Anthropic nos deu uma prévia de IA que se melhora",
-        "summary": "Pesquisadores demonstraram um sistema onde a IA automatizada conseguiu identificar e corrigir comportamentos desalinhados em múltiplos benchmarks mantendo o desempenho geral. O trabalho mostra um caminho para sistemas de IA que podem se melhorar sem supervisão externa.",
-        "source": "AI News & Artificial Intelligence | TechCrunch",
-        "url": "https://techcrunch.com/2026/08/28/an-anthropic-researcher-just-gave-us-a-peek-at-self-improving-ai/"
-      },
-      {
-        "date": "28 de ago. de 2026",
-        "title": "Anthropic conquista sua primeira vitória judicial contra o rótulo de risco de cadeia de suprimentos do Pentágono",
-        "summary": "Um juiz federal determinou que a designação do governo Trump da Anthropic como risco de cadeia de suprimentos foi inadequada, concedendo uma vitória judicial à empresa. A Anthropic continua buscando uma segunda ação judicial relacionada desafiando o mesmo rótulo.",
-        "source": "AI News & Artificial Intelligence | TechCrunch",
-        "url": "https://techcrunch.com/2026/08/28/anthropic-gets-its-first-court-win-over-the-pentagons-supply-chain-risk-label/"
+        "url": "https://techcrunch.com/2026/09/01/anthropics-new-fable-release-is-cheaper-less-restrictive/"
       },
       {
         "date": "19 de ago. de 2026",
-        "title": "VentureBeat nomeia Rob Strechay como seu primeiro Analista-Líder, expandindo sua iniciativa de pesquisa em IA corporativa",
-        "summary": "Rob Strechay, um analista de tecnologia veterano com três décadas de experiência, se juntou à VentureBeat para liderar pesquisa focada em infraestrutura de IA corporativa, desafios de implantação e tomada de decisões. Sua cobertura incluirá infraestrutura em nuvem, sistemas de dados, engenharia de plataformas e onde a IA se cruza com segurança.",
+        "title": "VentureBeat nomeia Rob Strechay como seu primeiro Lead Analyst, expandindo sua iniciativa de pesquisa em IA empresarial",
+        "summary": "VentureBeat contratou Rob Strechay, ex-diretor executivo da theCUBE Research com quase três décadas de experiência em infraestrutura e produtos, como seu primeiro Lead Analyst para conduzir pesquisa mais aprofundada sobre como as empresas implementam sistemas de IA. Ele liderará uma nova série de entrevistas técnicas e análises focadas em desafios práticos na infraestrutura, segurança e orquestração multivendedor de IA empresarial.",
         "source": "AI | VentureBeat",
         "url": "https://venturebeat.com/ai/venturebeat-names-rob-strechay-as-its-first-lead-analyst-expanding-its-enterprise-ai-research-push"
       },
       {
         "date": "22 de jan. de 2026",
-        "title": "Railway consegue $100 milhões para desafiar AWS com infraestrutura em nuvem nativa de IA",
-        "summary": "Railway, uma startup de infraestrutura em nuvem com dois milhões de desenvolvedores, levantou $100 milhões em financiamento da Série B para acelerar a implantação de aplicativos em velocidades necessárias para código gerado por IA. A empresa opera seus próprios data centers e cobra por segundo, undercutting provedores tradicionais em velocidade e custo.",
+        "title": "Railway garante $100 milhões para desafiar AWS com infraestrutura cloud nativa de IA",
+        "summary": "Railway, uma plataforma de nuvem com dois milhões de desenvolvedores, levantou $100 milhões em financiamento da Série B liderado por TQ Ventures para construir seus próprios data centers e expandir globalmente. A empresa se posiciona como mais rápida e mais barata que os provedores de nuvem legados, projetando infraestrutura otimizada para desenvolvimento assistido por IA, onde os tempos de implantação precisam corresponder à velocidade da geração de código por IA.",
         "source": "AI | VentureBeat",
         "url": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud"
       },
       {
         "date": "19 de jan. de 2026",
-        "title": "Claude Code custa até $200 por mês. Goose faz a mesma coisa gratuitamente.",
-        "summary": "Goose, um agente de codificação de IA de código aberto da Block, oferece capacidades de codificação autônoma comparáveis ao Claude Code, mas é executado localmente no hardware do usuário sem taxas de assinatura ou limites de uso. Desenvolvedores relatam frustração com o sistema de limitação de taxa do Claude Code, enquanto Goose oferece privacidade e funcionalidade offline ao custo de exigir hardware local mais poderoso e qualidade de modelo ligeiramente menor.",
+        "title": "Claude Code custa até $200 por mês. Goose faz a mesma coisa de graça.",
+        "summary": "Goose, um agente de codificação IA de código aberto construído pela Block, pode ser executado localmente na máquina de um desenvolvedor usando modelos de código aberto, eliminando custos de assinatura e limites de taxa que Claude Code impõe até $200 por mês. Enquanto Claude Code oferece qualidade superior de modelo e janelas de contexto maiores, Goose atrai desenvolvedores que priorizam privacidade, acesso offline e economia de custos sobre capacidades de modelo IA premium.",
         "source": "AI | VentureBeat",
         "url": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free"
       },
       {
-        "date": "1 de set. de 2026",
-        "title": "Apple compartilha 'evidência chocante' contra ex-funcionário acusado de roubar dados da empresa para OpenAI",
-        "summary": "Apple apresentou evidências de que um ex-funcionário destruiu dados e comunicações após descobrir que estava sob investigação por alegadamente transferir informações confidenciais da empresa para OpenAI. O caso envolve alegações de espionagem corporativa e adulteração de evidências.",
+        "date": "2 de set. de 2026",
+        "title": "OpenAI enfrenta 30 mais processos ligados ao tiroteio de Tumbler Ridge",
+        "summary": "O escritório de advocacia Edelson PC ajuizou 30 processos adicionais contra a OpenAI relacionados a um incidente de tiroteio em Tumbler Ridge, adicionando acusações de cumplicidade junto com acusações previamente ajuizadas. Os processos nomeiam Chris Lehane, embora as evidências que apoiem a conexão entre os sistemas OpenAI e o incidente não tenham sido confirmadas publicamente.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
-        "url": "https://techcrunch.com/2026/08/31/apple-shares-shocking-evidence-against-former-employee-accused-of-stealing-company-data-for-openai/"
+        "url": "https://techcrunch.com/2026/09/02/openai-faces-30-more-lawsuits-tied-to-tumbler-ridge-shooting/"
+      },
+      {
+        "date": "1 de set. de 2026",
+        "title": "AfterQuery supostamente se torna o unicórnio mais rápido do Y Combinator, agora avaliado em $3.2B",
+        "summary": "A startup de treinamento de modelos de IA AfterQuery atingiu uma avaliação de $3.2 bilhões em uma rodada de financiamento apenas cinco meses após fechar sua Série A em $300 milhões em abril, tornando-se uma das empresas mais rápidas do Y Combinator a atingir o status de unicórnio. O aumento rápido de avaliação reflete a demanda de investidores por empresas que constroem infraestrutura para treinar modelos de IA.",
+        "source": "AI News & Artificial Intelligence | TechCrunch",
+        "url": "https://techcrunch.com/2026/09/01/afterquery-reportedly-becomes-y-combinators-fastest-ever-unicorn-now-valued-at-3-2b/"
+      },
+      {
+        "date": "1 de set. de 2026",
+        "title": "O modelo Astra da OpenAI está a caminho — e muito bom em invadir sistemas de computador",
+        "summary": "OpenAI apresentou seu próximo modelo Astra e divulgou medidas de segurança que está implementando antes do lançamento, observando que o modelo demonstra fortes capacidades na identificação e exploração de vulnerabilidades do sistema de computador. A visualização revela tanto o potencial do modelo quanto a abordagem deliberada da OpenAI para gerenciar riscos de segurança associados ao seu lançamento.",
+        "source": "AI News & Artificial Intelligence | TechCrunch",
+        "url": "https://techcrunch.com/2026/09/01/open-ais-astra-model-is-on-the-way-and-very-good-at-breaking-into-computer-systems/"
       }
     ]
   },
   "es": {
-    "snapshotDate": "1 de sep. de 2026",
+    "snapshotDate": "2 de sep. de 2026",
     "items": [
       {
-        "date": "29 de ago. de 2026",
-        "title": "Sony Music, Warner demandan a Anthropic, alegando una 'campaña descarada' de robo de propiedad intelectual",
-        "summary": "Las principales discográficas presentaron una demanda contra Anthropic, acusando a la empresa de usar ilegalmente música protegida en el entrenamiento de sus modelos de IA. La demanda alega el uso no autorizado sistemático de material protegido.",
+        "date": "1 de sep. de 2026",
+        "title": "El nuevo lanzamiento Fable de Anthropic es más barato y menos restrictivo",
+        "summary": "Fable 5.1 reduce el costo por token y disminuye la tasa de bloqueos de seguridad falsos que ocurrían cuando el modelo trabajaba con código y contenido legítimos. Los cambios hacen que el modelo sea más económico de usar a escala mientras reducen la fricción del desarrollador.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
-        "url": "https://techcrunch.com/2026/08/29/sony-music-warner-sue-anthropic-alleging-a-brazen-campaign-of-intellectual-property-theft/"
-      },
-      {
-        "date": "28 de ago. de 2026",
-        "title": "Un investigador de Anthropic nos dio un adelanto de IA que se auto-mejora",
-        "summary": "Los investigadores demostraron un sistema donde la IA automatizada identificó y corrigió comportamientos desalineados en múltiples puntos de referencia mientras mantenía el rendimiento general. El trabajo muestra un camino hacia sistemas de IA que pueden mejorarse a sí mismos sin supervisión externa.",
-        "source": "AI News & Artificial Intelligence | TechCrunch",
-        "url": "https://techcrunch.com/2026/08/28/an-anthropic-researcher-just-gave-us-a-peek-at-self-improving-ai/"
-      },
-      {
-        "date": "28 de ago. de 2026",
-        "title": "Anthropic consigue su primera victoria judicial contra la etiqueta de riesgo de cadena de suministro del Pentágono",
-        "summary": "Un juez federal dictaminó que la designación de la administración Trump de Anthropic como riesgo de cadena de suministro fue impropia, otorgando una victoria judicial a la empresa. Anthropic continúa persiguiendo una segunda demanda relacionada que cuestione la misma etiqueta.",
-        "source": "AI News & Artificial Intelligence | TechCrunch",
-        "url": "https://techcrunch.com/2026/08/28/anthropic-gets-its-first-court-win-over-the-pentagons-supply-chain-risk-label/"
+        "url": "https://techcrunch.com/2026/09/01/anthropics-new-fable-release-is-cheaper-less-restrictive/"
       },
       {
         "date": "19 de ago. de 2026",
-        "title": "VentureBeat nombra a Rob Strechay como su primer Analista Líder, expandiendo su iniciativa de investigación en IA empresarial",
-        "summary": "Rob Strechay, un veterano analista de tecnología con tres décadas de experiencia, se unió a VentureBeat para liderar investigación enfocada en infraestructura de IA empresarial, desafíos de implementación y toma de decisiones. Su cobertura incluirá infraestructura en la nube, sistemas de datos, ingeniería de plataformas y donde la IA se cruza con la seguridad.",
+        "title": "VentureBeat nombra a Rob Strechay como su primer Lead Analyst, expandiendo su impulso de investigación en IA empresarial",
+        "summary": "VentureBeat contrató a Rob Strechay, exdirector ejecutivo de theCUBE Research con casi tres décadas de experiencia en infraestructura y productos, como su primer Lead Analyst para conducir investigación más profunda sobre cómo las empresas implementan sistemas de IA. Liderará una nueva serie de entrevistas técnicas y análisis enfocados en desafíos prácticos en infraestructura de IA empresarial, seguridad y orquestación multiproveedor.",
         "source": "AI | VentureBeat",
         "url": "https://venturebeat.com/ai/venturebeat-names-rob-strechay-as-its-first-lead-analyst-expanding-its-enterprise-ai-research-push"
       },
       {
         "date": "22 de ene. de 2026",
-        "title": "Railway asegura $100 millones para desafiar a AWS con infraestructura en nube nativa de IA",
-        "summary": "Railway, una startup de infraestructura en la nube con dos millones de desarrolladores, recaudó $100 millones en financiamiento de la Serie B para acelerar el despliegue de aplicaciones a velocidades necesarias para el código generado por IA. La empresa opera sus propios centros de datos y cobra por segundo, subpreciando a los proveedores de nube tradicionales en velocidad y costo.",
+        "title": "Railway obtiene $100 millones para desafiar a AWS con infraestructura cloud nativa de IA",
+        "summary": "Railway, una plataforma en la nube con dos millones de desarrolladores, recaudó $100 millones en financiación de la Serie B liderada por TQ Ventures para construir sus propios centros de datos y expandirse globalmente. La empresa se posiciona como más rápida y más barata que los proveedores de nube heredados, diseñando infraestructura optimizada para desarrollo asistido por IA, donde los tiempos de implementación deben coincidir con la velocidad de la generación de código por IA.",
         "source": "AI | VentureBeat",
         "url": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud"
       },
       {
         "date": "19 de ene. de 2026",
-        "title": "Claude Code cuesta hasta $200 al mes. Goose hace lo mismo gratis.",
-        "summary": "Goose, un agente de codificación de IA de código abierto de Block, proporciona capacidades de codificación autónoma comparables a Claude Code pero se ejecuta localmente en el hardware del usuario sin cuotas de suscripción ni límites de uso. Los desarrolladores reportan frustración con el sistema de limitación de velocidad de Claude Code, mientras que Goose ofrece privacidad y funcionalidad sin conexión al costo de requerir hardware local más poderoso y calidad de modelo ligeramente inferior.",
+        "title": "Claude Code cuesta hasta $200 por mes. Goose hace lo mismo de forma gratuita.",
+        "summary": "Goose, un agente de codificación IA de código abierto construido por Block, puede ejecutarse localmente en la máquina de un desarrollador utilizando modelos de código abierto, eliminando costos de suscripción y límites de velocidad que Claude Code impone hasta $200 por mes. Mientras que Claude Code ofrece una calidad de modelo superior y ventanas de contexto más grandes, Goose atrae a desarrolladores que priorizan la privacidad, el acceso sin conexión y el ahorro de costos sobre capacidades de modelo de IA premium.",
         "source": "AI | VentureBeat",
         "url": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free"
       },
       {
-        "date": "1 de sep. de 2026",
-        "title": "Apple comparte 'evidencia impactante' contra ex empleado acusado de robar datos de la empresa para OpenAI",
-        "summary": "Apple presentó evidencia de que un ex empleado destruyó datos y comunicaciones después de enterarse de que estaba siendo investigado por presuntamente transferir información confidencial de la empresa a OpenAI. El caso involucra alegaciones de espionaje corporativo y ocultamiento de pruebas.",
+        "date": "2 de sep. de 2026",
+        "title": "OpenAI enfrenta 30 demandas más relacionadas con el tiroteo de Tumbler Ridge",
+        "summary": "El despacho de abogados Edelson PC presentó 30 demandas adicionales contra OpenAI relacionadas con un incidente de tiroteo en Tumbler Ridge, agregando acusaciones de complicidad junto con cargos presentados anteriormente. Las demandas nombran a Chris Lehane, aunque las evidencias que respalden la conexión entre los sistemas OpenAI y el incidente no han sido confirmadas públicamente.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
-        "url": "https://techcrunch.com/2026/08/31/apple-shares-shocking-evidence-against-former-employee-accused-of-stealing-company-data-for-openai/"
+        "url": "https://techcrunch.com/2026/09/02/openai-faces-30-more-lawsuits-tied-to-tumbler-ridge-shooting/"
+      },
+      {
+        "date": "1 de sep. de 2026",
+        "title": "AfterQuery supuestamente se convierte en el unicornio más rápido de Y Combinator, ahora valorado en $3.2B",
+        "summary": "La startup de entrenamiento de modelos de IA AfterQuery alcanzó una valoración de $3.2 mil millones en una ronda de financiamiento solo cinco meses después de cerrar su Serie A en $300 millones en abril, convirtiéndola en una de las empresas más rápidas de Y Combinator en alcanzar el estado de unicornio. El rápido aumento de valoración refleja la demanda de inversores por empresas que construyen infraestructura para entrenar modelos de IA.",
+        "source": "AI News & Artificial Intelligence | TechCrunch",
+        "url": "https://techcrunch.com/2026/09/01/afterquery-reportedly-becomes-y-combinators-fastest-ever-unicorn-now-valued-at-3-2b/"
+      },
+      {
+        "date": "1 de sep. de 2026",
+        "title": "El modelo Astra de OpenAI está en camino — y es muy bueno para irrumpir en sistemas informáticos",
+        "summary": "OpenAI presentó su próximo modelo Astra y divulgó medidas de seguridad que está implementando antes del lanzamiento, observando que el modelo demuestra fuertes capacidades en la identificación y explotación de vulnerabilidades del sistema informático. La vista previa revela tanto el potencial del modelo como el enfoque deliberado de OpenAI para gestionar los riesgos de seguridad asociados con su lanzamiento.",
+        "source": "AI News & Artificial Intelligence | TechCrunch",
+        "url": "https://techcrunch.com/2026/09/01/open-ais-astra-model-is-on-the-way-and-very-good-at-breaking-into-computer-systems/"
       }
     ]
   }
