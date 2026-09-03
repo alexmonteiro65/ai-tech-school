@@ -3,164 +3,164 @@
    See news/ai-news-setup.md for how the pipeline is configured. */
 window.AITS_NEWS = {
   "en": {
-    "snapshotDate": "September 2, 2026",
+    "snapshotDate": "September 3, 2026",
     "items": [
       {
         "date": "Sep 1, 2026",
         "title": "Anthropic's new Fable release is cheaper, less restrictive",
-        "summary": "Fable 5.1 reduces the cost per token and lowers the rate of false-positive safety blocks that were triggering when the model worked with legitimate code and content. The changes make the model cheaper to use at scale while reducing developer friction.",
+        "summary": "Fable 5.1 reduces operational costs by lowering token consumption and adjusts safety filters to decrease false-positive blocks that were unnecessarily stopping legitimate requests.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
         "url": "https://techcrunch.com/2026/09/01/anthropics-new-fable-release-is-cheaper-less-restrictive/"
       },
       {
         "date": "Aug 19, 2026",
         "title": "VentureBeat names Rob Strechay as its first Lead Analyst, expanding its enterprise AI research push",
-        "summary": "VentureBeat hired Rob Strechay, a former managing director at theCUBE Research with nearly three decades of infrastructure and product experience, as its first Lead Analyst to conduct deeper research into how enterprises deploy AI systems. He will lead a new series of technical interviews and analysis focused on practical challenges in enterprise AI infrastructure, security, and multi-vendor orchestration.",
+        "summary": "Rob Strechay, a veteran industry analyst with three decades of experience in infrastructure and cloud technology, joined VentureBeat to provide research and technical analysis for enterprise leaders deploying AI in production environments. His coverage will focus on GPU utilization, cloud infrastructure, platform engineering, and the intersection of AI and enterprise security.",
         "source": "AI | VentureBeat",
         "url": "https://venturebeat.com/ai/venturebeat-names-rob-strechay-as-its-first-lead-analyst-expanding-its-enterprise-ai-research-push"
       },
       {
         "date": "Jan 22, 2026",
         "title": "Railway secures $100 million to challenge AWS with AI-native cloud infrastructure",
-        "summary": "Railway, a cloud platform with two million developers, raised $100 million in Series B funding led by TQ Ventures to build its own data centers and expand globally. The company positions itself as faster and cheaper than legacy cloud providers by designing infrastructure optimized for AI-assisted development, where deployment times need to match the speed of AI code generation.",
+        "summary": "Railway, a cloud platform that has grown to 2 million developers without traditional marketing, raised $100 million in Series B funding to expand its vertically integrated infrastructure that enables sub-second deployments and costs roughly half what AWS charges. The company operates its own data centers, processes over 10 million monthly deployments, and counts 31% of Fortune 500 companies among its users.",
         "source": "AI | VentureBeat",
         "url": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud"
       },
       {
         "date": "Jan 19, 2026",
         "title": "Claude Code costs up to $200 a month. Goose does the same thing for free.",
-        "summary": "Goose, an open-source AI coding agent built by Block, can run locally on a developer's machine using open-source models, eliminating subscription costs and rate limits that Claude Code imposes at up to $200 per month. While Claude Code offers superior model quality and larger context windows, Goose appeals to developers who prioritize privacy, offline access, and cost savings over premium AI model capabilities.",
+        "summary": "Block released Goose, an open-source AI coding agent that runs locally on developers' machines and offers similar functionality to Anthropic's Claude Code without subscription fees, usage limits, or cloud dependency. Goose gained 26,100 GitHub stars while Claude Code users complained about pricing ($20-$200/month) and restrictive rate limits that leave them unable to work intensively.",
         "source": "AI | VentureBeat",
         "url": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free"
       },
       {
+        "date": "Sep 3, 2026",
+        "title": "Nvidia confirms it will buy Hugging Face for $12.9 billion",
+        "summary": "Nvidia announced plans to acquire Hugging Face, the popular open-source machine learning platform that hosts over 3 million models and serves an 18 million-person developer community.",
+        "source": "AI News & Artificial Intelligence | TechCrunch",
+        "url": "https://techcrunch.com/2026/09/03/nvidia-confirms-it-will-buy-hugging-face-for-12-9-billion/"
+      },
+      {
         "date": "Sep 2, 2026",
-        "title": "OpenAI faces 30 more lawsuits tied to Tumbler Ridge shooting",
-        "summary": "Law firm Edelson PC filed 30 additional lawsuits against OpenAI related to a shooting incident in Tumbler Ridge, adding claims of aiding and abetting alongside previously filed charges. The lawsuits name Chris Lehane, though evidence supporting the connection between OpenAI systems and the incident has not been publicly confirmed.",
+        "title": "The Builders Stage brings practical strategies for scaling startups to TechCrunch Disrupt 2026",
+        "summary": "TechCrunch Disrupt 2026 is featuring the Builders Stage, a conference section dedicated to discussions between founders, startup operators, and investors about concrete approaches to building and growing early-stage companies.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
-        "url": "https://techcrunch.com/2026/09/02/openai-faces-30-more-lawsuits-tied-to-tumbler-ridge-shooting/"
+        "url": "https://techcrunch.com/2026/09/02/the-builders-stage-brings-practical-strategies-for-scaling-startups-to-techcrunch-disrupt-2026/"
       },
       {
-        "date": "Sep 1, 2026",
-        "title": "AfterQuery reportedly becomes Y Combinator's fastest-ever unicorn, now valued at $3.2B",
-        "summary": "AI model-training startup AfterQuery reached a $3.2 billion valuation in a funding round just five months after closing its Series A at $300 million in April, making it one of Y Combinator's fastest companies to reach unicorn status. The rapid valuation increase reflects investor demand for companies building infrastructure to train AI models.",
+        "date": "Sep 2, 2026",
+        "title": "Palo Alto Networks paid $500M for Thrive-backed Console, sources say",
+        "summary": "Palo Alto Networks acquired Console, an AI IT service automation company backed by Thrive Capital, for $500 million, leaving Sequoia-backed Serval as the leading startup in this market segment.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
-        "url": "https://techcrunch.com/2026/09/01/afterquery-reportedly-becomes-y-combinators-fastest-ever-unicorn-now-valued-at-3-2b/"
-      },
-      {
-        "date": "Sep 1, 2026",
-        "title": "OpenAI's Astra model is on the way — and very good at breaking into computer systems",
-        "summary": "OpenAI previewed its upcoming Astra model and disclosed safety measures it is implementing before release, noting that the model demonstrates strong capabilities in identifying and exploiting computer system vulnerabilities. The preview reveals both the model's potential power and OpenAI's deliberate approach to managing security risks associated with its release.",
-        "source": "AI News & Artificial Intelligence | TechCrunch",
-        "url": "https://techcrunch.com/2026/09/01/open-ais-astra-model-is-on-the-way-and-very-good-at-breaking-into-computer-systems/"
+        "url": "https://techcrunch.com/2026/09/02/palo-alto-networks-paid-500m-for-thrive-backed-console-sources-say/"
       }
     ]
   },
   "pt": {
-    "snapshotDate": "2 de set. de 2026",
+    "snapshotDate": "3 de set. de 2026",
     "items": [
       {
         "date": "1 de set. de 2026",
         "title": "Novo lançamento Fable da Anthropic é mais barato e menos restritivo",
-        "summary": "O Fable 5.1 reduz o custo por token e diminui a taxa de bloqueios de segurança falsos que ocorriam quando o modelo trabalhava com código e conteúdo legítimos. As mudanças tornam o modelo mais barato de usar em grande escala enquanto reduzem o atrito do desenvolvedor.",
+        "summary": "A Fable 5.1 reduz custos operacionais ao diminuir o consumo de tokens e ajusta filtros de segurança para diminuir bloqueios falsos positivos que estavam impedindo solicitações legítimas.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
         "url": "https://techcrunch.com/2026/09/01/anthropics-new-fable-release-is-cheaper-less-restrictive/"
       },
       {
         "date": "19 de ago. de 2026",
         "title": "VentureBeat nomeia Rob Strechay como seu primeiro Lead Analyst, expandindo sua iniciativa de pesquisa em IA empresarial",
-        "summary": "VentureBeat contratou Rob Strechay, ex-diretor executivo da theCUBE Research com quase três décadas de experiência em infraestrutura e produtos, como seu primeiro Lead Analyst para conduzir pesquisa mais aprofundada sobre como as empresas implementam sistemas de IA. Ele liderará uma nova série de entrevistas técnicas e análises focadas em desafios práticos na infraestrutura, segurança e orquestração multivendedor de IA empresarial.",
+        "summary": "Rob Strechay, um analista de indústria veterano com três décadas de experiência em infraestrutura e tecnologia em nuvem, ingressou na VentureBeat para fornecer pesquisa e análise técnica para líderes empresariais que implantam IA em ambientes de produção. Sua cobertura se concentrará em utilização de GPU, infraestrutura em nuvem, engenharia de plataforma e a interseção entre IA e segurança empresarial.",
         "source": "AI | VentureBeat",
         "url": "https://venturebeat.com/ai/venturebeat-names-rob-strechay-as-its-first-lead-analyst-expanding-its-enterprise-ai-research-push"
       },
       {
         "date": "22 de jan. de 2026",
-        "title": "Railway garante $100 milhões para desafiar AWS com infraestrutura cloud nativa de IA",
-        "summary": "Railway, uma plataforma de nuvem com dois milhões de desenvolvedores, levantou $100 milhões em financiamento da Série B liderado por TQ Ventures para construir seus próprios data centers e expandir globalmente. A empresa se posiciona como mais rápida e mais barata que os provedores de nuvem legados, projetando infraestrutura otimizada para desenvolvimento assistido por IA, onde os tempos de implantação precisam corresponder à velocidade da geração de código por IA.",
+        "title": "Railway obtém $100 milhões para desafiar AWS com infraestrutura em nuvem nativa de IA",
+        "summary": "Railway, uma plataforma em nuvem que cresceu para 2 milhões de desenvolvedores sem marketing tradicional, arrecadou $100 milhões em financiamento da Série B para expandir sua infraestrutura verticalmente integrada que permite implantações em menos de um segundo e custa aproximadamente metade do que AWS cobra. A empresa opera seus próprios data centers, processa mais de 10 milhões de implantações mensais e conta com 31% das empresas da Fortune 500 entre seus usuários.",
         "source": "AI | VentureBeat",
         "url": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud"
       },
       {
         "date": "19 de jan. de 2026",
-        "title": "Claude Code custa até $200 por mês. Goose faz a mesma coisa de graça.",
-        "summary": "Goose, um agente de codificação IA de código aberto construído pela Block, pode ser executado localmente na máquina de um desenvolvedor usando modelos de código aberto, eliminando custos de assinatura e limites de taxa que Claude Code impõe até $200 por mês. Enquanto Claude Code oferece qualidade superior de modelo e janelas de contexto maiores, Goose atrai desenvolvedores que priorizam privacidade, acesso offline e economia de custos sobre capacidades de modelo IA premium.",
+        "title": "Claude Code custa até $200 por mês. Goose faz a mesma coisa gratuitamente.",
+        "summary": "Block lançou Goose, um agente de codificação de IA de código aberto que funciona localmente nas máquinas dos desenvolvedores e oferece funcionalidade semelhante ao Claude Code da Anthropic sem taxas de assinatura, limites de uso ou dependência de nuvem. Goose ganhou 26.100 estrelas no GitHub enquanto usuários de Claude Code reclamavam de preços ($20-$200/mês) e limites de taxa restritivos que os impedem de trabalhar intensamente.",
         "source": "AI | VentureBeat",
         "url": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free"
       },
       {
+        "date": "3 de set. de 2026",
+        "title": "Nvidia confirma que comprará Hugging Face por $12,9 bilhões",
+        "summary": "Nvidia anunciou planos para adquirir Hugging Face, a popular plataforma de aprendizado de máquina de código aberto que hospeda mais de 3 milhões de modelos e atende uma comunidade de 18 milhões de desenvolvedores.",
+        "source": "AI News & Artificial Intelligence | TechCrunch",
+        "url": "https://techcrunch.com/2026/09/03/nvidia-confirms-it-will-buy-hugging-face-for-12-9-billion/"
+      },
+      {
         "date": "2 de set. de 2026",
-        "title": "OpenAI enfrenta 30 mais processos ligados ao tiroteio de Tumbler Ridge",
-        "summary": "O escritório de advocacia Edelson PC ajuizou 30 processos adicionais contra a OpenAI relacionados a um incidente de tiroteio em Tumbler Ridge, adicionando acusações de cumplicidade junto com acusações previamente ajuizadas. Os processos nomeiam Chris Lehane, embora as evidências que apoiem a conexão entre os sistemas OpenAI e o incidente não tenham sido confirmadas publicamente.",
+        "title": "The Builders Stage traz estratégias práticas para escalar startups ao TechCrunch Disrupt 2026",
+        "summary": "TechCrunch Disrupt 2026 está apresentando o Builders Stage, uma seção de conferência dedicada a discussões entre fundadores, operadores de startups e investidores sobre abordagens concretas para construir e fazer crescer empresas em estágio inicial.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
-        "url": "https://techcrunch.com/2026/09/02/openai-faces-30-more-lawsuits-tied-to-tumbler-ridge-shooting/"
+        "url": "https://techcrunch.com/2026/09/02/the-builders-stage-brings-practical-strategies-for-scaling-startups-to-techcrunch-disrupt-2026/"
       },
       {
-        "date": "1 de set. de 2026",
-        "title": "AfterQuery supostamente se torna o unicórnio mais rápido do Y Combinator, agora avaliado em $3.2B",
-        "summary": "A startup de treinamento de modelos de IA AfterQuery atingiu uma avaliação de $3.2 bilhões em uma rodada de financiamento apenas cinco meses após fechar sua Série A em $300 milhões em abril, tornando-se uma das empresas mais rápidas do Y Combinator a atingir o status de unicórnio. O aumento rápido de avaliação reflete a demanda de investidores por empresas que constroem infraestrutura para treinar modelos de IA.",
+        "date": "2 de set. de 2026",
+        "title": "Palo Alto Networks pagou $500 milhões pela Console apoiada por Thrive, dizem fontes",
+        "summary": "Palo Alto Networks adquiriu Console, uma empresa de automação de serviços de TI com IA apoiada pela Thrive Capital, por $500 milhões, deixando Serval apoiada por Sequoia como a startup líder neste segmento de mercado.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
-        "url": "https://techcrunch.com/2026/09/01/afterquery-reportedly-becomes-y-combinators-fastest-ever-unicorn-now-valued-at-3-2b/"
-      },
-      {
-        "date": "1 de set. de 2026",
-        "title": "O modelo Astra da OpenAI está a caminho — e muito bom em invadir sistemas de computador",
-        "summary": "OpenAI apresentou seu próximo modelo Astra e divulgou medidas de segurança que está implementando antes do lançamento, observando que o modelo demonstra fortes capacidades na identificação e exploração de vulnerabilidades do sistema de computador. A visualização revela tanto o potencial do modelo quanto a abordagem deliberada da OpenAI para gerenciar riscos de segurança associados ao seu lançamento.",
-        "source": "AI News & Artificial Intelligence | TechCrunch",
-        "url": "https://techcrunch.com/2026/09/01/open-ais-astra-model-is-on-the-way-and-very-good-at-breaking-into-computer-systems/"
+        "url": "https://techcrunch.com/2026/09/02/palo-alto-networks-paid-500m-for-thrive-backed-console-sources-say/"
       }
     ]
   },
   "es": {
-    "snapshotDate": "2 de sep. de 2026",
+    "snapshotDate": "3 de sep. de 2026",
     "items": [
       {
         "date": "1 de sep. de 2026",
         "title": "El nuevo lanzamiento Fable de Anthropic es más barato y menos restrictivo",
-        "summary": "Fable 5.1 reduce el costo por token y disminuye la tasa de bloqueos de seguridad falsos que ocurrían cuando el modelo trabajaba con código y contenido legítimos. Los cambios hacen que el modelo sea más económico de usar a escala mientras reducen la fricción del desarrollador.",
+        "summary": "Fable 5.1 reduce los costos operacionales al disminuir el consumo de tokens y ajusta los filtros de seguridad para reducir los bloqueos de falsos positivos que estaban impidiendo solicitudes legítimas.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
         "url": "https://techcrunch.com/2026/09/01/anthropics-new-fable-release-is-cheaper-less-restrictive/"
       },
       {
         "date": "19 de ago. de 2026",
-        "title": "VentureBeat nombra a Rob Strechay como su primer Lead Analyst, expandiendo su impulso de investigación en IA empresarial",
-        "summary": "VentureBeat contrató a Rob Strechay, exdirector ejecutivo de theCUBE Research con casi tres décadas de experiencia en infraestructura y productos, como su primer Lead Analyst para conducir investigación más profunda sobre cómo las empresas implementan sistemas de IA. Liderará una nueva serie de entrevistas técnicas y análisis enfocados en desafíos prácticos en infraestructura de IA empresarial, seguridad y orquestación multiproveedor.",
+        "title": "VentureBeat nombra a Rob Strechay como su primer Lead Analyst, ampliando su iniciativa de investigación en IA empresarial",
+        "summary": "Rob Strechay, un analista de la industria veterano con tres décadas de experiencia en infraestructura y tecnología en la nube, se unió a VentureBeat para proporcionar investigación y análisis técnico para líderes empresariales que implementan IA en entornos de producción. Su cobertura se enfocará en utilización de GPU, infraestructura en la nube, ingeniería de plataforma y la intersección entre IA y seguridad empresarial.",
         "source": "AI | VentureBeat",
         "url": "https://venturebeat.com/ai/venturebeat-names-rob-strechay-as-its-first-lead-analyst-expanding-its-enterprise-ai-research-push"
       },
       {
         "date": "22 de ene. de 2026",
-        "title": "Railway obtiene $100 millones para desafiar a AWS con infraestructura cloud nativa de IA",
-        "summary": "Railway, una plataforma en la nube con dos millones de desarrolladores, recaudó $100 millones en financiación de la Serie B liderada por TQ Ventures para construir sus propios centros de datos y expandirse globalmente. La empresa se posiciona como más rápida y más barata que los proveedores de nube heredados, diseñando infraestructura optimizada para desarrollo asistido por IA, donde los tiempos de implementación deben coincidir con la velocidad de la generación de código por IA.",
+        "title": "Railway obtiene $100 millones para desafiar a AWS con infraestructura en la nube nativa de IA",
+        "summary": "Railway, una plataforma en la nube que ha crecido a 2 millones de desarrolladores sin marketing tradicional, recaudó $100 millones en financiamiento de la Serie B para expandir su infraestructura verticalmente integrada que permite implementaciones en menos de un segundo y cuesta aproximadamente la mitad de lo que cobra AWS. La empresa opera sus propios centros de datos, procesa más de 10 millones de implementaciones mensuales y cuenta con el 31% de las empresas de la Fortune 500 entre sus usuarios.",
         "source": "AI | VentureBeat",
         "url": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud"
       },
       {
         "date": "19 de ene. de 2026",
-        "title": "Claude Code cuesta hasta $200 por mes. Goose hace lo mismo de forma gratuita.",
-        "summary": "Goose, un agente de codificación IA de código abierto construido por Block, puede ejecutarse localmente en la máquina de un desarrollador utilizando modelos de código abierto, eliminando costos de suscripción y límites de velocidad que Claude Code impone hasta $200 por mes. Mientras que Claude Code ofrece una calidad de modelo superior y ventanas de contexto más grandes, Goose atrae a desarrolladores que priorizan la privacidad, el acceso sin conexión y el ahorro de costos sobre capacidades de modelo de IA premium.",
+        "title": "Claude Code cuesta hasta $200 por mes. Goose hace lo mismo gratis.",
+        "summary": "Block lanzó Goose, un agente de codificación de IA de código abierto que se ejecuta localmente en las máquinas de los desarrolladores y ofrece funcionalidad similar a Claude Code de Anthropic sin tarifas de suscripción, límites de uso o dependencia de la nube. Goose ganó 26.100 estrellas en GitHub mientras que los usuarios de Claude Code se quejaban de los precios ($20-$200/mes) y límites de velocidad restrictivos que les impiden trabajar intensamente.",
         "source": "AI | VentureBeat",
         "url": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free"
       },
       {
+        "date": "3 de sep. de 2026",
+        "title": "Nvidia confirma que comprará Hugging Face por $12.9 mil millones",
+        "summary": "Nvidia anunció planes para adquirir Hugging Face, la popular plataforma de aprendizaje automático de código abierto que alberga más de 3 millones de modelos y atiende a una comunidad de 18 millones de desarrolladores.",
+        "source": "AI News & Artificial Intelligence | TechCrunch",
+        "url": "https://techcrunch.com/2026/09/03/nvidia-confirms-it-will-buy-hugging-face-for-12-9-billion/"
+      },
+      {
         "date": "2 de sep. de 2026",
-        "title": "OpenAI enfrenta 30 demandas más relacionadas con el tiroteo de Tumbler Ridge",
-        "summary": "El despacho de abogados Edelson PC presentó 30 demandas adicionales contra OpenAI relacionadas con un incidente de tiroteo en Tumbler Ridge, agregando acusaciones de complicidad junto con cargos presentados anteriormente. Las demandas nombran a Chris Lehane, aunque las evidencias que respalden la conexión entre los sistemas OpenAI y el incidente no han sido confirmadas públicamente.",
+        "title": "The Builders Stage trae estrategias prácticas para escalar startups a TechCrunch Disrupt 2026",
+        "summary": "TechCrunch Disrupt 2026 presenta The Builders Stage, una sección de conferencia dedicada a discusiones entre fundadores, operadores de startups e inversores sobre enfoques concretos para construir y hacer crecer empresas en etapa inicial.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
-        "url": "https://techcrunch.com/2026/09/02/openai-faces-30-more-lawsuits-tied-to-tumbler-ridge-shooting/"
+        "url": "https://techcrunch.com/2026/09/02/the-builders-stage-brings-practical-strategies-for-scaling-startups-to-techcrunch-disrupt-2026/"
       },
       {
-        "date": "1 de sep. de 2026",
-        "title": "AfterQuery supuestamente se convierte en el unicornio más rápido de Y Combinator, ahora valorado en $3.2B",
-        "summary": "La startup de entrenamiento de modelos de IA AfterQuery alcanzó una valoración de $3.2 mil millones en una ronda de financiamiento solo cinco meses después de cerrar su Serie A en $300 millones en abril, convirtiéndola en una de las empresas más rápidas de Y Combinator en alcanzar el estado de unicornio. El rápido aumento de valoración refleja la demanda de inversores por empresas que construyen infraestructura para entrenar modelos de IA.",
+        "date": "2 de sep. de 2026",
+        "title": "Palo Alto Networks pagó $500 millones por Console respaldada por Thrive, según fuentes",
+        "summary": "Palo Alto Networks adquirió Console, una empresa de automatización de servicios de TI con IA respaldada por Thrive Capital, por $500 millones, dejando a Serval respaldada por Sequoia como la startup líder en este segmento de mercado.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
-        "url": "https://techcrunch.com/2026/09/01/afterquery-reportedly-becomes-y-combinators-fastest-ever-unicorn-now-valued-at-3-2b/"
-      },
-      {
-        "date": "1 de sep. de 2026",
-        "title": "El modelo Astra de OpenAI está en camino — y es muy bueno para irrumpir en sistemas informáticos",
-        "summary": "OpenAI presentó su próximo modelo Astra y divulgó medidas de seguridad que está implementando antes del lanzamiento, observando que el modelo demuestra fuertes capacidades en la identificación y explotación de vulnerabilidades del sistema informático. La vista previa revela tanto el potencial del modelo como el enfoque deliberado de OpenAI para gestionar los riesgos de seguridad asociados con su lanzamiento.",
-        "source": "AI News & Artificial Intelligence | TechCrunch",
-        "url": "https://techcrunch.com/2026/09/01/open-ais-astra-model-is-on-the-way-and-very-good-at-breaking-into-computer-systems/"
+        "url": "https://techcrunch.com/2026/09/02/palo-alto-networks-paid-500m-for-thrive-backed-console-sources-say/"
       }
     ]
   }
