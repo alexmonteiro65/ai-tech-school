@@ -1,0 +1,96 @@
+name: Generate AI Universe explainer video
+
+# Assembles video/ai-universe-<lang>.mp4 (EN/PT/ES) from the existing
+# diagram + script — a slow pan/zoom through diagrams/ai-universe.svg,
+# captioned, narrated, and closed with a simple end card. See
+# scripts/build_universe_video.py and CLAUDE.md section 2 (item 6 in
+# claude/change-plan-sept1.md) for the full explanation of why this is
+# an assembled diagram walkthrough rather than stock/generated footage.
+#
+# This job also (re)runs scripts/generate_narration.py first so the
+# narration audio the video muxes in is always current — see
+# generate-narration.yml, which does the same synthesis for the lesson
+# pages. Duplicating that one step here keeps this workflow runnable on
+# its own, the same way instagram-autopost.yml and ai-news-autoupdate.yml
+# don't depend on each other. IMPORTANT: this workflow only commits its
+# own output (video/*.mp4, ai-universe-video.html, js/video.js) — it
+# deliberately does NOT commit audio/ or levels/, even though it just
+# regenerated copies of those files locally. generate-narration.yml owns
+# committing those. If both workflows tried to commit the same generated
+# MP3s, a same-moment push race turns into an unresolvable binary merge
+# conflict (Git can't 3-way-merge two different renders of an MP3) — this
+# happened once in practice. Keeping each workflow's commit scoped to the
+# files only it produces is what actually fixes that, not just retrying.
+on:
+  workflow_dispatch: {}   # trigger manually from the Actions tab any time
+  push:
+    branches: [main]
+    paths:
+      - "diagrams/ai-universe.svg"
+      - "video/ai-universe-script.md"
+      - "scripts/generate_narration.py"
+      - "scripts/build_universe_video.py"
+      - ".github/workflows/generate-universe-video.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  generate-universe-video:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Piper (offline TTS), Pillow, ffmpeg, and rsvg-convert
+        run: |
+          pip install --upgrade piper-tts pillow
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg librsvg2-bin fonts-dejavu-core
+
+      - name: Cache Piper voice models
+        uses: actions/cache@v4
+        with:
+          path: .piper-voices
+          key: piper-voices-en_US-norman-medium-pt_BR-faber-medium-es_ES-davefx-medium
+
+      - name: Generate narration audio (needed by the video mux step)
+        run: python scripts/generate_narration.py
+
+      - name: Build the AI Universe video (EN/PT/ES)
+        run: python scripts/build_universe_video.py
+
+      - name: Commit generated video if anything changed
+        run: |
+          git config user.name "ats-narration-bot"
+          git config user.email "actions@users.noreply.github.com"
+          # Only this workflow's own output — see the note at the top of this
+          # file for why audio/ and levels/ are deliberately left out.
+          git add video/*.mp4 ai-universe-video.html js/video.js
+          if ! git diff --cached --quiet; then
+            git commit -m "Generate AI Universe explainer video [skip ci]"
+            # This workflow and generate-narration.yml can both be triggered by
+            # the same push and land on main around the same time. If the other
+            # one pushes first, `git push` here is rejected as non-fast-forward.
+            # Now that the two workflows never commit the same files, a rebase
+            # here has nothing to conflict on — it just replays this commit on
+            # top of whatever landed. Retry a few times before giving up.
+            for attempt in 1 2 3 4 5; do
+              if git push; then
+                echo "Pushed on attempt $attempt."
+                break
+              fi
+              echo "Push rejected (attempt $attempt) — pulling and rebasing, then retrying..."
+              git fetch origin main
+              git rebase origin/main
+              if [ "$attempt" = 5 ]; then
+                echo "Still failing to push after $attempt attempts."
+                exit 1
+              fi
+            done
+          else
+            echo "No video changes to commit."
+          fi
