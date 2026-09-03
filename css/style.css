@@ -1021,7 +1021,13 @@ section { padding-block: var(--space-8); }
   align-items: center;
   justify-content: center;
   gap: var(--space-3);
-  aspect-ratio: 16 / 9;
+  /* 9:16 vertical, matching the AI Universe video's real output — see
+     scripts/build_universe_video.py and CLAUDE.md. Capped narrower than
+     the full content column so a vertical video reads like a phone
+     screen rather than stretching edge to edge. */
+  aspect-ratio: 9 / 16;
+  max-width: 420px;
+  margin-inline: auto;
   border: 1px dashed var(--border);
   border-radius: var(--radius-lg);
   background: var(--surface);
@@ -1041,7 +1047,10 @@ section { padding-block: var(--space-8); }
   justify-content: center;
   gap: var(--space-3);
   width: 100%;
-  aspect-ratio: 16 / 9;
+  /* 9:16 vertical — see .video-placeholder comment above. */
+  aspect-ratio: 9 / 16;
+  max-width: 420px;
+  margin-inline: auto;
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--border);
@@ -1101,7 +1110,9 @@ section { padding-block: var(--space-8); }
 }
 .ats-video-overlay-panel {
   position: relative;
-  width: min(92vw, 1100px);
+  /* 9:16 vertical video — narrower cap than the old 16:9 1100px, so the
+     modal reads like a phone-sized player, not a stretched-out one. */
+  width: min(92vw, 420px);
 }
 .ats-video-overlay-close {
   position: absolute;
@@ -1123,7 +1134,8 @@ section { padding-block: var(--space-8); }
 .ats-video-overlay-frame-wrap {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 9 / 16;
+  max-height: 85vh;
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--border);
@@ -1171,6 +1183,25 @@ body.ats-video-open { overflow: hidden; }
   color: var(--text-muted);
   border-bottom-color: var(--text-muted);
 }
+.ats-news-source[hidden] { display: none; }
+.ats-news-toggle {
+  display: inline-block;
+  font: inherit;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  border-bottom: 1px dotted var(--text-faint);
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+.ats-news-toggle:hover,
+.ats-news-toggle:focus-visible {
+  color: var(--text);
+  border-bottom-color: var(--text-muted);
+}
+.ats-news-toggle[hidden] { display: none; }
 
 /* ==========================================================================
    AI Universe homepage teaser

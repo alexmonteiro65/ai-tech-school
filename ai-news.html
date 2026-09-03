@@ -119,6 +119,7 @@
         "page.lede": "Every summary below is written fresh, in our own words — not copied from anywhere — and refreshed automatically. Each card names its original source for reference; we've kept those citations small on purpose so you stay on AITS instead of bouncing around the web.",
         "page.snapshotLabel": "Last refreshed",
         "news.sourceLabel": "Source",
+        "news.readMore": "Click to learn more",
         "footer.tagline1": "AI Tech School. Founded by Alex Monteiro.",
         "footer.tagline2": "Pure HTML, CSS & JS. No frameworks. No tracking."
       },
@@ -131,6 +132,7 @@
         "page.lede": "Cada resumo abaixo é escrito do zero, com nossas próprias palavras — nunca copiado de outro lugar — e atualizado automaticamente. Cada card cita sua fonte original como referência; mantivemos essas citações discretas de propósito, para você continuar na AITS em vez de sair navegando pela web.",
         "page.snapshotLabel": "Atualizado pela última vez em",
         "news.sourceLabel": "Fonte",
+        "news.readMore": "Clique para saber mais",
         "footer.tagline1": "AI Tech School. Fundada por Alex Monteiro.",
         "footer.tagline2": "HTML, CSS e JS puros. Sem frameworks. Sem rastreamento."
       },
@@ -143,6 +145,7 @@
         "page.lede": "Cada resumen de abajo está escrito desde cero, con nuestras propias palabras — nunca copiado de otro lado — y se actualiza automáticamente. Cada tarjeta cita su fuente original como referencia; mantuvimos esas citas discretas a propósito, para que te quedes en AITS en vez de andar saltando por la web.",
         "page.snapshotLabel": "Última actualización",
         "news.sourceLabel": "Fuente",
+        "news.readMore": "Haz clic para saber más",
         "footer.tagline1": "AI Tech School. Fundada por Alex Monteiro.",
         "footer.tagline2": "HTML, CSS y JS puros. Sin frameworks. Sin rastreo."
       }
@@ -175,17 +178,31 @@
         // Deliberately understated: a small citation, not a button — see
         // CLAUDE.md and news/ai-news-setup.md for why outbound links on
         // this page are kept as low-key as possible without removing
-        // sourcing entirely.
+        // sourcing entirely. The source link also stays hidden until the
+        // reader clicks "Click to learn more", so the summary gets read
+        // first rather than the source being an instant exit — added
+        // 2026-09-03 at Alex's request.
         var sourceEl = document.createElement("a");
         sourceEl.href = item.url;
         sourceEl.target = "_blank";
         sourceEl.rel = "noopener noreferrer nofollow";
         sourceEl.className = "ats-news-source";
         sourceEl.textContent = (chrome["news.sourceLabel"] || "Source") + ": " + item.source;
+        sourceEl.hidden = true;
+
+        var toggleEl = document.createElement("button");
+        toggleEl.type = "button";
+        toggleEl.className = "ats-news-toggle";
+        toggleEl.textContent = chrome["news.readMore"] || "Click to learn more";
+        toggleEl.addEventListener("click", function () {
+          sourceEl.hidden = false;
+          toggleEl.hidden = true;
+        });
 
         card.appendChild(dateEl);
         card.appendChild(titleEl);
         card.appendChild(summaryEl);
+        card.appendChild(toggleEl);
         card.appendChild(sourceEl);
         list.appendChild(card);
       });

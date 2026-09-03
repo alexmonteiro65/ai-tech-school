@@ -78,11 +78,40 @@ SCENES = [
 ]
 
 RASTER_SCALE = 2   # SVG units -> px (2x is already sharp for a 1080 output crop)
-PAD_SVG = 300       # padding added on every side, in SVG units, before cropping
-OUT_SIZE = 1080     # square output canvas, px
+# Padding added on every side, in SVG units, before cropping. 9:16 output
+# (see OUT_W/OUT_H below) needs a much taller crop box than the old square
+# 1080x1080 did at the widest zoom-out (scenes 0 and 7, half=540): at a
+# 16:9 vertical ratio that's a ~960-unit half-height above/below the
+# diagram's own 480 center, so 300 of padding isn't enough (500 is, with
+# room to spare) — see the "9:16 vertical" note in CLAUDE.md.
+PAD_SVG = 500
+OUT_W = 1080        # output canvas, px — 9:16 vertical (Reels/TikTok/Shorts
+OUT_H = 1920        # framing), changed from the old 1080x1080 square on
+                    # 2026-09-03 at Alex's request; see CLAUDE.md.
 FPS = 15            # a slow Ken Burns pan doesn't need 30fps, and this keeps
                     # per-language render time reasonable (see write_scene_frames)
 END_CARD_SECONDS = 4.0
+
+MASCOT_IMAGE = os.path.join(REPO_ROOT, "social", "aits-mascot.png")
+CONNECTOR_SCENE_INDEX = 5  # SCENES[5] == the Connectors ring scene below
+
+# The six connector chips as drawn in diagrams/ai-universe.svg (center +
+# half-extent, in SVG units — rect x/y/width/height there, halved). Order
+# matches the narration's own listing ("GitHub, Slack, Gmail, Notion, your
+# calendar... Composio"), so the pop-in below reveals each chip in the
+# order the voice actually names it.
+CONNECTOR_CHIPS = [
+    ("GitHub", 500, 180, 75, 22),
+    ("Slack", 760, 330, 75, 22),
+    ("Gmail", 760, 630, 75, 22),
+    ("Notion", 500, 780, 75, 22),
+    ("Calendar", 240, 630, 75, 22),
+    ("Composio", 240, 330, 75, 22),
+]
+CONNECTOR_GLOW_RGB = (56, 189, 248)  # #38bdf8 — same cyan as the connectors
+                                     # ring stroke in the SVG, so the glow
+                                     # reads as "part of this ring" rather
+                                     # than an unrelated added color.
 
 END_CARD_TEXT = {
     "en": ("AI TECH SCHOOL", "Beginner  ·  Intermediate  ·  Expert"),
@@ -173,15 +202,144 @@ def rasterize_diagram():
     return padded_path
 
 
+def half_extent_h(half_w):
+    """The vertical half-extent matching a given horizontal half-extent at
+    the output canvas's aspect ratio (9:16, so taller than it is wide)."""
+    return half_w * (OUT_H / OUT_W)
+
+
 def crop_frame(padded_img, cx, cy, half):
-    """Crops a (cx±half, cy±half) SVG-space square out of the padded
+    """Crops a (cx±half, cy±half_h) SVG-space rectangle — sized to the
+    output canvas's 9:16 aspect ratio, not a square — out of the padded
     diagram and resizes it to the output canvas."""
-    pad_px = PAD_SVG * RASTER_SCALE
+    half_h = half_extent_h(half)
     px_cx = (cx + PAD_SVG) * RASTER_SCALE
     px_cy = (cy + PAD_SVG) * RASTER_SCALE
-    px_half = half * RASTER_SCALE
-    box = (px_cx - px_half, px_cy - px_half, px_cx + px_half, px_cy + px_half)
-    return padded_img.crop(box).resize((OUT_SIZE, OUT_SIZE), Image.Resampling.BILINEAR)
+    px_half_w = half * RASTER_SCALE
+    px_half_h = half_h * RASTER_SCALE
+    box = (px_cx - px_half_w, px_cy - px_half_h, px_cx + px_half_w, px_cy + px_half_h)
+    return padded_img.crop(box).resize((OUT_W, OUT_H), Image.Resampling.BILINEAR)
+
+
+def svg_to_frame_px(px_svg, py_svg, cx, cy, half):
+    """Maps an SVG-space point to output-frame pixel coordinates for the
+    current pan/zoom box (cx, cy, half) — used to place overlays (the
+    connector pop-in glow, etc.) so they track the diagram under the
+    camera instead of sitting at a fixed screen position."""
+    half_h = half_extent_h(half)
+    fx = (px_svg - (cx - half)) / (2 * half) * OUT_W
+    fy = (py_svg - (cy - half_h)) / (2 * half_h) * OUT_H
+    return fx, fy
+
+
+def ease_out_back(t):
+    """Small overshoot easing (t in [0,1]) so an element "pops" into place
+    rather than just fading up linearly."""
+    t = max(0.0, min(1.0, t))
+    c1 = 1.70158
+    c3 = c1 + 1
+    return 1 + c3 * (t - 1) ** 3 + c1 * (t - 1) ** 2
+
+
+def draw_connector_pop(frame, cx, cy, half, scene_elapsed_s, scene_duration_s):
+    """"Light refresh" added 2026-09-03 at Alex's request (the AI Universe
+    video was "too basic" — see CLAUDE.md): during the Connectors scene,
+    each of the six chips gets a soft glow that pops in behind it, one at
+    a time in narration order, instead of the camera just panning past
+    six static boxes. Chips themselves never move (they're baked into the
+    rasterized diagram) — only the glow halo is drawn per frame, on top of
+    the already-cropped frame, positioned via svg_to_frame_px so it tracks
+    each chip correctly through the pan/zoom."""
+    n = len(CONNECTOR_CHIPS)
+    slot = scene_duration_s / n
+    pop_duration = min(slot, 0.5)
+    px_per_svg_x = OUT_W / (2 * half)
+    px_per_svg_y = OUT_H / (2 * half_extent_h(half))
+
+    overlay = Image.new("RGBA", frame.size, (0, 0, 0, 0))
+    draw = ImageDraw.Draw(overlay)
+    any_visible = False
+
+    for i, (_name, chip_cx, chip_cy, chip_hw, chip_hh) in enumerate(CONNECTOR_CHIPS):
+        appear_at = i * slot
+        if scene_elapsed_s < appear_at:
+            continue
+        progress = min((scene_elapsed_s - appear_at) / pop_duration, 1.0)
+        scale = ease_out_back(progress)
+        settle_alpha = min((scene_elapsed_s - appear_at) / (pop_duration * 0.6), 1.0)
+        alpha = max(settle_alpha, 0.0) * 0.55  # glow tops out under full
+                                                # opacity so it stays a
+                                                # highlight, not a block
+        if alpha <= 0:
+            continue
+        any_visible = True
+        gx, gy = svg_to_frame_px(chip_cx, chip_cy, cx, cy, half)
+        base_w = chip_hw * 2.4 * scale * px_per_svg_x
+        base_h = chip_hh * 2.6 * scale * px_per_svg_y
+        # Three concentric rounded rects standing in for a soft blur —
+        # cheap per-frame (no actual Gaussian blur needed at this scale).
+        for step, mult in ((0, 1.0), (1, 0.6), (2, 0.35)):
+            a = int(255 * alpha * mult)
+            if a <= 0:
+                continue
+            w = base_w * (1 + step * 0.4)
+            h = base_h * (1 + step * 0.4)
+            draw.rounded_rectangle(
+                [gx - w / 2, gy - h / 2, gx + w / 2, gy + h / 2],
+                radius=min(w, h) / 2,
+                fill=CONNECTOR_GLOW_RGB + (a,),
+            )
+
+    if not any_visible:
+        return frame
+    return Image.alpha_composite(frame.convert("RGBA"), overlay).convert("RGB")
+
+
+def draw_mascot_intro(frame, elapsed_s, scene_duration_s):
+    """Puts the AITS mascot in the bottom-right corner during the opening
+    title-card scene, fading in as the "Hi, I'm AITS" line starts and
+    fading back out before the pan into the Claude core begins — a small,
+    cheap way to put a face to the narration voice without touching the
+    diagram itself. Part of the same 2026-09-03 "light refresh" as the
+    connector pop-in above."""
+    fade = 0.5
+    if elapsed_s < fade:
+        alpha = elapsed_s / fade
+    elif elapsed_s > scene_duration_s - fade:
+        alpha = max(scene_duration_s - elapsed_s, 0.0) / fade
+    else:
+        alpha = 1.0
+    alpha = max(0.0, min(1.0, alpha))
+    if alpha <= 0:
+        return frame
+
+    mascot = _load_mascot()
+    if mascot is None:
+        return frame
+    size = int(OUT_W * 0.22)
+    resized = mascot.resize((size, size), Image.Resampling.LANCZOS)
+    if alpha < 1.0:
+        r, g, b, a = resized.split()
+        a = a.point(lambda v: int(v * alpha))
+        resized = Image.merge("RGBA", (r, g, b, a))
+    margin = int(OUT_W * 0.05)
+    pos = (OUT_W - size - margin, OUT_H - size - margin)
+    base = frame.convert("RGBA")
+    base.paste(resized, pos, resized)
+    return base.convert("RGB")
+
+
+_MASCOT_CACHE = {}
+
+
+def _load_mascot():
+    if "img" not in _MASCOT_CACHE:
+        if os.path.exists(MASCOT_IMAGE):
+            _MASCOT_CACHE["img"] = Image.open(MASCOT_IMAGE).convert("RGBA")
+        else:
+            log(f"WARNING: {MASCOT_IMAGE} not found — skipping mascot overlay")
+            _MASCOT_CACHE["img"] = None
+    return _MASCOT_CACHE["img"]
 
 
 # --------------------------------------------------------------------------
@@ -192,11 +350,15 @@ def lerp(a, b, t):
     return a + (b - a) * t
 
 
-def write_scene_frames(padded_img, prev_box, this_box, duration_s, stdin_pipe):
+def write_scene_frames(padded_img, prev_box, this_box, duration_s, stdin_pipe, scene_index=None):
     """Streams this scene's frames straight into ffmpeg's stdin as raw
     RGB24 bytes — no per-frame PNG encode/decode/disk-write, which is by
     far the slowest part of generating a few thousand frames. Returns the
-    frame count actually written."""
+    frame count actually written.
+
+    scene_index selects the per-scene overlay (mascot intro on the title
+    card, the connector pop-in on the Connectors scene) — see
+    draw_mascot_intro / draw_connector_pop above."""
     n_frames = max(int(round(duration_s * FPS)), 1)
     for i in range(n_frames):
         t = i / max(n_frames - 1, 1)
@@ -206,12 +368,17 @@ def write_scene_frames(padded_img, prev_box, this_box, duration_s, stdin_pipe):
         cy = lerp(prev_box[1], this_box[1], eased)
         half = lerp(prev_box[2], this_box[2], eased)
         frame = crop_frame(padded_img, cx, cy, half)
+        elapsed_s = i / FPS
+        if scene_index == 0:
+            frame = draw_mascot_intro(frame, elapsed_s, duration_s)
+        elif scene_index == CONNECTOR_SCENE_INDEX:
+            frame = draw_connector_pop(frame, cx, cy, half, elapsed_s, duration_s)
         stdin_pipe.write(frame.tobytes())
     return n_frames
 
 
 def build_end_card(lang, out_path):
-    img = Image.new("RGB", (OUT_SIZE, OUT_SIZE), hex_to_rgb(BG_COLOR))
+    img = Image.new("RGB", (OUT_W, OUT_H), hex_to_rgb(BG_COLOR))
     draw = ImageDraw.Draw(img)
     title, subtitle = END_CARD_TEXT[lang]
 
@@ -228,10 +395,24 @@ def build_end_card(lang, out_path):
     title_font = load_font(64, bold=True)
     subtitle_font = load_font(30, bold=False)
 
+    # Mascot above the title — ties the end card back to the narration
+    # voice (AITS), added in the same 2026-09-03 "light refresh" as the
+    # title-card intro and connector pop-in. Center of gravity sits a bit
+    # above the vertical midpoint since OUT_H is now much taller than it
+    # is wide (9:16), not square.
+    mascot = _load_mascot()
+    mascot_h = 0
+    if mascot is not None:
+        mascot_size = int(OUT_W * 0.32)
+        resized = mascot.resize((mascot_size, mascot_size), Image.Resampling.LANCZOS)
+        img.paste(resized, ((OUT_W - mascot_size) // 2, int(OUT_H * 0.34)), resized)
+        mascot_h = mascot_size
+
+    title_y = int(OUT_H * 0.34) + mascot_h + 50
     tw = draw.textlength(title, font=title_font)
-    draw.text(((OUT_SIZE - tw) / 2, OUT_SIZE / 2 - 60), title, font=title_font, fill=(244, 246, 251))
+    draw.text(((OUT_W - tw) / 2, title_y), title, font=title_font, fill=(244, 246, 251))
     sw = draw.textlength(subtitle, font=subtitle_font)
-    draw.text(((OUT_SIZE - sw) / 2, OUT_SIZE / 2 + 30), subtitle, font=subtitle_font, fill=(154, 163, 184))
+    draw.text(((OUT_W - sw) / 2, title_y + 90), subtitle, font=subtitle_font, fill=(154, 163, 184))
 
     img.save(out_path)
 
@@ -266,7 +447,12 @@ def caption_font_size(text):
 def caption_drawtext_filter(captions):
     """captions: [(start_s, end_s, text), ...]. Returns an ffmpeg
     drawtext filter chain burning in each scene's on-screen text near the
-    bottom of the frame, one caption visible at a time."""
+    bottom of the frame, one caption visible at a time.
+
+    y=h-300 (not the old square format's h-140) keeps the caption clear of
+    the bottom ~15% of a 1920-tall 9:16 frame — the safe zone Reels/TikTok/
+    Shorts reserve for their own caption/like/share UI, so text stays
+    readable if this MP4 is ever reused as a native vertical post."""
     parts = []
     for start_s, end_s, raw_text in captions:
         text = shorten_caption(raw_text)
@@ -279,7 +465,7 @@ def caption_drawtext_filter(captions):
         parts.append(
             "drawtext=fontfile='%s':text='%s':fontcolor=white:fontsize=%d:"
             "box=1:boxcolor=black@0.45:boxborderw=16:"
-            "x=(w-text_w)/2:y=h-140:enable='between(t,%.2f,%.2f)'"
+            "x=(w-text_w)/2:y=h-300:enable='between(t,%.2f,%.2f)'"
             % (CAPTION_FONT, escaped, caption_font_size(text), start_s, end_s)
         )
     return ",".join(parts)
@@ -343,7 +529,7 @@ def build_video_for_lang(lang, padded_img, script_scenes):
         "-pixel_format",
         "rgb24",
         "-video_size",
-        f"{OUT_SIZE}x{OUT_SIZE}",
+        f"{OUT_W}x{OUT_H}",
         "-framerate",
         str(FPS),
         "-i",
@@ -358,8 +544,8 @@ def build_video_for_lang(lang, padded_img, script_scenes):
     ]
     proc = subprocess.Popen(ffmpeg_cmd, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
     prev_box = SCENES[0]["box"]
-    for scene_def, duration in zip(SCENES, scene_durations):
-        write_scene_frames(padded_img, prev_box, scene_def["box"], duration, proc.stdin)
+    for scene_index, (scene_def, duration) in enumerate(zip(SCENES, scene_durations)):
+        write_scene_frames(padded_img, prev_box, scene_def["box"], duration, proc.stdin, scene_index)
         prev_box = scene_def["box"]
     proc.stdin.close()
     stderr = proc.stderr.read()

@@ -23,9 +23,24 @@ you can build after). No vague "browse and hope" navigation.
 
 **Guide: Alex Monteiro, Founder.** AITS is fronted by its real founder, not a
 mascot. Alex's presence (name, title, a short mission statement) appears on
-the landing page and sets the tone: direct, practical, no hype. There is no
-fictional character, no avatar illustration, no chatbot persona. If Alex's
+the landing page and sets the tone: direct, practical, no hype. If Alex's
 bio or photo is added later, keep it factual — no invented credentials.
+
+**Narration voice: AITS, the mascot (video/audio only) — changed
+2026-09-03 at Alex's request.** Lesson audio narration and the AI Universe
+video are now voiced in first person as "AITS," not as Alex — see
+`video/*-script.md` opening lines ("Hi, I'm AITS, your guide here at AI
+Tech School...") and the "Presenter voice" line in each script's header.
+This is scoped narrowly to the spoken narration track: the landing page's
+founder section, the `js/guide.js` "AM" tips widget, and every other
+first-person reference on the site still speak as Alex Monteiro. AITS was
+already an established name (`social/aits-mascot.png`, the graduate-robot
+mascot with an "AITS" chest badge, and the header/footer brand mark) —
+this just extends that existing character to also be the narration voice,
+rather than introducing a new one. There is still no chatbot persona and
+no illustrated character replacing Alex on the page itself — AITS narrates
+audio/video, it does not answer questions or appear as an interactive
+character in the UI.
 
 The mascot now also appears in the site header/footer logo mark
 (`.brand-mark` on every page), replacing the plain bracket-icon SVG, using
@@ -145,6 +160,12 @@ learner pick up where they left off — never to block access.
   understated — small muted text (`.ats-news-source`), not a button or
   icon — per Alex's explicit request to keep visitors from bouncing off
   the site, while still citing sources honestly rather than hiding them.
+  As of 2026-09-03, the source link is also hidden (`hidden` attribute)
+  until the reader clicks a "Click to learn more" toggle (`.ats-news-toggle`)
+  below the summary — the summary itself was already fully shown (not
+  truncated), so this gates the *exit link*, not the content, on a small
+  extra click. Same per-card pattern in all three languages; see the
+  `renderNews()` function in `ai-news.html`.
 - **Lesson and AI Universe narration audio is a third instance of the same
   GitHub-Actions-as-backend pattern**, built 2026-09-01 per
   `claude/change-plan-sept1.md` section 4 ("professorial narrator voice
@@ -196,6 +217,29 @@ learner pick up where they left off — never to block access.
   the lesson pages. `.github/workflows/generate-universe-video.yml` runs
   it on a manual trigger or when the diagram, script, or either script
   file changes.
+  **Changed 2026-09-03, at Alex's request (two items):** (1) output is
+  now 1080x1920, 9:16 vertical (`OUT_W`/`OUT_H`), not the old square
+  1080x1080 (`PAD_SVG` went from 300 to 500 to give the taller crop room
+  at the widest zoom-out — see the comment on it); `.video-placeholder`,
+  `.ats-video-poster`, and `.ats-video-overlay-frame-wrap` in
+  `css/style.css` were updated to match (9:16, capped narrower — around
+  420px — so a vertical video doesn't stretch edge-to-edge on desktop),
+  and the `#video-container` inline `max-width` on the three level hub
+  pages went from 640px to 360px for the same reason. (2) a "light
+  refresh" (chosen over a full rebuild — the video was "too basic" but
+  didn't need to be thrown out) added two small, cheap-to-render touches
+  on top of the same Ken-Burns-over-one-diagram approach, both in
+  `build_universe_video.py`: the AITS mascot (`social/aits-mascot.png`)
+  fades in/out in a bottom corner during the title-card scene and sits
+  above the title on the end card (`draw_mascot_intro`,
+  `build_end_card`) — a face for the narration voice, now that the
+  narrator is AITS, not Alex; and during the Connectors scene, each of
+  the six chips gets a soft glow that pops in behind it, one at a time in
+  the order the narration names them (`draw_connector_pop`,
+  `CONNECTOR_CHIPS`), so that scene doesn't just sit static while the
+  camera pans past it. No actual third-party logos are used (GitHub/
+  Slack/Gmail/Notion/Calendar/Composio marks would need licensing this
+  project doesn't have) — the "pop" is a glow halo, not a brand icon.
 - **Static content, static hosting.** Pages are plain files. Lesson/quiz
   data lives inline in each lesson's own `<script>` block (a small JS
   object passed to the shared quiz engine) — not fetched from a server.
