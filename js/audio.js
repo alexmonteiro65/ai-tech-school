@@ -20,11 +20,47 @@
    Face, which this project's own dev sandbox can't reach but Actions
    runners can. See claude/change-plan-sept1.md section 4 for the voice
    choices. Nothing here calls a generative API from the live site or a
-   visitor's browser — only the finished, hosted MP3 is referenced. */
+   visitor's browser — only the finished, hosted MP3 is referenced.
+
+   (Fixed 2026-09-02: scripts/generate_narration.py writes each lesson's
+   MP3 path as "audio/lessons/<lesson>-<lang>.mp3" — correct only when
+   resolved from the site root. Every lesson page patched with that path
+   lives two folders deep, at levels/<path>/lesson-N.html, so the browser
+   was resolving it as levels/<path>/audio/lessons/... and 404ing — the
+   narration never played on any lesson page. resolveMediaUrl() below
+   fixes this the same way js/video.js does, by resolving a site-root-
+   relative path against wherever this script itself was actually loaded
+   from, so the already-patched pages needed no changes at all.) */
 window.ATS = window.ATS || {};
 
 (function (ATS) {
   "use strict";
+
+  /* This script is loaded from a different relative depth depending on
+     the page ("js/audio.js" at the site root, "../../js/audio.js" from
+     levels/<path>/...) — find our own <script> tag and reuse whatever
+     prefix it was loaded with, so a single site-root-relative MP3 path
+     resolves correctly no matter how deep the calling page lives. */
+  function computeSitePrefix(scriptFileName) {
+    var scripts = document.getElementsByTagName("script");
+    for (var i = 0; i < scripts.length; i++) {
+      var src = scripts[i].getAttribute("src");
+      if (!src) continue;
+      var clean = src.split("?")[0].split("#")[0];
+      if (clean.slice(-scriptFileName.length) === scriptFileName) {
+        return clean.slice(0, clean.length - scriptFileName.length);
+      }
+    }
+    return "";
+  }
+
+  var SITE_PREFIX = computeSitePrefix("js/audio.js");
+
+  function resolveMediaUrl(path) {
+    if (!path) return path;
+    if (/^([a-z][a-z0-9+.-]*:)?\/\//i.test(path) || path.charAt(0) === "/") return path;
+    return SITE_PREFIX + path;
+  }
 
   var DEFAULT_PLACEHOLDER_TEXT = {
     en: "The narrated audio for this lesson is in production — check back soon.",
@@ -50,7 +86,7 @@ window.ATS = window.ATS || {};
 
     config = config || {};
     var urls = config.urls || {};
-    var url = urls[lang] || urls.en;
+    var url = resolveMediaUrl(urls[lang] || urls.en);
 
     if (!url) {
       var placeholderMap = config.placeholderText || DEFAULT_PLACEHOLDER_TEXT;
