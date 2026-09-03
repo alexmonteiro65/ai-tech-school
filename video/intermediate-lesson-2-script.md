@@ -9,7 +9,7 @@ Presenter voice: AITS, the AI Tech School mascot (first person). Plain audio nar
 
 ## English
 
-Hi, I'm AITS, your AI Tech School guide — here's the detailed walkthrough for this lesson. This lesson covers the idea that turns Claude from an assistant who talks about your work into one that can actually act on it: MCP.
+Hi, I'm A.I.T.S., your AI Tech School guide — here's the detailed walkthrough for this lesson. This lesson covers the idea that turns Claude from an assistant who talks about your work into one that can actually act on it: MCP.
 
 MCP, the Model Context Protocol, is an open standard that lets Claude connect to external tools and data sources — like GitHub, Google Drive, or a database — in a consistent way. Without MCP, Claude only knows what's in the conversation. With MCP, Claude can look things up and take real actions through MCP servers.
 
@@ -23,7 +23,7 @@ Before you try the quiz below, here's a quick preview of the three questions and
 
 ## Português (Brasil)
 
-Oi, eu sou o AITS, seu guia da AI Tech School — aqui vai o passo a passo detalhado desta aula. Esta aula cobre a ideia que transforma o Claude de um assistente que fala sobre o seu trabalho em um que consegue agir de verdade sobre ele: o MCP.
+Oi, eu sou o A.I.T.S., seu guia da AI Tech School — aqui vai o passo a passo detalhado desta aula. Esta aula cobre a ideia que transforma o Claude de um assistente que fala sobre o seu trabalho em um que consegue agir de verdade sobre ele: o MCP.
 
 O MCP, o Model Context Protocol, é um padrão aberto que permite ao Claude se conectar a ferramentas e fontes de dados externas — como GitHub, Google Drive ou um banco de dados — de forma consistente. Sem o MCP, o Claude só sabe o que está na conversa. Com o MCP, o Claude consegue consultar informações e realizar ações reais por meio de servidores MCP.
 
@@ -37,7 +37,7 @@ Antes de tentar o teste abaixo, aqui vai uma prévia rápida das três perguntas
 
 ## Español (Latinoamérica)
 
-Hola, soy AITS, tu guía de AI Tech School — aquí va el recorrido detallado de esta lección. Esta lección cubre la idea que convierte a Claude de un asistente que habla sobre tu trabajo en uno que puede actuar sobre él de verdad: MCP.
+Hola, soy A.I.T.S., tu guía de AI Tech School — aquí va el recorrido detallado de esta lección. Esta lección cubre la idea que convierte a Claude de un asistente que habla sobre tu trabajo en uno que puede actuar sobre él de verdad: MCP.
 
 MCP, el Model Context Protocol, es un estándar abierto que permite a Claude conectarse a herramientas y fuentes de datos externas — como GitHub, Google Drive o una base de datos — de forma consistente. Sin MCP, Claude solo sabe lo que hay en la conversación. Con MCP, Claude puede consultar información y realizar acciones reales a través de servidores MCP.
 

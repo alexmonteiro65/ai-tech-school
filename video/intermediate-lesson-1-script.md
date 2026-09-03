@@ -9,7 +9,7 @@ Presenter voice: AITS, the AI Tech School mascot (first person). Plain audio nar
 
 ## English
 
-Hi, I'm AITS, your AI Tech School guide — here's the detailed walkthrough for this lesson. Welcome to the Intermediate path — this is where Claude stops being something you chat with, and becomes something that actually works inside your own project.
+Hi, I'm A.I.T.S., your AI Tech School guide — here's the detailed walkthrough for this lesson. Welcome to the Intermediate path — this is where Claude stops being something you chat with, and becomes something that actually works inside your own project.
 
 Claude Code is Anthropic's official command-line tool. It lets Claude read, write, and run code directly inside your own project, in your own terminal. Here's how that's different from chatting in a browser: normally, you copy code out of a chat window, paste it into your project, and copy errors back in by hand. Claude Code skips all of that. It can see your actual files, propose edits, run tests or commands, and use tools — with your approval at each step you choose to review.
 
@@ -23,7 +23,7 @@ Before you try the quiz below, here's a quick preview of the three questions and
 
 ## Português (Brasil)
 
-Oi, eu sou o AITS, seu guia da AI Tech School — aqui vai o passo a passo detalhado desta aula. Bem-vindo à trilha Intermediária — é aqui que o Claude deixa de ser algo com que você conversa e passa a ser algo que trabalha de verdade dentro do seu projeto.
+Oi, eu sou o A.I.T.S., seu guia da AI Tech School — aqui vai o passo a passo detalhado desta aula. Bem-vindo à trilha Intermediária — é aqui que o Claude deixa de ser algo com que você conversa e passa a ser algo que trabalha de verdade dentro do seu projeto.
 
 O Claude Code é a ferramenta oficial de linha de comando da Anthropic. Ele permite ao Claude ler, escrever e executar código diretamente dentro do seu próprio projeto, no seu próprio terminal. Veja como isso é diferente de conversar em um navegador: normalmente, você copia código de uma janela de chat, cola no seu projeto, e copia os erros de volta manualmente. O Claude Code elimina tudo isso. Ele consegue ver seus arquivos de verdade, propor edições, rodar testes ou comandos, e usar ferramentas — com sua aprovação em cada etapa que você escolher revisar.
 
@@ -37,7 +37,7 @@ Antes de tentar o teste abaixo, aqui vai uma prévia rápida das três perguntas
 
 ## Español (Latinoamérica)
 
-Hola, soy AITS, tu guía de AI Tech School — aquí va el recorrido detallado de esta lección. Bienvenido a la ruta Intermedia — aquí es donde Claude deja de ser algo con lo que chateas y pasa a ser algo que trabaja de verdad dentro de tu propio proyecto.
+Hola, soy A.I.T.S., tu guía de AI Tech School — aquí va el recorrido detallado de esta lección. Bienvenido a la ruta Intermedia — aquí es donde Claude deja de ser algo con lo que chateas y pasa a ser algo que trabaja de verdad dentro de tu propio proyecto.
 
 Claude Code es la herramienta oficial de línea de comandos de Anthropic. Permite a Claude leer, escribir y ejecutar código directamente dentro de tu propio proyecto, en tu propia terminal. Así es como se diferencia de chatear en un navegador: normalmente, copias código de una ventana de chat, lo pegas en tu proyecto, y copias los errores de vuelta a mano. Claude Code se salta todo eso. Puede ver tus archivos reales, proponer cambios, ejecutar pruebas o comandos, y usar herramientas — con tu aprobación en cada paso que decidas revisar.
 

@@ -9,7 +9,7 @@ Presenter voice: AITS, the AI Tech School mascot (first person). Plain audio nar
 
 ## English
 
-Hi, I'm AITS, your AI Tech School guide — here's the detailed walkthrough for this lesson. Last lesson of the Intermediate path — let's talk about automation.
+Hi, I'm A.I.T.S., your AI Tech School guide — here's the detailed walkthrough for this lesson. Last lesson of the Intermediate path — let's talk about automation.
 
 Automation with Claude Code means describing a task once, then letting Claude carry out the steps — with your review — instead of you doing them by hand every single time. Here's a real example: "Every time I add a new blog post file, generate an SEO-friendly meta description and add it to the top of the file." Claude Code can read the new file, draft the description, and edit the file — all inside your project.
 
@@ -23,7 +23,7 @@ Before you try the quiz below, here's a quick preview of the three questions and
 
 ## Português (Brasil)
 
-Oi, eu sou o AITS, seu guia da AI Tech School — aqui vai o passo a passo detalhado desta aula. Última aula da trilha Intermediária — vamos falar sobre automação.
+Oi, eu sou o A.I.T.S., seu guia da AI Tech School — aqui vai o passo a passo detalhado desta aula. Última aula da trilha Intermediária — vamos falar sobre automação.
 
 Automação com o Claude Code significa descrever uma tarefa uma vez, e depois deixar o Claude executar as etapas — com sua revisão — em vez de você fazer isso manualmente todas as vezes. Aqui está um exemplo real: "Toda vez que eu adicionar um novo arquivo de post no blog, gere uma meta descrição amigável para SEO e adicione no topo do arquivo." O Claude Code consegue ler o novo arquivo, redigir a descrição e editar o arquivo — tudo dentro do seu projeto.
 
@@ -37,7 +37,7 @@ Antes de tentar o teste abaixo, aqui vai uma prévia rápida das três perguntas
 
 ## Español (Latinoamérica)
 
-Hola, soy AITS, tu guía de AI Tech School — aquí va el recorrido detallado de esta lección. Última lección de la ruta Intermedia — hablemos de automatización.
+Hola, soy A.I.T.S., tu guía de AI Tech School — aquí va el recorrido detallado de esta lección. Última lección de la ruta Intermedia — hablemos de automatización.
 
 Automatizar con Claude Code significa describir una tarea una vez, y luego dejar que Claude ejecute los pasos — con tu revisión — en lugar de que tú los hagas a mano cada vez. Aquí hay un ejemplo real: "Cada vez que agregue un nuevo archivo de entrada de blog, genera una meta descripción amigable para SEO y agrégala al principio del archivo." Claude Code puede leer el nuevo archivo, redactar la descripción y editar el archivo — todo dentro de tu proyecto.
 

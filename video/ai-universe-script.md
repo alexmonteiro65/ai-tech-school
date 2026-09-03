@@ -19,7 +19,7 @@ rather than assuming identical timestamps.
 
 | Time | On-screen / diagram focus | Narration |
 |---|---|---|
-| 0:00–0:12 | Title card: "THE AI UNIVERSE" | Hi, I'm AITS, your guide here at AI Tech School. You've probably chatted with Claude before. But have you ever wondered what's actually happening underneath — and just how far this technology can go? Let's take a two-minute tour of the AI Universe. |
+| 0:00–0:12 | Title card: "THE AI UNIVERSE" | Hi, I'm A.I.T.S., your guide here at AI Tech School. You've probably chatted with Claude before. But have you ever wondered what's actually happening underneath — and just how far this technology can go? Let's take a two-minute tour of the AI Universe. |
 | 0:12–0:24 | Zoom to center: the Claude core | At the center is Claude itself — the model. It reads, writes, and reasons in plain language. Every layer around it exists for one reason: to connect you, or your software, to that one core capability. |
 | 0:24–0:36 | Highlight ring: Prompts & Chat | The simplest layer is prompts and chat. You type a message on Claude.ai, and Claude responds — one conversation at a time. |
 | 0:36–0:52 | Highlight ring: API | But if you want Claude inside your own product, you need the API. That's how your own software sends requests directly to Claude, without a human typing each one by hand. |
@@ -34,7 +34,7 @@ rather than assuming identical timestamps.
 
 | Tempo | Foco visual / no diagrama | Narração |
 |---|---|---|
-| 0:00–0:12 | Card de título: "O UNIVERSO DA IA" | Oi, eu sou o AITS, seu guia aqui na AI Tech School. Você provavelmente já conversou com o Claude. Mas já parou para pensar no que realmente acontece por trás disso — e até onde essa tecnologia pode ir? Vamos fazer um tour de dois minutos pelo Universo da IA. |
+| 0:00–0:12 | Card de título: "O UNIVERSO DA IA" | Oi, eu sou o A.I.T.S., seu guia aqui na AI Tech School. Você provavelmente já conversou com o Claude. Mas já parou para pensar no que realmente acontece por trás disso — e até onde essa tecnologia pode ir? Vamos fazer um tour de dois minutos pelo Universo da IA. |
 | 0:12–0:24 | Zoom no centro: o núcleo Claude | No centro está o próprio Claude — o modelo. Ele lê, escreve e raciocina em linguagem natural. Cada camada ao redor existe por um motivo: conectar você, ou o seu software, a essa capacidade central. |
 | 0:24–0:36 | Destaque no anel: Prompts e Chat | A camada mais simples é a de prompts e chat. Você digita uma mensagem no Claude.ai, e o Claude responde — uma conversa de cada vez. |
 | 0:36–0:52 | Destaque no anel: API | Mas se você quiser o Claude dentro do seu próprio produto, precisa da API. É assim que o seu software envia pedidos diretamente ao Claude, sem uma pessoa digitando cada um manualmente. |
@@ -49,7 +49,7 @@ rather than assuming identical timestamps.
 
 | Tiempo | Enfoque visual / en el diagrama | Narración |
 |---|---|---|
-| 0:00–0:12 | Tarjeta de título: "EL UNIVERSO DE LA IA" | Hola, soy AITS, tu guía aquí en AI Tech School. Probablemente ya chateaste con Claude. Pero ¿alguna vez te preguntaste qué pasa realmente por debajo — y hasta dónde puede llegar esta tecnología? Vamos a hacer un recorrido de dos minutos por el Universo de la IA. |
+| 0:00–0:12 | Tarjeta de título: "EL UNIVERSO DE LA IA" | Hola, soy A.I.T.S., tu guía aquí en AI Tech School. Probablemente ya chateaste con Claude. Pero ¿alguna vez te preguntaste qué pasa realmente por debajo — y hasta dónde puede llegar esta tecnología? Vamos a hacer un recorrido de dos minutos por el Universo de la IA. |
 | 0:12–0:24 | Zoom al centro: el núcleo de Claude | En el centro está el propio Claude — el modelo. Lee, escribe y razona en lenguaje natural. Cada capa a su alrededor existe por una sola razón: conectarte a ti, o a tu software, con esa capacidad central. |
 | 0:24–0:36 | Resaltar anillo: Prompts y Chat | La capa más simple es la de prompts y chat. Escribes un mensaje en Claude.ai, y Claude responde — una conversación a la vez. |
 | 0:36–0:52 | Resaltar anillo: API | Pero si quieres tener a Claude dentro de tu propio producto, necesitas la API. Así es como tu propio software envía solicitudes directamente a Claude, sin que una persona escriba cada una a mano. |

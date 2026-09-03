@@ -9,7 +9,7 @@ Presenter voice: AITS, the AI Tech School mascot (first person). Plain audio nar
 
 ## English
 
-Hi, I'm AITS, your AI Tech School guide — here's the detailed walkthrough for this lesson. You've made it to the last lesson of the Beginner path, and it answers a question that trips a lot of people up: what is an API, and why do you actually need one?
+Hi, I'm A.I.T.S., your AI Tech School guide — here's the detailed walkthrough for this lesson. You've made it to the last lesson of the Beginner path, and it answers a question that trips a lot of people up: what is an API, and why do you actually need one?
 
 API stands for Application Programming Interface — a defined way for one piece of software to ask another for something, and get a response back. Here's the analogy that makes it click. Think of a restaurant. You don't walk into the kitchen and cook your own meal — you order from a menu, and a waiter carries your order to the kitchen and brings the result back. The menu and the waiter are the API: a fixed, reliable way to ask for something without needing to know how the kitchen works inside.
 
@@ -23,7 +23,7 @@ Before you try the quiz below, here's a quick preview of the three questions and
 
 ## Português (Brasil)
 
-Oi, eu sou o AITS, seu guia da AI Tech School — aqui vai o passo a passo detalhado desta aula. Você chegou na última aula da trilha Iniciante, e ela responde a uma pergunta que confunde muita gente: o que é uma API, e por que você realmente precisa de uma?
+Oi, eu sou o A.I.T.S., seu guia da AI Tech School — aqui vai o passo a passo detalhado desta aula. Você chegou na última aula da trilha Iniciante, e ela responde a uma pergunta que confunde muita gente: o que é uma API, e por que você realmente precisa de uma?
 
 API significa Application Programming Interface — uma forma definida de um programa pedir algo a outro e receber uma resposta de volta. Aqui está a analogia que faz tudo fazer sentido. Pense em um restaurante. Você não entra na cozinha e cozinha sua própria refeição — você pede pelo cardápio, e um garçom leva seu pedido até a cozinha e traz o resultado de volta. O cardápio e o garçom são a API: uma forma fixa e confiável de pedir algo sem precisar saber como a cozinha funciona por dentro.
 
@@ -37,7 +37,7 @@ Antes de tentar o teste abaixo, aqui vai uma prévia rápida das três perguntas
 
 ## Español (Latinoamérica)
 
-Hola, soy AITS, tu guía de AI Tech School — aquí va el recorrido detallado de esta lección. Llegaste a la última lección de la ruta Principiante, y responde una pregunta que confunde a mucha gente: ¿qué es una API, y por qué realmente la necesitas?
+Hola, soy A.I.T.S., tu guía de AI Tech School — aquí va el recorrido detallado de esta lección. Llegaste a la última lección de la ruta Principiante, y responde una pregunta que confunde a mucha gente: ¿qué es una API, y por qué realmente la necesitas?
 
 API significa Application Programming Interface — una forma definida de que un programa le pida algo a otro y reciba una respuesta. Aquí está la analogía que hace que todo tenga sentido. Piensa en un restaurante. No entras a la cocina a preparar tu propia comida — pides del menú, y un mesero lleva tu pedido a la cocina y trae el resultado de vuelta. El menú y el mesero son la API: una forma fija y confiable de pedir algo sin necesitar saber cómo funciona la cocina por dentro.
 

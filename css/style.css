@@ -1202,6 +1202,24 @@ body.ats-video-open { overflow: hidden; }
   border-bottom-color: var(--text-muted);
 }
 .ats-news-toggle[hidden] { display: none; }
+/* The expanded "details" paragraph a card reveals on click, and the
+   invisible sentinel after it that gates the source link — see
+   ai-news.html's renderNews() for the IntersectionObserver logic. */
+.ats-news-details {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+.ats-news-details[hidden] { display: none; }
+.ats-news-details p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 0 10px;
+}
+.ats-news-sentinel {
+  block-size: 1px;
+}
 
 /* ==========================================================================
    AI Universe homepage teaser

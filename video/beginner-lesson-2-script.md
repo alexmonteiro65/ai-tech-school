@@ -14,7 +14,7 @@ narration text per language, read straight through under the lesson's
 
 ## English
 
-Hi, I'm AITS, your AI Tech School guide — here's the detailed walkthrough for this lesson. In the last lesson we covered what Claude actually is. Now let's put that to work: how do you actually talk to it? A prompt is just the instruction you give Claude, and here's the whole lesson in one line — vague prompts get vague results, specific prompts get results you can actually use.
+Hi, I'm A.I.T.S., your AI Tech School guide — here's the detailed walkthrough for this lesson. In the last lesson we covered what Claude actually is. Now let's put that to work: how do you actually talk to it? A prompt is just the instruction you give Claude, and here's the whole lesson in one line — vague prompts get vague results, specific prompts get results you can actually use.
 
 So how do you write a specific one? Use four parts. Task: what you actually want done. Context: the details Claude needs to do it well. Format: how you want the answer shaped — length, structure. And optionally, tone: the voice you want it written in.
 
@@ -28,7 +28,7 @@ Before you try the quiz below, here's a quick preview of the three questions and
 
 ## Português (Brasil)
 
-Oi, eu sou o AITS, seu guia da AI Tech School — aqui vai o passo a passo detalhado desta aula. Na aula passada, vimos o que o Claude realmente é. Agora vamos colocar isso em prática: como você fala com ele de verdade? Um prompt é só a instrução que você dá ao Claude, e aqui está a aula inteira em uma frase — prompts vagos geram resultados vagos, prompts específicos geram resultados que você realmente consegue usar.
+Oi, eu sou o A.I.T.S., seu guia da AI Tech School — aqui vai o passo a passo detalhado desta aula. Na aula passada, vimos o que o Claude realmente é. Agora vamos colocar isso em prática: como você fala com ele de verdade? Um prompt é só a instrução que você dá ao Claude, e aqui está a aula inteira em uma frase — prompts vagos geram resultados vagos, prompts específicos geram resultados que você realmente consegue usar.
 
 Então, como você escreve um prompt específico? Use quatro partes. Tarefa: o que você realmente quer que seja feito. Contexto: os detalhes que o Claude precisa para fazer bem. Formato: como você quer que a resposta seja moldada — tamanho, estrutura. E, opcionalmente, tom: o estilo em que você quer que seja escrito.
 
@@ -42,7 +42,7 @@ Antes de tentar o teste abaixo, aqui vai uma prévia rápida das três perguntas
 
 ## Español (Latinoamérica)
 
-Hola, soy AITS, tu guía de AI Tech School — aquí va el recorrido detallado de esta lección. En la lección pasada vimos qué es Claude en realidad. Ahora vamos a ponerlo en práctica: ¿cómo le hablas de verdad? Un prompt es solo la instrucción que le das a Claude, y aquí está toda la lección en una frase — prompts vagos producen resultados vagos, prompts específicos producen resultados que realmente puedes usar.
+Hola, soy A.I.T.S., tu guía de AI Tech School — aquí va el recorrido detallado de esta lección. En la lección pasada vimos qué es Claude en realidad. Ahora vamos a ponerlo en práctica: ¿cómo le hablas de verdad? Un prompt es solo la instrucción que le das a Claude, y aquí está toda la lección en una frase — prompts vagos producen resultados vagos, prompts específicos producen resultados que realmente puedes usar.
 
 Entonces, ¿cómo escribes uno específico? Usa cuatro partes. Tarea: lo que realmente quieres que se haga. Contexto: los detalles que Claude necesita para hacerlo bien. Formato: cómo quieres que se estructure la respuesta — extensión, estructura. Y, opcionalmente, tono: el estilo en el que quieres que esté escrito.
 

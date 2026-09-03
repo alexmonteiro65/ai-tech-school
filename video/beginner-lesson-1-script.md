@@ -24,7 +24,7 @@ read in the time given.
 
 | Time | On-screen | Narration |
 |---|---|---|
-| 0:00–0:15 | Title card: "What is Claude AI?" · Beginner · Lesson 1 | Hi, I'm AITS, your AI Tech School guide — here's the detailed walkthrough for this lesson. Before you write a single prompt, it helps to know exactly what you're talking to. So let's spend the next few minutes on one question: what is Claude, actually? |
+| 0:00–0:15 | Title card: "What is Claude AI?" · Beginner · Lesson 1 | Hi, I'm A.I.T.S., your AI Tech School guide — here's the detailed walkthrough for this lesson. Before you write a single prompt, it helps to know exactly what you're talking to. So let's spend the next few minutes on one question: what is Claude, actually? |
 | 0:15–0:45 | Text: "Reads. Writes. Reasons." | Claude is an AI model made by Anthropic. It reads, writes, reasons through problems, and holds a conversation in plain language. And here's the one thing people get wrong most often: Claude is not a search engine. It doesn't go fetch a page that already exists somewhere. It reads what you give it, and generates an original, reasoned response based on that. |
 | 0:45–1:00 | Text: "What Claude is good at" | So what's it actually good at? Four things, in particular. |
 | 1:00–1:45 | Four beats, one at a time: "Drafting & editing" / "Explaining concepts" / "Summarizing" / "Reasoning step by step" | Drafting and editing writing — emails, reports, code, plans. Explaining a concept in plain language, at whatever depth you need. Summarizing long documents down to the parts that matter. And reasoning through a problem step by step, together with you. If your task looks like one of those four, Claude is a strong fit on its own. |
@@ -40,7 +40,7 @@ read in the time given.
 
 | Tempo | Na tela | Narração |
 |---|---|---|
-| 0:00–0:15 | Card de título: "O que é o Claude AI?" · Iniciante · Aula 1 | Oi, eu sou o AITS, seu guia da AI Tech School — aqui vai o passo a passo detalhado desta aula. Antes de escrever seu primeiro prompt, ajuda saber exatamente com o que você está falando. Então vamos passar os próximos minutos numa pergunta só: afinal, o que é o Claude? |
+| 0:00–0:15 | Card de título: "O que é o Claude AI?" · Iniciante · Aula 1 | Oi, eu sou o A.I.T.S., seu guia da AI Tech School — aqui vai o passo a passo detalhado desta aula. Antes de escrever seu primeiro prompt, ajuda saber exatamente com o que você está falando. Então vamos passar os próximos minutos numa pergunta só: afinal, o que é o Claude? |
 | 0:15–0:45 | Texto: "Lê. Escreve. Raciocina." | O Claude é um modelo de IA criado pela Anthropic. Ele lê, escreve, raciocina sobre problemas e mantém uma conversa em linguagem natural. E aqui está o erro mais comum: o Claude não é um mecanismo de busca. Ele não vai buscar uma página que já existe em algum lugar. Ele lê o que você fornece, e gera uma resposta original e raciocinada com base nisso. |
 | 0:45–1:00 | Texto: "No que o Claude é bom" | Então, no que ele é realmente bom? Quatro coisas, principalmente. |
 | 1:00–1:45 | Quatro pontos, um de cada vez: "Redigir e editar" / "Explicar conceitos" / "Resumir" / "Raciocinar passo a passo" | Redigir e editar textos — e-mails, relatórios, código, planos. Explicar um conceito em linguagem simples, na profundidade que você precisar. Resumir documentos longos nas partes que realmente importam. E raciocinar sobre um problema, passo a passo, junto com você. Se a sua tarefa parece com uma dessas quatro, o Claude resolve sozinho, tranquilamente. |
@@ -56,7 +56,7 @@ read in the time given.
 
 | Tiempo | En pantalla | Narración |
 |---|---|---|
-| 0:00–0:15 | Tarjeta de título: "¿Qué es Claude AI?" · Principiante · Lección 1 | Hola, soy AITS, tu guía de AI Tech School — aquí va el recorrido detallado de esta lección. Antes de escribir tu primer prompt, ayuda saber exactamente con qué estás hablando. Así que vamos a dedicar los próximos minutos a una sola pregunta: ¿qué es Claude, en realidad? |
+| 0:00–0:15 | Tarjeta de título: "¿Qué es Claude AI?" · Principiante · Lección 1 | Hola, soy A.I.T.S., tu guía de AI Tech School — aquí va el recorrido detallado de esta lección. Antes de escribir tu primer prompt, ayuda saber exactamente con qué estás hablando. Así que vamos a dedicar los próximos minutos a una sola pregunta: ¿qué es Claude, en realidad? |
 | 0:15–0:45 | Texto: "Lee. Escribe. Razona." | Claude es un modelo de IA creado por Anthropic. Lee, escribe, razona sobre problemas y mantiene una conversación en lenguaje natural. Y aquí está el error más común: Claude no es un buscador. No va a recuperar una página que ya existe en algún lugar. Lee lo que le das, y genera una respuesta original y razonada a partir de eso. |
 | 0:45–1:00 | Texto: "En qué es bueno Claude" | Entonces, ¿en qué es realmente bueno? En cuatro cosas, sobre todo. |
 | 1:00–1:45 | Cuatro puntos, uno por uno: "Redactar y editar" / "Explicar conceptos" / "Resumir" / "Razonar paso a paso" | Redactar y editar textos — correos, informes, código, planes. Explicar un concepto en lenguaje simple, con la profundidad que necesites. Resumir documentos largos en las partes que realmente importan. Y razonar sobre un problema, paso a paso, contigo. Si tu tarea se parece a una de esas cuatro, Claude la resuelve bien por sí solo. |

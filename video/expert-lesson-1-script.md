@@ -9,7 +9,7 @@ Presenter voice: AITS, the AI Tech School mascot (first person). Plain audio nar
 
 ## English
 
-Hi, I'm AITS, your AI Tech School guide — here's the detailed walkthrough for this lesson. Welcome to Expert — and let's start with the idea that defines this whole path: agents.
+Hi, I'm A.I.T.S., your AI Tech School guide — here's the detailed walkthrough for this lesson. Welcome to Expert — and let's start with the idea that defines this whole path: agents.
 
 An agent is an AI system that loops: observe, gather information. Think, decide what to do. Act, take an action, often via a tool. Then repeat — until the goal is done, largely without a human approving every single step. That's the key difference from Claude Code's default mode, where you review each step. An agent is trusted to make a chain of decisions on its own, within guardrails you define up front.
 
@@ -23,7 +23,7 @@ Before you try the quiz below, here's a quick preview of the three questions and
 
 ## Português (Brasil)
 
-Oi, eu sou o AITS, seu guia da AI Tech School — aqui vai o passo a passo detalhado desta aula. Bem-vindo ao Avançado — e vamos começar pela ideia que define toda essa trilha: agentes.
+Oi, eu sou o A.I.T.S., seu guia da AI Tech School — aqui vai o passo a passo detalhado desta aula. Bem-vindo ao Avançado — e vamos começar pela ideia que define toda essa trilha: agentes.
 
 Um agente é um sistema de IA que funciona em ciclo: observar, coletar informações. Pensar, decidir o que fazer. Agir, realizar uma ação, geralmente por meio de uma ferramenta. E repetir — até a meta ser cumprida, em grande parte sem um humano aprovando cada etapa. Essa é a principal diferença em relação ao modo padrão do Claude Code, em que você revisa cada etapa. Um agente tem a confiança para tomar uma sequência de decisões sozinho, dentro de limites que você define previamente.
 
@@ -37,7 +37,7 @@ Antes de tentar o teste abaixo, aqui vai uma prévia rápida das três perguntas
 
 ## Español (Latinoamérica)
 
-Hola, soy AITS, tu guía de AI Tech School — aquí va el recorrido detallado de esta lección. Bienvenido a Experto — y empecemos por la idea que define toda esta ruta: los agentes.
+Hola, soy A.I.T.S., tu guía de AI Tech School — aquí va el recorrido detallado de esta lección. Bienvenido a Experto — y empecemos por la idea que define toda esta ruta: los agentes.
 
 Un agente es un sistema de IA que funciona en bucle: observar, recopilar información. Pensar, decidir qué hacer. Actuar, realizar una acción, a menudo mediante una herramienta. Y repetir — hasta cumplir el objetivo, en gran parte sin que un humano apruebe cada paso. Esa es la diferencia clave con el modo predeterminado de Claude Code, donde revisas cada paso. Un agente tiene la confianza para tomar una cadena de decisiones por sí solo, dentro de límites que defines de antemano.
 

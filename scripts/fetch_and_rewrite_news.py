@@ -3,8 +3,12 @@
 Fetches recent AI-industry headlines from free, public RSS feeds, picks the
 ones actually relevant to Claude/Anthropic/the wider AI ecosystem, and asks
 the Anthropic API to write short, original, AITS-toned summaries of each one
-in English, Brazilian Portuguese, and Latin American Spanish. The result is
-written to news/news-data.js, which ai-news.html loads directly.
+in English, Brazilian Portuguese, and Latin American Spanish. Each item also
+gets a longer "details" write-up (5-8 sentences) for the card's expanded
+view — added 2026-09-03 at Alex's request, so clicking "Click to learn
+more" actually reveals substantially more to read, not just the same short
+summary with a source link attached. The result is written to
+news/news-data.js, which ai-news.html loads directly.
 
 Why this exists (see CLAUDE.md section 2 for the full architecture rule):
 this project doesn't hand-copy other outlets' text — every item on the page
@@ -134,9 +138,9 @@ def call_anthropic_rewrite(items, api_key):
     )
 
     prompt = (
-        "You are writing short news cards for AI Tech School (AITS), an educational "
+        "You are writing news cards for AI Tech School (AITS), an educational "
         "site that teaches Claude, Claude Code, MCP, and the AI ecosystem. For each "
-        "numbered item below, do two things in each of three languages — English (en), "
+        "numbered item below, do three things in each of three languages — English (en), "
         "Brazilian Portuguese (pt), and Latin American Spanish (es):\n"
         "1. Translate the headline (TITLE) naturally for that language — keep proper "
         "nouns/product names (Claude, Anthropic, MCP, company names) as-is, translate "
@@ -144,17 +148,28 @@ def call_anthropic_rewrite(items, api_key):
         "2. Write your OWN original 1-2 sentence factual summary of what happened — "
         "never copy phrases from the source summary. Plain, direct, no hype, no "
         "marketing adjectives, written the way you'd explain it to someone learning "
-        "the field.\n\n"
+        "the field. This is the short version shown on the card before it's expanded.\n"
+        "3. Write your OWN original, expanded write-up of the same story — "
+        "5-8 sentences, still never copying phrases from the source summary. This is "
+        "the long version a reader sees after clicking to expand the card, so it "
+        "should add real substance beyond the short summary: more concrete detail on "
+        "what actually happened, why it matters for someone learning to build with AI "
+        "(what changes for them in practice), and relevant context or background a "
+        "newcomer to the topic would need. Same plain, direct, no-hype tone as the "
+        "summary — write it as flowing prose paragraphs, not a list.\n\n"
         "Respond with ONLY a JSON array, one object per item, in the same order, each "
-        'shaped exactly like: {"en": {"title": "...", "summary": "..."}, "pt": '
-        '{"title": "...", "summary": "..."}, "es": {"title": "...", "summary": "..."}}. '
+        'shaped exactly like: {"en": {"title": "...", "summary": "...", "details": "..."}, '
+        '"pt": {"title": "...", "summary": "...", "details": "..."}, "es": {"title": "...", '
+        '"summary": "...", "details": "..."}}. '
         "No other text before or after the JSON.\n\n"
         f"{numbered}"
     )
 
     body = json.dumps({
         "model": ANTHROPIC_MODEL,
-        "max_tokens": 4096,
+        "max_tokens": 8192,  # bumped from 4096 now that each item also
+                             # includes a 5-8 sentence "details" write-up
+                             # per language, not just a 1-2 sentence summary
         "messages": [{"role": "user", "content": prompt}],
     }).encode("utf-8")
 
@@ -219,6 +234,10 @@ def build_output(items, rewrites):
                 "date": format_date_label(item["pubDate"], lang),
                 "title": lang_rewrite.get("title", item["title"]),
                 "summary": lang_rewrite.get("summary", ""),
+                # Longer expanded write-up shown when a reader expands the
+                # card — falls back to the summary if the model somehow
+                # omitted it, so the page never shows an empty expansion.
+                "details": lang_rewrite.get("details") or lang_rewrite.get("summary", ""),
                 "source": item["source"],
                 "url": item["link"],
             })

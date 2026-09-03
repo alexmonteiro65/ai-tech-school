@@ -175,13 +175,31 @@
         summaryEl.textContent = item.summary;
         summaryEl.style.marginBottom = "10px";
 
-        // Deliberately understated: a small citation, not a button — see
-        // CLAUDE.md and news/ai-news-setup.md for why outbound links on
-        // this page are kept as low-key as possible without removing
-        // sourcing entirely. The source link also stays hidden until the
-        // reader clicks "Click to learn more", so the summary gets read
-        // first rather than the source being an instant exit — added
-        // 2026-09-03 at Alex's request.
+        // Redesigned 2026-09-03 at Alex's request: clicking "Click to learn
+        // more" used to just reveal the (already-understated) source link
+        // next to the same short summary — barely different from showing
+        // it up front. Now it actually expands the card with a longer,
+        // separately-written "details" paragraph (see
+        // scripts/fetch_and_rewrite_news.py), and the source link stays
+        // hidden until the reader scrolls PAST that expanded text — an
+        // IntersectionObserver watches a zero-height sentinel placed right
+        // after the details paragraph and reveals the link once the
+        // sentinel enters the viewport, i.e. once there's nothing further
+        // to read before it. If the expanded text is short enough to fit
+        // on screen without scrolling, the sentinel is already visible the
+        // moment it's shown, so the source appears immediately — which is
+        // correct, there was nothing to scroll past.
+        var detailsWrap = document.createElement("div");
+        detailsWrap.className = "ats-news-details";
+        detailsWrap.hidden = true;
+
+        var detailsEl = document.createElement("p");
+        detailsEl.textContent = item.details || item.summary;
+
+        var sentinelEl = document.createElement("div");
+        sentinelEl.className = "ats-news-sentinel";
+        sentinelEl.setAttribute("aria-hidden", "true");
+
         var sourceEl = document.createElement("a");
         sourceEl.href = item.url;
         sourceEl.target = "_blank";
@@ -190,20 +208,40 @@
         sourceEl.textContent = (chrome["news.sourceLabel"] || "Source") + ": " + item.source;
         sourceEl.hidden = true;
 
+        detailsWrap.appendChild(detailsEl);
+        detailsWrap.appendChild(sentinelEl);
+        detailsWrap.appendChild(sourceEl);
+
         var toggleEl = document.createElement("button");
         toggleEl.type = "button";
         toggleEl.className = "ats-news-toggle";
+        toggleEl.setAttribute("aria-expanded", "false");
         toggleEl.textContent = chrome["news.readMore"] || "Click to learn more";
         toggleEl.addEventListener("click", function () {
-          sourceEl.hidden = false;
+          detailsWrap.hidden = false;
           toggleEl.hidden = true;
+          if (window.IntersectionObserver) {
+            var observer = new IntersectionObserver(function (entries) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                  sourceEl.hidden = false;
+                  observer.disconnect();
+                }
+              });
+            }, { rootMargin: "0px 0px -10% 0px" });
+            observer.observe(sentinelEl);
+          } else {
+            // No IntersectionObserver support: fail open rather than
+            // permanently hiding the source citation.
+            sourceEl.hidden = false;
+          }
         });
 
         card.appendChild(dateEl);
         card.appendChild(titleEl);
         card.appendChild(summaryEl);
         card.appendChild(toggleEl);
-        card.appendChild(sourceEl);
+        card.appendChild(detailsWrap);
         list.appendChild(card);
       });
     }

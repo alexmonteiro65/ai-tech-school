@@ -9,7 +9,7 @@ Presenter voice: AITS, the AI Tech School mascot (first person). Plain audio nar
 
 ## English
 
-Hi, I'm AITS, your AI Tech School guide — here's the detailed walkthrough for this lesson. One agent, many tools — that's what this lesson is about.
+Hi, I'm A.I.T.S., your AI Tech School guide — here's the detailed walkthrough for this lesson. One agent, many tools — that's what this lesson is about.
 
 Composio is a platform that provides ready-made MCP connectors for dozens of popular tools — Slack, Gmail, Notion, Google Calendar, GitHub, Linear, and more — so you don't build a custom connector for every service you want an agent to use. Instead of one agent hard-wired to one tool, Composio lets a single agent reach many tools through the same MCP interface, and the agent picks the right tool for each part of a task.
 
@@ -23,7 +23,7 @@ Before you try the quiz below, here's a quick preview of the three questions and
 
 ## Português (Brasil)
 
-Oi, eu sou o AITS, seu guia da AI Tech School — aqui vai o passo a passo detalhado desta aula. Um agente, várias ferramentas — é sobre isso que trata esta aula.
+Oi, eu sou o A.I.T.S., seu guia da AI Tech School — aqui vai o passo a passo detalhado desta aula. Um agente, várias ferramentas — é sobre isso que trata esta aula.
 
 O Composio é uma plataforma que oferece conectores MCP prontos para dezenas de ferramentas populares — Slack, Gmail, Notion, Google Calendar, GitHub, Linear e outras — para que você não precise construir um conector personalizado para cada serviço que quiser que um agente use. Em vez de um agente amarrado a uma única ferramenta, o Composio permite que um único agente alcance várias ferramentas pela mesma interface MCP, e o agente escolhe a ferramenta certa para cada parte de uma tarefa.
 
@@ -37,7 +37,7 @@ Antes de tentar o teste abaixo, aqui vai uma prévia rápida das três perguntas
 
 ## Español (Latinoamérica)
 
-Hola, soy AITS, tu guía de AI Tech School — aquí va el recorrido detallado de esta lección. Un agente, muchas herramientas — de eso trata esta lección.
+Hola, soy A.I.T.S., tu guía de AI Tech School — aquí va el recorrido detallado de esta lección. Un agente, muchas herramientas — de eso trata esta lección.
 
 Composio es una plataforma que ofrece conectores MCP ya listos para docenas de herramientas populares — Slack, Gmail, Notion, Google Calendar, GitHub, Linear y más — para que no tengas que construir un conector personalizado por cada servicio que quieras que use un agente. En lugar de un agente atado a una sola herramienta, Composio permite que un solo agente llegue a muchas herramientas a través de la misma interfaz MCP, y el agente elige la herramienta correcta para cada parte de una tarea.
 
