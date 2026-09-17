@@ -3,164 +3,185 @@
    See news/ai-news-setup.md for how the pipeline is configured. */
 window.AITS_NEWS = {
   "en": {
-    "snapshotDate": "September 3, 2026",
+    "snapshotDate": "September 17, 2026",
     "items": [
       {
-        "date": "Sep 1, 2026",
-        "title": "Anthropic's new Fable release is cheaper, less restrictive",
-        "summary": "Fable 5.1 reduces operational costs by lowering token consumption and adjusts safety filters to decrease false-positive blocks that were unnecessarily stopping legitimate requests.",
+        "date": "Sep 17, 2026",
+        "title": "Google, Nvidia, and Anthropic want Emerald AI to find space on the grid for more data centers",
+        "summary": "A coalition including Google, Nvidia, and Anthropic is working with Emerald AI to locate 100 gigawatts of electrical grid capacity for new data center construction.",
+        "details": "Training and running large language models requires enormous amounts of electricity, and data centers compete fiercely for available grid capacity in regions with reliable power. This coalition is essentially trying to solve a practical bottleneck: finding places where the electrical infrastructure can actually support the massive facilities these companies need to build. For someone learning to build with AI, understanding the infrastructure constraints is important because it shapes where and how AI systems get deployed. The 100 gigawatt target is a measure of ongoing power demand, not one-time usage. This effort signals that major AI companies see power availability as a limiting factor for growth, which has downstream effects on costs, availability of cloud resources, and where new AI labs can actually operate.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
-        "url": "https://techcrunch.com/2026/09/01/anthropics-new-fable-release-is-cheaper-less-restrictive/"
+        "url": "https://techcrunch.com/2026/09/17/google-nvidia-and-anthropic-want-emerald-ai-to-find-space-on-the-grid-for-more-data-centers/"
       },
       {
-        "date": "Aug 19, 2026",
-        "title": "VentureBeat names Rob Strechay as its first Lead Analyst, expanding its enterprise AI research push",
-        "summary": "Rob Strechay, a veteran industry analyst with three decades of experience in infrastructure and cloud technology, joined VentureBeat to provide research and technical analysis for enterprise leaders deploying AI in production environments. His coverage will focus on GPU utilization, cloud infrastructure, platform engineering, and the intersection of AI and enterprise security.",
-        "source": "AI | VentureBeat",
-        "url": "https://venturebeat.com/ai/venturebeat-names-rob-strechay-as-its-first-lead-analyst-expanding-its-enterprise-ai-research-push"
-      },
-      {
-        "date": "Jan 22, 2026",
-        "title": "Railway secures $100 million to challenge AWS with AI-native cloud infrastructure",
-        "summary": "Railway, a cloud platform that has grown to 2 million developers without traditional marketing, raised $100 million in Series B funding to expand its vertically integrated infrastructure that enables sub-second deployments and costs roughly half what AWS charges. The company operates its own data centers, processes over 10 million monthly deployments, and counts 31% of Fortune 500 companies among its users.",
-        "source": "AI | VentureBeat",
-        "url": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud"
-      },
-      {
-        "date": "Jan 19, 2026",
-        "title": "Claude Code costs up to $200 a month. Goose does the same thing for free.",
-        "summary": "Block released Goose, an open-source AI coding agent that runs locally on developers' machines and offers similar functionality to Anthropic's Claude Code without subscription fees, usage limits, or cloud dependency. Goose gained 26,100 GitHub stars while Claude Code users complained about pricing ($20-$200/month) and restrictive rate limits that leave them unable to work intensively.",
-        "source": "AI | VentureBeat",
-        "url": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free"
-      },
-      {
-        "date": "Sep 3, 2026",
-        "title": "Nvidia confirms it will buy Hugging Face for $12.9 billion",
-        "summary": "Nvidia announced plans to acquire Hugging Face, the popular open-source machine learning platform that hosts over 3 million models and serves an 18 million-person developer community.",
+        "date": "Sep 16, 2026",
+        "title": "Anthropic and OpenAI want to embed safety evaluators. Will they really be independent?",
+        "summary": "Anthropic and OpenAI are proposing to place safety evaluators directly inside their AI labs, which gives researchers better access to evaluate systems but raises questions about whether evaluators can truly be independent when embedded within the companies they're supposed to oversee.",
+        "details": "Safety evaluators are researchers and experts who test AI systems for potential harms—bias, jailbreaks, misuse risks, and so on. Traditionally, such oversight has been external, creating distance between evaluators and the companies building the systems. By embedding evaluators on-site, Anthropic and OpenAI argue that evaluators can access the actual systems more easily and provide real-time feedback. However, researchers who study AI governance have pointed out a real problem: if your salary, workspace, and career advancement depend on the same company you're supposed to oversee, maintaining genuine independence becomes difficult. The proposal highlights a core tension in AI development—companies want to improve safety, but true safety oversight requires some degree of distance and institutional separation. This matters for learners because it touches on governance questions that will shape how trustworthy AI systems can actually be built and deployed at scale.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
-        "url": "https://techcrunch.com/2026/09/03/nvidia-confirms-it-will-buy-hugging-face-for-12-9-billion/"
+        "url": "https://techcrunch.com/2026/09/16/anthropic-and-openai-want-to-embed-safety-evaluators-will-they-really-be-independent/"
       },
       {
-        "date": "Sep 2, 2026",
-        "title": "The Builders Stage brings practical strategies for scaling startups to TechCrunch Disrupt 2026",
-        "summary": "TechCrunch Disrupt 2026 is featuring the Builders Stage, a conference section dedicated to discussions between founders, startup operators, and investors about concrete approaches to building and growing early-stage companies.",
+        "date": "Sep 16, 2026",
+        "title": "Your AI agents can now control your Google Home devices",
+        "summary": "Google has released early access to an MCP server for Google Home that lets AI agents like Claude and ChatGPT control smart home devices, view camera summaries, and access activity logs through natural language commands.",
+        "details": "Model Context Protocol (MCP) is a standard that lets AI models interact with external tools and systems. By releasing a Google Home MCP server, Google is making it possible for any AI agent—Claude, ChatGPT, or others—to interface directly with smart home devices without each AI company needing to build its own Google Home integration. For someone learning to build with AI agents, this is a practical example of how MCP works in real systems. Instead of asking a user to manually control a device, an AI agent can now process a command like \"turn on the kitchen light\" or \"show me the living room camera\" and execute it directly. This matters because it lowers friction—users get more value from AI agents when those agents can actually interact with the physical world and systems they care about. The early access release signals that standardized integrations will likely become more common, which means builders need to understand how MCP works and how to use these existing integrations rather than building everything from scratch.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
-        "url": "https://techcrunch.com/2026/09/02/the-builders-stage-brings-practical-strategies-for-scaling-startups-to-techcrunch-disrupt-2026/"
+        "url": "https://techcrunch.com/2026/09/16/your-ai-agents-can-now-control-your-google-home-devices/"
       },
       {
-        "date": "Sep 2, 2026",
-        "title": "Palo Alto Networks paid $500M for Thrive-backed Console, sources say",
-        "summary": "Palo Alto Networks acquired Console, an AI IT service automation company backed by Thrive Capital, for $500 million, leaving Sequoia-backed Serval as the leading startup in this market segment.",
+        "date": "Sep 16, 2026",
+        "title": "Anthropic merges Claude chat and Cowork in one interface",
+        "summary": "Anthropic is consolidating its Claude chat interface and Cowork collaboration tool into a single unified interface, rolling out initially to Pro and Max subscribers.",
+        "details": "Anthropic previously maintained Claude as a straightforward chat interface and Cowork as a separate space designed for team collaboration and longer-form project work. By merging them, Anthropic is simplifying its product lineup and letting users move fluidly between personal chat and team collaboration within one tool. This change is being released first to paying subscribers on Pro and Max plans, which is typical product strategy—paying users get new features early, and the interface gradually rolls out more broadly. For builders learning how to use Claude effectively, this matters because the unified interface may change how you structure workflows and where you organize different types of work. Instead of context-switching between two separate tools, you'll have one environment that handles both quick interactions and structured team projects. Understanding the interface and how to use the collaboration features will become part of standard Claude usage.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
-        "url": "https://techcrunch.com/2026/09/02/palo-alto-networks-paid-500m-for-thrive-backed-console-sources-say/"
+        "url": "https://techcrunch.com/2026/09/16/anthropic-merges-claude-chat-and-cowork-in-one-interface/"
+      },
+      {
+        "date": "Sep 17, 2026",
+        "title": "Huawei plans Q1 2027 launch of new AI chip as it takes on Nvidia",
+        "summary": "Huawei is accelerating the launch of its Ascend 960DT AI chip to Q1 2027, moving faster in its effort to compete with Nvidia and reduce China's reliance on foreign AI computing hardware.",
+        "details": "Nvidia's GPUs dominate AI model training and inference globally, but U.S. export controls restrict what cutting-edge hardware China can access. This creates both a problem and an opportunity for Chinese companies like Huawei: the problem is they can't simply buy the latest Nvidia chips, but the opportunity is that there's strong incentive and government support to develop alternatives. Huawei's Ascend chip line is designed to be a domestic substitute for Nvidia GPUs. By accelerating the Q1 2027 timeline, Huawei is signaling confidence in the chip's readiness and responding to government and customer demand. For people learning about AI infrastructure, this matters because hardware choices affect training costs, inference speed, and what models are economical to run where. If Huawei's chip becomes viable, it changes the compute landscape in Asia, potentially lowering costs there and fragmenting the global AI infrastructure into different regional hardware ecosystems. This is part of a broader trend where different regions are developing independent AI capabilities rather than relying on a single supplier.",
+        "source": "AI News & Artificial Intelligence | TechCrunch",
+        "url": "https://techcrunch.com/2026/09/17/huawei-plans-q1-2027-launch-of-new-ai-chip-as-it-takes-on-nvidia/"
+      },
+      {
+        "date": "Sep 17, 2026",
+        "title": "2 days left to exhibit at TechCrunch Disrupt 2026",
+        "summary": "The deadline to book an exhibit booth at TechCrunch Disrupt 2026 is September 18, with the event taking place October 13–15 and expected to draw over 10,000 founders, investors, and tech leaders.",
+        "details": "TechCrunch Disrupt is a major tech conference where startups and established companies showcase their work to a large audience of decision-makers. If you're considering exhibiting—whether to demonstrate AI tools, recruit talent, or pitch to investors—this is a time-sensitive opportunity. The conference draws a high concentration of founders, VCs, operators, and media, making it valuable for getting visibility and making connections. For builders in the AI space, Disrupt is one of the larger venues where you might see emerging AI tools, meet other teams working on similar problems, and get exposure to funding sources if you're fundraising. The three-day format means different tracks and sessions, so you might attend even if not exhibiting. If you're at an early stage and want to get your AI product in front of decision-makers, the booth deadline of September 18 is the immediate constraint to be aware of.",
+        "source": "AI News & Artificial Intelligence | TechCrunch",
+        "url": "https://techcrunch.com/2026/09/17/2-days-left-to-exhibit-at-techcrunch-disrupt-2026/"
+      },
+      {
+        "date": "Sep 17, 2026",
+        "title": "Rival AI agents, Instinct and Meta's Muse, both add the ability to make calls",
+        "summary": "Instinct and Meta's Muse AI assistants have both added calling capabilities, allowing users to make phone calls through these agents to perform tasks like restaurant reservations and subscription cancellations.",
+        "details": "Phone calls are still a primary way people interact with businesses—you call a restaurant to book a table, call your insurance company to cancel a policy, and so on. By adding calling capability, AI agents can now handle these tasks on behalf of users, reducing the friction of making calls yourself. This is a step beyond text-based interactions; the agent must understand context, navigate phone systems or talk to humans, handle interruptions, and know when the call is complete. Both Instinct and Muse adding this capability at roughly the same time suggests it's becoming a competitive feature—if one AI assistant can make calls and another can't, the one with calling is more useful for everyday tasks. For builders learning to develop AI agents, this signals where the market is moving: toward agents that can interact with the physical world and existing business processes rather than existing only in chat windows. It also raises questions about how agents should identify themselves on calls and what consent and transparency standards should apply when an AI makes a call on your behalf.",
+        "source": "AI News & Artificial Intelligence | TechCrunch",
+        "url": "https://techcrunch.com/2026/09/17/rival-ai-agents-instinct-and-metas-muse-both-add-the-ability-to-make-calls/"
       }
     ]
   },
   "pt": {
-    "snapshotDate": "3 de set. de 2026",
+    "snapshotDate": "17 de set. de 2026",
     "items": [
       {
-        "date": "1 de set. de 2026",
-        "title": "Novo lançamento Fable da Anthropic é mais barato e menos restritivo",
-        "summary": "A Fable 5.1 reduz custos operacionais ao diminuir o consumo de tokens e ajusta filtros de segurança para diminuir bloqueios falsos positivos que estavam impedindo solicitações legítimas.",
+        "date": "17 de set. de 2026",
+        "title": "Google, Nvidia e Anthropic querem que Emerald AI encontre espaço na rede para mais data centers",
+        "summary": "Uma coalizão que inclui Google, Nvidia e Anthropic está trabalhando com a Emerald AI para localizar 100 gigawatts de capacidade da rede elétrica para construção de novos data centers.",
+        "details": "Treinar e executar modelos de linguagem grande requer quantidades enormes de eletricidade, e data centers competem intensamente por capacidade de rede disponível em regiões com energia confiável. Esta coalizão está essencialmente tentando resolver um gargalo prático: encontrar locais onde a infraestrutura elétrica possa realmente suportar as instalações massivas que essas empresas precisam construir. Para quem está aprendendo a construir com IA, entender as restrições de infraestrutura é importante porque molda onde e como os sistemas de IA são implantados. O alvo de 100 gigawatts é uma medida da demanda de energia contínua, não do uso único. Este esforço sinaliza que as grandes empresas de IA veem a disponibilidade de energia como um fator limitante para crescimento, que tem efeitos a jusante nos custos, disponibilidade de recursos em nuvem e onde novos laboratórios de IA podem realmente operar.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
-        "url": "https://techcrunch.com/2026/09/01/anthropics-new-fable-release-is-cheaper-less-restrictive/"
+        "url": "https://techcrunch.com/2026/09/17/google-nvidia-and-anthropic-want-emerald-ai-to-find-space-on-the-grid-for-more-data-centers/"
       },
       {
-        "date": "19 de ago. de 2026",
-        "title": "VentureBeat nomeia Rob Strechay como seu primeiro Lead Analyst, expandindo sua iniciativa de pesquisa em IA empresarial",
-        "summary": "Rob Strechay, um analista de indústria veterano com três décadas de experiência em infraestrutura e tecnologia em nuvem, ingressou na VentureBeat para fornecer pesquisa e análise técnica para líderes empresariais que implantam IA em ambientes de produção. Sua cobertura se concentrará em utilização de GPU, infraestrutura em nuvem, engenharia de plataforma e a interseção entre IA e segurança empresarial.",
-        "source": "AI | VentureBeat",
-        "url": "https://venturebeat.com/ai/venturebeat-names-rob-strechay-as-its-first-lead-analyst-expanding-its-enterprise-ai-research-push"
-      },
-      {
-        "date": "22 de jan. de 2026",
-        "title": "Railway obtém $100 milhões para desafiar AWS com infraestrutura em nuvem nativa de IA",
-        "summary": "Railway, uma plataforma em nuvem que cresceu para 2 milhões de desenvolvedores sem marketing tradicional, arrecadou $100 milhões em financiamento da Série B para expandir sua infraestrutura verticalmente integrada que permite implantações em menos de um segundo e custa aproximadamente metade do que AWS cobra. A empresa opera seus próprios data centers, processa mais de 10 milhões de implantações mensais e conta com 31% das empresas da Fortune 500 entre seus usuários.",
-        "source": "AI | VentureBeat",
-        "url": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud"
-      },
-      {
-        "date": "19 de jan. de 2026",
-        "title": "Claude Code custa até $200 por mês. Goose faz a mesma coisa gratuitamente.",
-        "summary": "Block lançou Goose, um agente de codificação de IA de código aberto que funciona localmente nas máquinas dos desenvolvedores e oferece funcionalidade semelhante ao Claude Code da Anthropic sem taxas de assinatura, limites de uso ou dependência de nuvem. Goose ganhou 26.100 estrelas no GitHub enquanto usuários de Claude Code reclamavam de preços ($20-$200/mês) e limites de taxa restritivos que os impedem de trabalhar intensamente.",
-        "source": "AI | VentureBeat",
-        "url": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free"
-      },
-      {
-        "date": "3 de set. de 2026",
-        "title": "Nvidia confirma que comprará Hugging Face por $12,9 bilhões",
-        "summary": "Nvidia anunciou planos para adquirir Hugging Face, a popular plataforma de aprendizado de máquina de código aberto que hospeda mais de 3 milhões de modelos e atende uma comunidade de 18 milhões de desenvolvedores.",
+        "date": "16 de set. de 2026",
+        "title": "Anthropic e OpenAI querem incorporar avaliadores de segurança. Serão realmente independentes?",
+        "summary": "Anthropic e OpenAI estão propondo colocar avaliadores de segurança diretamente dentro de seus laboratórios de IA, o que dá aos pesquisadores melhor acesso para avaliar sistemas, mas levanta questões sobre se os avaliadores podem ser verdadeiramente independentes quando incorporados nas empresas que deveriam supervisionar.",
+        "details": "Avaliadores de segurança são pesquisadores e especialistas que testam sistemas de IA para possíveis danos—viés, ataques, riscos de uso indevido, entre outros. Tradicionalmente, essa supervisão foi externa, criando distância entre avaliadores e as empresas que constroem os sistemas. Ao incorporar avaliadores no local, Anthropic e OpenAI argumentam que os avaliadores podem acessar os sistemas reais com mais facilidade e fornecer feedback em tempo real. No entanto, pesquisadores que estudam governança de IA apontaram um problema real: se seu salário, espaço de trabalho e progressão de carreira dependem da mesma empresa que você deveria supervisionar, manter a genuína independência se torna difícil. A proposta destaca uma tensão central no desenvolvimento de IA—empresas querem melhorar a segurança, mas a supervisão genuína de segurança requer algum grau de distância e separação institucional. Isso importa para os aprendizes porque toca em questões de governança que moldarão como sistemas de IA confiáveis podem ser realmente construídos e implantados em escala.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
-        "url": "https://techcrunch.com/2026/09/03/nvidia-confirms-it-will-buy-hugging-face-for-12-9-billion/"
+        "url": "https://techcrunch.com/2026/09/16/anthropic-and-openai-want-to-embed-safety-evaluators-will-they-really-be-independent/"
       },
       {
-        "date": "2 de set. de 2026",
-        "title": "The Builders Stage traz estratégias práticas para escalar startups ao TechCrunch Disrupt 2026",
-        "summary": "TechCrunch Disrupt 2026 está apresentando o Builders Stage, uma seção de conferência dedicada a discussões entre fundadores, operadores de startups e investidores sobre abordagens concretas para construir e fazer crescer empresas em estágio inicial.",
+        "date": "16 de set. de 2026",
+        "title": "Seus agentes de IA agora podem controlar seus dispositivos Google Home",
+        "summary": "Google lançou acesso inicial a um servidor MCP para Google Home que permite que agentes de IA como Claude e ChatGPT controlem dispositivos de casa inteligente, visualizem resumos de câmera e acessem logs de atividades através de comandos de linguagem natural.",
+        "details": "Model Context Protocol (MCP) é um padrão que permite que modelos de IA interajam com ferramentas e sistemas externos. Ao lançar um servidor Google Home MCP, Google está tornando possível para qualquer agente de IA—Claude, ChatGPT ou outros—interagir diretamente com dispositivos de casa inteligente sem que cada empresa de IA precise construir sua própria integração com Google Home. Para alguém aprendendo a construir com agentes de IA, este é um exemplo prático de como o MCP funciona em sistemas reais. Em vez de pedir a um usuário que controle manualmente um dispositivo, um agente de IA agora pode processar um comando como \"ligue a luz da cozinha\" ou \"mostre-me a câmera da sala de estar\" e executá-lo diretamente. Isso importa porque reduz o atrito—os usuários obtêm mais valor dos agentes de IA quando esses agentes podem realmente interagir com o mundo físico e os sistemas que eles se importam. O lançamento de acesso inicial sinaliza que integrações padronizadas provavelmente se tornarão mais comuns, o que significa que os construtores precisam entender como o MCP funciona e como usar essas integrações existentes em vez de construir tudo do zero.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
-        "url": "https://techcrunch.com/2026/09/02/the-builders-stage-brings-practical-strategies-for-scaling-startups-to-techcrunch-disrupt-2026/"
+        "url": "https://techcrunch.com/2026/09/16/your-ai-agents-can-now-control-your-google-home-devices/"
       },
       {
-        "date": "2 de set. de 2026",
-        "title": "Palo Alto Networks pagou $500 milhões pela Console apoiada por Thrive, dizem fontes",
-        "summary": "Palo Alto Networks adquiriu Console, uma empresa de automação de serviços de TI com IA apoiada pela Thrive Capital, por $500 milhões, deixando Serval apoiada por Sequoia como a startup líder neste segmento de mercado.",
+        "date": "16 de set. de 2026",
+        "title": "Anthropic mescla Claude chat e Cowork em uma interface única",
+        "summary": "Anthropic está consolidando sua interface de bate-papo Claude e sua ferramenta de colaboração Cowork em uma única interface unificada, lançando inicialmente para assinantes Pro e Max.",
+        "details": "Anthropic previamente mantinha Claude como uma interface de bate-papo direta e Cowork como um espaço separado projetado para colaboração em equipe e trabalho em projetos de forma mais longa. Ao mesclá-los, Anthropic está simplificando sua linha de produtos e permitindo que os usuários se movam fluidamente entre bate-papo pessoal e colaboração em equipe dentro de uma única ferramenta. Essa mudança está sendo lançada primeiro para assinantes pagos em planos Pro e Max, que é uma estratégia típica de produtos—usuários pagos obtêm novos recursos cedo, e a interface gradualmente se expande mais amplamente. Para construtores aprendendo a usar Claude efetivamente, isso importa porque a interface unificada pode mudar como você estrutura fluxos de trabalho e onde você organiza diferentes tipos de trabalho. Em vez de trocar contexto entre duas ferramentas separadas, você terá um ambiente que lida com interações rápidas e projetos estruturados em equipe. Entender a interface e como usar os recursos de colaboração se tornará parte do uso padrão de Claude.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
-        "url": "https://techcrunch.com/2026/09/02/palo-alto-networks-paid-500m-for-thrive-backed-console-sources-say/"
+        "url": "https://techcrunch.com/2026/09/16/anthropic-merges-claude-chat-and-cowork-in-one-interface/"
+      },
+      {
+        "date": "17 de set. de 2026",
+        "title": "Huawei planeja lançamento do novo chip de IA em Q1 2027 conforme enfrenta Nvidia",
+        "summary": "Huawei está acelerando o lançamento de seu chip de IA Ascend 960DT para Q1 2027, se movendo mais rápido em seu esforço para competir com Nvidia e reduzir a dependência da China de hardware de computação de IA estrangeiro.",
+        "details": "Os GPUs da Nvidia dominam o treinamento e inferência de modelos de IA globalmente, mas controles de exportação dos EUA restringem qual hardware de ponta a China pode acessar. Isso cria um problema e uma oportunidade para empresas chinesas como Huawei: o problema é que elas não podem simplesmente comprar os últimos chips Nvidia, mas a oportunidade é que há forte incentivo e apoio governamental para desenvolver alternativas. A linha de chips Ascend da Huawei é projetada para ser um substituto doméstico para GPUs Nvidia. Ao acelerar o cronograma de Q1 2027, Huawei está sinalizando confiança na prontidão do chip e respondendo à demanda governamental e de clientes. Para pessoas aprendendo sobre infraestrutura de IA, isso importa porque as escolhas de hardware afetam custos de treinamento, velocidade de inferência e que modelos são econômicos para executar onde. Se o chip da Huawei se tornar viável, muda o panorama de computação na Ásia, reduzindo potencialmente custos lá e fragmentando a infraestrutura de IA global em diferentes ecossistemas de hardware regional. Isso faz parte de uma tendência mais ampla onde regiões diferentes estão desenvolvendo capacidades de IA independentes em vez de confiar em um único fornecedor.",
+        "source": "AI News & Artificial Intelligence | TechCrunch",
+        "url": "https://techcrunch.com/2026/09/17/huawei-plans-q1-2027-launch-of-new-ai-chip-as-it-takes-on-nvidia/"
+      },
+      {
+        "date": "17 de set. de 2026",
+        "title": "2 dias restantes para exibir no TechCrunch Disrupt 2026",
+        "summary": "O prazo para reservar um estande de exibição no TechCrunch Disrupt 2026 é 18 de setembro, com o evento ocorrendo de 13 a 15 de outubro e esperado para atrair mais de 10.000 fundadores, investidores e líderes de tecnologia.",
+        "details": "TechCrunch Disrupt é uma grande conferência de tecnologia onde startups e empresas estabelecidas mostram seu trabalho para um grande público de tomadores de decisão. Se você está considerando exibir—seja para demonstrar ferramentas de IA, recrutar talentos ou apresentar a investidores—esta é uma oportunidade sensível ao tempo. A conferência atrai uma alta concentração de fundadores, VCs, operadores e mídia, tornando-a valiosa para ganhar visibilidade e fazer conexões. Para construtores no espaço de IA, Disrupt é um dos maiores locais onde você pode ver ferramentas de IA emergentes, conhecer outras equipes trabalhando em problemas semelhantes e ganhar exposição a fontes de financiamento se você estiver captando recursos. O formato de três dias significa diferentes trilhas e sessões, então você pode participar mesmo que não exiba. Se você estiver em um estágio inicial e quiser colocar seu produto de IA diante de tomadores de decisão, o prazo do estande de 18 de setembro é a restrição imediata a estar ciente.",
+        "source": "AI News & Artificial Intelligence | TechCrunch",
+        "url": "https://techcrunch.com/2026/09/17/2-days-left-to-exhibit-at-techcrunch-disrupt-2026/"
+      },
+      {
+        "date": "17 de set. de 2026",
+        "title": "Agentes de IA rivais, Instinct e Muse da Meta, ambos adicionam a capacidade de fazer chamadas",
+        "summary": "Os assistentes de IA Instinct e Muse da Meta adicionaram capacidades de chamada, permitindo que os usuários façam chamadas telefônicas através desses agentes para realizar tarefas como reservas de restaurante e cancelamentos de assinatura.",
+        "details": "Chamadas telefônicas ainda são uma forma primária de as pessoas interagirem com negócios—você chama um restaurante para reservar uma mesa, chama sua companhia de seguros para cancelar uma apólice, e assim por diante. Ao adicionar capacidade de chamada, agentes de IA agora podem lidar com essas tarefas em seu nome, reduzindo o atrito de fazer chamadas você mesmo. Isto é um passo além de interações baseadas em texto; o agente deve entender o contexto, navegar sistemas telefônicos ou falar com humanos, lidar com interrupções e saber quando a chamada foi concluída. Tanto Instinct quanto Muse adicionando essa capacidade aproximadamente ao mesmo tempo sugere que é uma característica competitiva—se um assistente de IA pode fazer chamadas e outro não, o que tem chamadas é mais útil para tarefas diárias. Para construtores aprendendo a desenvolver agentes de IA, isto sinaliza para onde o mercado está se movendo: em direção a agentes que podem interagir com o mundo físico e processos de negócios existentes em vez de existir apenas em janelas de bate-papo. Também levanta questões sobre como os agentes devem se identificar em chamadas e quais padrões de consentimento e transparência devem se aplicar quando uma IA faz uma chamada em seu nome.",
+        "source": "AI News & Artificial Intelligence | TechCrunch",
+        "url": "https://techcrunch.com/2026/09/17/rival-ai-agents-instinct-and-metas-muse-both-add-the-ability-to-make-calls/"
       }
     ]
   },
   "es": {
-    "snapshotDate": "3 de sep. de 2026",
+    "snapshotDate": "17 de sep. de 2026",
     "items": [
       {
-        "date": "1 de sep. de 2026",
-        "title": "El nuevo lanzamiento Fable de Anthropic es más barato y menos restrictivo",
-        "summary": "Fable 5.1 reduce los costos operacionales al disminuir el consumo de tokens y ajusta los filtros de seguridad para reducir los bloqueos de falsos positivos que estaban impidiendo solicitudes legítimas.",
+        "date": "17 de sep. de 2026",
+        "title": "Google, Nvidia y Anthropic quieren que Emerald AI encuentre espacio en la red para más data centers",
+        "summary": "Una coalición que incluye Google, Nvidia y Anthropic está trabajando con Emerald AI para localizar 100 gigawatts de capacidad de red eléctrica para la construcción de nuevos data centers.",
+        "details": "Entrenar y ejecutar modelos de lenguaje grande requiere cantidades enormes de electricidad, y los data centers compiten intensamente por la capacidad de red disponible en regiones con energía confiable. Esta coalición está esencialmente tratando de resolver un cuello de botella práctico: encontrar lugares donde la infraestructura eléctrica pueda realmente soportar las instalaciones masivas que estas empresas necesitan construir. Para alguien que está aprendiendo a construir con IA, entender las limitaciones de infraestructura es importante porque determina dónde y cómo se implementan los sistemas de IA. El objetivo de 100 gigawatts es una medida de demanda de energía continua, no de uso único. Este esfuerzo señala que las grandes empresas de IA ven la disponibilidad de energía como un factor limitante para el crecimiento, lo que tiene efectos secundarios en los costos, la disponibilidad de recursos en la nube y dónde pueden operar realmente los nuevos laboratorios de IA.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
-        "url": "https://techcrunch.com/2026/09/01/anthropics-new-fable-release-is-cheaper-less-restrictive/"
+        "url": "https://techcrunch.com/2026/09/17/google-nvidia-and-anthropic-want-emerald-ai-to-find-space-on-the-grid-for-more-data-centers/"
       },
       {
-        "date": "19 de ago. de 2026",
-        "title": "VentureBeat nombra a Rob Strechay como su primer Lead Analyst, ampliando su iniciativa de investigación en IA empresarial",
-        "summary": "Rob Strechay, un analista de la industria veterano con tres décadas de experiencia en infraestructura y tecnología en la nube, se unió a VentureBeat para proporcionar investigación y análisis técnico para líderes empresariales que implementan IA en entornos de producción. Su cobertura se enfocará en utilización de GPU, infraestructura en la nube, ingeniería de plataforma y la intersección entre IA y seguridad empresarial.",
-        "source": "AI | VentureBeat",
-        "url": "https://venturebeat.com/ai/venturebeat-names-rob-strechay-as-its-first-lead-analyst-expanding-its-enterprise-ai-research-push"
-      },
-      {
-        "date": "22 de ene. de 2026",
-        "title": "Railway obtiene $100 millones para desafiar a AWS con infraestructura en la nube nativa de IA",
-        "summary": "Railway, una plataforma en la nube que ha crecido a 2 millones de desarrolladores sin marketing tradicional, recaudó $100 millones en financiamiento de la Serie B para expandir su infraestructura verticalmente integrada que permite implementaciones en menos de un segundo y cuesta aproximadamente la mitad de lo que cobra AWS. La empresa opera sus propios centros de datos, procesa más de 10 millones de implementaciones mensuales y cuenta con el 31% de las empresas de la Fortune 500 entre sus usuarios.",
-        "source": "AI | VentureBeat",
-        "url": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud"
-      },
-      {
-        "date": "19 de ene. de 2026",
-        "title": "Claude Code cuesta hasta $200 por mes. Goose hace lo mismo gratis.",
-        "summary": "Block lanzó Goose, un agente de codificación de IA de código abierto que se ejecuta localmente en las máquinas de los desarrolladores y ofrece funcionalidad similar a Claude Code de Anthropic sin tarifas de suscripción, límites de uso o dependencia de la nube. Goose ganó 26.100 estrellas en GitHub mientras que los usuarios de Claude Code se quejaban de los precios ($20-$200/mes) y límites de velocidad restrictivos que les impiden trabajar intensamente.",
-        "source": "AI | VentureBeat",
-        "url": "https://venturebeat.com/infrastructure/claude-code-costs-up-to-usd200-a-month-goose-does-the-same-thing-for-free"
-      },
-      {
-        "date": "3 de sep. de 2026",
-        "title": "Nvidia confirma que comprará Hugging Face por $12.9 mil millones",
-        "summary": "Nvidia anunció planes para adquirir Hugging Face, la popular plataforma de aprendizaje automático de código abierto que alberga más de 3 millones de modelos y atiende a una comunidad de 18 millones de desarrolladores.",
+        "date": "16 de sep. de 2026",
+        "title": "Anthropic y OpenAI quieren incorporar evaluadores de seguridad. ¿Serán realmente independientes?",
+        "summary": "Anthropic y OpenAI están proponiendo colocar evaluadores de seguridad directamente dentro de sus laboratorios de IA, lo que da a los investigadores mejor acceso para evaluar sistemas, pero plantea preguntas sobre si los evaluadores pueden ser verdaderamente independientes cuando están incorporados en las empresas que deberían supervisar.",
+        "details": "Los evaluadores de seguridad son investigadores y expertos que prueban sistemas de IA para daños potenciales—sesgo, ataques, riesgos de uso indebido, y otros. Tradicionalmente, tal supervisión ha sido externa, creando distancia entre evaluadores y las empresas que construyen los sistemas. Al incorporar evaluadores en el sitio, Anthropic y OpenAI argumentan que los evaluadores pueden acceder a los sistemas reales más fácilmente y proporcionar retroalimentación en tiempo real. Sin embargo, los investigadores que estudian la gobernanza de IA han señalado un problema real: si tu salario, espacio de trabajo y progresión de carrera dependen de la misma empresa que se supone debes supervisar, mantener la verdadera independencia se vuelve difícil. La propuesta destaca una tensión central en el desarrollo de IA—las empresas quieren mejorar la seguridad, pero la verdadera supervisión de seguridad requiere cierto grado de distancia y separación institucional. Esto importa para los aprendices porque toca cuestiones de gobernanza que darán forma a cómo los sistemas de IA confiables pueden realmente construirse e implementarse a escala.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
-        "url": "https://techcrunch.com/2026/09/03/nvidia-confirms-it-will-buy-hugging-face-for-12-9-billion/"
+        "url": "https://techcrunch.com/2026/09/16/anthropic-and-openai-want-to-embed-safety-evaluators-will-they-really-be-independent/"
       },
       {
-        "date": "2 de sep. de 2026",
-        "title": "The Builders Stage trae estrategias prácticas para escalar startups a TechCrunch Disrupt 2026",
-        "summary": "TechCrunch Disrupt 2026 presenta The Builders Stage, una sección de conferencia dedicada a discusiones entre fundadores, operadores de startups e inversores sobre enfoques concretos para construir y hacer crecer empresas en etapa inicial.",
+        "date": "16 de sep. de 2026",
+        "title": "Tus agentes de IA ahora pueden controlar tus dispositivos Google Home",
+        "summary": "Google lanzó acceso inicial a un servidor MCP para Google Home que permite que agentes de IA como Claude y ChatGPT controlen dispositivos de hogar inteligente, vean resúmenes de cámaras y accedan a registros de actividad a través de comandos de lenguaje natural.",
+        "details": "Model Context Protocol (MCP) es un estándar que permite que los modelos de IA interactúen con herramientas y sistemas externos. Al lanzar un servidor Google Home MCP, Google está haciendo posible que cualquier agente de IA—Claude, ChatGPT u otros—se comunique directamente con dispositivos de hogar inteligente sin que cada empresa de IA necesite construir su propia integración con Google Home. Para alguien que está aprendiendo a construir con agentes de IA, este es un ejemplo práctico de cómo funciona MCP en sistemas reales. En lugar de pedirle a un usuario que controle manualmente un dispositivo, un agente de IA ahora puede procesar un comando como \"enciende la luz de la cocina\" o \"muéstrame la cámara de la sala de estar\" y ejecutarlo directamente. Esto importa porque reduce la fricción—los usuarios obtienen más valor de los agentes de IA cuando esos agentes pueden realmente interactuar con el mundo físico y los sistemas que les importan. El lanzamiento de acceso inicial señala que las integraciones estandarizadas probablemente se volverán más comunes, lo que significa que los constructores necesitan entender cómo funciona MCP y cómo usar estas integraciones existentes en lugar de construir todo desde cero.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
-        "url": "https://techcrunch.com/2026/09/02/the-builders-stage-brings-practical-strategies-for-scaling-startups-to-techcrunch-disrupt-2026/"
+        "url": "https://techcrunch.com/2026/09/16/your-ai-agents-can-now-control-your-google-home-devices/"
       },
       {
-        "date": "2 de sep. de 2026",
-        "title": "Palo Alto Networks pagó $500 millones por Console respaldada por Thrive, según fuentes",
-        "summary": "Palo Alto Networks adquirió Console, una empresa de automatización de servicios de TI con IA respaldada por Thrive Capital, por $500 millones, dejando a Serval respaldada por Sequoia como la startup líder en este segmento de mercado.",
+        "date": "16 de sep. de 2026",
+        "title": "Anthropic fusiona Claude chat y Cowork en una sola interfaz",
+        "summary": "Anthropic está consolidando su interfaz de chat Claude y su herramienta de colaboración Cowork en una única interfaz unificada, lanzando inicialmente para suscriptores Pro y Max.",
+        "details": "Anthropic previamente mantenía Claude como una interfaz de chat directa y Cowork como un espacio separado diseñado para colaboración en equipo y trabajo en proyectos más extensos. Al fusionarlos, Anthropic está simplificando su línea de productos y permitiendo que los usuarios se muevan fluidamente entre chat personal y colaboración en equipo dentro de una sola herramienta. Este cambio se está lanzando primero para suscriptores pagos en planes Pro y Max, que es una estrategia típica de productos—los usuarios pagos obtienen nuevas características temprano, y la interfaz gradualmente se expande más ampliamente. Para constructores aprendiendo a usar Claude efectivamente, esto importa porque la interfaz unificada puede cambiar cómo estructuras flujos de trabajo y dónde organizas diferentes tipos de trabajo. En lugar de cambiar contexto entre dos herramientas separadas, tendrás un entorno que maneja tanto interacciones rápidas como proyectos estructurados en equipo. Entender la interfaz y cómo usar las características de colaboración se convertirá en parte del uso estándar de Claude.",
         "source": "AI News & Artificial Intelligence | TechCrunch",
-        "url": "https://techcrunch.com/2026/09/02/palo-alto-networks-paid-500m-for-thrive-backed-console-sources-say/"
+        "url": "https://techcrunch.com/2026/09/16/anthropic-merges-claude-chat-and-cowork-in-one-interface/"
+      },
+      {
+        "date": "17 de sep. de 2026",
+        "title": "Huawei planea el lanzamiento de nuevo chip de IA en Q1 2027 mientras se enfrenta a Nvidia",
+        "summary": "Huawei está acelerando el lanzamiento de su chip de IA Ascend 960DT a Q1 2027, moviéndose más rápido en su esfuerzo por competir con Nvidia y reducir la dependencia de China del hardware de computación de IA extranjero.",
+        "details": "Los GPUs de Nvidia dominan el entrenamiento e inferencia de modelos de IA globalmente, pero los controles de exportación de EE.UU. restringen qué hardware de vanguardia puede acceder China. Esto crea tanto un problema como una oportunidad para empresas chinas como Huawei: el problema es que no pueden simplemente comprar los últimos chips Nvidia, pero la oportunidad es que hay un fuerte incentivo y apoyo gubernamental para desarrollar alternativas. La línea de chips Ascend de Huawei está diseñada para ser un sustituto doméstico de los GPUs Nvidia. Al acelerar el cronograma de Q1 2027, Huawei está señalando confianza en la preparación del chip y respondiendo a la demanda gubernamental y de clientes. Para personas aprendiendo sobre infraestructura de IA, esto importa porque las opciones de hardware afectan los costos de entrenamiento, la velocidad de inferencia y qué modelos son económicos para ejecutar dónde. Si el chip de Huawei se vuelve viable, cambia el panorama de computación en Asia, reduciendo potencialmente costos allí y fragmentando la infraestructura de IA global en diferentes ecosistemas de hardware regional. Esto es parte de una tendencia más amplia donde diferentes regiones están desarrollando capacidades de IA independientes en lugar de confiar en un único proveedor.",
+        "source": "AI News & Artificial Intelligence | TechCrunch",
+        "url": "https://techcrunch.com/2026/09/17/huawei-plans-q1-2027-launch-of-new-ai-chip-as-it-takes-on-nvidia/"
+      },
+      {
+        "date": "17 de sep. de 2026",
+        "title": "2 días restantes para exhibir en TechCrunch Disrupt 2026",
+        "summary": "El plazo para reservar un stand de exhibición en TechCrunch Disrupt 2026 es el 18 de septiembre, con el evento que se llevará a cabo del 13 al 15 de octubre y se espera que atraiga a más de 10.000 fundadores, inversores y líderes tecnológicos.",
+        "details": "TechCrunch Disrupt es una conferencia tecnológica importante donde startups y empresas establecidas muestran su trabajo a una gran audiencia de tomadores de decisiones. Si estás considerando exhibir—ya sea para demostrar herramientas de IA, reclutar talento o presentar a inversores—esta es una oportunidad sensible al tiempo. La conferencia atrae una alta concentración de fundadores, capitalistas de riesgo, operadores y medios, lo que la hace valiosa para ganar visibilidad y hacer conexiones. Para constructores en el espacio de IA, Disrupt es uno de los lugares más grandes donde puedes ver herramientas de IA emergentes, conocer otros equipos que trabajan en problemas similares y obtener exposición a fuentes de financiamiento si estás recaudando fondos. El formato de tres días significa diferentes pistas y sesiones, por lo que puedes asistir incluso si no exhibes. Si estás en una etapa temprana y quieres poner tu producto de IA frente a tomadores de decisiones, el plazo del stand del 18 de septiembre es la restricción inmediata de la que debes estar consciente.",
+        "source": "AI News & Artificial Intelligence | TechCrunch",
+        "url": "https://techcrunch.com/2026/09/17/2-days-left-to-exhibit-at-techcrunch-disrupt-2026/"
+      },
+      {
+        "date": "17 de sep. de 2026",
+        "title": "Agentes de IA rivales, Instinct y Muse de Meta, ambos agregan la capacidad de hacer llamadas",
+        "summary": "Los asistentes de IA Instinct y Muse de Meta han agregado capacidades de llamada, permitiendo que los usuarios realicen llamadas telefónicas a través de estos agentes para realizar tareas como reservas de restaurante y cancelaciones de suscripción.",
+        "details": "Las llamadas telefónicas siguen siendo una forma principal en que las personas interactúan con negocios—llamas a un restaurante para reservar una mesa, llamas a tu compañía de seguros para cancelar una póliza, y así sucesivamente. Al agregar capacidad de llamada, los agentes de IA ahora pueden manejar estas tareas en tu nombre, reduciendo la fricción de hacer llamadas tú mismo. Esto es un paso más allá de las interacciones basadas en texto; el agente debe entender el contexto, navegar sistemas telefónicos o hablar con humanos, manejar interrupciones y saber cuándo se completa la llamada. Tanto Instinct como Muse agregando esta capacidad aproximadamente al mismo tiempo sugiere que es una característica competitiva—si un asistente de IA puede hacer llamadas y otro no, el que tiene llamadas es más útil para tareas cotidianas. Para constructores aprendiendo a desarrollar agentes de IA, esto señala hacia dónde se está moviendo el mercado: hacia agentes que pueden interactuar con el mundo físico y procesos comerciales existentes en lugar de existir solo en ventanas de chat. También plantea preguntas sobre cómo los agentes deben identificarse en llamadas y qué estándares de consentimiento y transparencia deben aplicarse cuando una IA realiza una llamada en tu nombre.",
+        "source": "AI News & Artificial Intelligence | TechCrunch",
+        "url": "https://techcrunch.com/2026/09/17/rival-ai-agents-instinct-and-metas-muse-both-add-the-ability-to-make-calls/"
       }
     ]
   }
